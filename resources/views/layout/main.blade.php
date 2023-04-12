@@ -22,6 +22,12 @@
       margin-left: auto;
       }
     </style> --}}
+
+    <style>
+      body{
+        /* overflow-x: hidden; */
+      }
+    </style>
   </head>
   <body>
     @include('part.navbar')
