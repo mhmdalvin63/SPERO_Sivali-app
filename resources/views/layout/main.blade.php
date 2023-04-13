@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{{asset('../fontawesome/css/all.css')}}">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
     {{-- <link rel="stylesheet" href="{{ asset('../fontawesome/css/fontawesome.min.css') }}"/> --}}
     {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /> --}}
     {{-- <style>
@@ -24,9 +29,13 @@
     </style> --}}
 
     <style>
-      body{
-        /* overflow-x: hidden; */
-      }
+      
+      :root {
+      --blue-color: #134B6E; 
+    }
+    body{
+      font-family: 'Quicksand', sans-serif;
+    }
     </style>
   </head>
   <body>

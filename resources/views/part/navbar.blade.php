@@ -15,15 +15,15 @@
     <div class="container">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="nav_logo">
-                <a class="navbar-brand" href="#"><img src="{{asset('../img/logorpl.jfif')}}" width="75px" alt=""></a>
+                <a class="navbar-brand" href="/home"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link fs-5 active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link fs-5 active" aria-current="page" href="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fs-5" href="#">Katalog</a>
+                  <a class="nav-link fs-5" href="/katalog">Katalog</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link fs-5" href="#">Artikel</a>

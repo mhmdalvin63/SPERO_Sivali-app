@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <img src="{{asset('../img/logorpl.jfif')}}" width="100px" alt="">
+                <img src="{{asset('../img/logo-sivali-putih.png')}}" width="100%" alt="">
             </div>
             <div class="col-md-4">
                 <h2>SIVALI FURNITURE</h2>
