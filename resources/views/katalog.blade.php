@@ -1,231 +1,5 @@
 @extends('layout.main')
-
-<style>
-    
-    #top_content{
-        height: max-content;
-        padding: 10% 0 0 0;
-    }
-    #top_cf{
-        background-color: var(--blue-color);
-        padding: 2rem 4rem;
-        border-radius: 5px;
-    }
-    .tc_content{
-        height: 13rem;
-    }
-    .tc_content p{
-        color: #EE9D00;
-    }
-    .scrolling{
-        text-decoration: none;
-    }
-    #next_scroll{
-        height: max-content;
-        padding: 5rem 0;
-    }
-    .tj{
-        text-align: justify
-    }
-    .vl {
-        -ms-transform: translate(9px,0); /* Internet Explorer 9 */
-        -webkit-transform: translate(9px,0); /* Safari */
-        transform: translate(9px,0); /* Syntax Standart */	
-        border-left: 2px solid white;
-        height: 2rem;
-    }
-    .content_barang{
-        background-color: #f0f0f0;
-        padding: 2rem 4rem 2rem 0;
-    }
-    .content_barang h2{
-        color: #EE9D00;
-    }
-    .content_barang h3{
-        color: var(--blue-color);
-    }
-    .img__lampu{
-        /* height: 20%; */
-        align-items: flex-end;
-    }
-    .menu .menu_btn{
-        border: 1px solid rgb(187, 186, 186);
-        padding: .3rem 1.5rem;
-        border-radius: 20px;
-    }
-    .menu .menu_btn:hover{
-        border: 1px solid rgb(187, 186, 186);
-        border-radius: 20px;
-        background: #19376D;
-        font-weight: bold;
-        color: white;
-    }
-    .card a{
-        text-decoration: none;
-        color: var(--blue-color);
-    }
-    .hovering__left{
-        border-radius: 0 0 10px 10px
-    }
-    .hovering__right{
-        border-radius: 0 0 10px 10px
-    }
-    .hovering__left h2{
-        font-size: .75rem;
-    }
-    .card__title .fw-bold{
-        color: var(--blue-color);
-    }
-    
-    .pagination {
-        list-style: none;
-        display: inline-block;
-        padding: 0;
-        margin-top: 10px;
-    }
-    .pagination li {
-        display: inline;
-        text-align: center;
-    }
-    .pagination a {
-        float: left;
-        display: block;
-        font-size: 14px;
-        text-decoration: none;
-        padding: 10px 18px;
-        color: #fff;
-        margin-left: -1px;
-        border: 1px solid transparent;
-        line-height: 1.5;
-    }
-    .pagination a.active {
-        cursor: default;
-    }
-    .pagination a:active {
-        outline: none;
-    }
-    .modal-1 a {
-        border-radius: 6px;
-        border-color: #ddd;
-        color: #134B6E;
-        font-weight: bold;
-        font-size: 1rem;
-        background: #fff;
-    }
-    .modal-1 a:hover {
-        background: #eee;
-    }
-    .modal-1 a.active, .modal-1 a:active {
-        border-color: #134B6E;
-        background: #134B6E;
-        color: #fff;
-    }
-
-    #slider {
-        position: relative;
-        overflow: hidden;
-        margin: 20px auto 0 auto;
-        border-radius: 4px;
-    }
-
-    #slider ul {
-        position: relative;
-        margin: 0;
-        padding: 0;
-        height: 200px;
-        list-style: none;
-    }
-
-    #slider ul li {
-        position: relative;
-        display: block;
-        float: left;
-        margin: 0;
-        padding: 0;
-        width: 75%;
-        height: 300px;
-        background: #ccc;
-        text-align: center;
-        line-height: 300px;
-    }
-
-    a.control_prev, a.control_next {
-        position: absolute;
-        top: 45%;
-        z-index: 999;
-        display: block;
-        padding: 4% 3%;
-        width: auto;
-        height: 20px;
-        background: #2a2a2a;
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 18px;
-        opacity: 0.8;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    a.control_prev:hover, a.control_next:hover {
-        opacity: 1;
-        -webkit-transition: all 0.2s ease;
-    }
-
-    a.control_prev {
-        border-radius: 200px;
-    }
-
-    a.control_next {
-        right: 0;
-        border-radius:200px;
-    }
-
-    .slider_option {
-        position: relative;
-        margin: 10px auto;
-        width: 160px;
-        font-size: 18px;
-    }
-
-    .hl{ 
-        border:         none;
-        border-left:    1px solid hsla(200, 10%, 50%,100);
-        height:         1.25rem;
-        width:          1px;       
-    }
-
-    .status a{
-        text-decoration: none;
-    }
-    /* .pagination {
-        --bs-pagination-padding-x: 0.75rem;
-        --bs-pagination-padding-y: 0.375rem;
-        --bs-pagination-font-size: 1rem;
-        --bs-pagination-color: var(--bs-link-color);
-        --bs-pagination-bg: #fff;
-        --bs-pagination-border-width: 1px;
-        --bs-pagination-border-color: #dee2e6;
-        --bs-pagination-border-radius: 0.375rem;
-        --bs-pagination-hover-color: var(--bs-link-hover-color);
-        --bs-pagination-hover-bg: #e9ecef;
-        --bs-pagination-hover-border-color: #dee2e6;
-        --bs-pagination-focus-color: var(--bs-link-hover-color);
-        --bs-pagination-focus-bg: #e9ecef;
-        --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-        --bs-pagination-active-color: #fff;
-        --bs-pagination-active-bg: #134B6E;
-        --bs-pagination-active-border-color: #134B6E;
-        --bs-pagination-disabled-color: #6c757d;
-        --bs-pagination-disabled-bg: #fff;
-        --bs-pagination-disabled-border-color: #dee2e6;
-        display: flex;
-        padding-left: 0;
-        list-style: none;
-    } */
-</style>
+<link rel="stylesheet" href="{{asset('../css/katalog.css')}}">
 
 @section('content')
     <div class="container" id="top_content">
@@ -256,7 +30,10 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-md-5 barang__kiri"><img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt=""></div>
                     <div class="col-md-7">
-                        <h3 class="fw-light"><u>KURSI <span class="fw-bold">NYAMAN</span></u></h3>
+                        <div class="judul__barang">
+                            <h3 class="fw-light">KURSI <span class="fw-bold">NYAMAN</span></h3>
+                            <hr class="hr_judul bg-dark border-2 border-top border-dark">
+                        </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
                         <h2 class=" fw-bold">RP. 5.399.000</h2>
                         <div class="sd fs-5 d-flex gap-2 justify-content-end">
@@ -269,7 +46,10 @@
             <div class="col-md-6 content_barang d-flex align-items-center">
                 <div class="row d-flex align-items-center">
                     <div class="col-md-7">
-                        <h3 class="fw-light"><u>MEJA <span class="fw-bold">FLEXIBEL</span></u></h3>
+                        <div class="judul__barang">
+                            <h3 class="fw-light">MEJA <span class="fw-bold">FLEXIBEL</span></h3>
+                            <hr class="hr_judul bg-dark border-2 border-top border-dark">
+                        </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
                         <h2 class=" fw-bold">RP. 5.399.000</h2>
                         <div class="sd fs-5 d-flex gap-2 justify-content-start">
