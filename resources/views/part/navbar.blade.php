@@ -26,7 +26,7 @@
                   <a class="nav-link fs-5" href="/katalog">Katalog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fs-5" href="#">Artikel</a>
+                  <a class="nav-link fs-5" href="/artikel">Artikel</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link fs-5" href="#">Kontak</a>
