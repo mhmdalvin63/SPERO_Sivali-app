@@ -1,0 +1,14 @@
+.header{
+    height: 95vh;
+}
+
+.desc__scc{
+    width: 55%;
+}
+
+.ba__left p:nth-child(1) {
+        width: 75%;
+    }
+.ba__left p:nth-child(2) {
+        width: 55%;
+    }
