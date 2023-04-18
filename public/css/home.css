@@ -1,5 +1,14 @@
+.desc{ grid-area: desc; }
+.top__img{ grid-area: top__img; }
+
+.row__top{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
 #top{
     height: 100vh;
+    align-items: center;
 }
 .desc h1{
     color: var(--blue-color);
@@ -53,9 +62,85 @@
     font-weight: bold;
     background-color: var(--blue-color);
 }
+
+.wrapper {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 10px;
+    /* grid-auto-rows: minmax(100px, auto); */
+  }
+.la__image{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.la__image img{
+    height: 100%;
+    width: 100%;
+}
+.item1{ grid-area: w-1; }
+.item2{ grid-area: w-2; }
+.item3{ grid-area: w-3; }
+.item4{ grid-area: w-4; }
+.item5{ grid-area: w-5; }
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    'w-1 w-1 w-2 w-3'
+    'w-4 w-5 w-5 w-3';
+}
+.grid-item img{
+    filter: brightness(50%);
+}
+.overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+    text-align: start;
+}
+.item1 .overlay p:nth-child(1){
+    font-size: 1.75rem;
+    width: 40%;
+}
+.item1 .overlay p:nth-child(2){
+    font-size: 1rem;
+    width: 60%;
+}
+.item2 .overlay p{
+    font-size: 1.25rem;
+    width: 75%;
+}
+.item3 .overlay{
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    text-align: start;
+}
+.item3 .overlay p{
+    font-size: 1.5rem;
+    width: 75%;
+}
+.item4 .overlay p{
+    font-size: 1.5rem;
+}
+.item5 .overlay p:nth-child(1){
+    font-size: 1.5rem;
+    width: 60%;
+}
+
 @media only screen and (max-width: 600px) {
+    .top__img{
+        order: -1;
+    }
+    #top{
+        align-items: end;
+    }
     #ab_lemari{
-    width: 55%;
+        width: 55%;
     }
     .circle1{
         z-index: 1;
@@ -63,6 +148,11 @@
         height: 12.5rem;
         border-radius: 200px;
         background: #19376D;
+    }
+    .desc h1{
+        color: var(--blue-color);
+        font-weight: 700;
+        font-size: 25px;
     }
     .circle2{
         z-index: 1;
@@ -73,6 +163,23 @@
     }
     .logo__img img{
         width: 100%;
+    }
+    .grid-container{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto;
+        /* grid-template-rows: auto auto; */
+        grid-template-areas: 
+        'w-1'
+        'w-2'
+        'w-3'
+        'w-4'
+        'w-5';
+    }
+    .cont_3 h1{
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--blue-color);
     }
 }
 

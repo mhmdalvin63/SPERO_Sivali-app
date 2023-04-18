@@ -4,11 +4,11 @@
 @section('content')
 
 <div class="container">
-    <div class="header d-flex align-items-end">
+    <div class="header d-flex">
         <div class="content">
             <p class="fs-4 fw-bold" style="color:
             #134B6E">HUBUNGI KAMI</p>
-            <img src="{{asset('../img/kontak.png')}}" alt="">
+            <img class="img-fluid" src="{{asset('../img/kontak.png')}}" alt="">
         </div>
     </div>
 
@@ -19,7 +19,7 @@
 
     <div class="bottom__artikel d-flex justify-content-between mt-5">
         <div class="row">
-            <div class="col-md-5" style="height: max-content;">
+            <div class="col-md-5 col-12" style="height: max-content;">
                 <div class="ba__left">
                     <p class="fs-5 fw-bold mb-0" style="color:
                     #134B6E">Layanan Pelanggan SIVALI Telepon +6221-2985-3900 Whatsapp +62811-1300-2242</p>
@@ -29,7 +29,7 @@
             <div class="col-md-2 d-flex justify-content-center">
                 <div class="vr" style="width: 2.5px; color: #000"></div>
             </div>
-            <div class="col-md-5" style="height: max-content;">
+            <div class="col-md-5 col-12" style="height: max-content;">
                 <div class="ba__right">
                     <p class="fs-5 fw-bold mb-0" style="color:
                     #134B6E">E-MAIL</p>

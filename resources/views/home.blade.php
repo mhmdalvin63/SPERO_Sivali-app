@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="{{asset('../css/home.css')}}">
 
 @section('content')
-    <div class="container d-flex align-items-center"  id="top">
+    <div class="container d-flex"  id="top">
        <div class="container-fluid">
-        <div class="row">
+        <div class="row row__top">
             <div class="col-md-6 d-flex align-items-center">
                 <div class="desc">
                     <h1>Sofa terbaru dengan kualitas terbaik</h1> 
@@ -12,14 +12,14 @@
                     <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 top__img">
                 <img src="{{asset('../img/sofa-home.png')}}" width="110%" alt="">
             </div>
         </div>
        </div>
     </div>
 
-    <div class="container-fluid mb-5">
+    <div class="container-fluid mb-5 mt-5 mt-md-0">
         <div class="row d-flex justify-content-center text-center">
             <h3 class="mb-5">Kategori Barang</h3>
             <div class="col-md-1 col-2 logo">
@@ -168,40 +168,40 @@
     </div>
 
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-md-8" style="background-color: #19376D">1</div>
-                    <div class="col-md-4" style="background-color: #E7E6E1">2</div>
-                    <div class="col-md-4" style="background-color: #ffc800">3</div>
-                    <div class="col-md-8" style="background-color: chocolate">4</div>
+        <div class="grid-container">
+                <div class="grid-item item1 mt-3 la__image">
+                    <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt="">
+                    <div class="overlay">
+                        <p class="mb-1 fw-bold">SAMPAI JUMPA DI TOKO</p>
+                        <p>Sebelum berkunjung, lihat halaman Toko dan Pick-up Point SIVALI untuk mengetahui informasi seputar penawaran, event dan lainnya.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3" style="background-color: bisque">
-                <div class="col-md-3" style="background-color: blue">5</div>
-            </div>
-
-            
+                <div class="grid-item item2 mt-3 la__image">
+                    <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
+                    <div class="overlay">
+                        <p class="mb-1">Barang dengan kualitas Terbaik</p>
+                    </div>
+                </div>
+                <div class="grid-item item3 mt-3 la__image">
+                    <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
+                    <div class="overlay">
+                        <p class="mb-1">Temukan <br> barang - barang lokal buatan <br> Kota Jepara</p>
+                    </div>
+                </div>
+                <div class="grid-item item4 mt-3 la__image">
+                    <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
+                    <div class="overlay">
+                        <p class="mb-1 fw-bold">Semua Jenis Peralatan Dapur</p>
+                    </div>
+                </div>
+                <div class="grid-item item5 mt-3 la__image">
+                    <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
+                    <div class="overlay">
+                        <p class="mb-1 fw-bold">Tipe Dapur Impian Anda Dirumah</p>
+                        <p>Temukan semua barangnya hanya di Sivali Furniture</p>
+                    </div>
+                </div>
         </div>
     </div>
-    {{-- <div class="container d-flex align-items-center" id="top">
-        <div class="circle position-relative">
-            <div class="circle1"></div>
-            <div class="circle2"></div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
-                    <img id="ab_lemari" src="{{asset('../img/sofa.png')}}" alt="">
-                </div>
-                <div class="col-md-6">
-                    <h1>Tentang Furniture Kita</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat delectus facere blanditiis voluptatum labore aliquam fuga dicta voluptas vero porro!</p>
-                    <a class="btn btn-primary" href="#" role="button">Selengkapnya >></a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     
 @endsection

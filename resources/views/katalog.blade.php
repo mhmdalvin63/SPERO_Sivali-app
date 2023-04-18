@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container" id="top_content">
-        <div class="container-fluid" id="top_cf">
+        <div id="top_cf">
             <div class="content">
                 <div class="row">
                     <div class="col-md-6">
@@ -284,7 +284,7 @@
         </div>
     </div>
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="col-md-12">
             <div id="slider" style="width: 100vw;">
                 <a class="control_next">></a>
@@ -312,7 +312,7 @@
                 <label for="checkbox">Autoplay Slider</label>
               </div> 
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="container mt-5">

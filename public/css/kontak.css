@@ -1,5 +1,6 @@
 .header{
     height: 95vh;
+    align-items: end;
 }
 
 .desc__scc{
@@ -8,7 +9,35 @@
 
 .ba__left p:nth-child(1) {
         width: 75%;
+        /* font-size: 1.2rem; */
     }
 .ba__left p:nth-child(2) {
         width: 55%;
+        /* font-size: 1.25rem; */
     }
+
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .header{
+        height: 50vh;
+    }
+    .ba__left p:nth-child(1) {
+        width: 100%;
+        /* font-size: 1.2rem; */
+    }
+    .ba__left p:nth-child(2) {
+        width: 100%;
+        /* font-size: 1.25rem; */
+    }
+    .desc__scc{
+        width: 100%;
+    }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .vr{
+        display: inherit;
+    }
+}
