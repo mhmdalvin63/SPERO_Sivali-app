@@ -132,56 +132,6 @@
     width: 60%;
 }
 
-@media only screen and (max-width: 600px) {
-    .top__img{
-        order: -1;
-    }
-    #top{
-        align-items: end;
-    }
-    #ab_lemari{
-        width: 55%;
-    }
-    .circle1{
-        z-index: 1;
-        width: 12.5rem;
-        height: 12.5rem;
-        border-radius: 200px;
-        background: #19376D;
-    }
-    .desc h1{
-        color: var(--blue-color);
-        font-weight: 700;
-        font-size: 25px;
-    }
-    .circle2{
-        z-index: 1;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 200px;
-        background: #19376D;
-    }
-    .logo__img img{
-        width: 100%;
-    }
-    .grid-container{
-        display: grid;
-        gap: 10px;
-        grid-template-columns: auto;
-        /* grid-template-rows: auto auto; */
-        grid-template-areas: 
-        'w-1'
-        'w-2'
-        'w-3'
-        'w-4'
-        'w-5';
-    }
-    .cont_3 h1{
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--blue-color);
-    }
-}
 
 .menu .menu_btn{
     border: 1px solid rgb(187, 186, 186);
@@ -208,4 +158,343 @@
 }
 .rating .checked{
     color: #ffc800;
+}
+/* RESPONSIVE KATALOG KAMI */
+@media only screen and (max-width: 600px) {
+    .top_product img {
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .top_product img {
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .top_product img {
+        width: 150%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .top_product img {
+        width: 150%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .top_product img {
+        width: 100%;
+    }
+}
+
+
+/* RESPONSIVE TENTANG FURNITURE KITA */
+@media only screen and (max-width: 500px) {
+    #tfk_right{
+        margin-top: -15%;
+        text-align: center;
+    }
+    .circle1{
+        width: 15rem;
+        height: 15rem;
+        border-radius: 200px;
+    }
+    .circle2{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 200px;
+    }
+    #ab_lemari{
+        transform: translate(100px,-10px);
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+    #tfk_right{
+        text-align: center;
+    }
+    .circle1{
+        width: 15rem;
+        height: 15rem;
+        border-radius: 200px;
+    }
+    .circle2{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 200px;
+    }
+    #ab_lemari{
+        transform: translate(100px,-10px);
+        width: 45%;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    #ab_lemari{
+        width: 50%;
+    }
+    .cont_3 h1, p{
+        text-align: center;
+    }
+    .cont_3 a{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .circle1{
+        width: 15rem;
+        height: 15rem;
+        border-radius: 200px;
+    }
+    .circle2{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 200px;
+    }
+    #ab_lemari{
+        transform: translate(80px,0);
+        width: 25%;
+    }
+    #tfk_right{
+        align-items: start;
+    }
+}
+
+
+/* RESPONSIVE KATEGORI BARANG */
+@media only screen and (max-width: 485px) {
+    .logo__img img{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+@media only screen and (min-width: 486px) and (max-width: 600px) {
+    .logo__img  img{
+        margin-bottom: 4rem;
+    }
+    .k_b{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .k_b{
+        gap: 2rem;
+    }
+}
+
+
+/* RESPONSIVE HOME HEADER */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .desc h1{
+        font-size: calc(200% + 0.8vmin);
+    }
+    .desc p{
+        font-size: calc(75% + 0.8vmin);
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+    #top{
+        align-items: end;
+    }
+    .top__img{
+        order: -1;
+    }
+    .top__img img{
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .desc h1{
+        font-size: calc(200% + 0.8vmin);
+        text-align: center;
+    }
+    .desc p{
+        font-size: calc(75% + 0.8vmin);
+        text-align: center;
+    }
+    .desc a{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #top{
+        align-items: end;
+    }
+    .desc h1{
+        font-size: calc(200% + 0.8vmin);
+        text-align: center;
+    }
+    .desc p{
+        font-size: calc(75% + 0.8vmin);
+        text-align: center;
+    }
+    .desc a{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* RESPONSIVE KOLASE FOTO */
+@media only screen and (max-width: 600px) {
+    .top__img{
+        order: -1;
+    }
+    .circle1{
+        z-index: 1;
+        width: 12.5rem;
+        height: 12.5rem;
+        border-radius: 200px;
+        background: #19376D;
+    }
+    .desc h1{
+        color: var(--blue-color);
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .circle2{
+        z-index: 1;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 200px;
+        background: #19376D;
+    }
+    .grid-container{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto;
+        /* grid-template-rows: auto auto; */
+        grid-template-areas: 
+        'w-1'
+        'w-2'
+        'w-3'
+        'w-4'
+        'w-5';
+    }
+    .cont_3 h1{
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--blue-color);
+    }
+    .item1 .overlay p:nth-child(1){
+        font-size: calc(60% + 0.8vmin);
+        width: 40%;
+    }
+    .item1 .overlay p:nth-child(2){
+        font-size: calc(50% + 0.8vmin);
+        width: 60%;
+    }
+    .item2 .overlay p{
+        font-size: calc(75% + 0.8vmin);
+        width: 75%;
+    }
+    .item3 .overlay{
+        position: absolute;
+        top: 3rem;
+        left: 2rem;
+        text-align: start;
+    }
+    .item3 .overlay p{
+        font-size: calc(75% + 0.8vmin);
+        width: 75%;
+    }
+    .item4 .overlay p{
+        font-size: calc(75% + 0.8vmin);
+    }
+    .item5 .overlay p:nth-child(1){
+        font-size: calc(75% + 0.8vmin);
+        width: 60%;
+    }
+    .item5 .overlay p:nth-child(2){
+        font-size: calc(50% + 0.8vmin);
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .overlay {
+        position: absolute;
+        /* bottom: rem; */
+        left: 1rem;
+        text-align: start;
+    }
+    .item1 .overlay p:nth-child(1){
+        font-size: calc(40% + 0.8vmin);
+        width: 40%;
+    }
+    .item1 .overlay p:nth-child(2){
+        font-size: calc(30% + 0.8vmin);
+        width: 75%;
+        margin-bottom: 0;
+    }
+    .item2 .overlay p{
+        font-size: calc(50% + 0.8vmin);
+        width: 75%;
+    }
+    .item3 .overlay{
+        position: absolute;
+        top: .5rem;
+        left: 1rem;
+        text-align: start;
+    }
+    .item3 .overlay p{
+        font-size: calc(50% + 0.8vmin);
+        width: 75%;
+    }
+    .item4 .overlay p{
+        font-size: calc(50% + 0.8vmin);
+    }
+    .item5 .overlay p:nth-child(1){
+        font-size: calc(50% + 0.8vmin);
+        width: 60%;
+    }
+    .item5 .overlay p:nth-child(2){
+        font-size: calc(30% + 0.8vmin);
+        margin-bottom: 0;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .overlay {
+        position: absolute;
+        /* bottom: rem; */
+        left: 1rem;
+        text-align: start;
+    }
+    .item1 .overlay p:nth-child(1){
+        font-size: calc(100% + 0.8vmin);
+        width: 40%;
+    }
+    .item1 .overlay p:nth-child(2){
+        font-size: calc(50% + 0.8vmin);
+        width: 75%;
+        margin-bottom: 0;
+    }
+    .item2 .overlay p{
+        font-size: calc(100% + 0.8vmin);
+        width: 75%;
+    }
+    .item3 .overlay{
+        position: absolute;
+        top: 2rem;
+        left: 1rem;
+        text-align: start;
+    }
+    .item3 .overlay p{
+        font-size: calc(100% + 0.8vmin);
+        width: 75%;
+    }
+    .item4 .overlay p{
+        font-size: calc(100% + 0.8vmin);
+    }
+    .item5 .overlay p:nth-child(1){
+        font-size: calc(100% + 0.8vmin);
+        width: 60%;
+    }
+    .item5 .overlay p:nth-child(2){
+        font-size: calc(50% + 0.8vmin);
+        margin-bottom: 0;
+    }
 }

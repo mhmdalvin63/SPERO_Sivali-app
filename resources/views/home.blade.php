@@ -20,8 +20,8 @@
     </div>
 
     <div class="container-fluid mb-5 mt-5 mt-md-0">
-        <div class="row d-flex justify-content-center text-center">
-            <h3 class="mb-5">Kategori Barang</h3>
+        <h3 class="mb-5 text-center">Kategori Barang</h3>
+        <div class="row d-flex justify-content-center text-center k_b">
             <div class="col-md-1 col-2 logo">
                 <div class="logo__img">
                     <img src="{{asset('../img/bangku.png')}}" alt="">
@@ -57,15 +57,15 @@
 
     <div class="d-flex align-items-center mb-4 pb-4" style="background: #F5F6F8; height: max-content; margin-top: 10rem;">
         <div class="container">
-            <div class="row gap-5">
-                <div class="col-md-5">
+            <div class="row gap-5 tfk" >
+                <div class="col-md-5" id="tfk_left">
                     <img id="ab_lemari" src="{{asset('../img/furniture-home.png')}}" alt="">
                     <div class="circle position-relative">
                         <div class="circle1"></div>
                         <div class="circle2"></div>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-center">
+                <div class="col-md-6 d-flex" id="tfk_right">
                     <div class="cont_3">
                         <h1>Tentang Furniture Kita</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat delectus facere blanditiis voluptatum labore aliquam fuga dicta voluptas vero porro!</p>
