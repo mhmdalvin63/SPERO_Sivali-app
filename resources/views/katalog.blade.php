@@ -5,8 +5,8 @@
     <div class="container" id="top_content">
         <div id="top_cf">
             <div class="content">
-                <div class="row">
-                    <div class="col-md-6">
+                <div class="row" id="grid-header">
+                    <div class="col-md-6 gh_left">
                         <div class="tc_content mt-5">
                             <h1 class="text-white fw-light"><span class="fw-bold">SIVALI</span> #1 WEBSITE FURNITURE TERPERCAYA</h1>
                             <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iure.</p>
@@ -17,25 +17,27 @@
                             <i class="fa-solid fa-circle-chevron-down fa-lg mt-3" style="color: #000;"></i>
                         </a>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-end img__lampu"><img src="{{asset('../img/figma-lampu-1.png')}}" alt=""></div>
-                    <div class="col-md-3 d-flex justify-content-end"><img src="{{asset('../img/figma-lemari-1.png')}}" alt=""></div>
+                    <div class="img__lampu gh_right1"><img src="{{asset('../img/figma-lampu-1.png')}}" alt=""></div>
+                    <div class="col-md-6 gh_right2"><img src="{{asset('../img/figma-lemari-1.png')}}" alt=""></div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container d-flex align-items-center" id="next_scroll">
-        <div class="row d-flex">
-            <div class="col-md-6 content_barang d-flex align-items-center">
-                <div class="row d-flex align-items-center">
-                    <div class="col-md-5 barang__kiri"><img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt=""></div>
-                    <div class="col-md-7">
+        <div class="row" id="prnt_contentbrg">
+            <div class="col-md-12 col-lg-6 col-sm-12 gns1 content_barang d-flex align-items-center">
+                <div class="row produk d-grid d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-center">
+                    <div class="col-md-5 col-sm-6 barang__kiri" id="gambar_barang">
+                        <img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt="">
+                    </div>
+                    <div class="col-md-7 col-sm-6" id="desc_barang">
                         <div class="judul__barang">
                             <h3 class="fw-light">KURSI <span class="fw-bold">NYAMAN</span></h3>
                             <hr class="hr_judul bg-dark border-2 border-top border-dark">
                         </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
-                        <h2 class=" fw-bold">RP. 5.399.000</h2>
+                        <h2 class="harga fw-bold">RP. 5.399.000</h2>
                         <div class="sd fs-5 d-flex gap-2 justify-content-end">
                             <a class="text-decoration-none text-black" href="">Lihat</a>
                             <a class="text-decoration-none text-black fw-bold" href="">Detail</a>
@@ -43,21 +45,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 content_barang d-flex align-items-center">
-                <div class="row d-flex align-items-center">
-                    <div class="col-md-7">
+            <div class="col-md-12 col-lg-6 col-sm-12 gns2 content_barang d-flex align-items-center">
+                <div class="row produk d-grid d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-center">
+                    <div class="col-md-7 col-sm-6" id="desc_barang">
                         <div class="judul__barang">
                             <h3 class="fw-light">MEJA <span class="fw-bold">FLEXIBEL</span></h3>
                             <hr class="hr_judul bg-dark border-2 border-top border-dark">
                         </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
-                        <h2 class=" fw-bold">RP. 5.399.000</h2>
+                        <h2 class="harga fw-bold">RP. 5.399.000</h2>
                         <div class="sd fs-5 d-flex gap-2 justify-content-start">
                             <a class="text-decoration-none text-black" href="">Lihat</a>
                             <a class="text-decoration-none text-black fw-bold" href="">Detail</a>
                         </div>
                     </div>
-                    <div class="col-md-5 barang__kanan"><img src="{{asset('../img/meja-flexibel.png')}}" width="100%" alt=""></div>
+                    <div class="col-md-5 col-sm-6 barang__kanan" id="gambar_barang">
+                        <img src="{{asset('../img/meja-flexibel.png')}}" width="100%" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,10 +69,10 @@
 
     <div class="container">
         <div class="row d-flex align-items-center">
-            <div class="col-md-2 col-12 text-center text-md-left">
+            <div class="col-md-4 col-lg-2 col-12 text-center text-md-left">
                 <h3 class="fw-bold mb-0">FURNITURES</h3>
             </div>
-            <div class="col-md-10 menu d-flex gap-3 flex-wrap">
+            <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
                 <a class="btn menu_btn" href="#" role="button">Semua</a>
                 <a class="btn menu_btn" href="#" role="button">Meja</a>
                 <a class="btn menu_btn" href="#" role="button">Kursi</a>
@@ -78,8 +82,8 @@
             </div>
         </div>
 
-        <div class="row mt-5">
-            <div class="col-md-3">
+        <div class="row mt-5" id="list_barang">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -101,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -123,7 +127,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -145,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -167,7 +171,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -189,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -211,7 +215,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
@@ -233,7 +237,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4">
                 <div class="card border-0">
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">

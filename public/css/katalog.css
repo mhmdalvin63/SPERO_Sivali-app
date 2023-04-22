@@ -1,9 +1,5 @@
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    #top_cf{
-        padding: none;
-    }
-}
+
 #top_content{
     height: max-content;
     padding: 10% 0 0 0;
@@ -15,6 +11,7 @@
 }
 .tc_content{
     height: 13rem;
+    width: 45vw;
 }
 .tc_content p{
     color: #EE9D00;
@@ -25,6 +22,11 @@
 #next_scroll{
     height: max-content;
     padding: 5rem 0;
+}
+#prnt_contentbrg .content_barang{
+    display: flex;
+    border: .5rem solid white;
+    padding: 2rem 1rem;
 }
 .tj{
     text-align: justify
@@ -226,4 +228,107 @@ a.control_next {
 
 .status a{
     text-decoration: none;
+}
+
+.gh_left{ grid-area: ghl; }
+.gh_right1{ grid-area: ghr1; 
+    display: grid;
+    justify-content: end;
+}
+.gh_right2{ grid-area: ghr2; }
+
+#grid-header{
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: 'ghl ghr1 ghr2';
+}
+
+
+/* RESPONSIVE HEADER */
+@media only screen and (max-width: 575px) {
+    #next_scroll .row{
+        padding: 0 2rem;
+    }
+    #next_scroll .row img{
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #desc_barang{ grid-area: deskbrg; 
+    margin-top: 1.5rem;}
+    #gambar_barang{ grid-area: gmbrbrg; }
+
+    .produk{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        'gmbrbrg'
+        'deskbrg';
+    }
+    .judul__barang{
+        text-align: center;
+        width: 100%;
+    }
+    .hr_judul{
+        width: 45%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #list_barang .col-md-3{
+        padding: 0 2rem;
+        width: 50vw;
+    }
+}
+@media only screen and (max-width: 605px) {
+    #top_cf{
+        padding: 2rem;
+    }
+    .tc_content h1{
+        font-size: calc(150% + 0.8vmin);
+    }
+    .tc_content p{
+        font-size: calc(50% + 0.8vmin);
+    }
+}
+@media only screen and (max-width: 768px) {
+    #next_scroll{
+        padding: 2rem 0;
+    }
+    .barang__kiri img{
+        width: 100%;
+    }
+    #next_scroll .row .col-md-6{
+        margin-top: 2rem;
+    }
+}
+@media only screen and (max-width: 992px) {
+    #top_cf{
+        padding: 2rem;
+    }
+    .gh_right2{
+        display: none;
+    }
+    #grid-header{
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: auto;
+        grid-template-areas: 'ghl ghr1';
+    }
+    .gh_left{
+        width: 75vw;
+    }
+    .gh_right1 img{
+        width: 100%;
+    }
+    .hovering__left h2{
+        font-size: calc(25% + 0.8vmin);
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .hovering__left h2{
+        font-size: calc(35% + 0.8vmin);
+    }
 }
