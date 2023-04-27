@@ -34,7 +34,6 @@
                     <div class="col-md-7 col-sm-6" id="desc_barang">
                         <div class="judul__barang">
                             <h3 class="fw-light">KURSI <span class="fw-bold">NYAMAN</span></h3>
-                            <hr class="hr_judul bg-dark border-2 border-top border-dark">
                         </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
                         <h2 class="harga fw-bold">RP. 5.399.000</h2>
@@ -50,7 +49,6 @@
                     <div class="col-md-7 col-sm-6" id="desc_barang">
                         <div class="judul__barang">
                             <h3 class="fw-light">MEJA <span class="fw-bold">FLEXIBEL</span></h3>
-                            <hr class="hr_judul bg-dark border-2 border-top border-dark">
                         </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
                         <h2 class="harga fw-bold">RP. 5.399.000</h2>
@@ -288,35 +286,43 @@
         </div>
     </div>
 
-    {{-- <div class="container">
-        <div class="col-md-12">
-            <div id="slider" style="width: 100vw;">
-                <a class="control_next">></a>
-                <a class="control_prev"><</a>
-                <ul>
-                  <li>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1><span>Gaya Baru</span>Sofa Modern</h1>
-                            <a href=""><span>Lihat</span> Selengkapnya</a>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt="">
-                        </div>
-                    </div>
-                  </li>
-                  <li style="background: #aaa;">SLIDE 2</li>
-                  <li>SLIDE 3</li>
-                  <li style="background: #aaa;">SLIDE 4</li>
-                </ul>  
+    
+    <div class="container" id="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="slider">
+              <div class="carousel-item d-grid active">
+                <div class="ci_image">
+                  <img src="{{asset('../img/figma-lampu-1.png')}}" alt="...">
+                </div>
+                <div class="ci_desc text-black">
+                  <p class="fw-bold">Gaya Baru <span class="fw-light">Kursi Modern</span></p>
+                  <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
+                </div>
               </div>
-              
-              <div class="slider_option">
-                <input type="checkbox" id="checkbox">
-                <label for="checkbox">Autoplay Slider</label>
-              </div> 
+              <div class="carousel-item d-grid">
+                <div class="ci_image">
+                  <img src="{{asset('../img/figma-lemari-1.png')}}" alt="...">
+                </div>
+                <div class="ci_desc text-black">
+                  <p class="fw-bold">Gaya Baru <span class="fw-light">Lemari Modern</span></p>
+                  <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div> --}}
+        <div class="next_prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    </div>
 
 
     <div class="container mt-5">
@@ -342,7 +348,7 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
@@ -392,5 +398,5 @@
 
         });    
 
-    </script>
+    </script> --}}
 @endsection
