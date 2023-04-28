@@ -1,6 +1,9 @@
 .header{
-    height: 95vh;
-    align-items: end;
+    transform: translateY(7rem);
+}
+#sec_content{
+    color:#134B6E;
+    margin-top: 9rem;
 }
 
 .desc__scc{
@@ -12,7 +15,7 @@
         /* font-size: 1.2rem; */
     }
 .ba__left p:nth-child(2) {
-        width: 55%;
+        width: 60%;
         /* font-size: 1.25rem; */
     }
 
@@ -20,6 +23,10 @@
 @media only screen and (max-width: 600px) {
     .header{
         height: 50vh;
+    }
+    #sec_content{
+        color:#134B6E;
+        margin-top: 5%;
     }
     .ba__left p:nth-child(1) {
         width: 100%;

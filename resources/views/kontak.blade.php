@@ -1,5 +1,7 @@
 @extends('layout.main')
 <link rel="stylesheet" href="{{asset('../css/kontak.css')}}">
+<script src="{{asset('../js/coba.js')}}"></script>
+
 
 @section('content')
 
@@ -12,8 +14,7 @@
         </div>
     </div>
 
-        <p class="fs-4 fw-bold mt-5" style="color:
-            #134B6E">SIVALI CALL CENTER</p>
+        <p class="fs-4 fw-bold" id="sec_content">SIVALI CALL CENTER</p>
         <p class="desc__scc">Jika terdapat pertanyaan, kami siap membantu. Hubungi layanan pelanggan
             SIVALI atau temukan jawabannya di bawah ini.</p>
 
