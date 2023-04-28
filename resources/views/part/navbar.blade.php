@@ -11,9 +11,7 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
-    .active{
-      /* background-color:#d35400; */
-      color: #134B6E;
+    .nav-item .nav-link:focus{
       font-weight: bolder;
     }
 
@@ -96,10 +94,13 @@
 
 {{-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-          $('ul li a').click(function(){
-            $('li a').removeClass("active");
-            $(this).addClass("active");
-        });
-    });
+    document.querySelectorAll(".nav-item").forEach((ele) =>
+  ele.addEventListener("click", function (event) {
+    event.preventDefault();
+    document
+      .querySelectorAll(".nav-item")
+      .forEach((ele) => ele.classList.remove("active"));
+    this.classList.add("active")
+  })
+);
 </script> --}}
