@@ -370,6 +370,9 @@ a.control_next {
 
 /* RESPONSIVE HEADER */
 @media only screen and (max-width: 575px) {
+    .card__title p:nth-child(2){
+        font-size: 1rem !important;
+    }
     #next_scroll .row{
         padding: 0 2rem;
     }

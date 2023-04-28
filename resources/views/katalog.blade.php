@@ -333,13 +333,46 @@
                 <a href="" class="fw-bold text-black">READY STOK</a>
             </div>
         </div>
-        <div class="row mt-5 px-4 d-flex justify-content-between">
-            <div class="col-md-4 mt-3">
+        <div class="row mt-5 px-4 d-flex justify-content-between justify-content-md-start">
+            <div class="col-md-4 col-5 mt-3">
                 <div class="row">
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
                         <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
                     </div>
-                    <div class="col-md-6 fs-5 pl-5">
+                    <div class="r_desc col-md-6 fs-5 pl-5 ">
+                        <p class="mb-0 ">MICKE</p>
+                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-5 mt-3">
+                <div class="row">
+                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
+                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
+                    </div>
+                    <div class="r_desc col-md-6 fs-5 pl-5 ">
+                        <p class="mb-0 ">MICKE</p>
+                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-5 mt-3">
+                <div class="row">
+                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
+                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
+                    </div>
+                    <div class="r_desc col-md-6 fs-5 pl-5 ">
+                        <p class="mb-0 ">MICKE</p>
+                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-5 mt-3">
+                <div class="row">
+                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
+                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
+                    </div>
+                    <div class="r_desc col-md-6 fs-5 pl-5 ">
                         <p class="mb-0 ">MICKE</p>
                         <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
                     </div>
