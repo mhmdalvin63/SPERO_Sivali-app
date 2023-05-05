@@ -1,5 +1,5 @@
 @extends('backEnd.index')
-
+@section('title', 'Edit Kategori Barang')
 @section('mainContent')
     
 <div class="card">

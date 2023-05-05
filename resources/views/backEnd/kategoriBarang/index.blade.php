@@ -1,5 +1,5 @@
 @extends('backEnd.index')
-
+@section('title', 'List Kategori Barang')
 @section('mainContent')
 
 <div class="col-lg-12 grid-margin stretch-card">

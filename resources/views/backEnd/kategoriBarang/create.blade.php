@@ -1,5 +1,5 @@
 @extends('backEnd.index')
-
+@section('title', 'Input Kategori Barang')
 @section('mainContent')
 
 <div class="row d-flex" style="justify-content: center;">
