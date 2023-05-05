@@ -6,6 +6,7 @@ use App\Models\kategoriBarang;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class KategoriBarangController extends Controller
@@ -64,7 +65,7 @@ class KategoriBarangController extends Controller
     public function edit($id)
     {
         $KategoriBarang = KategoriBarang::find($id);
-        return view('KategoriBarang.edit', compact('KategoriBarang'));
+        return view('backEnd.KategoriBarang.edit', compact('KategoriBarang'));
     }
 
     /**
@@ -72,12 +73,29 @@ class KategoriBarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $KategoriBarang = KategoriBarang::findorfail($id);
-        $KategoriBarang->update([
-            'gambar_kategori' => $request->gambar_kategori,
-            'kategori_barang' => $request->kategori_barang,
+        $this->validate($request,[
+            'gambar_kategori' => '|image|mimes:jpeg,jpg,png,webp',
+            'kategori_barang' => '',
         ]);
-        return redirect('KategoriBarang')->with('success','Data Pemesanan Berhasil Di Edit');
+
+        $KategoriBarang = kategoriBarang::findOrfail($id);
+        if ($request->hasFile('gambar_kategori')) {
+
+            $gambar_kategori = $request->file('gambar_kategori');
+            $gambar_kategori->storeAs('public/image', $gambar_kategori->hashName());
+
+            Storage::delete('public/image/'.$KategoriBarang->gambar_kategori);
+
+            $KategoriBarang->update([
+                'gambar_kategori' => $gambar_kategori->hashName(),
+                'kategori_barang' => $request->kategori_barang,
+            ]);
+        }else{
+            $KategoriBarang->update([
+                'kategori_barang' => $request->kategori_barang,
+            ]);
+        }
+        return redirect()->route('kb_index');
     }
 
     /**
@@ -85,8 +103,9 @@ class KategoriBarangController extends Controller
      */
     public function destroy($id)
     {
-        $KategoriBarang = KategoriBarang::find($id);
+        $KategoriBarang = KategoriBarang::findOrfail($id);
+        Storage::delete('public/image'.$KategoriBarang->gambar_kategori);
         $KategoriBarang->delete();
-        return redirect('KategoriBarang')->with('success', 'Data deleted successfully');
+        return redirect()->route('kb_index')->with('success', 'Data deleted successfully');
     }
 }

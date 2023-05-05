@@ -33,7 +33,7 @@
                         <tr>
                             <td>{{$item->id}}</td>
                             {{-- <td><img src="../storage/image/{{$item->gambar_barang}}" alt="" width="200px"></td> --}}
-                            <td>{{HTML::image('../storage/image/'.$item->gambar_kategori)}}</td>
+                            <td><img src="{{asset('storage/image/'.$item->gambar_kategori)}}" alt="" width="75"></td>
                             <td>{{$item->kategori_barang}}</td>
                             {{-- <td>{{$item->nama_petugas}}</td> --}}
                             {{-- @if(auth()->user()->level == "admin") --}}
