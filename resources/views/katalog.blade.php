@@ -37,7 +37,7 @@
                         </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
                         <h2 class="harga fw-bold">RP. 5.399.000</h2>
-                        <div class="sd fs-5 d-flex gap-2 justify-content-end">
+                        <div class="sd fs-5 d-flex gap-2">
                             <a class="text-decoration-none text-black" href="">Lihat</a>
                             <a class="text-decoration-none text-black fw-bold" href="">Detail</a>
                         </div>
@@ -52,7 +52,7 @@
                         </div>
                         <p class="tj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae?</p>
                         <h2 class="harga fw-bold">RP. 5.399.000</h2>
-                        <div class="sd fs-5 d-flex gap-2 justify-content-start">
+                        <div class="sd fs-5 d-flex gap-2">
                             <a class="text-decoration-none text-black" href="">Lihat</a>
                             <a class="text-decoration-none text-black fw-bold" href="">Detail</a>
                         </div>
@@ -82,17 +82,24 @@
 
         <div class="row mt-5" id="list_barang">
             <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
+                <div class="card border-0" id="lb_barang">
+                    <div class="label">
+                        <p class="mb-0">Baru</p>
+                    </div>
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
                             <img src="{{asset('../img/11.png')}}" width="75%" alt="">
                         </div>
                         <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
+                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 30%;">
+                                <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
+                                {{-- <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                                <h2 class="text-white mb-0">Masukkan Keranjang</h2> --}}
                             </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
+                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
+                                <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
+                            </div>
+                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
                                 <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
                             </div>
                         </div>
@@ -103,171 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="card border-0">
-                    <div href="">
-                        <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
-                        </div>
-                        <div class="hovering d-flex justify-content-between">
-                            <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 75%; background-color: #19376D">
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 23%; background-color: #19376D">
-                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                            </div>
-                        </div>
-                        <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="col-md-12 d-flex justify-content-center align-items-center">
-                <nav aria-label="...">
-                    <ul class="pagination pagination-sm d-flex gap-5 mb-0">
-                      <li class="page-item active" aria-current="page">
-                        <span class="page-link">1</span>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    </ul>
-                </nav>
-            </div> --}}
+
             <div class="col-md-12 d-flex justify-content-center mt-5">
                 <ul class="pagination modal-1 gap-3">
                     {{-- <li><a href="#" class="prev">&laquo</a></li> --}}
@@ -310,8 +153,8 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
+        
         <div class="next_prev">
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -323,6 +166,8 @@
           </button>
         </div>
     </div>
+</div>
+    </div>
 
 
     <div class="container mt-5">
@@ -333,7 +178,7 @@
                 <a href="" class="fw-bold text-black">READY STOK</a>
             </div>
         </div>
-        <div class="row mt-5 px-4 d-flex justify-content-between justify-content-md-start">
+        <div class="row mt-5 px-4 d-flex justify-content-center justify-content-md-start">
             <div class="col-md-4 col-5 mt-3">
                 <div class="row">
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">

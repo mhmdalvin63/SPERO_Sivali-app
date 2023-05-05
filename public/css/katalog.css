@@ -76,15 +76,53 @@
     font-weight: bold;
     color: white;
 }
+
+#lb_barang{
+    position: relative;
+}
+#lb_barang .label{
+    position: absolute;
+    right: -15%;
+    top: 5%;
+    width: max-content;
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: red;
+    -webkit-clip-path: polygon(27% 0%, 75% 0%, 90% 100%, 12% 100%);
+    clip-path: polygon(27% 0%, 75% 0%, 90% 100%, 12% 100%);
+    place-items: center;
+    align-items: center;
+    padding: 0.1rem 2.5rem;
+}
+.label p{
+    font-size: .75rem;
+    width: 60px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
 .card a{
     text-decoration: none;
     color: var(--blue-color);
 }
 .hovering__left{
-    border-radius: 0 0 10px 10px
+    border-radius: 0 0 10px 10px;
+    transition: .3s ease;
+}
+.hovering__left:hover{
+    background-color: #0b2b66;
+    box-shadow: 0 0 20px rgba(115,115,115,0.75),
+                10px 0 20px -5px rgba(115,115,115,0.75);
 }
 .hovering__right{
-    border-radius: 0 0 10px 10px
+    border-radius: 0 0 10px 10px;
+    transition: .3s ease;
+}
+.hovering__right:hover{
+    background-color: #0b2b66;
+    box-shadow: 0 0 20px rgba(115,115,115,0.75),
+                10px 0 20px -5px rgba(115,115,115,0.75);
 }
 .hovering__left h2{
     font-size: .75rem;
@@ -93,6 +131,8 @@
     color: var(--blue-color);
 }
 .hovering{
+    background-color: #19376D;
+    border-radius: 0 0 10px 10px;
     position: absolute;
     bottom: 25%;
     left: 0;
@@ -406,6 +446,9 @@ a.control_next {
     #list_barang .col-md-3{
         padding: 0 2rem;
         width: 50vw;
+    }
+    .content_barang .sd:nth-child(odd){
+        justify-content: end;
     }
 }
 @media only screen and (max-width: 605px) {
