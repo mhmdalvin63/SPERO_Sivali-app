@@ -29,7 +29,7 @@
     .nav_notif{grid-area: notifikasi;}
     .navbar-toggler{grid-area: btnNav;}
 
-    .active{
+    .navactive{
       font-weight: bold;
       color: #134B6E;
       border-bottom: 1px solid #134B6E;
@@ -70,16 +70,16 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item {{ Request::segment(1) === 'home' ? 'active' : null }}">
+                <li class="nav-item {{ Request::segment(1) === 'home' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('home' )}}">Home</a>
                 </li>
-                <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'active' : null }}">
+                <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog</a>
                 </li>
-                <li class="nav-item {{ Request::segment(1) === 'artikel' ? 'active' : null }}">
+                <li class="nav-item {{ Request::segment(1) === 'artikel' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('artikel' )}}">Artikel</a>
                 </li>
-                <li class="nav-item {{ Request::segment(1) === 'kontak' ? 'active' : null }}">
+                <li class="nav-item {{ Request::segment(1) === 'kontak' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('kontak' )}}">Kontak</a>
                 </li>
               </ul>

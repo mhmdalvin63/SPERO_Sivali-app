@@ -74,12 +74,44 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">{{$item->judul_barang}}</h5>
                         <p class="card-text">Rp.{{$item->harga}}</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <div class="rating"> 
+                            @if($item->rate <= 0)
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            @elseif($item->rate == 1)
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            @elseif($item->rate == 2)
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            @elseif($item->rate == 3)
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            @elseif($item->rate == 4)
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            @elseif($item->rate >= 5)
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                                <i class="fa fa-star checked" aria-hidden="true"></i>
+                            @endif
                         </div>
                         {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                     </div>
