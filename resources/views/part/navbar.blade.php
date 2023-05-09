@@ -19,15 +19,21 @@
       color: #134B6E;
     }
 
-    #navbarText ul li a:focus,
     #navbarText ul li a:hover{
       font-weight: bold;
+      border-bottom: 1px solid #134B6E;
     }
 
     .nav_logo{grid-area: logo;}
     #navbarText{grid-area: menu;}
     .nav_notif{grid-area: notifikasi;}
     .navbar-toggler{grid-area: btnNav;}
+
+    .active{
+      font-weight: bold;
+      color: #134B6E;
+      border-bottom: 1px solid #134B6E;
+    }
     
     /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -64,17 +70,17 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link fs-5" aria-current="page" href="/home">Home</a>
+                <li class="nav-item {{ Request::segment(1) === 'home' ? 'active' : null }}">
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('home' )}}">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link fs-5" href="/katalog">Katalog</a>
+                <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'active' : null }}">
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link fs-5" href="/artikel">Artikel</a>
+                <li class="nav-item {{ Request::segment(1) === 'artikel' ? 'active' : null }}">
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('artikel' )}}">Artikel</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link fs-5" href="/kontak">Kontak</a>
+                <li class="nav-item {{ Request::segment(1) === 'kontak' ? 'active' : null }}">
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('kontak' )}}">Kontak</a>
                 </li>
               </ul>
             </div>  
