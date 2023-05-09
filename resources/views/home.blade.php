@@ -21,37 +21,15 @@
 
     <div class="container-fluid mb-5 mt-5 mt-md-0">
         <h3 class="mb-5 text-center">Kategori Barang</h3>
-        <div class="row d-flex justify-content-center text-center k_b">
+        <div class="row d-flex justify-content-center text-center flex-wrap k_b">
+            @foreach ($kategoriBarang as $item)
             <div class="col-md-1 col-2 logo">
                 <div class="logo__img">
-                    <img src="{{asset('../img/bangku.png')}}" alt="">
+                    <img src="{{asset('storage/image/'.$item->gambar_kategori)}}" alt="" width="50">
                 </div>
-                <p class="mt-3">Bangku</p>
+                <p class="mt-3">{{$item->kategori_barang}}</p>
             </div>
-            <div class="col-md-1 col-2 logo">
-                <div class="logo__img">
-                    <img src="{{asset('../img/sofa-vector.png')}}" alt="">
-                </div>
-                <p class="mt-3">Sofa</p>
-            </div>
-            <div class="col-md-1 col-2 logo">
-                <div class="logo__img">
-                    <img src="{{asset('../img/meja-vector.png')}}" alt="">
-                </div>
-                <p class="mt-3">Meja</p>
-            </div>
-            <div class="col-md-1 col-2 logo">
-                <div class="logo__img">
-                    <img src="{{asset('../img/kasur-vector.png')}}" alt="">
-                </div>
-                <p class="mt-3">Kasur</p>
-            </div>
-            <div class="col-md-1 col-2 logo">
-                <div class="logo__img">
-                    <img src="{{asset('../img/kamar-mandi-vector.png')}}" alt="">
-                </div>
-                <p class="mt-3">Kamar Mandi</p>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -87,14 +65,15 @@
             <a class="btn menu_btn" href="#" role="button">Promo</a>
         </div>
         <div class="row mt-5">
+            @foreach ($barang as $item)
             <div class="col-md-3 mt-4"> 
                 <div class="card" id="product">
                     <div class="top_product">
-                        <img src="{{asset('../img/lemarireal.png')}}" alt="">
+                        <img src="{{asset('storage/image/'.$item->gambar_barang)}}" alt="">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Micke</h5>
-                        <p class="card-text">Rp.555.000</p>
+                        <h5 class="card-title">{{$item->judul_barang}}</h5>
+                        <p class="card-text">Rp.{{$item->harga}}</p>
                         <div class="rating">
                             <i class="fa-solid fa-star checked"></i>
                             <i class="fa-solid fa-star checked"></i>
@@ -106,6 +85,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
             <div class="col-md-3 mt-4"> 
                 <div class="card" id="product">
                     <div class="top_product">

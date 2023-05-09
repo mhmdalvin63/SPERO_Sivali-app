@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\barang;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use App\Models\kategoriBarang;
 
 class kategoriBarang extends Model
 {
@@ -13,7 +15,7 @@ class kategoriBarang extends Model
         'id','gambar_kategori','kategori_barang'
     ];
 
-    // public function siswa(){
-    //     return $this->hasMany(siswa::class);
-    // }
+    public function barang(){
+        return $this->hasMany(barang::class);
+    }
 }

@@ -28,6 +28,10 @@
     /* display: flex; */
     justify-content: center;
 }
+.logo__img img{
+    height: 100%;
+    width: auto;
+}
 .circle{
     top: -5rem
 }
@@ -155,6 +159,7 @@
 }
 .top_product img{
     width: 100%;
+    height: 100%;
 }
 .rating .checked{
     color: #ffc800;

@@ -63,7 +63,7 @@ License: For each use you must have a valid license purchased only from above li
 									</a>
 								</div>
 								<div class="menu-item py-2">
-									<a class="menu-link active menu-center" href="index.html" title="Barang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+									<a class="menu-link active menu-center" href="/barang" title="Barang" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 										<span class="menu-icon me-0">
 											<!--begin::Svg Icon | path: icons/duotone/Home/Home2.svg-->
 											<span class="svg-icon svg-icon-1">
