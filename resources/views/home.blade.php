@@ -73,7 +73,7 @@
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{$item->judul_barang}}</h5>
-                        <p class="card-text">Rp.{{$item->harga}}</p>
+                        <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p>
                         <div class="rating"> 
                             @if($item->rate <= 0)
                                 <i class="fa fa-star" aria-hidden="true"></i>
