@@ -9,15 +9,17 @@ use App\Http\Controllers\Controller;
 
 class dataBarangFrontController extends Controller
 {
-    public function dataKategoriBarang(){
+    public function dataKategoriBarang(Request $request){
         $kategoriBarang = kategoriBarang::first()->get();
         $barang = barang::latest()->get();
         
-        if ($kategoriBarang && $barang) {
-            return view("home",compact('kategoriBarang','barang'));
-        } else{
-            return response()->json(['message'=>'Tidak Ada Data'], 200);
-        };
+        if($request->sort == 'termurah') {
+            $barang = barang::orderby('harga','asc')->get();
+        }elseif($request->sort == 'termahal'){
+            $barang = barang::orderby('harga','desc')->get();
+        }elseif($request->sort == 'terbaru'){
+            $barang = barang::orderby('created_at','asc')->get();
+        }
 
         return view("home",compact('kategoriBarang','barang'));
     }

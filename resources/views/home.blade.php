@@ -57,12 +57,12 @@
     <div class="container" style="margin-top: 7rem;">
         <h1 class="text-center fw-bold">Katalog Kami</h1>
         <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
-            <a class="btn menu_btn" href="#" role="button">Semua</a>
-            <a class="btn menu_btn" href="#" role="button">Terbaru</a>
-            <a class="btn menu_btn" href="#" role="button">Terlaris</a>
-            <a class="btn menu_btn" href="#" role="button">Termurah</a>
-            <a class="btn menu_btn" href="#" role="button">Termahal</a>
-            <a class="btn menu_btn" href="#" role="button">Promo</a>
+            <a href="{{ URL::current()}}" class="btn menu_btn" role="button">Semua</a>
+            <a href="{{ URL::current()."?sort=terbaru"}}" class="btn menu_btn" role="button">Terbaru</a>
+            <a href="{{ URL::current()."?sort=terlaris"}}" class="btn menu_btn" role="button">Terlaris</a>
+            <a href="{{ URL::current()."?sort=termurah"}}" class="btn menu_btn" role="button">Termurah</a>
+            <a href="{{ URL::current()."?sort=termahal"}}" class="btn menu_btn" role="button">Termahal</a>
+            <a href="{{ URL::current()."?sort=promo"}}" class="btn menu_btn" role="button">Promo</a>
         </div>
         <div class="row mt-5">
             @foreach ($barang as $item)
@@ -86,63 +86,6 @@
                 </div>
             </div>
             @endforeach
-            <div class="col-md-3 mt-4"> 
-                <div class="card" id="product">
-                    <div class="top_product">
-                        <img src="{{asset('../img/sofa.png')}}" alt="">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Lisabo</h5>
-                        <p class="card-text">Rp.399.000</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mt-4"> 
-                <div class="card" id="product">
-                    <div class="top_product">
-                        <img src="{{asset('../img/lemarireal.png')}}" alt="">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Micke</h5>
-                        <p class="card-text">Rp.555.000</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mt-4"> 
-                <div class="card" id="product">
-                    <div class="top_product">
-                        <img src="{{asset('../img/sofa.png')}}" alt="">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Lisabo</h5>
-                        <p class="card-text">Rp.399.000</p>
-                        <div class="rating">
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star checked"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-                    </div>
-                </div>
-            </div>
         </div>
         <a class="d-block fs-5 mt-3 text-end" href="#" role="button">Selengkapnya >></a>
     </div>

@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\kategoriBarang;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -14,7 +15,7 @@ return new class extends Migration
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
             $table->string('gambar_barang');
-            $table->foreignId('id_kategori')->references('id')->on('kategoriBarang')->onDelete('cascade');
+            $table->foreignId('id_kategori')->references('id')->on('kategori_barangs')->onDelete('cascade');
             $table->string('judul_barang', 100);
             $table->string('deskripsi');
             $table->string('harga', 100);
