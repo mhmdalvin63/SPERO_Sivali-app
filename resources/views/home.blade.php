@@ -25,7 +25,7 @@
             @foreach ($kategoriBarang as $item)
             <div class="col-md-1 col-2 logo">
                 <div class="logo__img">
-                    <img src="{{asset('storage/image/'.$item->gambar_kategori)}}" alt="" width="50">
+                    <img src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt="" width="50">
                 </div>
                 <p class="mt-3">{{$item->kategori_barang}}</p>
             </div>
@@ -69,7 +69,7 @@
             <div class="col-md-3 mt-4"> 
                 <div class="card" id="product">
                     <div class="top_product">
-                        <img src="{{asset('storage/image/'.$item->gambar_barang)}}" alt="">
+                        <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt="">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{$item->judul_barang}}</h5>
