@@ -72,8 +72,8 @@
             </div>
             <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
                 <a class="btn menu_btn" href="{{ URL::current() }}" role="button">Semua</a>
-                @foreach ($barang as $item)
-                    <a class="btn menu_btn" href="{{ URL::current()."?sort".'='.$item->kategoriBarang->kategori_barang}}" role="button">{{$item->kategoriBarang->kategori_barang}}</a>
+                @foreach ($kategoriBarang as $item)
+                    <a class="btn menu_btn" href="{{ URL::current()."?sort".'='.$item->kategori_barang}}" role="button">{{$item->kategori_barang}}</a>
                 @endforeach
             </div>
         </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt="">
+                            <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="">
                         </div>
                         <div class="hovering d-flex justify-content-between">
                             <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 30%;">
@@ -180,10 +180,11 @@
         </div>
         <div class="row mt-5 px-4 d-flex justify-content-center justify-content-md-start">
            @foreach ($barang as $item)
-        <div class="col-md-4 col-5 mt-3">
+            <div class="col-md-4 col-5 mt-3">
                 <div class="row">
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241);height: 12.5rem;">
-                        <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt="" style="width: 100%;height: auto;">
+                        {{-- <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75"> --}}
+                        <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" style="width: 100%;height: auto;">
                     </div>
                     <div class="r_desc col-md-6 fs-5 pl-5 ">
                         <p class="mb-0 ">{{$item->judul_barang}}</p>
