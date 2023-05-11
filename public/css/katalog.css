@@ -141,10 +141,14 @@
     transition: .5s ease;
     height: 0;
 }
+.card__img{
+    width: 100%;
+    height: 15rem;
+}
 .card__img img{
     display: block;
-    width: 70%;
-    height: auto;
+    width: 50%;
+    /* height: auto; */
 }
 .card:hover .hovering {
     height: 12.5%;

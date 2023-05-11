@@ -71,16 +71,15 @@
                 <h3 class="fw-bold mb-0">FURNITURES</h3>
             </div>
             <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
-                <a class="btn menu_btn" href="#" role="button">Semua</a>
-                <a class="btn menu_btn" href="#" role="button">Meja</a>
-                <a class="btn menu_btn" href="#" role="button">Kursi</a>
-                <a class="btn menu_btn" href="#" role="button">Lampu</a>
-                <a class="btn menu_btn" href="#" role="button">Sofa</a>
-                <a class="btn menu_btn" href="#" role="button">Kasur</a>
+                <a class="btn menu_btn" href="{{ URL::current() }}" role="button">Semua</a>
+                @foreach ($barang as $item)
+                    <a class="btn menu_btn" href="{{ URL::current()."?sort".'='.$item->kategoriBarang->kategori_barang}}" role="button">{{$item->kategoriBarang->kategori_barang}}</a>
+                @endforeach
             </div>
         </div>
 
         <div class="row mt-5" id="list_barang">
+            @foreach ($barang as $item) 
             <div class="col-md-3 col-sm-4">
                 <div class="card border-0" id="lb_barang">
                     <div class="label">
@@ -88,7 +87,7 @@
                     </div>
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
-                            <img src="{{asset('../img/11.png')}}" width="75%" alt="">
+                            <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt="">
                         </div>
                         <div class="hovering d-flex justify-content-between">
                             <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 30%;">
@@ -104,12 +103,13 @@
                             </div>
                         </div>
                         <div class="card__title">
-                            <p class="fs-5 mb-1 mt-3">MICKE</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.555.000</p>
+                            <p class="fs-5 mb-1 mt-3">{{$item->judul_barang}}</p>
+                            <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <div class="col-md-12 d-flex justify-content-center mt-5">
                 <ul class="pagination modal-1 gap-3">
@@ -179,50 +179,19 @@
             </div>
         </div>
         <div class="row mt-5 px-4 d-flex justify-content-center justify-content-md-start">
-            <div class="col-md-4 col-5 mt-3">
+           @foreach ($barang as $item)
+        <div class="col-md-4 col-5 mt-3">
                 <div class="row">
-                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
-                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
+                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241);height: 12.5rem;">
+                        <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt="" style="width: 100%;height: auto;">
                     </div>
                     <div class="r_desc col-md-6 fs-5 pl-5 ">
-                        <p class="mb-0 ">MICKE</p>
-                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
+                        <p class="mb-0 ">{{$item->judul_barang}}</p>
+                        <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga, 2, ',', '.') }}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-5 mt-3">
-                <div class="row">
-                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
-                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
-                    </div>
-                    <div class="r_desc col-md-6 fs-5 pl-5 ">
-                        <p class="mb-0 ">MICKE</p>
-                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-5 mt-3">
-                <div class="row">
-                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
-                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
-                    </div>
-                    <div class="r_desc col-md-6 fs-5 pl-5 ">
-                        <p class="mb-0 ">MICKE</p>
-                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-5 mt-3">
-                <div class="row">
-                    <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241)">
-                        <img src="{{asset('../img/lemari-coklat.png')}}" width="70%" alt="">
-                    </div>
-                    <div class="r_desc col-md-6 fs-5 pl-5 ">
-                        <p class="mb-0 ">MICKE</p>
-                        <span class="fw-bold" style="color: #134B6E">RP.555.000</span>
-                    </div>
-                </div>
-            </div>
+           @endforeach
         </div>
     </div>
 

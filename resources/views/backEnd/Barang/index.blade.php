@@ -36,7 +36,8 @@
                         @foreach ($barang as $item)
                         <tr>
                             <td>{{$item->id}}</td>
-                            <td><img src="{{asset('storage/image/'.$item->gambar_barang)}}" alt="" width="75"></td>
+                            <td><img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75"></td>
+                            {{-- <td><img src="{{asset('storage/image/'.$item->file_hash)}}" alt="" width="75"></td> --}}
                             <td>{{$item->kategoriBarang->kategori_barang}}</td>
                             <td>{{$item->judul_barang}}</td>
                             <td>{{$item->deskripsi}}</td>

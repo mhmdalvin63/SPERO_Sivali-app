@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use App\Models\kategoriBarang;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class BarangController extends Controller
@@ -47,9 +48,11 @@ class BarangController extends Controller
 
         $gambar_barang = $request->file('gambar_barang');
         $gambar_barang->storeAs('public/image', $gambar_barang->hashName());
-
+        // <a href="{{$data->file_location.'/'.$data->file_hash}}" download="{{$data->file_name}}"> </a>
         barang::create([
-            'gambar_barang' => $gambar_barang->hashName(),
+            'file_name' => $gambar_barang->getClientOriginalName(),
+            'file_location' => URL('/').'/storage/image/',
+            'file_hash' => $gambar_barang->hashName(),
             'id_kategori' => $request->id_kategori,
             'judul_barang' => $request->judul_barang,
             'deskripsi' => $request->deskripsi,

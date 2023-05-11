@@ -17,7 +17,7 @@ use App\Http\Controllers\KategoriBarangController;
 */
 
 Route::get('/home', [dataBarangFrontController::class,'dataKategoriBarang']);
-Route::get('/katalog', function () {return view('katalog');});
+Route::get('/katalog', [dataBarangFrontController::class,'dataKategoriBarangKatalog']);
 Route::get('/artikel', function () {return view('artikel');});
 Route::get('/kontak', function () {return view('kontak');});
 Route::get('/coba', function () {return view('cobacoba');});

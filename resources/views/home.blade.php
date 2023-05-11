@@ -69,7 +69,8 @@
             <div class="col-md-3 mt-4"> 
                 <div class="card" id="product">
                     <div class="top_product">
-                        <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt="">
+                        {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
+                        <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{$item->judul_barang}}</h5>

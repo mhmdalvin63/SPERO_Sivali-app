@@ -24,6 +24,24 @@ class dataBarangFrontController extends Controller
         return view("home",compact('kategoriBarang','barang'));
     }
 
+    public function dataKategoriBarangKatalog(Request $request){
+        // $kategoriBarang = kategoriBarang::with('barang')->get();
+        $barang = barang::with('kategoriBarang')->get();
+
+        // if($request->sort.'='.$barang->id_kategori) {
+        //     $barang = barang::with('kategoriBarang')->orderBy('kategori_barang','kategori_barang');
+        // }
+        // foreach ($barang as $item) {
+        //     if($request->sort == $barang->id_kategori) {
+        //         $barang = barang::orderby('harga','id_kategori')->get();
+        //     }
+        // }
+
+        return view("katalog",compact('barang'));
+    }
+
+
+
     // public function home_katalog(){
     //     $barang = barang::first()->get();
     //     if ($barang) {
