@@ -72,8 +72,8 @@
             </div>
             <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
                 <a class="btn menu_btn" href="{{ URL::current() }}" role="button">Semua</a>
-                @foreach ($kategoriBarang as $item)
-                    <a class="btn menu_btn" href="{{ URL::current()."?sort".'='.$item->kategori_barang}}" role="button">{{$item->kategori_barang}}</a>
+                @foreach ($kategoriBarang as $item) 
+                    <a class="btn menu_btn" href="{{ URL::current()."?sort".'='.$item->id}}" role="button">{{$item->kategori_barang}}</a>
                 @endforeach
             </div>
         </div>
