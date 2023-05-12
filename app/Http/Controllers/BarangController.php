@@ -19,7 +19,7 @@ class BarangController extends Controller
     public function index()
     {
         $barang = barang::all();
-        return view('backEnd.barang.index', compact('barang'));
+        return view('backEnd.Barang.index', compact('barang'));
     }
 
     /**
@@ -29,7 +29,7 @@ class BarangController extends Controller
     {
         $barang = barang::all();
         $kategoriBarang = kategoriBarang::all();
-        return view('backEnd.barang.create', compact('barang','kategoriBarang'));
+        return view('backEnd.Barang.create', compact('barang','kategoriBarang'));
     }
 
     /**
@@ -79,7 +79,7 @@ class BarangController extends Controller
     {
         $barang = barang::find($id);
         $kategoriBarang = kategoriBarang::all();
-        return view('backEnd.barang.edit', compact('barang','kategoriBarang'));
+        return view('backEnd.Barang.edit', compact('barang','kategoriBarang'));
     }
 
     /**

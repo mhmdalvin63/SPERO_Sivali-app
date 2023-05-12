@@ -26,7 +26,7 @@ class KategoriBarangController extends Controller
     public function create()
     {
         $KategoriBarang = KategoriBarang::all();
-        return view('backEnd.KategoriBarang.create', compact('KategoriBarang'));
+        return view('backEnd.kategoriBarang.create', compact('KategoriBarang'));
     }
 
     /**
@@ -65,7 +65,7 @@ class KategoriBarangController extends Controller
     public function edit($id)
     {
         $KategoriBarang = KategoriBarang::find($id);
-        return view('backEnd.KategoriBarang.edit', compact('KategoriBarang'));
+        return view('backEnd.kategoriBarang.edit', compact('KategoriBarang'));
     }
 
     /**
