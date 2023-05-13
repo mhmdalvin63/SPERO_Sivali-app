@@ -82,9 +82,20 @@
             @foreach ($barang as $item) 
             <div class="col-md-3 col-sm-4">
                 <div class="card border-0" id="lb_barang">
-                    <div class="label">
-                        <p class="mb-0">Baru</p>
-                    </div>
+                        @if ($item->promosi=='Promo')
+                            <div class="label" style="background-color: red;">
+                                <p class="mb-0">Promo</p>
+                            </div>
+                        @elseif($item->promosi=='Baru')
+                            <div class="label" style="background-color: green;">
+                                <p class="mb-0">Baru</p>
+                            </div>
+                        @elseif($item->promosi=='Terlaris')
+                            <div class="label" style="background-color: blue;">
+                                <p class="mb-0">Terlaris</p>
+                            </div>
+                        @endif
+                        
                     <div href="">
                         <div class="card__img d-flex justify-content-center align-items-center py-5">
                             <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="">

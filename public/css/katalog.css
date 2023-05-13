@@ -87,7 +87,7 @@
     width: max-content;
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-    background-color: red;
+    /* background-color: red; */
     -webkit-clip-path: polygon(27% 0%, 75% 0%, 90% 100%, 12% 100%);
     clip-path: polygon(27% 0%, 75% 0%, 90% 100%, 12% 100%);
     place-items: center;
