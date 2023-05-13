@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('id_kategori')->references('id')->on('kategori_barangs')->onDelete('cascade');
             $table->string('judul_barang', 100);
             $table->string('deskripsi');
+            $table->enum('promosi', ['Baru', 'Terlaris', 'Promo'])->nullable();
             $table->string('harga_asli', 100);
             $table->string('harga_diskon', 100)->nullable();
             $table->string('rate', 5);

@@ -25,6 +25,7 @@
                             <th>Kategori</th>
                             <th>Judul</th>
                             <th>Deskripsi</th>
+                            <th>Jenis Promosi</th>
                             <th>Harga Asli</th>
                             <th>Harga Diskon</th>
                             <th>Rating</th>
@@ -42,6 +43,7 @@
                             <td>{{$item->kategoriBarang->kategori_barang}}</td>
                             <td>{{$item->judul_barang}}</td>
                             <td>{{$item->deskripsi}}</td>
+                            <td>{{$item->promosi}}</td>
                             <td>{{$item->harga_asli}}</td>
                             <td>{{$item->harga_diskon}}</td>
                             <td>{{$item->rate}}</td>

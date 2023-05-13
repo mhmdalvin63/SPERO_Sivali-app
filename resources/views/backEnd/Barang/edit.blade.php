@@ -30,6 +30,15 @@
                 <input type="text" class="form-control" id="exampleInputUsername1"
                     placeholder="Masukkan Deskripsi Barang..." name="deskripsi" value="{{$barang->deskripsi}}">
             </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Jenis Promosi :</label>
+                <select class="form-select" id="inputGroupSelect01" name="promosi" value="{{$barang->promosi}}">
+                  {{-- <option selected>Pilih Jenis...</option> --}}
+                  <option value="Baru">Baru</option>
+                  <option value="Terlaris">Terlaris</option>    
+                  <option value="Promo">Promo</option>
+                </select>
+              </div>
             <div class="form-group mt-5">
                 <label for="exampleInputUsername1" class="fw-bold">Harga Barang Asli :</label>
                 <input type="number" class="form-control" id="exampleInputUsername1"
