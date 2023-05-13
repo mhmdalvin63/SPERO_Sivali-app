@@ -25,7 +25,8 @@
                             <th>Kategori</th>
                             <th>Judul</th>
                             <th>Deskripsi</th>
-                            <th>Harga</th>
+                            <th>Harga Asli</th>
+                            <th>Harga Diskon</th>
                             <th>Rating</th>
                             {{-- @if(auth()->user()->level == "admin") --}}
                             <th>Aksi</th>
@@ -41,7 +42,8 @@
                             <td>{{$item->kategoriBarang->kategori_barang}}</td>
                             <td>{{$item->judul_barang}}</td>
                             <td>{{$item->deskripsi}}</td>
-                            <td>{{$item->harga}}</td>
+                            <td>{{$item->harga_asli}}</td>
+                            <td>{{$item->harga_diskon}}</td>
                             <td>{{$item->rate}}</td>
                             {{-- @if(auth()->user()->level == "admin") --}}
                             <td class="d-flex gap-3 justify-content-center">

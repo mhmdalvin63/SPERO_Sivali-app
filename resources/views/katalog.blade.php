@@ -92,8 +92,6 @@
                         <div class="hovering d-flex justify-content-between">
                             <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 30%;">
                                 <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
-                                {{-- <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                                <h2 class="text-white mb-0">Masukkan Keranjang</h2> --}}
                             </div>
                             <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
                                 <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
@@ -104,7 +102,13 @@
                         </div>
                         <div class="card__title">
                             <p class="fs-5 mb-1 mt-3">{{$item->judul_barang}}</p>
-                            <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p>
+                            @if ($item->harga_diskon==null)
+                                <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                <p class=" mb-1 fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                            @else
+                                <p class="mb-1 fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -188,7 +192,14 @@
                     </div>
                     <div class="r_desc col-md-6 fs-5 pl-5 ">
                         <p class="mb-0 ">{{$item->judul_barang}}</p>
-                        <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga, 2, ',', '.') }}</span>
+                        {{-- <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga, 2, ',', '.') }}</span> --}}
+                            @if ($item->harga_diskon==null)
+                                <span class="fw-bold">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                                <span class="fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                            @else
+                                <span class="fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                                <span class="fw-bold">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -196,9 +207,55 @@
         </div>
     </div>
 
-    {{-- <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script type="text/javascript">
+
+
+    // $(function() {
+    //    $.ajax({
+    //      type    :"GET",
+    //      url     :"{{env('APP_URL')}}/api/barang",
+    //      dataType:"json",
+    //      data    :{},
+    //      success: function (data) {
+    //        $.each(data.data, function(k, v) {
+    //            $("#list_barang").prepend('<div class="col-md-3 col-sm-4">
+    //             <div class="card border-0" id="lb_barang">
+    //                 <div class="label">
+    //                     <p class="mb-0">Baru</p>
+    //                 </div>
+    //                 <div href="">
+    //                     {{-- <div class="card__img d-flex justify-content-center align-items-center py-5">
+    //                         <img src="'+v.file_location+'.'/'.'+v.file_hash+'" title="'+v.file_name+'" alt="">
+    //                     </div> --}}
+    //                     <div class="hovering d-flex justify-content-between">
+    //                         <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 30%;">
+    //                             <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
+    //                             {{-- <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+    //                             <h2 class="text-white mb-0">Masukkan Keranjang</h2> --}}
+    //                         </div>
+    //                         <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
+    //                             <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
+    //                         </div>
+    //                         <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
+    //                             <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
+    //                         </div>
+    //                     </div>
+    //                     <div class="card__title">
+    //                         <p class="fs-5 mb-1 mt-3">'+v.judul_barang'</p>
+    //                         <p class="fs-5 mb-1 fw-bold">Rp. '+v.number_format(harga, 2, ',', '.')' </p>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </div>');
+    //          });
+    //          console.log(data);
+    //      }
+    //      })
+    // });
+</script>
+
+    {{-- <script type="text/javascript">
         jQuery(document).ready(function ($) {
 
         $('#checkbox').change(function(){
@@ -246,5 +303,5 @@
 
         });    
 
-    </script> --}}
+    </script>  --}}
 @endsection

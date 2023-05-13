@@ -74,7 +74,14 @@
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">{{$item->judul_barang}}</h5>
-                        <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p>
+                        {{-- <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p> --}}
+                            @if ($item->harga_diskon==null)
+                            <p class="card-text mb-0" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                <p class="card-text mb-3">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                            @else
+                                <p class="card-text mb-0" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                <p class="card-text mb-3">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                            @endif
                         <div class="rating"> 
                             @if($item->rate <= 0)
                                 <i class="fa fa-star" aria-hidden="true"></i>

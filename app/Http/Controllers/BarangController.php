@@ -42,7 +42,8 @@ class BarangController extends Controller
             'id_kategori' => 'required',
             'judul_barang' => 'required',
             'deskripsi' => 'required',
-            'harga' => 'required',
+            'harga_asli' => 'required',
+            'harga_diskon' => '',
             'rate' => 'required',
         ]);
 
@@ -56,7 +57,8 @@ class BarangController extends Controller
             'id_kategori' => $request->id_kategori,
             'judul_barang' => $request->judul_barang,
             'deskripsi' => $request->deskripsi,
-            'harga' => $request->harga,
+            'harga_asli' => $request->harga_asli,
+            'harga_diskon' => $request->harga_diskon,
             'rate' => $request->rate,
         ]);
         // barang::create($request->all());
@@ -92,7 +94,8 @@ class BarangController extends Controller
             'id_kategori' => '',
             'judul_barang' => '',
             'deskripsi' => '',
-            'harga' => '',
+            'harga_asli' => '',
+            'harga_diskon' => '',
             'rate' => '',
         ]);
 
@@ -109,7 +112,8 @@ class BarangController extends Controller
                 'id_kategori' => $request->id_kategori,
                 'judul_barang' => $request->judul_barang,
                 'deskripsi' => $request->deskripsi,
-                'harga' => $request->harga,
+                'harga_asli' => $request->harga_asli,
+                'harga_diskon' => $request->harga_diskon,
                 'rate' => $request->rate,
             ]);
         }else{
@@ -117,7 +121,8 @@ class BarangController extends Controller
                 'id_kategori' => $request->id_kategori,
                 'judul_barang' => $request->judul_barang,
                 'deskripsi' => $request->deskripsi,
-                'harga' => $request->harga,
+                'harga_asli' => $request->harga_asli,
+                'harga_diskon' => $request->harga_diskon,
                 'rate' => $request->rate,
             ]);
         }

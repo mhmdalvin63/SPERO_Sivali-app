@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Front;
 use App\Models\barang;
 use Illuminate\Http\Request;
 use App\Models\kategoriBarang;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Console\View\Components\Alert;
 
 class dataBarangFrontController extends Controller
 {
@@ -24,17 +26,95 @@ class dataBarangFrontController extends Controller
         return view("home",compact('kategoriBarang','barang'));
     }
     public function dataKategoriBarangKatalog(Request $request){
-        // $kategoriBarang = kategoriBarang::first()->get();
-        // $barang = barang::latest()->get();
         $kategoriBarang = kategoriBarang::first()->get();
-        $barang = barang::with('kategoriBarang')->get();
+            // $barang = barang::latest()->get();
+        $barang = barang::with('kategoriBarang')->latest()->get();
 
-        $sort = kategoriBarang::where('kategori_barang','$sort->kategori_barang');
-        if($request->sort == $sort) {
-            // $barang = barang::orderby('harga','asc')->get();
-            $sort = barang::orderby('id_kategori','$sort->id_kategori');
-            dd($sort);
+        if($request->sort == '1') {
+            $barang = barang::where('id_kategori','1')->get();
+        }if($request->sort == '2'){
+            $barang = barang::where('id_kategori','2')->get();
+        }if($request->sort == '3'){
+            $barang = barang::where('id_kategori','3')->get();
         }
+        // else($request->sort == '4'){
+        //     $barang = barang::where('id_kategori','4')->get();
+        // }
+
+        // $sorted = $barang->sortBy('barang.id_kategori');
+        // $sorted1 = $kategoriBarang->sortBy('kategoriBarang.id');
+
+        // if($request->sort == 'termurah') {
+        //     $barang = barang::orderby('harga','asc')->get();
+        // }
+
+        return view("katalog",compact('kategoriBarang','barang'));
+
+        // $filter = $request->query('filter');
+
+        // if (!empty($filter)) {
+        //     $barang = barang::sortable()
+        //         ->where('barang.id_kategori', 'like', '%'.$filter.'%')
+        //         ->get();
+        // } else {
+        //     $barang = barang::sortable()
+        //         ->get();
+        // }
+        // $barang->search(function($value, $key){
+        //     strlen($value) == $barang->id_kategori;
+        // })
+        // return view("katalog",compact('kategoriBarang','barang'));
+
+        // $kbid = kategoriBarang::find($id);
+        // $getSort = $request->sort == '';
+        // $sortBarang = barang::orderBy('id_kategori');
+        // $sortKategoriBarang = kategoriBarang::orderBy('id');
+
+        // if ($getSort = $sortBarang && $sortKategoriBarang ) {
+        //     $barang = barang::with('kategoriBarang')->latest()->get();
+        // }
+
+
+            // $barang = barang::with('kategoriBarang')->get();
+        // $kategoriBarang = kategoriBarang::first()->get();
+        // $barang = barang::with('kategoriBarang')->latest()->get();
+        // foreach($sorts as $sort){
+        //     $query->orderBy($sort,'DESC')
+        // };
+
+        //     $sortedQuery = $query->get();
+
+        // $sortBarang = barang::orderBy('id_kategori')->get();
+        // $sortKategoriBarang = kategoriBarang::orderBy('id')->get();
+
+        // if($request->sort == $sortKategoriBarang) {
+        //     if ($sortKategoriBarang && $sortBarang) {
+        //         $barang = barang::with('kategoriBarang')->get();
+        //         // dd($barang);
+                
+        //     }
+        // }
+
+
+        // if($request->sort.'=='.kategoriBarang->kategori_barang &&    ) {
+        //         $barang = barang::orderby('harga','asc')->get();
+        //         // $sort = barang::orderby('id_kategori','id_kategori->nama_kategori');
+        //         // dd($sort);
+        //     }
+
+        // $kategorisort = barang::
+
+        // $sort = DB::table("barang")
+        // ->select('id_kategori')
+        // ->where('id_kategori','id_kategori->katgeori_barang')
+        // ->get();
+
+        // $sort = kategoriBarang::where('kategori_barang','id_kategori->kategori_barang');
+        // if($request->sort == ) {
+        //     // $barang = barang::orderby('harga','asc')->get();
+        //     $sort = barang::orderby('id_kategori','id_kategori->nama_kategori');
+        //     dd($sort);
+        // }
         
         // if($request->sort == 'termurah') {
         //     $barang = barang::orderby('harga','asc')->get();
@@ -44,7 +124,7 @@ class dataBarangFrontController extends Controller
         //     $barang = barang::orderby('created_at','desc')->get();
         // }
 
-        return view("katalog",compact('kategoriBarang','barang'));
+        
     }
 
     // public function dataKategoriBarangKatalog(Request $request){

@@ -31,9 +31,14 @@
                     placeholder="Masukkan Deskripsi Barang..." name="deskripsi" value="{{$barang->deskripsi}}">
             </div>
             <div class="form-group mt-5">
-                <label for="exampleInputUsername1" class="fw-bold">Harga Barang :</label>
+                <label for="exampleInputUsername1" class="fw-bold">Harga Barang Asli :</label>
                 <input type="number" class="form-control" id="exampleInputUsername1"
-                    placeholder="Masukkan Harga Barang..." name="harga" value="{{$barang->harga}}">
+                    placeholder="Masukkan Harga Barang Asli..." name="harga_asli" value="{{$barang->harga_asli}}">
+            </div>
+            <div class="form-group mt-5">
+                <label for="exampleInputUsername1" class="fw-bold">Harga Barang Diskon :</label>
+                <input type="number" class="form-control" id="exampleInputUsername1"
+                    placeholder="Masukkan Harga Barang Diskon..." name="harga_diskon" value="{{$barang->harga_diskon}}">
             </div>
             <div class="form-group mt-5">
                 <label for="exampleInputUsername1" class="fw-bold">Rating Barang (Max:5) :</label>
