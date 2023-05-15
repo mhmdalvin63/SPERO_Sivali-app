@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\barang;
+use App\Models\Barang;
 use Illuminate\Http\Request;
-use App\Models\kategoriBarang;
+use App\Models\KategoriBarang;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Console\View\Components\Alert;
@@ -12,30 +12,30 @@ use Illuminate\Console\View\Components\Alert;
 class dataBarangFrontController extends Controller
 {
     public function dataKategoriBarang(Request $request){
-        $kategoriBarang = kategoriBarang::first()->get();
-        $barang = barang::latest()->get();
+        $kategoriBarang = KategoriBarang::first()->get();
+        $barang = Barang::latest()->get();
         
         if($request->sort == 'termurah') {
-            $barang = barang::orderby('harga','asc')->get();
+            $barang = Barang::orderby('harga','asc')->get();
         }elseif($request->sort == 'termahal'){
-            $barang = barang::orderby('harga','desc')->get();
+            $barang = Barang::orderby('harga','desc')->get();
         }elseif($request->sort == 'terbaru'){
-            $barang = barang::orderby('created_at','desc')->get();
+            $barang = Barang::orderby('created_at','desc')->get();
         }
 
         return view("home",compact('kategoriBarang','barang'));
     }
     public function dataKategoriBarangKatalog(Request $request){
-        $kategoriBarang = kategoriBarang::first()->get();
+        $kategoriBarang = KategoriBarang::first()->get();
             // $barang = barang::latest()->get();
-        $barang = barang::with('kategoriBarang')->latest()->get();
+        $barang = Barang::with('kategoriBarang')->latest()->get();
 
         if($request->sort == '1') {
-            $barang = barang::where('id_kategori','1')->get();
+            $barang = Barang::where('id_kategori','1')->get();
         }if($request->sort == '2'){
-            $barang = barang::where('id_kategori','2')->get();
+            $barang = Barang::where('id_kategori','2')->get();
         }if($request->sort == '3'){
-            $barang = barang::where('id_kategori','3')->get();
+            $barang = Barang::where('id_kategori','3')->get();
         }
         // else($request->sort == '4'){
         //     $barang = barang::where('id_kategori','4')->get();
