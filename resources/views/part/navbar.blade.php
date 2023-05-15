@@ -166,9 +166,11 @@
                     <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                     <input type="text" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search...">
                   </div>
-                    <div class="profil me-2">
-                      <i class="fa-lg fa-regular fa-user w-75"></i>
-                    </div>
+                    <a href="/profil">
+                      <div class="profil me-2">
+                        <i class="fa-lg fa-regular fa-user w-75"></i>
+                      </div>
+                    </a>
                     <div class="keranjang">
                     <i class="fa-lg fa-solid fa-cart-shopping w-75"></i>
                     </div>

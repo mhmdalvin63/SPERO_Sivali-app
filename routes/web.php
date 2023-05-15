@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\Front\dataBarangFrontController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\Front\dataBarangFrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\KategoriBarangController;
 */
 
 Route::get('/', [dataBarangFrontController::class,'dataKategoriBarang']);
+
+Route::get('/profil', [ProfilController::class,'index']);
 
 Route::get('/home', [dataBarangFrontController::class,'dataKategoriBarang']);
 Route::get('/katalog', [dataBarangFrontController::class,'dataKategoriBarangKatalog']);
