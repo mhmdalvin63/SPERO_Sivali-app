@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kategoriBarang;
+use App\Models\KategoriBarang;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
@@ -42,7 +42,7 @@ class KategoriBarangController extends Controller
         $gambar_kategori = $request->file('gambar_kategori');
         $gambar_kategori->storeAs('public/image', $gambar_kategori->hashName());
 
-        kategoriBarang::create([
+        KategoriBarang::create([
             'gambar_kategori' => $gambar_kategori->hashName(),
             'kategori_barang' => $request->kategori_barang,
         ]);

@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use App\Models\barang;
+// use App\Models\KategoriBarang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use App\Models\kategoriBarang;
 
-class kategoriBarang extends Model
+class KategoriBarang extends Model
 {
     protected $primaryKey = "id";
     protected $table = "kategori_barangs";
@@ -16,6 +16,6 @@ class kategoriBarang extends Model
     ];
 
     public function barang(){
-        return $this->hasMany(barang::class);
+        return $this->hasMany(Barang::class);
     }
 }

@@ -13,7 +13,7 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        $profil = profil::all();
+        $profil = profil::first()->get();
         return view('profil.index', compact('profil'));
     }
 

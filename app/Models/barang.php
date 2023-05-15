@@ -6,7 +6,7 @@ use App\Models\kategoriBarang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class barang extends Model
+class Barang extends Model
 {
     protected $primaryKey = "id";
     protected $table = "barangs";
@@ -15,6 +15,6 @@ class barang extends Model
     ];
 
     public function KategoriBarang(){
-        return $this->belongsTo(kategoriBarang::class, 'id_kategori');
+        return $this->belongsTo(KategoriBarang::class, 'id_kategori');
     }
 }

@@ -26,7 +26,7 @@
                 <h1>Nama Lengkap :</h1>
                 {{-- @foreach ($profil as $item)     --}}
                     @if ($profil->nama_lengkap)
-                        <p>{{$profil->first()->nama_lengkap}}</p>
+                        <p>{{$profil->nama_lengkap}}</p>
                     @else   
                         <p>User4d41cd104802dd06fb82674f76e0d3dab8446339</p>
                     @endif
