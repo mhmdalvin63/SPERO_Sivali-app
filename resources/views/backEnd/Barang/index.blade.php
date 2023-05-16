@@ -28,6 +28,8 @@
                             <th>Jenis Promosi</th>
                             <th>Harga Asli</th>
                             <th>Harga Diskon</th>
+                            <th>Stok</th>
+                            <th>Terjual</th>
                             <th>Rating</th>
                             {{-- @if(auth()->user()->level == "admin") --}}
                             <th>Aksi</th>
@@ -46,6 +48,8 @@
                             <td>{{$item->promosi}}</td>
                             <td>{{$item->harga_asli}}</td>
                             <td>{{$item->harga_diskon}}</td>
+                            <td>{{$item->stok}}</td>
+                            <td>{{$item->terjual}}</td>
                             <td>{{$item->rate}}</td>
                             {{-- @if(auth()->user()->level == "admin") --}}
                             <td class="d-flex gap-3 justify-content-center">

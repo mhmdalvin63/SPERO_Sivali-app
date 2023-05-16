@@ -126,6 +126,20 @@
             </div>
             @endforeach
 
+            {{-- {{ $barang->links('part.paginate_katalog') }} --}}
+            <div class="pagination2" style="display: grid; place-items: center;">
+                {{-- {{ $barang->links() }}   --}}
+            </div>
+            {{-- <nav aria-label="...">
+                <ul class="pagination pagination-sm">
+                  <li class="page-item active" aria-current="page">
+                    <span class="page-link">1</span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                </ul>
+            </nav> --}}
+
             <div class="col-md-12 d-flex justify-content-center mt-5">
                 <ul class="pagination modal-1 gap-3">
                     {{-- <li><a href="#" class="prev">&laquo</a></li> --}}

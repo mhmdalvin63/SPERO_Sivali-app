@@ -23,6 +23,8 @@ return new class extends Migration
             $table->enum('promosi', ['Baru', 'Terlaris', 'Promo'])->nullable();
             $table->string('harga_asli', 100);
             $table->string('harga_diskon', 100)->nullable();
+            $table->string('stok');
+            $table->string('terjual')->nullable();
             $table->string('rate', 5);
             $table->timestamps();
         });

@@ -45,6 +45,8 @@ class BarangController extends Controller
             'promosi' => '',
             'harga_asli' => 'required',
             'harga_diskon' => '',
+            'stok' => 'required',
+            'terjual' => '',
             'rate' => 'required',
         ]);
 
@@ -61,6 +63,8 @@ class BarangController extends Controller
             'promosi' => $request->promosi,
             'harga_asli' => $request->harga_asli,
             'harga_diskon' => $request->harga_diskon,
+            'stok' => $request->stok,
+            'terjual' => $request->terjual,
             'rate' => $request->rate,
         ]);
         // barang::create($request->all());
@@ -99,6 +103,8 @@ class BarangController extends Controller
             'promosi' => '',
             'harga_asli' => '',
             'harga_diskon' => '',
+            'stok' => '',
+            'terjual' => '',
             'rate' => '',
         ]);
 
@@ -118,6 +124,8 @@ class BarangController extends Controller
                 'promosi' => $request->promosi,
                 'harga_asli' => $request->harga_asli,
                 'harga_diskon' => $request->harga_diskon,
+                'stok' => $request->stok,
+                'terjual' => $request->terjual,
                 'rate' => $request->rate,
             ]);
         }else{
@@ -128,6 +136,8 @@ class BarangController extends Controller
                 'promosi' => $request->promosi,
                 'harga_asli' => $request->harga_asli,
                 'harga_diskon' => $request->harga_diskon,
+                'stok' => $request->stok,
+                'terjual' => $request->terjual,
                 'rate' => $request->rate,
             ]);
         }

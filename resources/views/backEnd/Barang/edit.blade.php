@@ -50,6 +50,16 @@
                     placeholder="Masukkan Harga Barang Diskon..." name="harga_diskon" value="{{$barang->harga_diskon}}">
             </div>
             <div class="form-group mt-5">
+                <label for="exampleInputUsername1" class="fw-bold">Stok Barang :</label>
+                <input type="number" class="form-control" id="exampleInputUsername1"
+                    placeholder="Masukkan Stok Barang..." name="stok" value="{{$barang->stok}}">
+            </div>
+            <div class="form-group mt-5">
+                <label for="exampleInputUsername1" class="fw-bold">Barang Terjual :</label>
+                <input type="number" class="form-control" id="exampleInputUsername1"
+                    placeholder="Masukkan Barang Terjual..." name="terjual" value="{{$barang->terjual}}">
+            </div>
+            <div class="form-group mt-5">
                 <label for="exampleInputUsername1" class="fw-bold">Rating Barang (Max:5) :</label>
                 <input type="number" class="form-control" id="exampleInputUsername1" name="rate" value="{{$barang->rate}}">
             </div>
