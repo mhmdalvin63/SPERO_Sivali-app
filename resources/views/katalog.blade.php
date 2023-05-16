@@ -207,7 +207,7 @@
                 <a href="" class="fw-bold text-black">READY STOK</a>
             </div>
         </div>
-        <div class="row mt-5 px-4 d-flex justify-content-center justify-content-md-start">
+        <div class="row mt-5 d-flex justify-content-between">
            @foreach ($barang as $item)
             <div class="col-md-4 col-5 mt-3">
                 <div class="row">
@@ -219,11 +219,11 @@
                         <p class="mb-0 ">{{$item->judul_barang}}</p>
                         {{-- <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga, 2, ',', '.') }}</span> --}}
                             @if ($item->harga_diskon==null)
-                                <span class="fw-bold">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                                <span class="fw-bold" style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
                                 <span class="fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
                             @else
                                 <span class="fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
-                                <span class="fw-bold">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                                <span class="fw-bold" style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
                             @endif
                     </div>
                 </div>
