@@ -10,6 +10,7 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{asset('../theme/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('../theme/dist/assets/modules/fontawesome/css/all.min.css')}}">
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
 
@@ -30,6 +31,13 @@
 
     </script>
     <!-- /END GA -->
+    <style>
+        .sideactive{
+            background-color: rgb(216, 216, 216);
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -283,11 +291,11 @@
                         </li>
                         <li class="menu-header">Starter</li>
                         <li>
-                            <a class="nav-link" {{ Request::segment(1) === 'kategoriBarang' ? 'active' : null }}" href="{{ url('kategoriBarang' )}}"><i class="fas fa-th"></i>
+                            <a class="nav-link {{ Request::segment(1) === 'kategoriBarang' ? 'sideactive' : null }}" href="{{ url('kategoriBarang' )}}"><i class="fas fa-th"></i>
                             <span>Kategori Barang</span></a>
                         </li>
                         <li>
-                            <a class="nav-link" {{ Request::segment(1) === 'barang' ? 'active' : null }}" href="{{ url('barang' )}}"><i class="far fa-file-alt"></i>
+                            <a class="nav-link {{ Request::segment(1) === 'barang' ? 'sideactive' : null }}" href="{{ url('barang' )}}"><i class="far fa-file-alt"></i>
                             <span>List Barang</span></a>
                         </li>
                         {{-- <li class="dropdown">
@@ -477,6 +485,8 @@
     <script src="{{asset('../theme/dist/assets/js/stisla.js')}}"></script>
 
     <!-- JS Libraies -->
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js') }}" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js') }}" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
     <!-- Page Specific JS File -->
 
