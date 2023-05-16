@@ -33,7 +33,7 @@
     <!-- /END GA -->
     <style>
         .sideactive{
-            background-color: rgb(216, 216, 216);
+            background-color: rgb(238, 238, 238);
             color: white;
             border-radius: 10px;
         }
