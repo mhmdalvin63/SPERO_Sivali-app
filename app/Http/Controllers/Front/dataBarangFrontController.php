@@ -20,7 +20,7 @@ class DataBarangFrontController extends Controller
         }elseif($request->sort == 'termahal'){
             $barang = Barang::orderby('harga_asli','desc')->get();
         }elseif($request->sort == 'terbaru'){
-            $barang = Barang::orderby('created_at','asc')->get();
+            $barang = Barang::orderby('created_at','desc')->get();
         }elseif($request->sort == 'terlaris'){
             $barang = Barang::orderby('terjual','desc')->get();
         }elseif($request->sort == 'promo'){
