@@ -5,12 +5,9 @@ namespace App\Http\Controllers\Front;
 use App\Models\Barang;
 use Illuminate\Http\Request;
 use App\Models\KategoriBarang;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Console\View\Components\Alert;
-// use App\Http\Controllers\Front\DataBarangFrontController;
 
-class DataBarangFrontController extends Controller
+class FrontEndBarangController extends Controller
 {
     public function dataKategoriBarang(Request $request){
         $kategoriBarang = KategoriBarang::first()->get();

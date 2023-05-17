@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\SigninController;
 use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\Front\FrontEndBarangController;
 use App\Http\Controllers\Front\DataBarangFrontController;
-// use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,19 +20,19 @@ use App\Http\Controllers\Front\DataBarangFrontController;
 |
 */
 
-Route::get('/', [DataBarangFrontController::class,'dataKategoriBarang']);
+Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 
-Route::get('/home', [DataBarangFrontController::class,'dataKategoriBarang']);
-Route::get('/katalog', [DataBarangFrontController::class,'dataKategoriBarangKatalog']);
+Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
+Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
 Route::get('/artikel', function () {return view('artikel');});
 Route::get('/kontak', function () {return view('kontak');});
 Route::get('/coba', function () {return view('cobacoba');});
 
-Route::get('/login', [LoginController::class,'login'])->name('login');
-Route::post('/postlogin', [LoginController::class,'postlogin'])->name('postlogin');
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+Route::get('/login',[SigninController::class,'login'])->name('login');
+Route::post('/postlogin',[SigninController::class,'postlogin'])->name('postlogin');
+Route::get('/logout',[SigninController::class,'logout'])->name('logout');
 
 Route::middleware(['admin','auth:web'])->group(function(){
     // D A T A   K A T E G O R I B A R A N G  
