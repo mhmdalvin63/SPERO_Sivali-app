@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Console\View\Components\Alert;
 
-class dataBarangFrontController extends Controller
+class DataBarangFrontController extends Controller
 {
     public function dataKategoriBarang(Request $request){
         $kategoriBarang = KategoriBarang::first()->get();

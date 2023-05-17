@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KategoriBarangController;
-use App\Http\Controllers\Front\dataBarangFrontController;
+use App\Http\Controllers\Front\DataBarangFrontController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -18,12 +18,12 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', [dataBarangFrontController::class,'dataKategoriBarang']);
+Route::get('/', [DataBarangFrontController::class,'dataKategoriBarang']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 
-Route::get('/home', [dataBarangFrontController::class,'dataKategoriBarang']);
-Route::get('/katalog', [dataBarangFrontController::class,'dataKategoriBarangKatalog']);
+Route::get('/home', [DataBarangFrontController::class,'dataKategoriBarang']);
+Route::get('/katalog', [DataBarangFrontController::class,'dataKategoriBarangKatalog']);
 Route::get('/artikel', function () {return view('artikel');});
 Route::get('/kontak', function () {return view('kontak');});
 Route::get('/coba', function () {return view('cobacoba');});
