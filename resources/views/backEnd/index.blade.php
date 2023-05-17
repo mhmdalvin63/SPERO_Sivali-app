@@ -455,9 +455,9 @@
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
-                    <div class="section-header">
+                    {{-- <div class="section-header"> --}}
                         @yield('mainContent')
-                    </div>
+                    {{-- </div> --}}
 
                     {{-- <div class="section-body">
                     </div> --}}

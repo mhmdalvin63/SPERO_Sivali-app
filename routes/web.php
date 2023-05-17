@@ -5,7 +5,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\Front\dataBarangFrontController;
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +28,9 @@ Route::get('/artikel', function () {return view('artikel');});
 Route::get('/kontak', function () {return view('kontak');});
 Route::get('/coba', function () {return view('cobacoba');});
 
-Route::get('/login', [loginController::class,'login'])->name('login');
-Route::post('/postlogin', [loginController::class,'postlogin'])->name('postlogin');
-Route::get('/logout', [loginController::class,'logout'])->name('logout');
+Route::get('/login', [LoginController::class,'login'])->name('login');
+Route::post('/postlogin', [LoginController::class,'postlogin'])->name('postlogin');
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
 Route::middleware(['admin','auth:web'])->group(function(){
     // D A T A   K A T E G O R I B A R A N G  

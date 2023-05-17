@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// use App\Http\Controllers\LoginController;
 
-class loginController extends Controller
+class LoginController extends Controller
 {
    public function login(){
     return view('backEnd.login');
