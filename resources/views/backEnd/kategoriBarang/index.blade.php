@@ -37,7 +37,7 @@
                             <td>{{$item->kategori_barang}}</td>
                             {{-- <td>{{$item->nama_petugas}}</td> --}}
                             {{-- @if(auth()->user()->level == "admin") --}}
-                            <td class="d-flex gap-3 justify-content-center">
+                            <td class="d-flex gap-3 justify-content-center align-items-center">
                                 {{-- <a href="{{ route('kb_show', $item->id )}}" class="btn btn-outline-primary
                                 btn-icon-text">
                                 Lihat

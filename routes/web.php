@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\Front\DataBarangFrontController;
-use App\Http\Controllers\LoginController;
+// use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------

@@ -52,7 +52,7 @@
                             <td>{{$item->terjual}}</td>
                             <td>{{$item->rate}}</td>
                             {{-- @if(auth()->user()->level == "admin") --}}
-                            <td class="d-flex gap-3 justify-content-center">
+                            <td class="d-flex gap-3 justify-content-center align-items-center">
                                 {{-- <a href="{{ route('b_show', $item->id )}}" class="btn btn-outline-primary
                                 btn-icon-text">
                                 Lihat

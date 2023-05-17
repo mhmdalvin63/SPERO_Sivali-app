@@ -120,7 +120,7 @@
                     </div>
                 </form>
                 <ul class="navbar-nav navbar-right">
-                    <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+                    {{-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                             class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
                         <div class="dropdown-menu dropdown-list dropdown-menu-right">
                             <div class="dropdown-header">Messages
@@ -246,7 +246,7 @@
                                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="{{asset('../theme/dist/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
@@ -280,7 +280,7 @@
                         <a href="index.html">St</a>
                     </div>
                     <ul class="sidebar-menu">
-                        <li class="menu-header">Dashboard</li>
+                        {{-- <li class="menu-header">Dashboard</li>
                         <li class="dropdown">
                             <a href="" class="nav-link has-dropdown"><i
                                     class="fas fa-fire"></i><span>Dashboard</span></a>
@@ -288,8 +288,8 @@
                                 <li><a class="nav-link" href="">General Dashboard</a></li>
                                 <li><a class="nav-link" href="">Ecommerce Dashboard</a></li>
                             </ul>
-                        </li>
-                        <li class="menu-header">Starter</li>
+                        </li> --}}
+                        <li class="menu-header">Menu</li>
                         <li>
                             <a class="nav-link {{ Request::segment(1) === 'kategoriBarang' ? 'sideactive' : null }}" href="{{ url('kategoriBarang' )}}"><i class="fas fa-th"></i>
                             <span>Kategori Barang</span></a>
@@ -445,9 +445,9 @@
                     </ul>
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                        {{-- <a href="" class="btn btn-primary btn-lg btn-block btn-icon-split">
                             <i class="fas fa-rocket"></i> Documentation
-                        </a>
+                        </a> --}}
                     </div>
                 </aside>
             </div>
