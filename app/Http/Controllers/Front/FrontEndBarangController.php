@@ -27,6 +27,8 @@ class FrontEndBarangController extends Controller
 
         return view("home",compact('kategoriBarang','barang'));
     }
+
+
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = KategoriBarang::first()->get();
         $barang = Barang::with('kategoriBarang')->latest()->get();
@@ -39,4 +41,13 @@ class FrontEndBarangController extends Controller
         
         return view("katalog",compact('kategoriBarang','barang'));
     }
+
+
+    // public function filter_barang(Barang $barang){
+    //     // $barang = KategoriBarang::with('Barang')->get();
+    //     $barang->KategoriBarang()->get();
+
+    //     return view("katalog",compact('barang'));
+    // //    return $barang;
+    // }
 }

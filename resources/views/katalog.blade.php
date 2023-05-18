@@ -75,6 +75,10 @@
                 @foreach ($kategoriBarang as $item) 
                     <a class="btn menu_btn" href="{{ URL::current()."?sort".'='.$item->id}}" role="button">{{$item->kategori_barang}}</a>
                 @endforeach
+                {{-- <a class="btn menu_btn" href="{{ url('/katalog') }}" role="button">Semua</a>
+                @foreach ($barang as $item) 
+                    <a class="btn menu_btn" href="{{ route('filter_barang',$item->KategoriBarang->id)}}" role="button">{{$item->KategoriBarang->kategori_barang}}</a>
+                @endforeach --}}
             </div>
         </div>
 
@@ -207,9 +211,9 @@
                 <a href="" class="fw-bold text-black">READY STOK</a>
             </div>
         </div>
-        <div class="row mt-5 d-flex justify-content-between">
+        <div class="row mt-5 px-3 d-flex justify-content-between justify-content-xl-start">
            @foreach ($barang as $item)
-            <div class="col-md-4 col-5 mt-3">
+            <div class="col-xl-4 col-5 col-md-6 mt-5">
                 <div class="row">
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241);height: 12.5rem;">
                         {{-- <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75"> --}}

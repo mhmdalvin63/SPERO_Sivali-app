@@ -26,11 +26,12 @@ Route::get('/profil', [ProfilController::class,'index']);
 
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
+// Route::get('/katalog-filter/{Barang}', [FrontEndBarangController::class,'filter_barang'])->name('filter_barang');
 Route::get('/artikel', function () {return view('artikel');});
 Route::get('/kontak', function () {return view('kontak');});
 Route::get('/coba', function () {return view('cobacoba');});
 
-Route::get('/login',[SigninController::class,'login'])->name('login');
+Route::get('/signin',[SigninController::class,'login'])->name('login');
 Route::post('/postlogin',[SigninController::class,'postlogin'])->name('postlogin');
 Route::get('/logout',[SigninController::class,'logout'])->name('logout');
 
