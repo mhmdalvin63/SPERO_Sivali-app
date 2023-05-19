@@ -19,36 +19,19 @@
     <div class="artikel__bottom">
         <h1 class="fw-bold fs-3 mb-4">ARTIKEL</h1>
         <div class="row" list__artikel>
-            <div class="col-md-4 mt-3 la__image">
-                <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-                <div class="overlay">
-                    <p class="mb-1 fw-bold">Barang dengan kualitas Terbaik</p>
-                    <a href=""selengkapnya class="d-flex align-items-center gap-2 text-decoration-none text-white">
-                        <i class="fa-solid fa-circle-chevron-right" style="color: #ffffff;"></i>
-                        <p class="mb-0">Selengkapnya</p>
-                    </a>
+            @foreach ($Artikel as $item)
+                <div class="col-md-4 mt-3 la__image">
+                    <img class="artikel_img" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt="">
+                    {{-- <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt=""> --}}
+                    <div class="overlay">
+                        <p class="mb-1 fw-bold text-start">{{$item->judul_artikel}}</p>
+                        <a href=""selengkapnya class="d-flex align-items-center gap-2 text-decoration-none text-white">
+                            <i class="fa-solid fa-circle-chevron-right" style="color: #ffffff;"></i>
+                            <p class="mb-0">Selengkapnya</p>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 mt-3 la__image">
-                <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-                <div class="overlay">
-                    <p class="mb-1 fw-bold">Barang dengan kualitas Terbaik</p>
-                    <a href=""selengkapnya class="selangkapnya d-flex align-items-center gap-2 text-decoration-none text-white">
-                        <i class="fa-solid fa-circle-chevron-right" style="color: #ffffff;"></i>
-                        <p class="mb-0">Selengkapnya</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 mt-3 la__image">
-                <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-                <div class="overlay">
-                    <p class="mb-1 fw-bold">Barang dengan kualitas Terbaik</p>
-                    <a href=""selengkapnya class="d-flex align-items-center gap-2 text-decoration-none text-white">
-                        <i class="fa-solid fa-circle-chevron-right" style="color: #ffffff;"></i>
-                        <p class="mb-0">Selengkapnya</p>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

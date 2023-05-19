@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
@@ -27,7 +28,7 @@ Route::get('/profil', [ProfilController::class,'index']);
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
 // Route::get('/katalog-filter/{Barang}', [FrontEndBarangController::class,'filter_barang'])->name('filter_barang');
-Route::get('/artikel', function () {return view('artikel');});
+Route::get('/artikel', [FrontEndBarangController::class,'dataArtikel']);
 Route::get('/kontak', function () {return view('kontak');});
 Route::get('/coba', function () {return view('cobacoba');});
 
@@ -53,6 +54,15 @@ Route::middleware(['admin','auth:web'])->group(function(){
     Route::get('barang/edit/{id}',[BarangController::class,'edit'])->name('b_edit');
     Route::put('barang/update/{id}',[BarangController::class,'update'])->name('b_update');
     Route::delete('barang/delete/{id}',[BarangController::class,'destroy'])->name('b_delete');
+
+    // D A T A   A R T I K E L 
+    Route::get('admartikel',[ArtikelController::class,'index'])->name('art_index');
+    // Route::get('Barang/show/{id}',[ArtikelController::class,'show'])->name('b_show');
+    Route::get('admartikel/create',[ArtikelController::class,'create'])->name('art_create');
+    Route::post('admartikel/store',[ArtikelController::class,'store'])->name('art_store');
+    Route::get('admartikel/edit/{id}',[ArtikelController::class,'edit'])->name('art_edit');
+    Route::put('admartikel/update/{id}',[ArtikelController::class,'update'])->name('art_update');
+    Route::delete('admartikel/delete/{id}',[ArtikelController::class,'destroy'])->name('art_delete');
 });
 
 

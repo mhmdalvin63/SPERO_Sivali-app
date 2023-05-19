@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Barang;
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 use App\Models\KategoriBarang;
 use App\Http\Controllers\Controller;
@@ -40,6 +41,12 @@ class FrontEndBarangController extends Controller
         }
         
         return view("katalog",compact('kategoriBarang','barang'));
+    }
+
+    public function dataArtikel(Request $request){
+        $Artikel = Artikel::all();
+
+        return view("artikel",compact('Artikel'));
     }
 
 

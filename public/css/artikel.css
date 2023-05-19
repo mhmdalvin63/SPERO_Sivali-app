@@ -7,7 +7,12 @@
 #sec_content{
     margin-top: 9rem;
 }
-
+.artikel_img{
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(50%);
+}
 .la__image{
         position: relative;
         text-align: center;

@@ -298,6 +298,10 @@
                             <a class="nav-link {{ Request::segment(1) === 'barang' ? 'sideactive' : null }}" href="{{ url('barang' )}}"><i class="far fa-file-alt"></i>
                             <span>List Barang</span></a>
                         </li>
+                        <li>
+                            <a class="nav-link {{ Request::segment(1) === 'admartikel' ? 'sideactive' : null }}" href="{{ url('admartikel' )}}"><i class="far fa-file-alt"></i>
+                            <span>Artikel</span></a>
+                        </li>
                         {{-- <li class="dropdown">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
                                     class="fas fa-columns"></i> <span>Layout</span></a>
