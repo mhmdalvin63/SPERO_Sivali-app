@@ -65,7 +65,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row d-flex align-items-center">
             <div class="col-md-4 col-lg-2 col-12 text-center text-md-left">
                 <h3 class="fw-bold mb-0">FURNITURES</h3>
@@ -163,7 +163,7 @@
     </div>
 
     
-    <div class="container" id="carousel">
+    <div class="container mt-5" id="carousel">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="slider">
@@ -199,6 +199,7 @@
           </button>
         </div>
     </div>
+    
 </div>
     </div>
 

@@ -1,9 +1,64 @@
 @extends('layout.main')
 <link rel="stylesheet" href="{{asset('../css/home.css')}}">
+<link rel="stylesheet" href="{{asset('../js/coba.js')}}">
 
 @section('content')
-    <div class="container d-flex"  id="top">
-       <div class="container-fluid">
+    <div class="d-flex"  id="top">
+        {{-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators"></ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner"></div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div> --}}
+       
+
+        {{-- <div class="container">
+        <div class="mt-5" id="carousel">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="slider">
+                  <div class="carousel-item d-grid active">
+                    <div class="ci_image">
+                      <img src="{{asset('../img/figma-lampu-1.png')}}" alt="...">
+                    </div>
+                    <div class="ci_desc text-black">
+                      <p class="fw-bold">Gaya Baru <span class="fw-light">Kursi Modern</span></p>
+                      <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
+                    </div>
+                  </div>
+                  <div class="carousel-item d-grid">
+                    <div class="ci_image">
+                      <img src="{{asset('../img/figma-lemari-1.png')}}" alt="...">
+                    </div>
+                    <div class="ci_desc text-black">
+                      <p class="fw-bold">Gaya Baru <span class="fw-light">Lemari Modern</span></p>
+                      <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+       </div>
+            
+            <div class="next_prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div> --}}
+       {{-- <div class="container-fluid">
         <div class="row row__top">
             <div class="col-md-6 d-flex align-items-center">
                 <div class="desc">
@@ -16,10 +71,10 @@
                 <img src="{{asset('../img/sofa-home.png')}}" width="110%" alt="">
             </div>
         </div>
-       </div>
+       </div> --}}
     </div>
 
-    <div class="container-fluid mb-5 mt-5 mt-md-0">
+    <div class="container-fluid mb-5" id="kategoribarang">
         <h3 class="mb-5 text-center">Kategori Barang</h3>
         <div class="row d-flex justify-content-center text-center flex-wrap k_b">
             @foreach ($kategoriBarang as $item)
@@ -33,7 +88,8 @@
         </div>
     </div>
 
-    <div class="d-flex align-items-center mb-4 pb-4" style="background: #F5F6F8; height: max-content; margin-top: 10rem;">
+    <div class="d-flex align-items-center mb-4 pb-4" style="background: #F5F6F8; height: max-content;
+        transform: translateY(15rem);">
         <div class="container">
             <div class="row gap-5 tfk" >
                 <div class="col-md-5" id="tfk_left">
@@ -54,7 +110,8 @@
         </div>
     </div>
 
-    <div class="container" style="margin-top: 7rem;">
+    <div class="container" style="margin-top: 7rem;height: max-content;
+        transform: translateY(9rem);">
         <h1 class="text-center fw-bold">Katalog Kami</h1>
         <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
             <a href="{{ URL::current()}}" class="btn menu_btn" role="button">Semua</a>
@@ -66,7 +123,7 @@
         </div>
         <div class="row mt-5">
             @foreach ($barang as $item)
-            <div class="col-md-3 mt-4"> 
+            <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4"> 
                 <div class="card" id="product">
                     <div class="top_product">
                         {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
@@ -127,10 +184,11 @@
             </div>
             @endforeach
         </div>
-        <a class="d-block fs-5 mt-3 text-end" href="#" role="button">Selengkapnya >></a>
+        <a class="d-block fs-5 mt-3 text-end" href="/katalog" role="button">Selengkapnya >></a>
     </div>
 
-    <div class="container mt-5">
+    <div class="container" style="height: max-content;
+        margin-top: 12.5rem;">
         <div class="grid-container">
                 <div class="grid-item item1 mt-3 la__image">
                     <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt="">
@@ -167,4 +225,96 @@
         </div>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+            $('.slider').each(function() {
+        var $this = $(this);
+        var $group = $this.find('.slide_group');
+        var $slides = $this.find('.slide');
+        var bulletArray = [];
+        var currentIndex = 0;
+        var timeout;
+        
+        function move(newIndex) {
+            var animateLeft, slideLeft;
+            
+            advance();
+            
+            if ($group.is(':animated') || currentIndex === newIndex) {
+            return;
+            }
+            
+            bulletArray[currentIndex].removeClass('active');
+            bulletArray[newIndex].addClass('active');
+            
+            if (newIndex > currentIndex) {
+            slideLeft = '100%';
+            animateLeft = '-100%';
+            } else {
+            slideLeft = '-100%';
+            animateLeft = '100%';
+            }
+            
+            $slides.eq(newIndex).css({
+            display: 'block',
+            left: slideLeft
+            });
+            $group.animate({
+            left: animateLeft
+            }, function() {
+            $slides.eq(currentIndex).css({
+                display: 'none'
+            });
+            $slides.eq(newIndex).css({
+                left: 0
+            });
+            $group.css({
+                left: 0
+            });
+            currentIndex = newIndex;
+            });
+        }
+        
+        function advance() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+            if (currentIndex < ($slides.length - 1)) {
+                move(currentIndex + 1);
+            } else {
+                move(0);
+            }
+            }, 4000);
+        }
+        
+        $('.next_btn').on('click', function() {
+            if (currentIndex < ($slides.length - 1)) {
+            move(currentIndex + 1);
+            } else {
+            move(0);
+            }
+        });
+        
+        $('.previous_btn').on('click', function() {
+            if (currentIndex !== 0) {
+            move(currentIndex - 1);
+            } else {
+            move(3);
+            }
+        });
+        
+        $.each($slides, function(index) {
+            var $button = $('<a class="slide_btn">&bull;</a>');
+            
+            if (index === currentIndex) {
+            $button.addClass('active');
+            }
+            $button.on('click', function() {
+            move(index);
+            }).appendTo('.slide_buttons');
+            bulletArray.push($button);
+        });
+        
+        advance();
+        });
+    </script>
 @endsection

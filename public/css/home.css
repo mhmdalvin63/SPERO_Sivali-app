@@ -7,7 +7,8 @@
     grid-template-rows: auto auto;
 }
 #top{
-    height: 100vh;
+    height: max-content;
+    transform: translateY(8rem);
     align-items: center;
 }
 .desc h1{
@@ -31,6 +32,10 @@
 .logo__img img{
     height: 100%;
     width: auto;
+}
+#kategoribarang{
+    height: max-content;
+    transform: translateY(10rem);
 }
 .circle{
     top: -5rem
@@ -154,6 +159,7 @@
     color: white;
 }
 
+
 .top_product{
     /* background: red; */
     width: 100%;
@@ -165,7 +171,7 @@
 }
 .top_product img{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 }
 .rating .checked{
     color: #ffc800;
@@ -175,20 +181,35 @@
     .top_product img {
         width: 50%;
     }
+    .top_product {
+        padding: 0;
+        /* height: 10rem; */
+    }
 }
 @media only screen and (min-width: 600px) {
     .top_product img {
         width: 50%;
     }
+    .top_product {
+        padding: 0;
+        /* height: 10rem; */
+    }
 }
 @media only screen and (min-width: 768px) {
+    #product{
+        height: 100%;
+    }
+    .top_product {
+        padding: 1.5rem;
+        /* height: 10rem; */
+    }
     .top_product img {
-        width: 150%;
+        width: 100%;
     }
 }
 @media only screen and (min-width: 992px) {
     .top_product img {
-        width: 150%;
+        width: 100%;
     }
 }
 @media only screen and (min-width: 1200px) {
