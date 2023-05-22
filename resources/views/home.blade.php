@@ -61,7 +61,7 @@
     </div>
 
     <div class="container-fluid mb-5" id="kategoribarang">
-        <h3 class="mb-5 text-center">Kategori Barang</h3>
+        <h3 class="mb-5 text-center fw-bold">Kategori Barang</h3>
         <div class="k_b d-flex justify-content-center">
             @foreach ($kategoriBarang as $item)
             <div class="logo">
@@ -79,7 +79,7 @@
     <div class="d-flex align-items-center mb-4 pb-4" style="background: #F5F6F8; height: max-content;
         transform: translateY(15rem);">
         <div class="container">
-            <div class="row gap-5 tfk" >
+            <div class="row gap-5 tfk" style="align-items: center;">
                 <div class="col-md-5" id="tfk_left">
                     <img id="ab_lemari" src="{{asset('../img/furniture-home.png')}}" alt="">
                     <div class="circle position-relative">
@@ -111,21 +111,22 @@
         </div>
         <div class="row mt-5">
             @foreach ($barang as $item)
-            <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4"> 
+            <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4" id="home_list_barang"> 
+               <a href="{{ route('detail_barang', $item->id)}}">
                 <div class="card" id="product">
                     <div class="top_product">
                         {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
                         <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">{{$item->judul_barang}}</h5>
+                        <h5 class="card-title text-black">{{$item->judul_barang}}</h5>
                         {{-- <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p> --}}
                             @if ($item->harga_diskon==null)
-                            <p class="card-text mb-0" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
-                                <p class="card-text mb-3">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                            <p class="card-text fw-bold mb-0" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                <p class="card-text fw-bold mb-3" style="color: #19376D;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
                             @else
-                                <p class="card-text mb-0" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                                <p class="card-text mb-3">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                <p class="card-text fw-bold mb-0" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                <p class="card-text fw-bold mb-3" style="color: #19376D;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
                             @endif
                         <div class="rating"> 
                             @if($item->rate <= 0)
@@ -169,10 +170,11 @@
                         {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                     </div>
                 </div>
+               </a>
             </div>
             @endforeach
         </div>
-        <a class="d-block fs-5 mt-3 text-end" href="/katalog" role="button">Selengkapnya >></a>
+        <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a>
     </div>
 
     <div class="container" style="height: max-content;

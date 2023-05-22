@@ -270,7 +270,9 @@
     color: white;
 }
 
-
+#home_list_barang a{
+    text-decoration: none;
+}
 .top_product{
     /* background: red; */
     width: 100%;

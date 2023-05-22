@@ -7,12 +7,14 @@ use App\Models\Artikel;
 use Illuminate\Http\Request;
 use App\Models\KategoriBarang;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class FrontEndBarangController extends Controller
 {
     public function dataKategoriBarang(Request $request){
         $kategoriBarang = KategoriBarang::first()->get();
         $barang = Barang::latest()->get();
+        $Artikel = Artikel::all();
         
         if($request->sort == 'termurah') {
             $barang = Barang::orderby('harga_asli','asc')->get();
@@ -26,7 +28,7 @@ class FrontEndBarangController extends Controller
             $barang = Barang::where('promosi','promo')->get();
         }
 
-        return view("home",compact('kategoriBarang','barang'));
+        return view("home",compact('kategoriBarang','barang','Artikel'));
     }
 
 
@@ -34,19 +36,28 @@ class FrontEndBarangController extends Controller
         $kategoriBarang = KategoriBarang::first()->get();
         $barang = Barang::with('kategoriBarang')->latest()->get();
 
+        $barangrandomkiri = Barang::orderByRaw('RAND()')->get();
+        $barangrandomkanan = Barang::orderByRaw('RAND()')->get();
+
         foreach($barang as $item){
             if($request->sort == '{{$item->$kategoriBarang->id}}') {
             $barang = Barang::where('id_kategori','{{$item->id_kategori}}')->get();
             }
         }
         
-        return view("katalog",compact('kategoriBarang','barang'));
+        return view("katalog",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan'));
     }
 
     public function dataArtikel(Request $request){
         $Artikel = Artikel::all();
 
         return view("artikel",compact('Artikel'));
+    }
+
+    public function detailBarang($id){
+        $barang = Barang::find($id);
+
+        return view("detailBarang",compact('barang'));
     }
 
 

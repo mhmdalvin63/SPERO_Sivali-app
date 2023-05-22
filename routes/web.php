@@ -26,6 +26,7 @@ Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 Route::get('/profil', [ProfilController::class,'index']);
 
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
+Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
 Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
 // Route::get('/katalog-filter/{Barang}', [FrontEndBarangController::class,'filter_barang'])->name('filter_barang');
 Route::get('/artikel', [FrontEndBarangController::class,'dataArtikel']);
