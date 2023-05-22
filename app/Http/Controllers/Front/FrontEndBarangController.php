@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Banner;
 use App\Models\Barang;
 use App\Models\Artikel;
 use Illuminate\Http\Request;
 use App\Models\KategoriBarang;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class FrontEndBarangController extends Controller
 {
     public function dataKategoriBarang(Request $request){
         $kategoriBarang = KategoriBarang::first()->get();
         $barang = Barang::latest()->get();
-        $Artikel = Artikel::all();
+        $Banner = Banner::all();
         
         if($request->sort == 'termurah') {
             $barang = Barang::orderby('harga_asli','asc')->get();
@@ -28,7 +29,7 @@ class FrontEndBarangController extends Controller
             $barang = Barang::where('promosi','promo')->get();
         }
 
-        return view("home",compact('kategoriBarang','barang','Artikel'));
+        return view("home",compact('kategoriBarang','barang','Banner'));
     }
 
 

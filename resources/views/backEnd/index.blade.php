@@ -273,11 +273,11 @@
             </nav>
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="index.html">Stisla</a>
+                    <div class="sidebar-brand py-3" style="height: max-content;">
+                        <a href="index.html"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">St</a>
+                        <a href="index.html">SF</a>
                     </div>
                     <ul class="sidebar-menu">
                         {{-- <li class="menu-header">Dashboard</li>
@@ -301,6 +301,10 @@
                         <li>
                             <a class="nav-link {{ Request::segment(1) === 'admartikel' ? 'sideactive' : null }}" href="{{ url('admartikel' )}}"><i class="far fa-file-alt"></i>
                             <span>Artikel</span></a>
+                        </li>
+                        <li>
+                            <a class="nav-link {{ Request::segment(1) === 'banner' ? 'sideactive' : null }}" href="{{ url('banner' )}}"><i class="far fa-file-alt"></i>
+                            <span>Banner</span></a>
                         </li>
                         {{-- <li class="dropdown">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i

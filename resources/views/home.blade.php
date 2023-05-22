@@ -24,10 +24,10 @@
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="slider">
-                        @foreach ($Artikel as $key => $item)
-                        <a href="">
+                        @foreach ($Banner as $key => $item)
+                        <a href="{{asset($item->url)}}" target="_blank">
                             <div class="carousel-item {{ $key == 0 ? 'active' : ''}}" id="carousel_img">
-                                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt="">
+                                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_banner)}}" alt="">
                             </div>
                         </a>
                         @endforeach
