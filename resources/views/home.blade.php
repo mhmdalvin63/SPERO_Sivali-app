@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('../js/coba.js')}}">
 
 @section('content')
-    <div class="d-flex"  id="top">
+    <div id="top">
         {{-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators"></ol>
@@ -19,45 +19,31 @@
         </div> --}}
        
 
-        {{-- <div class="container">
-        <div class="mt-5" id="carousel">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="slider">
-                  <div class="carousel-item d-grid active">
-                    <div class="ci_image">
-                      <img src="{{asset('../img/figma-lampu-1.png')}}" alt="...">
+        <div class="container">
+            <div class="" id="carousel">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="slider">
+                        @foreach ($Artikel as $key => $item)
+                        <a href="">
+                            <div class="carousel-item {{ $key == 0 ? 'active' : ''}}" id="carousel_img">
+                                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt="">
+                            </div>
+                        </a>
+                        @endforeach
                     </div>
-                    <div class="ci_desc text-black">
-                      <p class="fw-bold">Gaya Baru <span class="fw-light">Kursi Modern</span></p>
-                      <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
-                    </div>
-                  </div>
-                  <div class="carousel-item d-grid">
-                    <div class="ci_image">
-                      <img src="{{asset('../img/figma-lemari-1.png')}}" alt="...">
-                    </div>
-                    <div class="ci_desc text-black">
-                      <p class="fw-bold">Gaya Baru <span class="fw-light">Lemari Modern</span></p>
-                      <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
-                    </div>
-                  </div>
                 </div>
             </div>
-        </div>
        </div>
-            
             <div class="next_prev">
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="fw-bold" style="color: black;">Prev</span>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="fw-bold" style="color: black;">Next</span>
               </button>
             </div>
-        </div> --}}
+        </div>
        {{-- <div class="container-fluid">
         <div class="row row__top">
             <div class="col-md-6 d-flex align-items-center">
@@ -76,13 +62,15 @@
 
     <div class="container-fluid mb-5" id="kategoribarang">
         <h3 class="mb-5 text-center">Kategori Barang</h3>
-        <div class="row d-flex justify-content-center text-center flex-wrap k_b">
+        <div class="k_b d-flex justify-content-center">
             @foreach ($kategoriBarang as $item)
-            <div class="col-md-1 col-2 logo">
+            <div class="logo">
                 <div class="logo__img">
-                    <img src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt="" width="50">
+                    <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt="" width="50">
                 </div>
-                <p class="mt-3">{{$item->kategori_barang}}</p>
+                <div class="desc_logo_img">
+                <p class="mt-3 text-center">{{$item->kategori_barang}}</p>
+                </div>
             </div>
             @endforeach
         </div>
