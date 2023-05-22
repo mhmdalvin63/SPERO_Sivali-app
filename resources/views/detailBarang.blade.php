@@ -12,7 +12,7 @@
     opacity: .25;
 }
 #detailBarang{
-    height: 100vh;
+    height: max-content;
     width: 100%;
     /* display: flex; */
     justify-content: center;
@@ -48,8 +48,9 @@
     font-weight: bold;
 }
 .dbd_desc{
-    background-color: #d6d6d6;
+    background-color: #e9e9e9;
     padding: 1rem 1.5rem;
+    border-radius: .5rem;
 }
 .dbd_rate{
     display: flex;
@@ -68,6 +69,16 @@
 .arrow_back:hover{
     background-color: rgb(177, 177, 177);
 }
+@media (max-width: 575px) { 
+    .arrow_back{
+        left: .5rem;
+    }
+}
+@media (max-width: 767px) { 
+    .db_desc{
+        align-items: flex-end;
+    }
+}
 </style>
 
 @section('content')
@@ -76,7 +87,7 @@
             {{-- <img src="{{asset('storage/image/'.'/'.$barang->gambar_barang)}}" alt=""> --}}
             
             <div class="container" id="detailBarang">
-                <a href="/home" class="arrow_back text-white">                                            
+                <a href="{{ url()->previous() }}" class="arrow_back text-white">                                            
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
                 <div class="db_section">
@@ -87,7 +98,7 @@
                         <div class="db_desc col-md-6">
                             <div class="dbd_content">
                                 <h5 class="card-title">{{$barang->judul_barang}}</h5>
-                                <h5 class="card-subtitle">Ketegori  {{$barang->kategoriBarang->kategori_barang}}</h5>
+                                <h5 class="card-subtitle fw-light">Ketegori  {{$barang->kategoriBarang->kategori_barang}}</h5>
                                 <hr class="hr">
                                 <div class="dbd_st d-flex align-items-center justify-content-between">
                                     <p><span class="fw-bold">Stok :</span> {{$barang->stok}}</p>

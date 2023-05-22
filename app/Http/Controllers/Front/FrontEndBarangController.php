@@ -56,7 +56,6 @@ class FrontEndBarangController extends Controller
 
     public function detailBarang($id){
         $barang = Barang::find($id);
-
         return view("detailBarang",compact('barang'));
     }
 
