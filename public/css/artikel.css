@@ -18,6 +18,10 @@
         text-align: center;
         color: white;
 }
+.la__image a{
+    text-decoration: none;
+    color: white;
+}
 .overlay {
     position: absolute;
     bottom: 1rem;

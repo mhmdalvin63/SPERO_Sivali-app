@@ -41,8 +41,8 @@ class FrontEndBarangController extends Controller
         $barangrandomkanan = Barang::orderByRaw('RAND()')->get();
 
         foreach($barang as $item){
-            if($request->sort == '{{$item->$kategoriBarang->id}}') {
-            $barang = Barang::where('id_kategori','{{$item->id_kategori}}')->get();
+            if($request->sort == '{{$item->kategoriBarang->id}}') {
+            $barang = Barang::where('id_kategori', $item->kategoriBarang->id)->get();
             }
         }
         
@@ -51,9 +51,18 @@ class FrontEndBarangController extends Controller
 
     public function dataArtikel(Request $request){
         $Artikel = Artikel::all();
-
-        return view("artikel",compact('Artikel'));
+        $ArtikelRandom = Artikel::orderByRaw('RAND()')->get();
+        return view("artikel",compact('Artikel','ArtikelRandom'));
     }
+    public function dataArtikelDetail($id){
+        $ArtikelDetail = Artikel::find($id);
+        $Artikel = Artikel::all();
+        return view("artikelDetail",compact('Artikel', 'ArtikelDetail'));
+    }
+    // public function dataArtikelid($id){
+    //     $Artikelid = Artikel::find($id);
+    //     return view("artikel",compact('Artikelid'));
+    // }
 
     public function detailBarang($id){
         $barang = Barang::find($id);
