@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Barang;
+// use App\Models\Barang;
+use App\Models\NewBarang;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 // use App\Models\KategoriBarang;
+use Illuminate\Http\Response;
 use App\Models\NewKategoriBarang;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Http\RedirectResponse;
@@ -19,7 +20,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = Barang::latest()->get();
+        $barang = NewBarang::latest()->get();
         return view('backEnd.Barang.index', compact('barang'));
     }
 
@@ -28,7 +29,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        $barang = Barang::all();
+        $barang = NewBarang::all();
         $kategoriBarang = NewKategoriBarang::all();
         return view('backEnd.Barang.create', compact('barang','kategoriBarang'));
     }
@@ -54,7 +55,7 @@ class BarangController extends Controller
         $gambar_barang = $request->file('gambar_barang');
         $gambar_barang->storeAs('public/image', $gambar_barang->hashName());
         // <a href="{{$data->file_location.'/'.$data->file_hash}}" download="{{$data->file_name}}"> </a>
-        Barang::create([
+        NewBarang::create([
             'file_name' => $gambar_barang->getClientOriginalName(),
             'file_location' => URL('/').'/storage/image/',
             'file_hash' => $gambar_barang->hashName(),
@@ -86,7 +87,7 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        $barang = Barang::find($id);
+        $barang = NewBarang::find($id);
         $kategoriBarang = NewKategoriBarang::all();
         return view('backEnd.Barang.edit', compact('barang','kategoriBarang'));
     }
@@ -109,7 +110,7 @@ class BarangController extends Controller
             'rate' => '',
         ]);
 
-        $barang = Barang::findOrfail($id);
+        $barang = NewBarang::findOrfail($id);
         if ($request->hasFile('gambar_barang')) {
 
             $gambar_barang = $request->file('gambar_barang');
@@ -150,7 +151,7 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        $barang = Barang::findOrfail($id);
+        $barang = NewBarang::findOrfail($id);
         Storage::delete('public/image'.$barang->gambar_barang);
         $barang->delete();
         return redirect()->route('kb_index')->with('success', 'Data deleted successfully');

@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Models\KategoriBarang;
+use App\Models\NewKategoriBarang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Barang extends Model
+class NewBarang extends Model
 {
     protected $primaryKey = "id";
     protected $table = "barangs";
@@ -15,6 +15,6 @@ class Barang extends Model
     ];
 
     public function KategoriBarang(){
-        return $this->belongsTo(KategoriBarang::class, 'id_kategori');
+        return $this->belongsTo(NewKategoriBarang::class, 'id_kategori');
     }
 }

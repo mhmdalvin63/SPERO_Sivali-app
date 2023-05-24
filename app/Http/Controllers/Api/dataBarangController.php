@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\barang;
+// use App\Models\barang;
 use Illuminate\Http\Request;
 // use App\Models\kategoriBarang;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\barangResource;
 use App\Http\Resources\kategoriBarangResource;
+use App\Models\NewBarang;
 use App\Models\NewKategoriBarang;
 
 class dataBarangController extends Controller
 {
     public function index_barang(){
-        $barang = barang::latest()->get();
+        $barang = NewBarang::latest()->get();
             return response()->json([
                 'data' => barangResource::collection($barang),
                 'message' => 'Berhasil',

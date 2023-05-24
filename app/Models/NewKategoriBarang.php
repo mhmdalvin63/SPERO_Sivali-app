@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use App\Models\KategoriBarang;
+use App\Models\NewBarang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use App\Models\kategoriBarang;
@@ -16,6 +17,6 @@ class NewKategoriBarang extends Model
     ];
 
     public function barang(){
-        return $this->hasMany(Barang::class);
+        return $this->hasMany(NewBarang::class);
     }
 }
