@@ -35,18 +35,29 @@ class FrontEndBarangController extends Controller
 
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = KategoriBarang::first()->get();
-        $barang = Barang::with('kategoriBarang')->latest()->get();
+        $barang = Barang::with('KategoriBarang')->latest()->get();
 
         $barangrandomkiri = Barang::orderByRaw('RAND()')->get();
         $barangrandomkanan = Barang::orderByRaw('RAND()')->get();
 
-        foreach($barang as $item){
-            if($request->sort == '{{$item->kategoriBarang->id}}') {
-            $barang = Barang::where('id_kategori', $item->kategoriBarang->id)->get();
-            }
-        }
-        
+        // foreach($barang as $item){
+            // if($request->sort == '{{$barang->KategoriBarang->id}}' && $barang->id_kategori) {
+            //     $barang = Barang::all();
+            // }
+        // }
+
         return view("katalog",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan'));
+    }
+    public function dataKategoriBarangKatalogId($id){
+        $KategoriBarangfilter = Barang::with('KategoriBarang')->where('id_kategori',$id)->get();
+        
+        $kategoriBarang = KategoriBarang::first()->get();
+        $barang = Barang::with('KategoriBarang')->latest()->get();
+
+        $barangrandomkiri = Barang::orderByRaw('RAND()')->get();
+        $barangrandomkanan = Barang::orderByRaw('RAND()')->get();
+        return view("katalogFilter",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','KategoriBarangfilter'));
+        // dd($KategoriBarangfilter);
     }
 
     public function dataArtikel(Request $request){

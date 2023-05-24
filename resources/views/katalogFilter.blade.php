@@ -100,7 +100,7 @@
                 <h3 class="fw-bold mb-0">FURNITURES</h3>
             </div>
             <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
-                <a class="btn menu_btn" href="{{ URL::current() }}#list_katalog" role="button">Semua</a>
+                <a class="btn menu_btn" href="{{ URL::to('katalog') }}#list_katalog"  role="button">Semua</a>
                 @foreach ($kategoriBarang as $item) 
                     <a class="btn menu_btn" href="{{ route('katalogFilter', $item->id)}}#list_katalog" role="button">{{$item->kategori_barang}}</a>
                 @endforeach
@@ -112,7 +112,7 @@
         </div>
 
         <div class="row mt-5" id="list_barang">
-            @foreach ($barang as $item) 
+            @foreach ($KategoriBarangfilter as $item) 
             <div class="col-md-3 col-sm-4">
                 <div class="card border-0" id="lb_barang">
                         @if ($item->promosi=='Promo')

@@ -27,6 +27,7 @@
     display: flex;
     border: .5rem solid white;
     padding: 2rem 1rem;
+    height: max-content;
 }
 .tj{
     text-align: justify
@@ -41,6 +42,10 @@
 .content_barang{
     background-color: #f0f0f0;
     padding: 2rem 4rem 2rem 0;
+}
+#gambar_barang{
+    height: 12rem;
+    /* width: 25%; */
 }
 .content_barang h2{
     color: #EE9D00;
@@ -147,8 +152,9 @@
 }
 .card__img img{
     display: block;
-    width: 50%;
-    /* height: auto; */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 .card:hover .hovering {
     height: 12.5%;
@@ -436,16 +442,26 @@ a.control_next {
         grid-template-areas: 
         'gmbrbrg'
         'deskbrg';
+        justify-content: space-between;
     }
     .judul__barang{
         text-align: center;
         width: 100%;
+    }
+    .tj{
+        text-align: center;
+    }
+    .sd{
+        justify-content: end;
     }
     .hr_judul{
         width: 45%;
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    .harga{
+        text-align: center;
     }
     #list_barang .col-md-3{
         padding: 0 2rem;
