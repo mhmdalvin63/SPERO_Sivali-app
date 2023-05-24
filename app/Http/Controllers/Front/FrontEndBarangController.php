@@ -16,19 +16,19 @@ class FrontEndBarangController extends Controller
 {
     public function dataKategoriBarang(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
-        $barang = NewBarang::latest()->get();
+        $barang = NewBarang::latest()->where('status','Active')->get();
         $Banner = Banner::all();
         
         if($request->sort == 'termurah') {
-            $barang = NewBarang::orderby('harga_asli','asc')->get();
+            $barang = NewBarang::orderby('harga_asli','asc')->where('status','Active')  ->get();
         }elseif($request->sort == 'termahal'){
-            $barang = NewBarang::orderby('harga_asli','desc')->get();
+            $barang = NewBarang::orderby('harga_asli','desc')->where('status','Active') ->get();
         }elseif($request->sort == 'terbaru'){
-            $barang = NewBarang::orderby('created_at','desc')->get();
+            $barang = NewBarang::orderby('created_at','desc')->where('status','Active') ->get();
         }elseif($request->sort == 'terlaris'){
-            $barang = NewBarang::orderby('terjual','desc')->get();
+            $barang = NewBarang::orderby('terjual','desc')->where('status','Active')    ->get();
         }elseif($request->sort == 'promo'){
-            $barang = NewBarang::where('promosi','promo')->get();
+            $barang = NewBarang::where('promosi','promo')->where('status','Active') ->get();
         }
 
         return view("home",compact('kategoriBarang','barang','Banner'));
@@ -37,10 +37,10 @@ class FrontEndBarangController extends Controller
 
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
-        $barang = NewBarang::with('KategoriBarang')->latest()->get();
+        $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();
 
-        $barangrandomkiri = NewBarang::orderByRaw('RAND()')->get();
-        $barangrandomkanan = NewBarang::orderByRaw('RAND()')->get();
+        $barangrandomkiri = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
+        $barangrandomkanan = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
 
         // foreach($barang as $item){
             // if($request->sort == '{{$barang->KategoriBarang->id}}' && $barang->id_kategori) {
@@ -51,13 +51,13 @@ class FrontEndBarangController extends Controller
         return view("katalog",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan'));
     }
     public function dataKategoriBarangKatalogId($id){
-        $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->get();
+        $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->where('status','active')->get();
         
         $kategoriBarang = NewKategoriBarang::first()->get();
-        $barang = NewBarang::with('KategoriBarang')->latest()->get();
+        $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();
 
-        $barangrandomkiri = NewBarang::orderByRaw('RAND()')->get();
-        $barangrandomkanan = NewBarang::orderByRaw('RAND()')->get();
+        $barangrandomkiri = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
+        $barangrandomkanan = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
         return view("katalogFilter",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','KategoriBarangfilter'));
         // dd($KategoriBarangfilter);
     }

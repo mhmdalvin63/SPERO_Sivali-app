@@ -153,9 +153,11 @@
                             {{-- <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
                                 <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
                             </div> --}}
-                        <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 50%;">
-                            <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                        </div>
+                        <a href="{{ route('favorit_barang', $item->id)}}">
+                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 50%;">
+                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

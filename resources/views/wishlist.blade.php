@@ -53,27 +53,29 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td class="detail_produk d-flex align-items-center gap-3">
-                                    <div class="td_left">
-                                        <img src="{{asset('../img/logo-sivali.png')}}" alt="">
-                                    </div>
-                                    <div class="td_right">
-                                        <div class="judul fw-bold">
-                                            Baju Lengan Panjang 
+                              @foreach ($Favorit as $item)
+                                <tr>
+                                    <td class="detail_produk d-flex align-items-center gap-3">
+                                        <div class="td_left">
+                                            <img src="{{$item->Barang->file_location.'/'.$item->Barang->file_hash}}" title="{{$item->Barang->file_name}}" alt="" width="75">
                                         </div>
-                                        <div class="kategori">
-                                            Gamis   
+                                        <div class="td_right">
+                                            <div class="judul fw-bold">
+                                                {{$item->Barang->judul_barang}} 
+                                            </div>
+                                            <div class="kategori">
+                                                {{$item->Barang->KategoriBarang->kategori_barang}}   
+                                            </div>
+                                            <div class="harga">
+                                                {{$item->Barang->Harga}} 
+                                            </div>
                                         </div>
-                                        <div class="harga">
-                                            Rp. 35.000  
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>2</td>
-                                <td>Rp. 35.000</td>
-                                <td>Rp. 70.000</td>
-                              </tr>
+                                    </td>
+                                    <td>2</td>
+                                    <td>Rp. 35.000</td>
+                                    <td>Rp. 70.000</td>
+                                </tr>
+                              @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -5,6 +5,7 @@ use App\Http\Controllers\BannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\FavoritController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\KategoriBarangController;
@@ -26,7 +27,9 @@ Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
-Route::get('/wishlist', function () {return view('wishlist');});
+
+Route::get('/wishlist', [FavoritController::class,'index']);
+Route::get('/wishlist/{id}', [FavoritController::class,'store'])->name('favorit_barang');
 
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 

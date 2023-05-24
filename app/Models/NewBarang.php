@@ -17,4 +17,7 @@ class NewBarang extends Model
     public function KategoriBarang(){
         return $this->belongsTo(NewKategoriBarang::class, 'id_kategori');
     }
+    public function Favorit(){
+        return $this->hasMany(Favorit::class);
+    }
 }

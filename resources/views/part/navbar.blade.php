@@ -171,7 +171,7 @@
                         <i class="fa-lg fa-regular fa-user w-75"></i>
                       </div>
                     </a>
-                    <a href="/wishlist">
+                    <a href="{{ url('wishlist') }}">
                       <div class="wishlist">
                         {{-- <i class="fa-lg fa-solid fa-cart-shopping w-75"></i> --}}
                         <i class="fa-lg fa-regular fa-heart"></i>
