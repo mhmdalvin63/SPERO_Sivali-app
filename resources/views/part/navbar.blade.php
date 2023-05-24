@@ -171,9 +171,12 @@
                         <i class="fa-lg fa-regular fa-user w-75"></i>
                       </div>
                     </a>
-                    <div class="keranjang">
-                    <i class="fa-lg fa-solid fa-cart-shopping w-75"></i>
-                    </div>
+                    <a href="/wishlist">
+                      <div class="wishlist">
+                        {{-- <i class="fa-lg fa-solid fa-cart-shopping w-75"></i> --}}
+                        <i class="fa-lg fa-regular fa-heart"></i>
+                        </div>
+                    </a>
                 </span>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

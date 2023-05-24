@@ -91,25 +91,25 @@
                     <div class="cont_3">
                         <h1>Tentang Furniture Kita</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat delectus facere blanditiis voluptatum labore aliquam fuga dicta voluptas vero porro!</p>
-                        <a class="btn btn-primary" href="#" role="button">Selengkapnya >></a>
+                        <a class="btn btn-primary" href="/katalog" role="button">Selengkapnya >></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container" style="margin-top: 7rem;height: max-content;
+    <div id="list_barang" class="container" style="margin-top: 7rem;height: max-content;
         transform: translateY(9rem);">
         <h1 class="text-center fw-bold">Katalog Kami</h1>
         <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
-            <a href="{{ URL::current()}}" class="btn menu_btn" role="button">Semua</a>
-            <a href="{{ URL::current()."?sort=terbaru"}}" class="btn menu_btn" role="button">Terbaru</a>
-            <a href="{{ URL::current()."?sort=terlaris"}}" class="btn menu_btn" role="button">Terlaris</a>
-            <a href="{{ URL::current()."?sort=termurah"}}" class="btn menu_btn" role="button">Termurah</a>
-            <a href="{{ URL::current()."?sort=termahal"}}" class="btn menu_btn" role="button">Termahal</a>
-            <a href="{{ URL::current()."?sort=promo"}}" class="btn menu_btn" role="button">Promo</a>
+            <a href="{{ URL::current()}}#list_barang" class="btn menu_btn" role="button">Semua</a>
+            <a href="{{ URL::current()."?sort=terbaru"}}#list_barang" class="btn menu_btn" role="button">Terbaru</a>
+            <a href="{{ URL::current()."?sort=terlaris"}}#list_barang" class="btn menu_btn" role="button">Terlaris</a>
+            <a href="{{ URL::current()."?sort=termurah"}}#list_barang" class="btn menu_btn" role="button">Termurah</a>
+            <a href="{{ URL::current()."?sort=termahal"}}#list_barang" class="btn menu_btn" role="button">Termahal</a>
+            <a href="{{ URL::current()."?sort=promo"}}#list_barang" class="btn menu_btn" role="button">Promo</a>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5"">
             @foreach ($barang as $item)
             <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4" id="home_list_barang"> 
                <a href="{{ route('detail_barang', $item->id)}}">
