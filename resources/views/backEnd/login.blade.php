@@ -162,7 +162,7 @@
                     <i class="fa fa-key" aria-hidden="true"></i>
                 </div>
                 <div class="col-md-12 login-title">
-                    ADMIN SARANAWISESA
+                    ADMIN SIVALI
                 </div>
                 <div class="col-md-12 login-form">
                     <div class="col-md-12 login-form">
