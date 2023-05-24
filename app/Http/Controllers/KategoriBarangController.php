@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KategoriBarang;
+// use App\Models\KategoriBarang;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Models\NewKategoriBarang;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -16,7 +17,7 @@ class KategoriBarangController extends Controller
      */
     public function index()
     {
-        $KategoriBarang = KategoriBarang::all();
+        $KategoriBarang = NewKategoriBarang::all();
         return view('backEnd.kategoriBarang.index', compact('KategoriBarang'));
     }
 
@@ -25,7 +26,7 @@ class KategoriBarangController extends Controller
      */
     public function create()
     {
-        $KategoriBarang = KategoriBarang::all();
+        $KategoriBarang = NewKategoriBarang::all();
         return view('backEnd.kategoriBarang.create', compact('KategoriBarang'));
     }
 
@@ -42,7 +43,7 @@ class KategoriBarangController extends Controller
         $gambar_kategori = $request->file('gambar_kategori');
         $gambar_kategori->storeAs('public/image', $gambar_kategori->hashName());
 
-        KategoriBarang::create([
+        NewKategoriBarang::create([
             'gambar_kategori' => $gambar_kategori->hashName(),
             'kategori_barang' => $request->kategori_barang,
         ]);
@@ -64,7 +65,7 @@ class KategoriBarangController extends Controller
      */
     public function edit($id)
     {
-        $KategoriBarang = KategoriBarang::find($id);
+        $KategoriBarang = NewKategoriBarang::find($id);
         return view('backEnd.kategoriBarang.edit', compact('KategoriBarang'));
     }
 
@@ -78,7 +79,7 @@ class KategoriBarangController extends Controller
             'kategori_barang' => '',
         ]);
 
-        $KategoriBarang = kategoriBarang::findOrfail($id);
+        $KategoriBarang = NewkategoriBarang::findOrfail($id);
         if ($request->hasFile('gambar_kategori')) {
 
             $gambar_kategori = $request->file('gambar_kategori');
@@ -103,7 +104,7 @@ class KategoriBarangController extends Controller
      */
     public function destroy($id)
     {
-        $KategoriBarang = KategoriBarang::findOrfail($id);
+        $KategoriBarang = NewKategoriBarang::findOrfail($id);
         Storage::delete('public/image'.$KategoriBarang->gambar_kategori);
         $KategoriBarang->delete();
         return redirect()->route('kb_index')->with('success', 'Data deleted successfully');

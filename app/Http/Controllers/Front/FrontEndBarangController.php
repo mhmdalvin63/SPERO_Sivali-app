@@ -6,14 +6,15 @@ use App\Models\Banner;
 use App\Models\Barang;
 use App\Models\Artikel;
 use Illuminate\Http\Request;
-use App\Models\KategoriBarang;
+// use App\Models\KategoriBarang;
+use App\Models\NewKategoriBarang;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class FrontEndBarangController extends Controller
 {
     public function dataKategoriBarang(Request $request){
-        $kategoriBarang = KategoriBarang::first()->get();
+        $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = Barang::latest()->get();
         $Banner = Banner::all();
         
@@ -34,7 +35,7 @@ class FrontEndBarangController extends Controller
 
 
     public function dataKategoriBarangKatalog(Request $request){
-        $kategoriBarang = KategoriBarang::first()->get();
+        $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = Barang::with('KategoriBarang')->latest()->get();
 
         $barangrandomkiri = Barang::orderByRaw('RAND()')->get();
@@ -51,7 +52,7 @@ class FrontEndBarangController extends Controller
     public function dataKategoriBarangKatalogId($id){
         $KategoriBarangfilter = Barang::with('KategoriBarang')->where('id_kategori',$id)->get();
         
-        $kategoriBarang = KategoriBarang::first()->get();
+        $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = Barang::with('KategoriBarang')->latest()->get();
 
         $barangrandomkiri = Barang::orderByRaw('RAND()')->get();

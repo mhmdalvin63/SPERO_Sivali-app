@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use App\Models\kategoriBarang;
 
-class KategoriBarang extends Model
+class NewKategoriBarang extends Model
 {
     protected $primaryKey = "id";
     protected $table = "kategori_barangs";

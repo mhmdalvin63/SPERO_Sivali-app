@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\barang;
 use Illuminate\Http\Request;
-use App\Models\kategoriBarang;
+// use App\Models\kategoriBarang;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\barangResource;
 use App\Http\Resources\kategoriBarangResource;
+use App\Models\NewKategoriBarang;
 
 class dataBarangController extends Controller
 {
@@ -21,7 +22,7 @@ class dataBarangController extends Controller
             // return view("backEnd.Barang.",compact('barang'));
     }
     public function index_kategori_barang(){
-        $kategoriBarang = kategoriBarang::latest()->get();
+        $kategoriBarang = NewKategoriBarang::latest()->get();
             return response()->json([
                 'data' => kategoriBarangResource::collection($kategoriBarang),
                 'message' => 'Berhasil',

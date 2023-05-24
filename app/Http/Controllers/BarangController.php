@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\KategoriBarang;
+// use App\Models\KategoriBarang;
+use App\Models\NewKategoriBarang;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\URL;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class BarangController extends Controller
@@ -28,7 +29,7 @@ class BarangController extends Controller
     public function create()
     {
         $barang = Barang::all();
-        $kategoriBarang = KategoriBarang::all();
+        $kategoriBarang = NewKategoriBarang::all();
         return view('backEnd.Barang.create', compact('barang','kategoriBarang'));
     }
 
@@ -86,7 +87,7 @@ class BarangController extends Controller
     public function edit($id)
     {
         $barang = Barang::find($id);
-        $kategoriBarang = KategoriBarang::all();
+        $kategoriBarang = NewKategoriBarang::all();
         return view('backEnd.Barang.edit', compact('barang','kategoriBarang'));
     }
 
