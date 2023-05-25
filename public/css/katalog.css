@@ -160,7 +160,7 @@
     height: 12.5%;
 }
 
-.pagination {
+/* .pagination {
     list-style: none;
     display: inline-block;
     padding: 0;
@@ -186,7 +186,7 @@
 }
 .pagination a:active {
     outline: none;
-}
+} */
 
 /* CAROUSEL */
 #carousel{

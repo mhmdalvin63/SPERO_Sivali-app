@@ -110,7 +110,7 @@
             <a href="{{ URL::current()."?sort=promo"}}#list_barang" class="btn menu_btn" role="button">Promo</a>
         </div>
         <div class="row mt-5"">
-            @foreach ($barang as $item)
+            @foreach ($barang->take(4) as $item)
             <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4" id="home_list_barang"> 
                <a href="{{ route('detail_barang', $item->id)}}">
                 <div class="card" id="product">

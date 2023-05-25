@@ -153,20 +153,23 @@
                             {{-- <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
                                 <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
                             </div> --}}
-                        <a href="{{ route('favorit_barang', $item->id)}}">
                             <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 50%;">
+                                <a href="{{ route('favorit_barang', $item->id)}}#list_barang">
                                 <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
+                            </a>
                             </div>
-                        </a>
                     </div>
                 </div>
             </div>
             @endforeach
+            <div class="d-flex justify-content-center">
+                {{ $barang->links('vendor.pagination.bootstrap-5') }}
+            </div>
 
             {{-- {{ $barang->links('part.paginate_katalog') }} --}}
-            <div class="pagination2" style="display: grid; place-items: center;">
-                {{-- {{ $barang->links() }}   --}}
-            </div>
+            {{-- <div class="pagination2" style="display: grid; place-items: center;">
+                {{ $barang->links() }}  
+            </div> --}}
             {{-- <nav aria-label="...">
                 <ul class="pagination pagination-sm">
                   <li class="page-item active" aria-current="page">
@@ -177,21 +180,21 @@
                 </ul>
             </nav> --}}
 
-            <div class="col-md-12 d-flex justify-content-center mt-5">
+            {{-- <div class="col-md-12 d-flex justify-content-center mt-5">
                 <ul class="pagination modal-1 gap-3">
-                    {{-- <li><a href="#" class="prev">&laquo</a></li> --}}
+                    <li><a href="#" class="prev">&laquo</a></li>
                     <li><a href="#" class="active">1</a></li>
                     <li> <a href="#">2</a></li>
                     <li> <a href="#">3</a></li>
-                    {{-- <li> <a href="#">4</a></li>
+                    <li> <a href="#">4</a></li>
                     <li> <a href="#">5</a></li>
                     <li> <a href="#">6</a></li>
                     <li> <a href="#">7</a></li>
                     <li> <a href="#">8</a></li>
-                    <li> <a href="#">9</a></li> --}}
-                    {{-- <li><a href="#" class="next">&raquo;</a></li> --}}
+                    <li> <a href="#">9</a></li> 
+                    <li><a href="#" class="next">&raquo;</a></li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </div>
 
