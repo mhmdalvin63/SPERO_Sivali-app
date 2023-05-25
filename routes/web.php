@@ -27,9 +27,12 @@ Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
+// Route::get('/wishlist/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
 
-Route::get('/wishlist', [FavoritController::class,'index']);
+Route::get('/wishlist', [FavoritController::class,'index'])->name('wl_index');
 Route::get('/wishlist/{id}', [FavoritController::class,'store'])->name('favorit_barang');
+// Route::get('/wishlist/{id}', [FavoritController::class,'show'])->name('detail_favorit');
+Route::delete('wishlist/delete/{id}',[FavoritController::class,'destroy'])->name('wl_delete');
 
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 

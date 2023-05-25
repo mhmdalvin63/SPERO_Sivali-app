@@ -14,11 +14,12 @@ class FavoritController extends Controller
      */
     public function index()
     {
-        $Favorit = Favorit::orderBy('created_at','desc')->get();
+        $Favorit = Favorit::orderBy('created_at','desc')->distinct()->get();
+        $FavoritCount = Favorit::count();
         
         // $this->data['Favorit'] = $Favorit;
 
-        return view('wishlist', compact('Favorit'));
+        return view('wishlist', compact('Favorit','FavoritCount'));
     }
 
     /**
@@ -62,9 +63,10 @@ class FavoritController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Favorit $favorit)
+    public function show($id)
     {
-        //
+        $Favorit = NewBarang::with('Favorit')->find($id);
+        return view('detail_wishlist', compact('Favorit'));
     }
 
     /**
@@ -91,6 +93,6 @@ class FavoritController extends Controller
         $Favorit = Favorit::findOrFail($id);
         $Favorit->delete();
         // \Session::flash('success', 'Data Berhasil Di Hapus');
-        return redirect('favorit');
+        return redirect()->route('wl_index')->with('success', 'Data deleted successfully');
     }
 }
