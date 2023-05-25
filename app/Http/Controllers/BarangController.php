@@ -40,6 +40,7 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'status' => 'required',
             'gambar_barang' => 'required|image|mimes:jpeg,jpg,png,webp',
             'id_kategori' => 'required',
             'judul_barang' => 'required',
@@ -56,6 +57,7 @@ class BarangController extends Controller
         $gambar_barang->storeAs('public/image', $gambar_barang->hashName());
         // <a href="{{$data->file_location.'/'.$data->file_hash}}" download="{{$data->file_name}}"> </a>
         NewBarang::create([
+            'status' => $request->status,
             'file_name' => $gambar_barang->getClientOriginalName(),
             'file_location' => URL('/').'/storage/image/',
             'file_hash' => $gambar_barang->hashName(),
@@ -98,6 +100,7 @@ class BarangController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
+            'status' => '',
             'gambar_barang' => '|image|mimes:jpeg,jpg,png,webp',
             'id_kategori' => '',
             'judul_barang' => '',
@@ -119,6 +122,7 @@ class BarangController extends Controller
             Storage::delete('public/image/'.$barang->gambar_barang);
 
             $barang->update([
+                'status' => $request->status,
                 'gambar_barang' => $gambar_barang->hashName(),
                 'id_kategori' => $request->id_kategori,
                 'judul_barang' => $request->judul_barang,
@@ -132,6 +136,7 @@ class BarangController extends Controller
             ]);
         }else{
             $barang->update([
+                'status' => $request->status,
                 'id_kategori' => $request->id_kategori,
                 'judul_barang' => $request->judul_barang,
                 'deskripsi' => $request->deskripsi,

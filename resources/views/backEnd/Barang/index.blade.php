@@ -21,6 +21,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Status</th>
                             <th>Gambar</th>
                             <th>Kategori</th>
                             <th>Judul</th>
@@ -40,6 +41,13 @@
                         @foreach ($barang as $item)
                         <tr>
                             <td>{{$item->id}}</td>
+                            <td>
+                                @if ($item->status == 'Active')
+                                    <button class="btn btn-success">Active</button>
+                                @else
+                                    <button class="btn btn-danger">Non Active</button>
+                                @endif
+                            </td>
                             <td><img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75"></td>
                             {{-- <td><img src="{{asset('storage/image/'.$item->file_hash)}}" alt="" width="75"></td> --}}
                             <td>{{$item->kategoriBarang->kategori_barang}}</td>

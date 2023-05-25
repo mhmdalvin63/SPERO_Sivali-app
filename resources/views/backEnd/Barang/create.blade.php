@@ -9,6 +9,14 @@
                 <h4 class="card-title">Form Kategori Barang</h4>
                 <form action="{{ route('b_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Status :</label>
+                        <select class="form-select" id="inputGroupSelect01" name="status">
+                          {{-- <option>Pilih Jenis...</option> --}}
+                          <option value="Active">Active</option>
+                          <option value="Non Active">Non Active</option>
+                        </select>
+                    </div>
                     <div class="form-group mt-5">
                         <label for="formFile" class="form-label">Pilih Gambar Barang</label>
                         <input class="form-control" type="file" id="formFile" name="gambar_barang">

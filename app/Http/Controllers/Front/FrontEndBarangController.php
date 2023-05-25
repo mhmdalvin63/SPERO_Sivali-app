@@ -37,7 +37,7 @@ class FrontEndBarangController extends Controller
 
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
-        $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();
+        $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->paginate(4);
 
         $barangrandomkiri = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
         $barangrandomkanan = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
