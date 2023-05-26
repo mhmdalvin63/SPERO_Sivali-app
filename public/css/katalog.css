@@ -1,5 +1,4 @@
 /* Extra small devices (phones, 600px and down) */
-
 #top_content{
     height: max-content;
     padding: 10% 0 0 0;
@@ -98,6 +97,22 @@
     place-items: center;
     align-items: center;
     padding: 0.1rem 2.5rem;
+}
+@media (max-width: 992px) { 
+    #lb_barang .label{
+        right: -25%;
+    }
+}
+@media (max-width: 576px) { 
+    #lb_barang .label{
+        right: -2.4rem;
+    }
+}
+@media (max-width: 390px) { 
+   .card__img{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+   }
 }
 .label p{
     font-size: .75rem;

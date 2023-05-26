@@ -1,4 +1,25 @@
 /* CAROUSEL */
+@media (max-width: 575.98px) { 
+    #lg-np{
+        display: none;
+    }
+}
+@media (min-width: 575.98px) { 
+    #sm-np{
+        display: none;
+    }
+}
+.parent_icon{
+    padding: .3rem .5rem;
+    background-color: black;
+    border-radius: 50%;
+}
+.parent_icon i{
+    color: white;
+}
+#top{
+    height: max-content;
+}
 #carousel{
     width: 100%;
     display: flex;
@@ -24,8 +45,14 @@
     height: 100%;
   }
   .carousel-item{
-    width: 100%;
-    height: 30rem;
+    width: 80%;
+    height: 25rem;
+  }
+  @media (max-width: 576px) {
+    .carousel-item{
+        width: 80%;
+        height: 15rem;
+    }
   }
   #carousel_img img{
     width: 100%;
@@ -35,26 +62,16 @@
   }
   .next_prev{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   .next_prev .carousel-control-prev{
-    transform: translate(0, 12.5rem);
+    /* transform: translate(0, 25%); */
     color: black;
-    /* background-color: #000; */
-    height: 2.5rem;
-    width: 2.5rem;
-    padding: .75rem;
-    border-radius: 50%
   }
   .next_prev .carousel-control-next{
-    transform: translate(0, 12.5rem);
+    /* transform: translate(0, 25%); */
     color: black;
-    /* background-color: #000; */
-    height: 2.5rem;
-    width: 2.5rem;
-    padding: .75rem;
-    border-radius: 50%
   }
   @media only screen and (max-width: 992px){
     .carousel-item{
@@ -89,20 +106,6 @@
       text-decoration-line: underline;
       text-underline-offset: 7.5px;
       font-size: 1.25rem;
-    }
-    .carousel-control-prev{
-      background-color: #000;
-      background: #000;
-      height: 2rem;
-      width: 2rem;
-      padding: .6rem;
-    }
-    .carousel-control-next{
-      background-color: #000;
-      background: #000;
-      height: 2rem;
-      width: 2rem;
-      padding: .6rem;
     }
   }
 

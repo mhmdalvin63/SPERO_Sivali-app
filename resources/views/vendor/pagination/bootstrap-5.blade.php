@@ -15,7 +15,7 @@
     }
 </style>
 @if ($paginator->hasPages())
-    <nav class="mt-5 d-flex justify-items-center justify-content-between" style="box-shadow: none !important;">
+    <nav class="mt-5 d-flex justify-items-center justify-content-between" style="box-shadow: none !important; z-index: 3;">
         <div class="d-flex justify-content-between flex-fill d-sm-none">
             <ul class="pagination">
                 @foreach ($elements as $element)

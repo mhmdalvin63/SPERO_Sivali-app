@@ -134,26 +134,38 @@
                                     <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="">
                                 </div>
                                 <div class="card__title">
-                                    <p class="fs-5 mb-1 mt-3 text-black">{{$item->judul_barang}}</p>
+                                    <p class="mb-1 mt-3 text-black" >{{$item->judul_barang}}</p>
+                                    <div class="harga_bawah" style="width: 100%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;">
                                     @if ($item->harga_diskon==null)
-                                    <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                                    <p class=" mb-1 fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                        <p class="mb-1 fw-bold" style="width: 100%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                        <p class=" mb-1 fw-bold" style="font-size: .75rem; visibility: hidden;
+                                        ">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
                                     @else
-                                    <p class="mb-1 fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                                    <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                        <p class="mb-1 fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;
+                                        width: 100%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                        <p class="mb-1 fw-bold" style="width: 100%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
                                     @endif
+                                    </div>
                                 </div>
                             </div>
                         </a>
                         
-                    <div class="hovering d-flex justify-content-between">
-                        <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 50%;">
+                    <div class="hovering d-flex justify-content-around">
+                        <div class="hovering__left d-flex align-items-center justify-content-center px-3 py-3">
                             <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
                         </div>
                             {{-- <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
                                 <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
                             </div> --}}
-                            <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 50%;">
+                            <div class="hovering__right d-flex justify-content-center align-items-center px-3 py-3">
                                 <a href="{{ route('favorit_barang', $item->id)}}#list_barang">
                                 <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
                             </a>
@@ -260,13 +272,17 @@
                             <div class="r_desc col-md-6 fs-5 pl-5 ">
                                 <p class="mb-0 text-black">{{$item->judul_barang}}</p>
                                 {{-- <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga, 2, ',', '.') }}</span> --}}
+                                <div class="harga_bawah" style="width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;">
                                     @if ($item->harga_diskon==null)
-                                        <span class="fw-bold" style="overflow-wrap: break-word; color: #19376D;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                                        <span class="fw-bold" style="color: #19376D;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
                                         <span class="fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
                                     @else
                                         <span class="fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
-                                        <span class="fw-bold" style="overflow-wrap: break-word; color: #19376D;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                                        <span class="fw-bold" style="color: #19376D;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
                                     @endif
+                                </div>
                             </div>
                         </div>
                     </a>
