@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
             $table->string('gambar_banner');
-            $table->string('url');
+            $table->foreignId('id_barang')->references('id')->on('barangs')->onDelete('cascade');
             $table->timestamps();
         });
     }

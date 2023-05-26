@@ -22,7 +22,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Gambar</th>
-                            <th>URL</th>
+                            <th>Barang</th>
                             {{-- @if(auth()->user()->level == "admin") --}}
                             <th>Aksi</th>
                             {{-- @endif --}}
@@ -34,7 +34,8 @@
                             <td>{{$item->id}}</td>
                             {{-- <td><img src="../storage/image/{{$item->gambar_barang}}" alt="" width="200px"></td> --}}
                             <td><img src="{{asset('storage/image/'.$item->gambar_banner)}}" alt="" width="75"></td>
-                            <td>{{$item->url}}</td>
+                            <td>{{$item->Barang->judul_barang}}</td>
+                            {{-- <td>{{$item->url}}</td> --}}
                             {{-- <td>{{$item->nama_petugas}}</td> --}}
                             {{-- @if(auth()->user()->level == "admin") --}}
                             <td class="d-flex gap-3 justify-content-center align-items-center">

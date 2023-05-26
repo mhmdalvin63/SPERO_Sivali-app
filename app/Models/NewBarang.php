@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Banner;
 use App\Models\NewKategoriBarang;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,5 +20,8 @@ class NewBarang extends Model
     }
     public function Favorit(){
         return $this->hasMany(Favorit::class);
+    }
+    public function Banner(){
+        return $this->hasMany(Banner::class);
     }
 }

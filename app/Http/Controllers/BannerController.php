@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\NewBarang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,7 +14,8 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $Banner = Banner::all();
+        $Banner = Banner::with('Barang')->get();
+
         return view('backEnd.Banner.index', compact('Banner'));
     }
 
@@ -23,7 +25,8 @@ class BannerController extends Controller
     public function create()
     {
         $Banner = Banner::all();
-        return view('backEnd.Banner.create', compact('Banner'));
+        $Barang = NewBarang::where('status','active')->get();
+        return view('backEnd.Banner.create', compact('Banner', 'Barang'));
     }
 
     /**
@@ -33,7 +36,7 @@ class BannerController extends Controller
     {
         $this->validate($request,[
             'gambar_banner' => 'required|image|mimes:jpeg,jpg,png,webp',
-            'url' => 'required',
+            'id_barang' => 'required',
         ]);
 
         $gambar_banner = $request->file('gambar_banner');
@@ -41,7 +44,7 @@ class BannerController extends Controller
 
         Banner::create([
             'gambar_banner' => $gambar_banner->hashName(),
-            'url' => $request->url,
+            'id_barang' => $request->id_barang,
         ]);
         // Banner::create($request->all());
         return redirect('/banner')->with('success','Data Pemesanan Berhasil Di Tambahkan');
@@ -59,10 +62,12 @@ class BannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Banner $Banner)
     {
-        $Banner = Banner::find($id);
-        return view('backEnd.Banner.edit', compact('Banner'));
+        $Barang = NewBarang::where('status','active')->get();
+        // $Banner = Banner::with('Barang')->findOrFail($id);
+        // $Banner->update($request->all());
+        return view('backEnd.Banner.edit', compact('Banner','Barang'));
     }
 
     /**
@@ -72,7 +77,7 @@ class BannerController extends Controller
     {
         $this->validate($request,[
             'gambar_banner' => '|image|mimes:jpeg,jpg,png,webp',
-            'url' => '',
+            'id_barang' => '',
         ]);
 
         $Banner = Banner::findOrfail($id);
@@ -85,11 +90,11 @@ class BannerController extends Controller
 
             $Banner->update([
                 'gambar_banner' => $gambar_banner->hashName(),
-                'url' => $request->url,
+                'id_barang' => $request->id_barang,
             ]);
         }else{
             $Banner->update([
-                'url' => $request->url,
+                'id_barang' => $request->id_barang,
             ]);
         }
         return redirect()->route('ban_index');

@@ -84,7 +84,7 @@ Route::middleware(['admin','auth:web'])->group(function(){
     // Route::get('Barang/show/{id}',[BannerController::class,'show'])->name('b_show');
     Route::get('banner/create',[BannerController::class,'create'])->name('ban_create');
     Route::post('banner/store',[BannerController::class,'store'])->name('ban_store');
-    Route::get('banner/edit/{id}',[BannerController::class,'edit'])->name('ban_edit');
+    Route::get('banner/edit/{Banner}',[BannerController::class,'edit'])->name('ban_edit');
     Route::put('banner/update/{id}',[BannerController::class,'update'])->name('ban_update');
     Route::delete('banner/delete/{id}',[BannerController::class,'destroy'])->name('ban_delete');
 });

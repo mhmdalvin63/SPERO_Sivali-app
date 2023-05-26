@@ -13,11 +13,19 @@
                         <label for="formFile" class="form-label">Pilih Gambar Banner</label>
                         <input class="form-control" type="file" id="formFile" name="gambar_banner">
                       </div>
-                    <div class="form-group mt-5">
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect2">Pilih Barang :</label>
+                        <select class="form-control form-control-lg" id="exampleFormControlSelect2" name="id_barang">
+                          @foreach ($Barang as $item)
+                          <option value="{{ $item->id}}">{{ $item->judul_barang }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    {{-- <div class="form-group mt-5">
                         <label for="exampleInputUsername1" class="fw-bold">Link URL :</label>
                         <input type="text" class="form-control" id="exampleInputUsername1"
                             placeholder="Masukkan Link URL..." name="url">
-                    </div>
+                    </div> --}}
                     {{-- <div class="form-group">
                         <label for="exampleInputUsername1">Password :</label>
                         <input type="text" class="form-control" id="exampleInputUsername1"
