@@ -68,6 +68,7 @@ Route::middleware(['admin','auth:web'])->group(function(){
     Route::post('barang/store',[BarangController::class,'store'])->name('b_store');
     Route::get('barang/edit/{id}',[BarangController::class,'edit'])->name('b_edit');
     Route::put('barang/update/{id}',[BarangController::class,'update'])->name('b_update');
+    // Route::get('banner/changeStatus/{id}',[BarangController::class,'changeStatus'])->name('ban_changeStatus');
     Route::delete('barang/delete/{id}',[BarangController::class,'destroy'])->name('b_delete');
 
     // D A T A   A R T I K E L 

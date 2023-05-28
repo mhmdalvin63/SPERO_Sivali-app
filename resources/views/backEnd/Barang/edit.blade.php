@@ -8,26 +8,31 @@
         <form action="{{ route('b_update', $barang->id) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PUT')
+
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupSelect01">Status :</label>
                 <select class="form-select" id="inputGroupSelect01" name="status" value="{{$barang->status}}">
-                  {{-- <option selected>Pilih Jenis...</option> --}}
+                <option selected>{{$barang->status}}</option> 
                   <option value="Active">Active</option>
                   <option value="Non Active">Non Active</option>
                 </select>
               </div>
+              
             <div class="form-group mt-5">
                 <label for="formFile" class="form-label">Pilih Gambar Barang</label>
                 <input class="form-control" type="file" id="formFile" name="gambar_barang" value="{{$barang->gambar_barang}}">
             </div>
+
             <div class="form-group">
                 <label for="exampleFormControlSelect2">Pilih Kategori :</label>
                 <select class="form-control form-control-lg" id="exampleFormControlSelect2" name="id_kategori" value="{{$barang->id_kategori}}">
+                  <option value="{{$barang->id_kategori}}" selected>{{$barang->KategoriBarang->kategori_barang}}</option>
                   @foreach ($kategoriBarang as $item)
                   <option value="{{ $item->id}}">{{ $item->kategori_barang}}</option>
                   @endforeach
                 </select>
               </div>
+
             <div class="form-group mt-5">
                 <label for="exampleInputUsername1" class="fw-bold">Judul Barang :</label>
                 <input type="text" class="form-control" id="exampleInputUsername1"
@@ -38,15 +43,17 @@
                 <input type="text" class="form-control" id="exampleInputUsername1"
                     placeholder="Masukkan Deskripsi Barang..." name="deskripsi" value="{{$barang->deskripsi}}">
             </div>
+
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupSelect01">Jenis Promosi :</label>
-                <select class="form-select" id="inputGroupSelect01" name="promosi" value="{{$barang->promosi}}">
-                  {{-- <option selected>Pilih Jenis...</option> --}}
-                  <option value="Baru">Baru</option>
-                  <option value="Terlaris">Terlaris</option>    
-                  <option value="Promo">Promo</option>
+                <select class="form-control form-control-lg" id="exampleFormControlSelect2" name="promosi" value="{{$barang->promosi}}">
+                  <option selected>{{$barang->promosi}}</option>
+                    <option value="Baru">Baru</option>
+                    <option value="Terlaris">Terlaris</option>    
+                    <option value="Promo">Promo</option>
                 </select>
               </div>
+
             <div class="form-group mt-5">
                 <label for="exampleInputUsername1" class="fw-bold">Harga Barang Asli :</label>
                 <input type="number" class="form-control" id="exampleInputUsername1"

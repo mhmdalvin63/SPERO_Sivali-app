@@ -12,15 +12,17 @@
                 <label for="formFile" class="form-label">Ubah Gambar Jika Ingin</label>
                 <input class="form-control mt-5" type="file" id="formFile" name="gambar_banner" value="{{ $Banner->gambar_banner}}">
               </div>
+
               <div class="form-group">
                 <label for="exampleFormControlSelect2">Pilih Barang :</label>
                 <select class="form-control form-control-lg" id="exampleFormControlSelect2" name="id_barang" value="{{$Banner->id_barang}}">
-                  <option selected>{{$Banner->id_barang}}</option>
+                  <option selected>{{$Banner->Barang->judul_barang}}</option>
                   @foreach ($Barang as $item)
                   <option value="{{ $item->id}}">{{ $item->judul_barang }}</option>
                   @endforeach
                 </select>
               </div>
+              
               {{-- <div class="form-group mt-5">
                 <label for="exampleInputUsername1">URL :</label>
                 <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Masukkan URL..." name="url" value="{{ $Banner->url }}" >

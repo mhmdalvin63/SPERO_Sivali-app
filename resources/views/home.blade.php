@@ -12,10 +12,9 @@
                     <div class="carousel-inner">
                         <div class="slider">
                             @foreach ($Banner as $key => $item)
-                            <a href="{{asset($item->url)}}" target="_blank">
+                            <a href="{{ route('detail_barang', $item->id_barang)}}" target="_blank">
                                 <div class="carousel-item {{ $key == 0 ? 'active' : ''}}" id="carousel_img">
-                                    <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_banner)}}"
-                                        alt="">
+                                    <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_banner)}}" alt="">
                                 </div>
                             </a>
                             @endforeach
@@ -55,15 +54,17 @@
     <h3 class="mb-5 text-center fw-bold">Kategori Barang</h3>
     <div class="k_b d-flex justify-content-center">
         @foreach ($kategoriBarang as $item)
-        <div class="logo">
-            <div class="logo__img">
-                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt=""
-                    width="50">
+        <a href="{{ route('katalogFilter', $item->id)}}#list_katalog">
+            <div class="logo">
+                <div class="logo__img">
+                    <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt=""
+                        width="50">
+                </div>
+                <div class="desc_logo_img">
+                    <p class="mt-3 text-center">{{$item->kategori_barang}}</p>
+                </div>
             </div>
-            <div class="desc_logo_img">
-                <p class="mt-3 text-center">{{$item->kategori_barang}}</p>
-            </div>
-        </div>
+        </a>
         @endforeach
     </div>
 </div>
@@ -178,45 +179,45 @@
 <div class="container" style="height: max-content;
         margin-top: 12.5rem;">
     <div class="grid-container">
-        <div class="grid-item item1 mt-3 la__image">
+        <a href="/artikel" class="grid-item item1 mt-3 la__image">
             <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt="">
             <div class="overlay">
                 <p class="mb-1 fw-bold">SAMPAI JUMPA DI TOKO</p>
                 <p>Sebelum berkunjung, lihat halaman Toko dan Pick-up Point SIVALI untuk mengetahui informasi seputar
                     penawaran, event dan lainnya.</p>
             </div>
-        </div>
-        <div class="grid-item item2 mt-3 la__image">
+        </a>
+        <a href="/artikel" class="grid-item item2 mt-3 la__image">
             <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
             <div class="overlay">
                 <p class="mb-1">Barang dengan kualitas Terbaik</p>
             </div>
-        </div>
-        <div class="grid-item item3 mt-3 la__image">
+        </a>
+        <a href="/artikel" class="grid-item item3 mt-3 la__image">
             <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
             <div class="overlay">
                 <p class="mb-1">Temukan <br> barang - barang lokal buatan <br> Kota Jepara</p>
             </div>
-        </div>
-        <div class="grid-item item4 mt-3 la__image">
+        </a>
+        <a href="/artikel" class="grid-item item4 mt-3 la__image">
             <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
             <div class="overlay">
                 <p class="mb-1 fw-bold">Semua Jenis Peralatan Dapur</p>
             </div>
-        </div>
-        <div class="grid-item item5 mt-3 la__image">
+        </a>
+        <a href="/artikel" class="grid-item item5 mt-3 la__image">
             <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
             <div class="overlay">
                 <p class="mb-1 fw-bold">Tipe Dapur Impian Anda Dirumah</p>
                 <p>Temukan semua barangnya hanya di Sivali Furniture</p>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     $('.slider').each(function () {
         var $this = $(this);
         var $group = $this.find('.slide_group');
@@ -307,5 +308,5 @@
         advance();
     });
 
-</script>
+</script> --}}
 @endsection
