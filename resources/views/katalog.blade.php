@@ -113,7 +113,7 @@
 
         <div class="row mt-5" id="list_barang">
             @foreach ($barang as $item) 
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card border-0" id="lb_barang">
                         @if ($item->promosi=='Promo')
                             <div class="label" style="background-color: red;">
@@ -130,7 +130,7 @@
                         @endif
                         <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;"> 
                             <div>
-                                <div class="card__img d-flex justify-content-center align-items-center py-5">
+                                <div class="card__img d-flex justify-content-center align-items-center">
                                     <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="">
                                 </div>
                                 <div class="card__title">
@@ -252,20 +252,20 @@
     </div>
 
 
-    <div class="container mt-5">
-        <div class="row mb-5">
+    <div class="container mt-5" id="bottom_lb">
+        <div class="row">
             <div class="status col d-flex gap-3 align-items-center fs-5">
                 <a href="" class="text-black">LAKU <span class="fw-bold">TERJUAL</span></a>
                 <div class="hl"></div>
                 <a href="" class="fw-bold text-black">READY STOK</a>
             </div>
         </div>
-        <div class="row mt-5 px-3 d-flex justify-content-between justify-content-xl-start">
-           @foreach ($barang as $item)
+        <div class="row px-3 d-flex justify-content-between justify-content-xl-start">
+           @foreach ($allbarang as $item)
                 <div class="col-xl-4 col-5 col-md-6 mt-5">
                     <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;"> 
                         <div class="row">
-                            <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" style="background-color: rgb(241, 241, 241);height: 12.5rem;">
+                            <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" id="pbi">
                                 {{-- <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" width="75"> --}}
                                 <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="" style="width: 100%;height: 100%; object-fit: contain;">
                             </div>

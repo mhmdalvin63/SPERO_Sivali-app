@@ -86,8 +86,8 @@
 }
 #lb_barang .label{
     position: absolute;
-    right: -15%;
-    top: 5%;
+    right: -2.4rem;
+    top: 1.25rem;
     width: max-content;
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -98,28 +98,42 @@
     align-items: center;
     padding: 0.1rem 2.5rem;
 }
-@media (max-width: 992px) { 
-    #lb_barang .label{
-        right: -25%;
-    }
-}
-@media (max-width: 576px) { 
-    #lb_barang .label{
-        right: -2.4rem;
-    }
-}
-@media (max-width: 390px) { 
-   .card__img{
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-   }
-}
 .label p{
     font-size: .75rem;
     width: 60px;
     color: white;
     font-weight: bolder;
     text-align: center;
+}
+@media (max-width: 500px) { 
+    #lb_barang .label{
+        right: -1.8rem;  
+        top: 1rem;
+        padding: 0.1rem 1.5rem;
+    }
+    .label p{
+        font-size: .5rem;
+        width: 60px;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+    }
+}
+@media (min-width: 500px) and (max-width: 992px) { 
+    /* #lb_barang .label{
+        right: -25%;
+    } */
+}
+/* @media (max-width: 576px) { 
+    #lb_barang .label{
+        right: -2.4rem;
+    }
+} */
+@media (max-width: 390px) { 
+   .card__img{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+   }
 }
 
 .card a{
@@ -164,6 +178,21 @@
 .card__img{
     width: 100%;
     height: 15rem;
+}
+@media only screen and (max-width: 576px){
+    .card__img{
+        height: 10rem;
+    }
+}
+@media only screen and (max-width: 400px){
+    .card__img{
+        height: 7.5rem;
+    }
+}
+@media only screen and (max-width: 300px){
+    .card__img{
+        height: 5rem;
+    }
 }
 .card__img img{
     display: block;
@@ -416,6 +445,25 @@ a.control_next {
 
 .status a{
     text-decoration: none;
+}   
+@media (max-width: 768px) {
+    .status a{
+        font-size: 1rem;
+    } 
+}
+#pbi{
+    background-color: rgb(241, 241, 241);
+    height: 12.5rem;
+}
+@media (max-width: 576px) {
+    #pbi{
+        height: 10rem;
+    }
+}
+@media (max-width: 425px) {
+    #pbi{
+        height: 8rem;
+    }
 }
 
 .gh_left{ grid-area: ghl; }
