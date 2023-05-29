@@ -2,7 +2,7 @@
     footer{
         margin-top: 2.5rem;
         background-color: #19376D;
-        padding: 5rem 0 2rem 0;
+        padding: 3rem 0 2rem 0;
     }
     .text-justify{
         text-align: justify;
@@ -11,23 +11,37 @@
         width: max-content;
     }
     hr {
-        margin: 2rem 0 .5rem 0;
+        margin: 1rem 0 1rem 0;
         color: inherit;
         border: 0;
         border-top: 1px solid;
         opacity: .25;
     }
+    h2{
+        font-size: calc(20px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+    p{
+        font-size: calc(6px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+    @media (max-width: 768px) {
+        .par-img img{
+            width: 50%;
+        }
+        p{
+            font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+    }
 </style>
 <footer class="text-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
+            <div class="par-img col-md-2 d-flex justify-content-center align-items-center">
                 <img src="{{asset('../img/logo-sivali-putih.png')}}" width="100%" alt="">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <h2>SIVALI FURNITURE</h2>
                 <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos nulla tenetur commodi! Dolor, eligendi fuga.</p>
-                <div class="sosmed d-flex gap-4 mt-3 mt-lg-4 mb-4 mb-lg-0">
+                <div class="sosmed d-flex gap-4 mt-3 mt-lg-4 mb-4 mb-lg-0 flex-wrap">
                     <i class="fa-brands fa-facebook-f fa-lg"></i>
                     <i class="fa-brands fa-twitter fa-lg"></i>
                     <i class="fa-brands fa-instagram fa-lg"></i>
@@ -36,14 +50,14 @@
                     <i class="fa-solid fa-circle-play fa-lg"></i>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mt-3">
                 <h2>MENU</h2>
                 <p class="mb-1">Home</p>
                 <p class="mb-1">Artikel</p>
                 <p class="mb-1">Katalog</p>
                 <p class="mb-1">Kontak Kami</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <h2>ALAMAT</h2>
                 <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, delectus! Doloremque molestiae commodi quae rerum.</p>
             </div>
