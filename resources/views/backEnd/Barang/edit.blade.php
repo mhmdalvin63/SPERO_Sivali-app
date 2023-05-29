@@ -12,9 +12,8 @@
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupSelect01">Status :</label>
                 <select class="form-select" id="inputGroupSelect01" name="status" value="{{$barang->status}}">
-                <option selected>{{$barang->status}}</option> 
-                  <option value="Active">Active</option>
-                  <option value="Non Active">Non Active</option>
+                <option @if($barang->status == 'Active')@selected(true)@endif value="Active">Active</option>
+                <option @if($barang->status == 'Non Active')@selected(true)@endif value="Non Active">Non Active</option>
                 </select>
               </div>
               
@@ -47,10 +46,9 @@
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupSelect01">Jenis Promosi :</label>
                 <select class="form-control form-control-lg" id="exampleFormControlSelect2" name="promosi" value="{{$barang->promosi}}">
-                  <option selected>{{$barang->promosi}}</option>
-                    <option value="Baru">Baru</option>
-                    <option value="Terlaris">Terlaris</option>    
-                    <option value="Promo">Promo</option>
+                <option @if($barang->promosi == 'Baru')@selected(true)@endif value="Baru">Baru</option>
+                <option @if($barang->promosi == 'Terlaris')@selected(true)@endif value="Terlaris">Terlaris</option>
+                <option @if($barang->promosi == 'Promo')@selected(true)@endif value="Promo">Promo</option>
                 </select>
               </div>
 
