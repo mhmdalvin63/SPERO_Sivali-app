@@ -52,7 +52,7 @@ class FrontEndBarangController extends Controller
         return view("katalog",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','allbarang'));
     }
     public function dataKategoriBarangKatalogId($id){
-        $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->where('status','active')->get();
+        $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->where('status','active')->paginate(4);
         
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();

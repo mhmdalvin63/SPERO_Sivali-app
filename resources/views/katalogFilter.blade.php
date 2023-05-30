@@ -104,16 +104,12 @@
                 @foreach ($kategoriBarang as $item) 
                     <a class="btn menu_btn" href="{{ route('katalogFilter', $item->id)}}#list_katalog" role="button">{{$item->kategori_barang}}</a>
                 @endforeach
-                {{-- <a class="btn menu_btn" href="{{ url('/katalog') }}" role="button">Semua</a>
-                @foreach ($barang as $item) 
-                    <a class="btn menu_btn" href="{{ route('filter_barang',$item->KategoriBarang->id)}}" role="button">{{$item->KategoriBarang->kategori_barang}}</a>
-                @endforeach --}}
             </div>
         </div>
 
         <div class="row mt-5" id="list_barang">
             @foreach ($KategoriBarangfilter as $item) 
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-sm-6 mt-5">
                 <div class="card border-0" id="lb_barang">
                         @if ($item->promosi=='Promo')
                             <div class="label" style="background-color: red;">
@@ -130,41 +126,58 @@
                         @endif
                         <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;"> 
                             <div>
-                                <div class="card__img d-flex justify-content-center align-items-center py-5">
+                                <div class="card__img d-flex justify-content-center align-items-center">
                                     <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt="">
                                 </div>
                                 <div class="card__title">
-                                    <p class="fs-5 mb-1 mt-3 text-black">{{$item->judul_barang}}</p>
+                                    <p class="mb-1 mt-3 text-black" >{{$item->judul_barang}}</p>
+                                    <div class="harga_bawah" style="width: 100%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;">
                                     @if ($item->harga_diskon==null)
-                                    <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                                    <p class=" mb-1 fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                        <p class="mb-1 fw-bold" style="width: 100%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                        <p class=" mb-1 fw-bold" style="font-size: .75rem; visibility: hidden;
+                                        ">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
                                     @else
-                                    <p class="mb-1 fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                                    <p class="fs-5 mb-1 fw-bold">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                        <p class="mb-1 fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;
+                                        width: 100%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                        <p class="mb-1 fw-bold" style="width: 100%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
                                     @endif
+                                    </div>
                                 </div>
                             </div>
                         </a>
                         
-                    <div class="hovering d-flex justify-content-between">
-                        <div class="hovering__left d-flex align-items-center justify-content-center gap-2 px-3 py-3" style="width: 50%;">
+                    <div class="hovering d-flex justify-content-around">
+                        <div class="hovering__left d-flex align-items-center justify-content-center px-3 py-3">
                             <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
                         </div>
                             {{-- <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
                                 <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
                             </div> --}}
-                        <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 50%;">
-                            <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                        </div>
+                            <div class="hovering__right d-flex justify-content-center align-items-center px-3 py-3">
+                                <a href="{{ route('favorit_barang', $item->id)}}#list_barang">
+                                <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
+                            </a>
+                            </div>
                     </div>
                 </div>
             </div>
             @endforeach
+            <div class="d-flex justify-content-center">
+                {{ $KategoriBarangfilter->links('vendor.pagination.bootstrap-5') }}
+            </div>
 
             {{-- {{ $barang->links('part.paginate_katalog') }} --}}
-            {{-- <div class="pagination2" style="display: grid; place-items: center;"> --}}
-                {{-- {{ $barang->links() }}   --}}
-            {{-- </div> --}}
+            {{-- <div class="pagination2" style="display: grid; place-items: center;">
+                {{ $barang->links() }}  
+            </div> --}}
             {{-- <nav aria-label="...">
                 <ul class="pagination pagination-sm">
                   <li class="page-item active" aria-current="page">
@@ -186,7 +199,7 @@
                     <li> <a href="#">6</a></li>
                     <li> <a href="#">7</a></li>
                     <li> <a href="#">8</a></li>
-                    <li> <a href="#">9</a></li>
+                    <li> <a href="#">9</a></li> 
                     <li><a href="#" class="next">&raquo;</a></li>
                 </ul>
             </div> --}}
