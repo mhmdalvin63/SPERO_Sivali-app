@@ -18,7 +18,7 @@
                     placeholder="Masukkan Judul Artikel..." name="judul_artikel" value="{{ $Artikel->judul_artikel}}">
             </div>
             <div class="form-group mt-5">
-                <label for="exampleInputUsername1" class="fw-bold">Subudul Artikel :</label>
+                <label for="exampleInputUsername1" class="fw-bold">Sub Judul Artikel :</label>
                 <input type="text" class="form-control" id="exampleInputUsername1"
                     placeholder="Masukkan Subjudul Artikel..." name="subjudul_artikel" value="{{ $Artikel->subjudul_artikel}}">
             </div>

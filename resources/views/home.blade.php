@@ -92,18 +92,18 @@
     </div>
 </div>
 
-<div id="list_barang" class="container" style="margin-top: 7rem;height: max-content;
+<section id="list_barang" class="container" style="margin-top: 7rem;height: max-content;
         transform: translateY(9rem);">
     <h1 class="text-center fw-bold">Katalog Kami</h1>
     <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
-        <a href="{{ URL::current()}}#list_barang" class="btn menu_btn" role="button">Semua</a>
-        <a href="{{ URL::current()."?sort=terbaru"}}#list_barang" class="btn menu_btn" role="button">Terbaru</a>
-        <a href="{{ URL::current()."?sort=terlaris"}}#list_barang" class="btn menu_btn" role="button">Terlaris</a>
-        <a href="{{ URL::current()."?sort=termurah"}}#list_barang" class="btn menu_btn" role="button">Termurah</a>
-        <a href="{{ URL::current()."?sort=termahal"}}#list_barang" class="btn menu_btn" role="button">Termahal</a>
-        <a href="{{ URL::current()."?sort=promo"}}#list_barang" class="btn menu_btn" role="button">Promo</a>
+        <a href="{{ URL::current()}}#list_barang" class="btn menu_btn {{ (!isset($_GET['sort'])) ? 'active' : '' }}" role="button">Semua</a>
+        <a href="{{ URL::current()."?sort=terbaru"}}#list_barang" class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'terbaru') ? 'active' : '' }}" role="button">Terbaru</a>
+        <a href="{{ URL::current()."?sort=terlaris"}}#list_barang" class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'terlaris') ? 'active' : '' }}" role="button">Terlaris</a>
+        <a href="{{ URL::current()."?sort=termurah"}}#list_barang" class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'termurah') ? 'active' : '' }}" role="button">Termurah</a>
+        <a href="{{ URL::current()."?sort=termahal"}}#list_barang" class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'termahal') ? 'active' : '' }}" role="button">Termahal</a>
+        <a href="{{ URL::current()."?sort=promo"}}#list_barang" class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'promo') ? 'active' : '' }}" role="button">Promo</a>
     </div>
-    <div class="row mt-5"">
+    <div class="row mt-5">
             @foreach ($barang->take(4) as $item)
             <div class=" col-md-4 col-lg-3 col-12 col-sm-6 mt-4" id="home_list_barang">
         <a href="{{ route('detail_barang', $item->id)}}">
@@ -172,13 +172,13 @@
         </a>
     </div>
     @endforeach
-</div>
-<a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a>
-</div>
+    </div>
+    <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a>
+</section>
 
-<div class="container" style="height: max-content;
+<section class="container" style="height: max-content;
         margin-top: 12.5rem;">
-    <div class="grid-container">
+    <div class="grid-container href-artikel">
         <a href="/artikel" class="grid-item item1 mt-3 la__image">
             <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt="">
             <div class="overlay">
@@ -213,7 +213,7 @@
             </div>
         </a>
     </div>
-</div>
+</section>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>

@@ -35,7 +35,7 @@
                             </div>
                             <div class="" id="desc_barang">
                                 <div class="judul__barang">
-                                    <h3 class="fw-light">{{$item->judul_barang}}</h3>
+                                    <h3 class="fw-light"  style="text-decoration: none; font-weight:bold">{{$item->judul_barang}}</h3>
                                     {{-- <h3 class="fw-light">KURSI <span class="fw-bold">NYAMAN</span></h3> --}}
                                 </div>
                                 <p class="tj">{{$item->deskripsi}}</p>
@@ -50,8 +50,7 @@
                                 </h2>
                             <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">    
                                 <div class="sd fs-5 d-flex gap-2">
-                                    <P class="text-decoration-none text-black">Lihat</P>
-                                    <P class="text-decoration-none text-black fw-bold">Detail</P>
+                                    <P class="text-decoration-none text-black">Lihat <span class="fw-bold">Detail</span></P>
                                 </div>
                             </a>
                             </div>
@@ -102,7 +101,7 @@
             <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
                 <a class="btn menu_btn" href="{{ URL::to('katalog') }}#list_katalog"  role="button">Semua</a>
                 @foreach ($kategoriBarang as $item) 
-                    <a class="btn menu_btn" href="{{ route('katalogFilter', $item->id)}}#list_katalog" role="button">{{$item->kategori_barang}}</a>
+                    <a class="btn menu_btn {{ (request()->is('katalog/'.$item->id)) ? 'active' : '' }}" href="{{ route('katalogFilter', $item->id)}}#list_katalog" role="button">{{$item->kategori_barang}}</a>
                 @endforeach
             </div>
         </div>
