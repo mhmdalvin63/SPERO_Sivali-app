@@ -101,13 +101,11 @@
             </div>
             <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
                 <a class="btn menu_btn" href="{{ URL::current() }}#list_katalog" role="button">Semua</a>
+                {{-- <a class="btn menu_btn" href="" onclick="routeToKatalog()" role="button">Semua</a> --}}
                 @foreach ($kategoriBarang as $item) 
                     <a class="btn menu_btn" href="{{ route('katalogFilter', $item->id)}}#list_katalog" role="button">{{$item->kategori_barang}}</a>
+                    {{-- <a class="btn menu_btn" href="" onclick="routeToKatalogFilter()" role="button">{{$item->kategori_barang}}</a> --}}
                 @endforeach
-                {{-- <a class="btn menu_btn" href="{{ url('/katalog') }}" role="button">Semua</a>
-                @foreach ($barang as $item) 
-                    <a class="btn menu_btn" href="{{ route('filter_barang',$item->KategoriBarang->id)}}" role="button">{{$item->KategoriBarang->kategori_barang}}</a>
-                @endforeach --}}
             </div>
         </div>
 
@@ -294,6 +292,51 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script type="text/javascript">
 
+    function routeToKatalogFilter(){
+        // var val = data;
+        // $.ajax({
+        // type: "POST",
+        // url: "get",
+        // data: { id : val },
+        //     success:function(id)
+        //     {
+        //         $("#list_barang").html(id);
+        //     }
+        // });
+
+        event.preventDefault();
+        const CSRF_TOKEN = $('meta[name="csrf-token"]').attr('list_barang');
+        $.ajax({
+            url:"/katalog/{id}",
+            type:"get",
+            data:{
+                CSRF_TOKEN
+            },
+            success:function(data){
+                // console.log(data)
+                $('#list_barang').load('#list_barang')
+            }
+        })
+    }
+
+    function routeToKatalog(){
+        event.preventDefault();
+        const CSRF_TOKEN = $('meta[name="csrf-token"]').attr('list_barang');
+
+        $.ajax({
+
+            url:"/katalog",
+            type:"get",
+            data:{
+                CSRF_TOKEN
+            },
+            success:function(data){
+                // console.log(data)
+                $('#list_barang').html(data)
+            }
+        })
+    }
+
 
     // $(function() {
     //    $.ajax({
@@ -337,7 +380,7 @@
     //      }
     //      })
     // });
-</script>
+    </script>
 
     {{-- <script type="text/javascript">
         jQuery(document).ready(function ($) {
