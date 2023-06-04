@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-4 mt-3">
                 <h2>SIVALI FURNITURE</h2>
-                <p class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos nulla tenetur commodi! Dolor, eligendi fuga.</p>
+                <p class="text-justify">Sivali Fitur adalah sebuah wadah untuk anda yang sedang mencari furniture terbaik.</p>
                 <div class="sosmed d-flex gap-4 mt-3 mt-lg-4 mb-4 mb-lg-0 flex-wrap">
                     <i class="fa-brands fa-facebook-f fa-lg"></i>
                     <i class="fa-brands fa-twitter fa-lg"></i>
@@ -59,13 +59,13 @@
             </div>
             <div class="col-md-4 mt-3">
                 <h2>ALAMAT</h2>
-                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, delectus! Doloremque molestiae commodi quae rerum.</p>
+                <p class="text-justify">Jalan bukit sikumbang, no.103, rangkapan jaya baru, pancoran mas, depok.</p>
             </div>
         </div>
         <hr class="bg-white border-2 border-top border-white">
         <div class="bottom_footer d-flex justify-content-between">
             <p>@2020 Sivalin Furniture Jepara, All Rights Reserved</p>
-            <p>Terms & Condition - Privacy - Cookies</p>
+            <p><a class="text-white" href="#">Terms & Condition</a> - <a class="text-white" href="#">Privacy</a> - <a class="text-white" href="#">Cookies</a></p>
         </div>
     </div>
 </footer>

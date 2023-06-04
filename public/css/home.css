@@ -266,8 +266,8 @@
     background: #19376D;
     color: white;
 }
-.menu .menu_btn:active{
-    border: 1px solid rgb(187, 186, 186);
+.menu .menu_btn:active, .menu .menu_btn.active{
+    border: 1px solid rgb(187, 186, 186) !important;
     border-radius: 20px;
     background: #19376D;
     color: white;
@@ -293,6 +293,15 @@
 .rating .checked{
     color: #ffc800;
 }
+
+.href-artikel a{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.href-artikel a:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
 /* RESPONSIVE KATALOG KAMI */
 @media only screen and (max-width: 600px) {
     .top_product img {

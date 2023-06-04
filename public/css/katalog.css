@@ -81,6 +81,14 @@
     color: white;
 }
 
+.menu .menu_btn.active{
+    border: 1px solid rgb(187, 186, 186);
+    border-radius: 20px;
+    background: #19376D;
+    font-weight: bold;
+    color: white;
+}
+
 #lb_barang{
     position: relative;
 }
