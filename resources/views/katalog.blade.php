@@ -129,9 +129,7 @@
                                 </div>
                                 <div class="card__title">
                                     <p class="mb-1 mt-3 text-black" >{{$item->judul_barang}}</p>
-                                    <div class="harga_bawah" style="width: 100%;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;">
+                                    <div class="harga_bawah" style="width: 100%; overflow: hidden; text-overflow: ellipsis;">
                                     @if ($item->harga_diskon==null)
                                         <p class="mb-1 fw-bold" style="width: 100%;
                                         overflow: hidden;
@@ -147,6 +145,10 @@
                                         overflow: hidden;
                                         text-overflow: ellipsis;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
                                     @endif
+                                    <div class="stok_terjual d-flex justify-content-between">
+                                        <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
+                                        <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -276,6 +278,10 @@
                                         <span class="fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
                                         <span class="fw-bold" style="color: #19376D;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
                                     @endif
+                                    <div class="stok_terjual d-flex justify-content-between">
+                                        <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
+                                        <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

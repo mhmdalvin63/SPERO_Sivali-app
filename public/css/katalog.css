@@ -172,6 +172,10 @@
 .card__title .fw-bold{
     color: var(--blue-color);
 }
+.stok_terjual p{
+    font-size: .75rem;
+    font-weight: bolder;
+}
 .hovering{
     background-color: #19376D;
     border-radius: 0 0 10px 10px;
