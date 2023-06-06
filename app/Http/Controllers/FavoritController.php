@@ -14,7 +14,7 @@ class FavoritController extends Controller
      */
     public function index()
     {
-        $Favorit = Favorit::orderBy('created_at','desc')->distinct()->get();
+        $Favorit = Favorit::with('Barang')->orderBy('created_at','desc')->distinct()->get();
         $FavoritCount = Favorit::count();
         
         // $this->data['Favorit'] = $Favorit;
