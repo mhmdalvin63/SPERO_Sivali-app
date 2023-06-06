@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\BannerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\FavoritController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SigninController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\FavoritController;
 use App\Http\Controllers\KategoriBarangController;
+use App\Http\Controllers\SocialShareButtonController;
 use App\Http\Controllers\Front\FrontEndBarangController;
 use App\Http\Controllers\Front\DataBarangFrontController;
 
@@ -24,6 +25,8 @@ use App\Http\Controllers\Front\DataBarangFrontController;
 */
 
 Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
+
+Route::get('/social-media-share', [SocialShareButtonController::class,'ShareWidget']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');

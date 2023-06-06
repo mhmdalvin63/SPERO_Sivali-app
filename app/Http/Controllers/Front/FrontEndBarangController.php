@@ -18,20 +18,21 @@ class FrontEndBarangController extends Controller
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::latest()->where('status','Active')->get();
         $Banner = Banner::all();
+        $Artikel = Artikel::orderBy('id', 'desc')->get();
         
         if($request->sort == 'termurah') {
-            $barang = NewBarang::orderby('harga_asli','asc')->where('status','Active')  ->get();
+            $barang = NewBarang::orderby('harga_asli','asc')->where('status','Active')->get();
         }elseif($request->sort == 'termahal'){
-            $barang = NewBarang::orderby('harga_asli','desc')->where('status','Active') ->get();
+            $barang = NewBarang::orderby('harga_asli','desc')->where('status','Active')->get();
         }elseif($request->sort == 'terbaru'){
-            $barang = NewBarang::orderby('created_at','desc')->where('status','Active') ->get();
+            $barang = NewBarang::orderby('created_at','desc')->where('status','Active')->get();
         }elseif($request->sort == 'terlaris'){
-            $barang = NewBarang::orderby('terjual','desc')->where('status','Active')    ->get();
+            $barang = NewBarang::orderby('terjual','desc')->where('status','Active')->get();
         }elseif($request->sort == 'promo'){
-            $barang = NewBarang::where('promosi','promo')->where('status','Active') ->get();
+            $barang = NewBarang::where('promosi','promo')->where('status','Active')->get();
         }
 
-        return view("home",compact('kategoriBarang','barang','Banner'));
+        return view("home",compact('kategoriBarang','barang','Banner','Artikel'));
     }
 
 
@@ -52,6 +53,7 @@ class FrontEndBarangController extends Controller
         return view("katalog",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','allbarang'));
     }
     public function dataKategoriBarangKatalogId($id){
+        
         $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->where('status','active')->paginate(4);
         
         $kategoriBarang = NewKategoriBarang::first()->get();
@@ -80,7 +82,14 @@ class FrontEndBarangController extends Controller
 
     public function detailBarang($id){
         $barang = NewBarang::find($id);
-        return view("detailBarang",compact('barang'));
+        $shareComponent = \Share::currentPage()
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()        
+        ->reddit();
+        return view("detailBarang",compact('barang','shareComponent'));
     }
 
 
