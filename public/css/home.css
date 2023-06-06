@@ -200,6 +200,7 @@
 .la__image img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 .item1{ grid-area: w-1; }
 .item2{ grid-area: w-2; }

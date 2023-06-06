@@ -97,21 +97,21 @@
         transform: translateY(9rem);">
     <h1 class="text-center fw-bold">Katalog Kami</h1>
     <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
-        <a href="{{ URL::current()}}#list_barang" class="btn menu_btn {{ (!isset($_GET['sort'])) ? 'active' : '' }}"
+        <a id="lb_filter" href="{{ URL::current()}}#list_barang" class="btn menu_btn {{ (!isset($_GET['sort'])) ? 'active' : '' }}"
             role="button">Semua</a>
-        <a href="{{ URL::current()."?sort=terbaru"}}#list_barang"
+        <a id="lb_filter" href="{{ URL::current()."?sort=terbaru"}}#list_barang"
             class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'terbaru') ? 'active' : '' }}"
             role="button">Terbaru</a>
-        <a href="{{ URL::current()."?sort=terlaris"}}#list_barang"
+        <a id="lb_filter" href="{{ URL::current()."?sort=terlaris"}}#list_barang"
             class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'terlaris') ? 'active' : '' }}"
             role="button">Terlaris</a>
-        <a href="{{ URL::current()."?sort=termurah"}}#list_barang"
+        <a id="lb_filter" href="{{ URL::current()."?sort=termurah"}}#list_barang"
             class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'termurah') ? 'active' : '' }}"
             role="button">Termurah</a>
-        <a href="{{ URL::current()."?sort=termahal"}}#list_barang"
+        <a id="lb_filter" href="{{ URL::current()."?sort=termahal"}}#list_barang"
             class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'termahal') ? 'active' : '' }}"
             role="button">Termahal</a>
-        <a href="{{ URL::current()."?sort=promo"}}#list_barang"
+        <a id="lb_filter" href="{{ URL::current()."?sort=promo"}}#list_barang"
             class="btn menu_btn {{ ((isset($_GET['sort']) ? $_GET['sort'] : '') == 'promo') ? 'active' : '' }}"
             role="button">Promo</a>
     </div>
@@ -193,43 +193,41 @@
 </section>
 
 <section class="container" style="height: max-content; margin-top: 12.5rem;">
-    <div class="grid-container href-artikel">
-        @foreach ($Artikel as $item) 
-            <a href="{{ route('detail_artikel', $item->id)}}" class="grid-item item1 mt-3 la__image">
+    <div class="grid-container href-artikel"> 
+            <a href="{{ route('detail_artikel', $Artikel[0]->id)}}" class="grid-item item1 mt-3 la__image">
                 {{-- <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt=""> --}}
-                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt="">
+                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[0]->gambar_artikel)}}" alt="">
                 <div class="overlay">
-                    <p class="mb-1 fw-bold">{{ $item->judul_artikel }}</p>
-                    <p>{{ $item->subjudul_artikel }}</p>
+                    <p class="mb-1 fw-bold">{{ $Artikel[0]->judul_artikel }}</p>
+                    <p>{{ $Artikel[0]->subjudul_artikel }}</p>
                 </div>
             </a>
-            <a href="{{ route('detail_artikel', $item->id)}}" class="grid-item item2 mt-3 la__image">
-                {{-- <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt=""> --}}
-                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt="">
+            <a href="{{ route('detail_artikel', $Artikel[1]->id)}}" class="grid-item item2 mt-3 la__image">
+                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[1]->gambar_artikel)}}" alt="">
+                {{-- <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt=""> --}}
                 <div class="overlay">
-                    <p class="mb-1">Barang dengan kualitas Terbaik</p>
+                    <p class="mb-1">{{ $Artikel[1]->subjudul_artikel }}</p>
                 </div>
             </a>
-        @endforeach
-        <a href="/artikel" class="grid-item item3 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1">Temukan <br> barang - barang lokal buatan <br> Kota Jepara</p>
-            </div>
-        </a>
-        <a href="/artikel" class="grid-item item4 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1 fw-bold">Semua Jenis Peralatan Dapur</p>
-            </div>
-        </a>
-        <a href="/artikel" class="grid-item item5 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1 fw-bold">Tipe Dapur Impian Anda Dirumah</p>
-                <p>Temukan semua barangnya hanya di Sivali Furniture</p>
-            </div>
-        </a>
+            <a href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item3 mt-3 la__image">
+                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[2]->gambar_artikel)}}" alt="">
+                <div class="overlay">
+                    <p class="mb-1">{{ $Artikel[2]->subjudul_artikel }}</p>
+                </div>
+            </a>
+            <a href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item4 mt-3 la__image">
+                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[3]->gambar_artikel)}}" alt="">
+                <div class="overlay">
+                    <p class="mb-1 fw-bold">{{ $Artikel[3]->subjudul_artikel }}</p>
+                </div>
+            </a>
+            <a href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item5 mt-3 la__image">
+                <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[4]->gambar_artikel)}}" alt="">
+                <div class="overlay">
+                    <p class="mb-1 fw-bold">{{ $Artikel[4]->judul_artikel }}</p>
+                    <p>{{ $Artikel[4]->subjudul_artikel }}</p>
+                </div>
+            </a>
     </div>
 </section>
 
@@ -272,98 +270,15 @@
     </div>
 </section> --}}
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-{{-- <script type="text/javascript">
-    $('.slider').each(function () {
-        var $this = $(this);
-        var $group = $this.find('.slide_group');
-        var $slides = $this.find('.slide');
-        var bulletArray = [];
-        var currentIndex = 0;
-        var timeout;
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-        function move(newIndex) {
-            var animateLeft, slideLeft;
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script>
+$(#lb_filter).on("click", function(){
+$('#list-barang').load(' #list-barang')
+alert('Reloaded')
+});
+</script>
 
-            advance();
-
-            if ($group.is(':animated') || currentIndex === newIndex) {
-                return;
-            }
-
-            bulletArray[currentIndex].removeClass('active');
-            bulletArray[newIndex].addClass('active');
-
-            if (newIndex > currentIndex) {
-                slideLeft = '100%';
-                animateLeft = '-100%';
-            } else {
-                slideLeft = '-100%';
-                animateLeft = '100%';
-            }
-
-            $slides.eq(newIndex).css({
-                display: 'block',
-                left: slideLeft
-            });
-            $group.animate({
-                left: animateLeft
-            }, function () {
-                $slides.eq(currentIndex).css({
-                    display: 'none'
-                });
-                $slides.eq(newIndex).css({
-                    left: 0
-                });
-                $group.css({
-                    left: 0
-                });
-                currentIndex = newIndex;
-            });
-        }
-
-        function advance() {
-            clearTimeout(timeout);
-            timeout = setTimeout(function () {
-                if (currentIndex < ($slides.length - 1)) {
-                    move(currentIndex + 1);
-                } else {
-                    move(0);
-                }
-            }, 4000);
-        }
-
-        $('.next_btn').on('click', function () {
-            if (currentIndex < ($slides.length - 1)) {
-                move(currentIndex + 1);
-            } else {
-                move(0);
-            }
-        });
-
-        $('.previous_btn').on('click', function () {
-            if (currentIndex !== 0) {
-                move(currentIndex - 1);
-            } else {
-                move(3);
-            }
-        });
-
-        $.each($slides, function (index) {
-            var $button = $('<a class="slide_btn">&bull;</a>');
-
-            if (index === currentIndex) {
-                $button.addClass('active');
-            }
-            $button.on('click', function () {
-                move(index);
-            }).appendTo('.slide_buttons');
-            bulletArray.push($button);
-        });
-
-        advance();
-    });
-
-</script> --}}
 @endsection

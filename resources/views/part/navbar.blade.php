@@ -137,6 +137,9 @@
   border-bottom:1px solid #134B6E;
   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
+.d-none {
+      display: none;
+    }
 </style>
 <nav class="navbar navbar-expand-lg bg-light position-fixed w-100" id="nav-large">
     <div class="container">
@@ -164,7 +167,7 @@
                 <span class="navbar-text d-flex align-items-center justify-content-center gap-3">
                   <div class="search-box">
                     <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="text" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search...">
+                    <input type="search" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search..." data-search="@text" data-target=".list-item" data-hide-class="d-none">
                   </div>
                     <a href="">
                       <div class="profil me-2">
@@ -232,6 +235,11 @@
         </div>
     </div>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/combine/npm/jquery,npm/g1"></script>
+  {{-- <script>
+    $('body').search()
+  </script> --}}
 
 {{-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
