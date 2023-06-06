@@ -18,7 +18,8 @@ class FrontEndBarangController extends Controller
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::latest()->where('status','Active')->get();
         $Banner = Banner::all();
-        $Artikel = Artikel::orderBy('id', 'desc')->get();
+
+        $Artikel = Artikel::orderBy('id', 'desc')->take(5)->get();
         
         if($request->sort == 'termurah') {
             $barang = NewBarang::orderby('harga_asli','asc')->where('status','Active')->get();
@@ -31,7 +32,7 @@ class FrontEndBarangController extends Controller
         }elseif($request->sort == 'promo'){
             $barang = NewBarang::where('promosi','promo')->where('status','Active')->get();
         }
-
+        // dd($Artikel);
         return view("home",compact('kategoriBarang','barang','Banner','Artikel'));
     }
 

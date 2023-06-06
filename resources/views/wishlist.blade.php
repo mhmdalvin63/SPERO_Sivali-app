@@ -81,7 +81,7 @@
                 </div>
                 <div class="tableContent">
                     @foreach ($Favorit as $item)
-                        {{-- <a href="{{ route('detail_favorit', $item->id)}}"> --}}
+                        <a href="{{ route('detail_barang', $item->id_barang)}}">
                         {{-- <a href=""> --}}
                             <div class="row">
                                 <div class="col-md-12 mt-5" id="tableRow">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                             </div>
-                        {{-- </a> --}}
+                        </a>
                     @endforeach
                 </div>
             </div>
