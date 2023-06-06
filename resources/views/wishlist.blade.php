@@ -27,6 +27,17 @@
         width: 25%;
         height: 7.5rem;
     }
+    .tableContent a{
+        text-decoration: none;
+        color: black;
+    }
+    .tableContent a:hover{
+        text-decoration: none;
+        color: black;
+    }
+    #tableRow #tr_row:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
     @media (max-width: 768px) {
         .judul_barang{
             text-align: center;
@@ -85,7 +96,7 @@
                         {{-- <a href=""> --}}
                             <div class="row">
                                 <div class="col-md-12 mt-5" id="tableRow">
-                                    <div class="row">
+                                    <div class="row" id="tr_row">
                                         <div class="col-md-8 col-6">
                                             <div class="row" id="produk">
                                                 <div class="parent_img col-md-6 col-12">
