@@ -80,68 +80,51 @@
       text-align: center;
     }
 }
-.search-box{
-  position: relative;
+.search {
+  width: 100%;
+  /* position: relative; */
+  display: flex;
 }
-.input-search{
-  height: 50px;
-  width: 50px;
-  border-style: none;
-  padding: 10px;
-  font-size: 18px;
-  letter-spacing: 2px;
+
+.wrap{
+  width: 100%;
+  margin-bottom: 0!important;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* right: -10%; */
+  transform: translate(0 50%);
+}
+.searchTerm {
+  width: 15rem;
+  border: .5px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: max-content;
+  border-radius: 5px 0 0 5px;
   outline: none;
-  border-radius: 100%;
-  transition: all .5s ease-in-out;
-  /* background-color: #22a6b3; */
-  padding-right: 40px;
-  /* color:#fff; */
+  color: #9DBFAF;
 }
-.input-search::placeholder{
-  color:rgba(17, 1, 243, 0.5);
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 500;
+
+.searchTerm:focus{
+  color: #888b8b;
 }
-.btn-search{
-  width: 47px;
-  height: 53px;
-  border-style: none;
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
+
+.searchButton {
+  width: 2.5rem;
+  height: 36px;
+  border: 1px solid white;
+  background: white;
+  text-align: center;
+  color: #8b8b8b;
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  right: 0px;
-  color:grey ;
-  background-color:transparent;
-  pointer-events: painted;  
-}
-.btn-search:focus ~ .input-search{
-  color:rgba(17, 1, 243, 0.5);
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 500;
-  width: 250px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid #134B6E;
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-}
-.input-search:focus{
-  color: grey;
-  width: 250px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom:1px solid #134B6E;
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  font-size: 20px;
 }
 .d-none {
       display: none;
     }
 </style>
-<nav class="navbar navbar-expand-lg bg-light position-fixed w-100" id="nav-large">
+<nav class="navbar navbar-expand-lg bg-light position-sticky top-0 w-100" id="nav-large">
     <div class="container">
         <div class="container-fluid">
             <div class="nav_logo">
@@ -165,10 +148,20 @@
             </div>  
             <div class="nav_notif">
                 <span class="navbar-text d-flex align-items-center justify-content-center gap-3">
-                  <div class="search-box">
-                    <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="search" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search..." data-search="@text" data-target=".list-item" data-hide-class="d-none">
-                  </div>
+                  {{-- <form role="search">
+                    <div class="search-box">
+                      <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      <input type="search" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search...">
+                    </div>
+                  </form> --}}
+                  <form action="{{ url('search') }}" method="GET" role="search" class="wrap">
+                    <div class="search">
+                      <input type="search" name="search" value="" class="searchTerm" placeholder="Cari Barangmu...">
+                      <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                     </button>
+                    </div>
+                  </form>
                     <a href="">
                       <div class="profil me-2">
                         <i class="fa-lg fa-regular fa-user w-75"></i>
@@ -211,10 +204,14 @@
               </ul>
               <div class="nav_notif">
                   <span class="navbar-text d-flex align-items-center justify-content-center gap-3">
-                    <div class="search-box">
-                      <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                      <input type="text" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search...">
-                    </div>
+                    <form action="{{ url('search') }}" method="GET" role="search" class="wrap">
+                      <div class="search">
+                        <input type="search" name="search" value="" class="searchTerm" placeholder="Cari Barangmu...">
+                        <button type="submit" class="searchButton">
+                          <i class="fa fa-search"></i>
+                       </button>
+                      </div>
+                    </form>
                       <a href="">
                         <div class="profil me-2">
                           <i class="fa-lg fa-regular fa-user w-75"></i>

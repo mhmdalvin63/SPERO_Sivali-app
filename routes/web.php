@@ -27,6 +27,7 @@ use App\Http\Controllers\Front\DataBarangFrontController;
 Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/social-media-share', [SocialShareButtonController::class,'ShareWidget']);
+Route::get('search', [FrontEndBarangController::class,'SearchProduct']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');

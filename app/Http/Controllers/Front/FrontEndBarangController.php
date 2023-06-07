@@ -35,8 +35,6 @@ class FrontEndBarangController extends Controller
         // dd($Artikel);
         return view("home",compact('kategoriBarang','barang','Banner','Artikel'));
     }
-
-
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->paginate(4);
@@ -65,7 +63,6 @@ class FrontEndBarangController extends Controller
         return view("katalogFilter",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','KategoriBarangfilter'));
         // dd($KategoriBarangfilter);
     }
-
     public function dataArtikel(Request $request){
         $Artikel = Artikel::all();
         $ArtikelRandom = Artikel::orderByRaw('RAND()')->get();
@@ -76,11 +73,6 @@ class FrontEndBarangController extends Controller
         $Artikel = Artikel::all();
         return view("artikelDetail",compact('Artikel', 'ArtikelDetail'));
     }
-    // public function dataArtikelid($id){
-    //     $Artikelid = Artikel::find($id);
-    //     return view("artikel",compact('Artikelid'));
-    // }
-
     public function detailBarang($id){
         $barang = NewBarang::find($id);
         $shareComponent = \Share::currentPage()
@@ -92,13 +84,13 @@ class FrontEndBarangController extends Controller
         ->reddit();
         return view("detailBarang",compact('barang','shareComponent'));
     }
-
-
-    // public function filter_barang(Barang $barang){
-    //     // $barang = KategoriBarang::with('Barang')->get();
-    //     $barang->KategoriBarang()->get();
-
-    //     return view("katalog",compact('barang'));
-    // //    return $barang;
-    // }
+    public function SearchProduct(Request $request){
+        if ($request->search) {
+            $searchProduct = NewBarang::where('judul_barang','LIKE','%'.$request->search.'%')->latest()->paginate(10);
+            return view('search', compact('searchProduct'));
+        } else {
+           return redirect()->back()->with('message','Empty Search');
+        }
+        
+    }
 }

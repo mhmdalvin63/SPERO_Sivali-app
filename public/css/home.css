@@ -120,7 +120,7 @@
 }
 #top{
     height: max-content;
-    transform: translateY(6rem);
+    transform: translateY(3rem);
     align-items: center;
 }
 .desc h1{

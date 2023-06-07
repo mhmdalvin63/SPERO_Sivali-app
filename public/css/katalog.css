@@ -1,7 +1,7 @@
 /* Extra small devices (phones, 600px and down) */
 #top_content{
     height: max-content;
-    padding: 10% 0 0 0;
+    padding: 5% 0 0 0;
 }
 #top_cf{
     background-color: var(--blue-color);
