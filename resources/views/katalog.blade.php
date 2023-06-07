@@ -69,6 +69,10 @@
         }
     }
 
+    .menu.active,.btn:hover{ 
+    background-color:#19376D; 
+    }
+
 </style>
 
 @section('content')

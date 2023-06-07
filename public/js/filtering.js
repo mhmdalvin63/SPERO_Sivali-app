@@ -440,4 +440,18 @@ jQuery(function($) {
         console.log('Box position is ' + position);
         console.log('Box sort order is ' + order);
     });
+
+    const room  = document.querySelector('.menu');
+    const btns = document.querySelectorAll('.menu_btn'); 
+
+    room.addEventListener('click', e => {
+
+    btns.forEach(btn => {
+
+        if(btn.getAttribute('data-filter') === e.target.getAttribute('data-filter'))
+        btn.classList.add('active');
+        else
+        btn.classList.remove('active');
+        });
+    });
 });
