@@ -130,8 +130,8 @@
     <h3 class="mb-5 text-center fw-bold">Kategori Barang</h3>
     <div class="k_b d-flex justify-content-center">
         @foreach ($kategoriBarang as $item)
-        <a class="text-black" href="{{ url('katalog')}}#list_katalog" style="text-decoration: none;">
-        {{-- <a class="text-black" href="{{ route('katalogFilter', $item->id)}}#list_katalog" style="text-decoration: none;"> --}}
+        {{-- <a class="text-black" href="{{ url('katalog')}}#list_katalog" style="text-decoration: none;"> --}}
+        <a class="text-black" href="{{ route('katalogFilter', $item->id)}}" style="text-decoration: none;">
             <div class="logo">
                 <div class="logo__img">
                     <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt=""

@@ -28,6 +28,7 @@ Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/social-media-share', [SocialShareButtonController::class,'ShareWidget']);
 Route::get('search', [FrontEndBarangController::class,'SearchProduct']);
+// Route::get('/katalog/{id}', [FrontEndBarangController::class,'SearchProduct']);
 
 Route::get('/profil', [ProfilController::class,'index']);
 Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
@@ -41,7 +42,7 @@ Route::delete('wishlist/delete/{id}',[FavoritController::class,'destroy'])->name
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
-// Route::get('/katalog/{id}', [FrontEndBarangController::class,'dataKategoriBarangKatalogId'])->name('katalogFilter');
+Route::get('/katalog/{id}', [FrontEndBarangController::class,'dataKategoriBarangKatalogId'])->name('katalogFilter');
 // Route::get('/katalog/{slug}', [FrontEndBarangController::class,'ShowBarangByKategori'])->name('filter_barang');
 // Route::get('/katalog-filter/{Barang}', [FrontEndBarangController::class,'dataKategoriBarangKatalogFilter'])->name('filter_barang');
 

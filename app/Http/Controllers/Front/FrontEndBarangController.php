@@ -53,9 +53,10 @@ class FrontEndBarangController extends Controller
         return view("katalog",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','allbarang'));
     }
     public function dataKategoriBarangKatalogId($id){
-        
-        $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->where('status','active')->paginate(4);
-        
+        // $KategoriBarangId = NewKategoriBarang::find($id)->get();
+        $KategoriBarangfilter = NewBarang::with('KategoriBarang')->where('id_kategori',$id)->where('status','active')->get();
+        // dd($KategoriBarangId);
+
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();
         $allbarang = NewBarang::with('KategoriBarang')->latest()->get();
@@ -96,4 +97,13 @@ class FrontEndBarangController extends Controller
         }
         
     }
+    // public function BarangKategori($id){
+    //     if ($request->search) {
+    //         $searchProduct = NewBarang::where('judul_barang','LIKE','%'.$request->search.'%')->latest()->paginate(10);
+    //         return view('search', compact('searchProduct'));
+    //     } else {
+    //        return redirect()->back()->with('message','Empty Search');
+    //     }
+        
+    // }
 }
