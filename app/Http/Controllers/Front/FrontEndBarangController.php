@@ -16,7 +16,7 @@ class FrontEndBarangController extends Controller
 {
     public function dataKategoriBarang(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
-        $barang = NewBarang::latest()->where('status','Active')->get();
+        $barang = NewBarang::where('status','Active')->get();
         $Banner = Banner::all();
 
         $Artikel = Artikel::orderBy('id', 'desc')->take(5)->get();
@@ -37,7 +37,8 @@ class FrontEndBarangController extends Controller
     }
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
-        $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->paginate(4);
+        // $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->paginate(4);
+        $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();
         $allbarang = NewBarang::with('KategoriBarang')->latest()->get();
 
         $barangrandomkiri = NewBarang::orderByRaw('RAND()')->where('status','active')->get();

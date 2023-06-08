@@ -196,7 +196,7 @@
             <h3 class="fw-bold mb-0">FURNITURES</h3>
         </div>
         <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
-            <button class="btn menu_btn sorter" role="button" data-filter="*">Semua</button>
+            <button id="home_button" class="btn menu_btn sorter" role="button" data-filter="*">Semua</button>
             @foreach ($kategoriBarang as $item)
             <button class="btn menu_btn sorter" role="button"
                 data-filter="filter-{{$item->id}}">{{$item->kategori_barang}}</button>
@@ -281,9 +281,9 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center">
+    {{-- <div class="d-flex justify-content-center">
         {{ $barang->links('vendor.pagination.bootstrap-5') }}
-    </div>
+    </div> --}}
 </div>
 
 
@@ -386,7 +386,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script>
-
+ $(document).ready(function (e) {
+        $('#home_button').addClass('active');
+});
 // var allbarang = JSON.parse("{{ json_encode($allbarang) }}");
 // var barang = {!! json_encode($barang) !!};
 // const myArr = JSON.parse(barang);

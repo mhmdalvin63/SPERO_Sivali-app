@@ -84,8 +84,8 @@
     }
 </style>
 @section('content')
-<section id="list_barang" class="container" style="margin-top: 7rem;height: max-content;
-        transform: translateY(9rem);">
+<section id="list_barang" class="container" style="height: max-content;
+        transform: translateY(10rem);">
     <h1 class="text-center fw-bold">Katalog Kami</h1>
     <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
         <button id="lb_filter" data-filter="home" onclick="home()" class="btn menu_btn"
@@ -102,93 +102,97 @@
    <div class="row">
     <div class="col-md-12">
         <div class="row lbblbb mt-5" id="lbblbb">
-            @foreach ($searchProduct as $item)
-            {{-- <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4 list-barang-barang" id="home_list_barang" --}}
-            <div class="list-barang-barang" id="home_list_barang"
-            terjual_count="{{$item->terjual}}"
-            terbaru_count="{{$item->created_at}}"
-            harga_count="
-            @if ($item->harga_diskon==null)
-                {{$item->harga_asli}}
-            @else
-                {{$item->harga_diskon}}
-            @endif"
-            data-promosi="{{$item->promosi}}"
-            data-status="{{$item->status}}">
-                <a href="{{ route('detail_barang', $item->id)}}">
-                    <div class="card" id="product">
-                        <div class="top_product">
-                            {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
-                            <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt=""
-                                width="75">
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title text-black">{{$item->judul_barang}}</h5>
-                            {{-- <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p> --}}
-                            @if ($item->harga_diskon==null)
-                            <p class="card-text fw-bold mb-0" style="font-size: .75rem; visibility: hidden;">
-                                Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
-                            <p class="card-text fw-bold mb-0" style="color: #19376D;">
-                                Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                            @else
-                            <p class="card-text fw-bold mb-0"
-                                style="font-size: .75rem; text-decoration: line-through; color: red;">
-                                Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                            <p class="card-text fw-bold mb-0" style="color: #19376D;">
-                                Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
-                            @endif
-                            <div class="stok_terjual d-flex justify-content-between flex-wrap">
-                                <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
-                                <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
-                            </div>
-                            <div class="rating">
-                                @if($item->rate <= 0) <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    @elseif($item->rate == 1)
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    @elseif($item->rate == 2)
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    @elseif($item->rate == 3)
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    @elseif($item->rate == 4)
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    @elseif($item->rate >= 5)
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    <i class="fa fa-star checked" aria-hidden="true"></i>
-                                    @endif
-                            </div>
-                            {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
+           @if ($searchProduct->isEmpty())
+                <h1 class="text-center" style="color: grey;">Tidak Ada Barang Yang Dicari</h1>
+           @else
+           @foreach ($searchProduct as $item)
+           {{-- <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4 list-barang-barang" id="home_list_barang" --}}
+               <div class="list-barang-barang" id="home_list_barang"
+                   terjual_count="{{$item->terjual}}"
+                   terbaru_count="{{$item->created_at}}"
+                   harga_count="
+                   @if ($item->harga_diskon==null)
+                       {{$item->harga_asli}}
+                   @else
+                       {{$item->harga_diskon}}
+                   @endif"
+                   data-promosi="{{$item->promosi}}"
+                   data-status="{{$item->status}}">
+                       <a href="{{ route('detail_barang', $item->id)}}">
+                           <div class="card" id="product">
+                               <div class="top_product">
+                                   {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
+                                   <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt=""
+                                       width="75">
+                               </div>
+                               <div class="card-body text-center">
+                                   <h5 class="card-title text-black">{{$item->judul_barang}}</h5>
+                                   {{-- <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p> --}}
+                                   @if ($item->harga_diskon==null)
+                                   <p class="card-text fw-bold mb-0" style="font-size: .75rem; visibility: hidden;">
+                                       Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                   <p class="card-text fw-bold mb-0" style="color: #19376D;">
+                                       Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                   @else
+                                   <p class="card-text fw-bold mb-0"
+                                       style="font-size: .75rem; text-decoration: line-through; color: red;">
+                                       Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                   <p class="card-text fw-bold mb-0" style="color: #19376D;">
+                                       Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                   @endif
+                                   <div class="stok_terjual d-flex justify-content-between flex-wrap">
+                                       <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
+                                       <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
+                                   </div>
+                                   <div class="rating">
+                                       @if($item->rate <= 0) <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           @elseif($item->rate == 1)
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           @elseif($item->rate == 2)
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           @elseif($item->rate == 3)
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           @elseif($item->rate == 4)
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star" aria-hidden="true"></i>
+                                           @elseif($item->rate >= 5)
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           <i class="fa fa-star checked" aria-hidden="true"></i>
+                                           @endif
+                                   </div>
+                                   {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+                               </div>
+                           </div>
+                       </a>
+               </div>
+           @endforeach
+           @endif
         </div>
     </div>
    </div>
-    <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a>
+    {{-- <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a> --}}
 </section>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>

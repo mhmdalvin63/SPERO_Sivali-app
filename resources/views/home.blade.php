@@ -172,21 +172,19 @@
         transform: translateY(9rem);">
     <h1 class="text-center fw-bold">Katalog Kami</h1>
     <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
-        <button id="lb_filter" data-filter="home" onclick="home()" class="btn menu_btn"
+        <button id="lb_filter" data-filter="Active" onclick="home()" class="home_button btn menu_btn"
             role="button">Semua
         </button>
         <button id="lb_filter" data-filter="Terbaru" onclick="showterbaru()" class="btn menu_btn" role="button">Terbaru</button>
         <button id="lb_filter" data-filter="Terlaris" onclick="showterlaris()" class="btn menu_btn" role="button">Terlaris</button>
         <button id="lb_filter" onclick="showtermurah()" data-filter="Termurah" class="btn menu_btn" role="button">Termurah</button>
         <button id="lb_filter" onclick="showtermahal()" data-filter="Termahal" class="btn menu_btn" role="button">Termahal</button>
-        <button id="lb_filter" data-filter="Promo" onclick="showpromo()"
-            class="btn menu_btn"
-            role="button">Promo</button>
+        <button id="lb_filter" data-filter="Promo" onclick="showpromo()" class="btn menu_btn" role="button">Promo</button>
     </div>
    <div class="row">
     <div class="col-md-12">
         <div class="row lbblbb mt-5" id="lbblbb">
-            @foreach ($barang->take(4) as $item)
+            @foreach ($barang as $item)
             {{-- <div class="col-md-4 col-lg-3 col-12 col-sm-6 mt-4 list-barang-barang" id="home_list_barang" --}}
             <div class="list-barang-barang" id="home_list_barang"
             terjual_count="{{$item->terjual}}"
@@ -199,7 +197,7 @@
             @endif"
             data-promosi="{{$item->promosi}}"
             data-status="{{$item->status}}">
-                <a href="{{ route('detail_barang', $item->id)}}">
+                <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
                     <div class="card" id="product">
                         <div class="top_product">
                             {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
@@ -358,13 +356,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
 </script>
 <script>
+    // var url = window.location.href;
+    $(document).ready(function (e) {
+    $('.home_button').click();
+    });
+
+      // BUTTON ACTIVE BY data-filter
+      const room  = document.querySelector('.menu');
+    const btns = document.querySelectorAll('.menu_btn'); 
+    room.addEventListener('click', e => {
+        btns.forEach(btn => {
+            if(btn.getAttribute('data-filter') === e.target.getAttribute('data-filter'))
+            btn.classList.add('active');
+            else
+            btn.classList.remove('active');
+            });
+    });
     // SORT TERBARU
-        var sortterbaru = jQuery(".lbblbb").find(".list-barang-barang").toArray().sort(function(a, b){return parseInt(b.getAttribute('terbaru_count')) - parseInt(a.getAttribute('terbaru_count'))});
+        var sortterbaru = jQuery(".lbblbb").find(".list-barang-barang").toArray().reverse(function(a, b){return parseInt(b.getAttribute('terbaru_count')) - parseInt(a.getAttribute('terbaru_count'))});
             jQuery.each(sortterbaru, function(index, value) {
                 jQuery(".lbblbb").append(value);
             });
                 var resultterbaru = "";
-                for (var i = 0; i < sortterbaru.length; i++) {
+                for (var i = 0; i < 4; i++) {
             resultterbaru += sortterbaru[i].innerHTML;
         }
     // SORT TERLARIS
@@ -373,7 +387,7 @@
                 jQuery(".lbblbb").append(value);
             });
                 var resultterlaris = "";
-                for (var i = 0; i < sortterjual.length; i++) {
+                for (var i = 0; i < 4; i++) {
             resultterlaris += sortterjual[i].innerHTML;
         }
     // SORT TERMURAH
@@ -382,7 +396,7 @@
         jQuery(".lbblbb").append(value);
         });
         var resulttermurah = "";
-                for (var i = 0; i < sorttermurah.length; i++) {
+                for (var i = 0; i < 4; i++) {
             resulttermurah += sorttermurah[i].innerHTML;
         }
     // SORT TERMAHAL
@@ -391,21 +405,21 @@
         jQuery(".lbblbb").append(value);
         });
         var resulttermahal = "";
-                for (var i = 0; i < sorttermahal.length; i++) {
+                for (var i = 0; i < 4; i++) {
             resulttermahal += sorttermahal[i].innerHTML;
         }
-    // SORT PROMO
-    const sortirpromo = document.querySelectorAll('[data-promosi="Promo"]');
+        // SORT HOME ACTIVE
+        var sortiractive = document.querySelectorAll('[data-status="Active"]');
+            var resultstatus = "";
+                for (var i = 0; i < 4; i++) {
+                    resultstatus += sortiractive[i].innerHTML;
+                };
+        // SORT PROMO
+        var sortirpromo = document.querySelectorAll('[data-promosi="Promo"]');
         var resultpromo = "";
-            for (var i = 0; i < sortirpromo.length; i++) {
+        for (var i = 0; i < 4; i++) {
             resultpromo += sortirpromo[i].innerHTML;
-        }
-    // SORT HOME ACTIVE
-    const sortiractive = document.querySelectorAll('[data-status="Active"]');
-        var resultstatus = "";
-            for (var i = 0; i < sortiractive.length; i++) {
-            resultstatus += sortiractive[i].innerHTML;
-        }
+        };
     
     function showterbaru() {
         document.getElementById("lbblbb").innerHTML = resultterbaru;
@@ -424,19 +438,12 @@
     }
     function home() {
         document.getElementById("lbblbb").innerHTML = resultstatus;
+        // window.location = url
     }
+
+    
      
-    // BUTTON ACTIVE BY data-filter
-    const room  = document.querySelector('.menu');
-    const btns = document.querySelectorAll('.menu_btn'); 
-    room.addEventListener('click', e => {
-        btns.forEach(btn => {
-            if(btn.getAttribute('data-filter') === e.target.getAttribute('data-filter'))
-            btn.classList.add('active');
-            else
-            btn.classList.remove('active');
-            });
-    });
+  
     
 
 </script>
