@@ -27,7 +27,7 @@
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 440px) {
         .sdfm-inner-wrapper {
-            width: 39vw !important;
+            width: 42.5% !important;
         }
     }
 
@@ -39,7 +39,7 @@
 
     @media only screen and (min-width: 490px) and (max-width: 600px) {
         .sdfm-inner-wrapper {
-            width: 41vw !important;
+            width: 37.5vw !important;
         }
     }
 
@@ -340,7 +340,7 @@
     </div>
     <div class="row px-3 d-flex justify-content-between justify-content-xl-start">
         @foreach ($allbarang as $item)
-        <div class="col-xl-4 col-5 col-md-6 mt-5">
+        <div class="col-xl-4 col-6 col-sm-6 mt-5">
             <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
                 <div class="row">
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" id="pbi">

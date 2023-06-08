@@ -130,7 +130,8 @@
     <h3 class="mb-5 text-center fw-bold">Kategori Barang</h3>
     <div class="k_b d-flex justify-content-center">
         @foreach ($kategoriBarang as $item)
-        <a class="text-black" href="{{ route('katalogFilter', $item->id)}}#list_katalog" style="text-decoration: none;">
+        <a class="text-black" href="{{ url('katalog')}}#list_katalog" style="text-decoration: none;">
+        {{-- <a class="text-black" href="{{ route('katalogFilter', $item->id)}}#list_katalog" style="text-decoration: none;"> --}}
             <div class="logo">
                 <div class="logo__img">
                     <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_kategori)}}" alt=""
@@ -171,7 +172,7 @@
 <section id="list_barang" class="container" style="margin-top: 7rem;height: max-content;
         transform: translateY(9rem);">
     <h1 class="text-center fw-bold">Katalog Kami</h1>
-    <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
+    <div class="menu d-flex gap-2 flex-wrap justify-content-start justify-content-md-center mt-5">
         <button id="lb_filter" data-filter="Active" onclick="home()" class="home_button btn menu_btn"
             role="button">Semua
         </button>
@@ -275,7 +276,7 @@
 
 <section class="container" style="height: max-content; margin-top: 12.5rem;">
     <div class="grid-container href-artikel"> 
-            <a href="{{ route('detail_artikel', $Artikel[0]->id)}}" class="grid-item item1 mt-3 la__image">
+            <a id="a-genap" href="{{ route('detail_artikel', $Artikel[0]->id)}}" class="grid-item item1 mt-3 la__image">
                 {{-- <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt=""> --}}
                 <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[0]->gambar_artikel)}}" alt="">
                 <div class="overlay">
@@ -283,26 +284,26 @@
                     <p>{{ $Artikel[0]->subjudul_artikel }}</p>
                 </div>
             </a>
-            <a href="{{ route('detail_artikel', $Artikel[1]->id)}}" class="grid-item item2 mt-3 la__image">
+            <a id="a-genap" href="{{ route('detail_artikel', $Artikel[1]->id)}}" class="grid-item item2 mt-3 la__image">
                 <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[1]->gambar_artikel)}}" alt="">
                 {{-- <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$item->gambar_artikel)}}" alt=""> --}}
                 <div class="overlay">
                     <p class="mb-1">{{ $Artikel[1]->subjudul_artikel }}</p>
                 </div>
             </a>
-            <a href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item3 mt-3 la__image">
+            <a id="a-ganjil" href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item3 mt-3 la__image">
                 <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[2]->gambar_artikel)}}" alt="">
                 <div class="overlay">
                     <p class="mb-1">{{ $Artikel[2]->subjudul_artikel }}</p>
                 </div>
             </a>
-            <a href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item4 mt-3 la__image">
+            <a id="a-genap" href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item4 mt-3 la__image">
                 <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[3]->gambar_artikel)}}" alt="">
                 <div class="overlay">
                     <p class="mb-1 fw-bold">{{ $Artikel[3]->subjudul_artikel }}</p>
                 </div>
             </a>
-            <a href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item5 mt-3 la__image">
+            <a id="a-genap" href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item5 mt-3 la__image">
                 <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[4]->gambar_artikel)}}" alt="">
                 <div class="overlay">
                     <p class="mb-1 fw-bold">{{ $Artikel[4]->judul_artikel }}</p>

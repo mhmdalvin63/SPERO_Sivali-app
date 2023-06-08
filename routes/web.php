@@ -41,7 +41,7 @@ Route::delete('wishlist/delete/{id}',[FavoritController::class,'destroy'])->name
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 
 Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
-Route::get('/katalog/{id}', [FrontEndBarangController::class,'dataKategoriBarangKatalogId'])->name('katalogFilter');
+// Route::get('/katalog/{id}', [FrontEndBarangController::class,'dataKategoriBarangKatalogId'])->name('katalogFilter');
 // Route::get('/katalog/{slug}', [FrontEndBarangController::class,'ShowBarangByKategori'])->name('filter_barang');
 // Route::get('/katalog-filter/{Barang}', [FrontEndBarangController::class,'dataKategoriBarangKatalogFilter'])->name('filter_barang');
 

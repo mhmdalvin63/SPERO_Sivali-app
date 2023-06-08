@@ -1,5 +1,15 @@
 #artikel{
-    transform: translateY(3.5rem);
+    transform: translateY(3rem);
+}
+@media only screen and (max-width: 650px) {
+    #artikel{
+        transform: translateY(6rem);
+    }
+}
+@media only screen and (max-width: 425px) {
+    #artikel{
+        transform: translateY(7rem);
+    }
 }
 @media only screen and (min-width: 768px){
     #artikel{

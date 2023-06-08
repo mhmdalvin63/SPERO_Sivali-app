@@ -58,10 +58,12 @@ class FrontEndBarangController extends Controller
         
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::with('KategoriBarang')->latest()->where('status','active')->get();
+        $allbarang = NewBarang::with('KategoriBarang')->latest()->get();
+
 
         $barangrandomkiri = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
         $barangrandomkanan = NewBarang::orderByRaw('RAND()')->where('status','active')->get();
-        return view("katalogFilter",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','KategoriBarangfilter'));
+        return view("katalogFilter",compact('kategoriBarang','barang','barangrandomkiri','barangrandomkanan','KategoriBarangfilter','allbarang'));
         // dd($KategoriBarangfilter);
     }
     public function dataArtikel(Request $request){

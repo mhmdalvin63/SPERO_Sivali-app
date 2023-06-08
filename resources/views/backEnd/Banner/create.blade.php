@@ -9,7 +9,7 @@
                 <h4 class="card-title">Form Kategori Barang</h4>
                 <form action="{{ route('ban_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    <div class="form-group mt-5">
+                      <div class="form-group mt-5">
                         <label for="formFile" class="form-label">Pilih Gambar Banner (1440px x 556px)</label>
                         <input class="form-control" type="file" id="formFile" name="gambar_banner">
                       </div>

@@ -120,8 +120,18 @@
 }
 #top{
     height: max-content;
-    transform: translateY(3rem);
+    transform: translateY(5%);
     align-items: center;
+}
+@media only screen and (max-width: 650px) {
+    #top{
+        transform: translateY(20%);
+    }
+}
+@media only screen and (max-width: 577px) {
+    #top{
+        transform: translateY(40%);
+    }
 }
 .desc h1{
     color: var(--blue-color);
@@ -277,6 +287,9 @@
 #home_list_barang a{
     text-decoration: none;
 }
+#product{
+    height: 100%;
+}
 .top_product{
     width: 100%;
     padding: 5%;
@@ -309,6 +322,25 @@
 .href-artikel a{
     color: rgba(255, 255, 255, 0.9);
 }
+#a-genap{
+    height: 20rem;
+}
+@media only screen and (max-width: 992px) {
+    #a-genap{
+        height: 15rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #a-genap{
+        height: 10rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #a-ganjil{
+        height: 15rem;
+    }
+}
+
 
 .href-artikel a:hover{
     color: rgba(255, 255, 255, 1);
@@ -322,8 +354,6 @@
     #product{
         height: max-content;
     }
-}
-@media only screen and (min-width: 600px) {
 }
 @media only screen and (min-width: 768px) {
     #product{
