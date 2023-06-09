@@ -417,7 +417,7 @@
             resultterlaris += sortterjual[i].innerHTML;
         }
     // SORT TERMURAH
-        var sorttermurah = jQuery(".lbblbb").find(".list-barang-barang").toArray().reverse(function(a, b){return parseInt(b.getAttribute('harga_count')) - parseInt(a.getAttribute('harga_count'))});
+        var sorttermurah = jQuery(".lbblbb").find(".list-barang-barang").toArray().sort(function(a, b){return parseInt(a.getAttribute('harga_count')) - parseInt(b.getAttribute('harga_count'))});
         jQuery.each(sorttermurah, function(index, value) {
         jQuery(".lbblbb").append(value);
         });
