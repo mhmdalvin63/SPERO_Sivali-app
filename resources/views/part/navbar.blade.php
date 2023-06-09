@@ -144,7 +144,9 @@
 .searchButton {
   width: 2.5rem;
   height: 36px;
-  border: 1px solid white;
+  border: .5px solid #00B4CC;
+  border-left: none;
+  outline: none;
   background: white;
   text-align: center;
   color: #8b8b8b;
@@ -213,7 +215,7 @@
         </div>
     </div>
 </nav>
-<nav class="navbar navbar-expand-lg bg-light position-fixed w-100" id="nav-small">
+<nav class="navbar navbar-expand-lg bg-light position-sticky top-0 w-100" id="nav-small">
     <div class="container">
         <div class="container-fluid">
             <div class="nav_logo">

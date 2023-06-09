@@ -114,7 +114,7 @@
                    @endif"
                    data-promosi="{{$item->promosi}}"
                    data-status="{{$item->status}}">
-                       <a href="{{ route('detail_barang', $item->id)}}">
+                       <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
                            <div class="card" id="product">
                                <div class="top_product">
                                    {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}

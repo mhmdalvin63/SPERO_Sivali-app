@@ -6,6 +6,7 @@ use Session;
 use App\Models\Favorit;
 use App\Models\NewBarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class FavoritController extends Controller
 {
@@ -14,12 +15,14 @@ class FavoritController extends Controller
      */
     public function index()
     {
+        $FavoritMerge = Favorit::with('Barang')->select('id_barang',Favorit::raw('sum(favorits.id_barang) as FavoritMerge'))->groupBy('id_barang')->latest()->get();  
         $Favorit = Favorit::with('Barang')->orderBy('created_at','desc')->distinct()->get();
+        // dd($FavoritMerge);
         $FavoritCount = Favorit::count();
         
         // $this->data['Favorit'] = $Favorit;
 
-        return view('wishlist', compact('Favorit','FavoritCount'));
+        return view('wishlist', compact('Favorit','FavoritCount','FavoritMerge'));
     }
 
     /**
@@ -50,13 +53,13 @@ class FavoritController extends Controller
                 [
                     'id_barang' => $id,
                     ]
-                );
+            );
                 // dd($id);
         // }
         // return response('Barang Berhasil Ditambahkan');
         // return redirect('/katalog');
         // return view('katalog', compact('Favorit'));
-        return redirect('/katalog')->with('success','Favorit Berhasil Di Tambahkan');
+        return redirect('/wishlist')->with('success','Favorit Berhasil Di Tambahkan');
 
     }
 
@@ -89,10 +92,10 @@ class FavoritController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy($id)
-    {
-        $Favorit = Favorit::findOrFail($id);
-        $Favorit->delete();
-        // \Session::flash('success', 'Data Berhasil Di Hapus');
-        return redirect()->route('wl_index')->with('success', 'Data deleted successfully');
-    }
+        {
+            $Favorit = Favorit::where('id_barang',$id)->first();
+                $Favorit = $Favorit->offers_id;
+                $Favorit = Favorit::where('id_barang', $id)->delete();
+                return Redirect::to('wishlist');
+        }
 }

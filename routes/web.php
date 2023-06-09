@@ -9,7 +9,7 @@ use App\Http\Controllers\SigninController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\FavoritController;
 use App\Http\Controllers\KategoriBarangController;
-use App\Http\Controllers\SocialShareButtonController;
+// use App\Http\Controllers\SocialShareButtonController;
 use App\Http\Controllers\Front\FrontEndBarangController;
 use App\Http\Controllers\Front\DataBarangFrontController;
 
@@ -26,7 +26,7 @@ use App\Http\Controllers\Front\DataBarangFrontController;
 
 Route::get('/', [FrontEndBarangController::class,'dataKategoriBarang']);
 
-Route::get('/social-media-share', [SocialShareButtonController::class,'ShareWidget']);
+// Route::get('/social-media-share', [SocialShareButtonController::class,'ShareWidget']);
 Route::get('search', [FrontEndBarangController::class,'SearchProduct']);
 // Route::get('/katalog/{id}', [FrontEndBarangController::class,'SearchProduct']);
 
@@ -35,9 +35,10 @@ Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'
 // Route::get('/wishlist/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
 
 Route::get('/wishlist', [FavoritController::class,'index'])->name('wl_index');
-Route::get('/wishlist/{id}', [FavoritController::class,'store'])->name('favorit_barang');
+Route::get('/wishlist/{id_barang}', [FavoritController::class,'store'])->name('favorit_barang');
 // Route::get('/wishlist/{id}', [FavoritController::class,'show'])->name('detail_favorit');
-Route::delete('wishlist/delete/{id}',[FavoritController::class,'destroy'])->name('wl_delete');
+
+Route::delete('wishlist/delete/{id}',[FavoritController::class,'destroy'])->name('Favorit-delete');
 
 Route::get('/home', [FrontEndBarangController::class,'dataKategoriBarang']);
 

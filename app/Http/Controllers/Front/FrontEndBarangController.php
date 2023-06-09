@@ -83,7 +83,7 @@ class FrontEndBarangController extends Controller
         ->facebook()
         ->twitter()
         ->linkedin()
-        ->telegram()
+        ->telegram()    
         ->whatsapp()        
         ->reddit();
         return view("detailBarang",compact('barang','shareComponent'));
