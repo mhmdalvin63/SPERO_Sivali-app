@@ -33,6 +33,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: none;
     }
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 440px) {
@@ -303,34 +304,34 @@
                     </div>
                 </a>
             @endif
+            @if (empty($Artikel[4]))
+                <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
+            @else
+                <a id="a-ganjil" href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item3 mt-3 la__image">
+                    <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[4]->gambar_artikel)}}" alt="">
+                    <div class="overlay">
+                        <p class="mb-1">{{ $Artikel[4]->subjudul_artikel }}</p>
+                    </div>
+                </a>
+            @endif
             @if (empty($Artikel[2]))
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
-                <a id="a-ganjil" href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item3 mt-3 la__image">
+                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item4 mt-3 la__image">
                     <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[2]->gambar_artikel)}}" alt="">
                     <div class="overlay">
-                        <p class="mb-1">{{ $Artikel[2]->subjudul_artikel }}</p>
+                        <p class="mb-1 fw-bold">{{ $Artikel[2]->subjudul_artikel }}</p>
                     </div>
                 </a>
             @endif
             @if (empty($Artikel[3]))
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
-                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item4 mt-3 la__image">
+                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item5 mt-3 la__image">
                     <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[3]->gambar_artikel)}}" alt="">
                     <div class="overlay">
-                        <p class="mb-1 fw-bold">{{ $Artikel[3]->subjudul_artikel }}</p>
-                    </div>
-                </a>
-            @endif
-            @if (empty($Artikel[4]))
-                <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
-            @else
-                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item5 mt-3 la__image">
-                    <img class="img-fluid" src="{{asset('../storage/image/'.'/'.$Artikel[4]->gambar_artikel)}}" alt="">
-                    <div class="overlay">
-                        <p class="mb-1 fw-bold">{{ $Artikel[4]->judul_artikel }}</p>
-                        <p>{{ $Artikel[4]->subjudul_artikel }}</p>
+                        <p class="mb-1 fw-bold">{{ $Artikel[3]->judul_artikel }}</p>
+                        <p>{{ $Artikel[3]->subjudul_artikel }}</p>
                     </div>
                 </a>
             @endif
