@@ -27,17 +27,17 @@ class SigninController extends Controller
     
             if(Auth::attempt($credentials)){
                 if(auth()->user()->level == 'admin'){
-                    return redirect()->route('kb_index');
+                    return redirect()->route('dashboard');
                 }else{
-                    return redirect()->route('login');
+                    return redirect()->route('signin');
                 }
             }else{
-                return redirect()->route('login');
+                return redirect()->route('signin');
             }
        }
     
        public function logout(){
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('signin');
        }
 }

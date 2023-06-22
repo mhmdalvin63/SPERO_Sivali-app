@@ -36,19 +36,25 @@ class KategoriBarangController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar_kategori' => 'required|image|mimes:jpeg,jpg,png,webp',
+            'gambar_kategori' => 'required|image|mimes:jpeg,jpg,png,webp|dimensions:max_width=1080,max_height=1080',
             'kategori_barang' => 'required',
         ]);
 
-        $gambar_kategori = $request->file('gambar_kategori');
-        $gambar_kategori->storeAs('public/image', $gambar_kategori->hashName());
+        $kategoriNew = new NewKategoriBarang();
+        $kategoriNew->kategori_barang = $request->kategori_barang;
+        if($request->hasFile('gambar_kategori'))
+        {
+            $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
+            $request->file('gambar_kategori')->move(public_path().'/img/', $category);
+            $kategoriNew->gambar_kategori = $category;
+            $kategoriNew->save();
+        }
+        $kategoriNew->save();
 
-        NewKategoriBarang::create([
-            'gambar_kategori' => $gambar_kategori->hashName(),
-            'kategori_barang' => $request->kategori_barang,
-        ]);
+        
+
         // KategoriBarang::create($request->all());
-        return redirect('/kategoriBarang')->with('success','Data Pemesanan Berhasil Di Tambahkan');
+        return redirect('/kategoriBarang')->with('success','Data Kategori Berhasil Di Tambahkan');
     }
 
     /**
@@ -75,18 +81,18 @@ class KategoriBarangController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar_kategori' => '|image|mimes:jpeg,jpg,png,webp',
+            'gambar_kategori' => '|image|mimes:jpeg,jpg,png,webp|dimensions:max_width=1080px,max_height=1080px',
             'kategori_barang' => '',
         ]);
 
         $KategoriBarang = NewkategoriBarang::findOrfail($id);
-        if ($request->hasFile('gambar_kategori')) {
-
-            $gambar_kategori = $request->file('gambar_kategori');
-            $gambar_kategori->storeAs('public/image', $gambar_kategori->hashName());
-
-            Storage::delete('public/image/'.$KategoriBarang->gambar_kategori);
-
+        if($request->hasFile('gambar_kategori'))
+        {
+            $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
+            $request->file('gambar_kategori')->move(public_path().'/img/', $category);
+            $KategoriBarang->gambar_kategori = $category;
+            $KategoriBarang->save();
+            
             $KategoriBarang->update([
                 'gambar_kategori' => $gambar_kategori->hashName(),
                 'kategori_barang' => $request->kategori_barang,
@@ -96,7 +102,7 @@ class KategoriBarangController extends Controller
                 'kategori_barang' => $request->kategori_barang,
             ]);
         }
-        return redirect()->route('kb_index');
+        return redirect()->route('kb_index')->with('success', 'Data Kategori Berhasil Diupdate');
     }
 
     /**
@@ -107,6 +113,6 @@ class KategoriBarangController extends Controller
         $KategoriBarang = NewKategoriBarang::findOrfail($id);
         Storage::delete('public/image'.$KategoriBarang->gambar_kategori);
         $KategoriBarang->delete();
-        return redirect()->route('kb_index')->with('success', 'Data deleted successfully');
+        return redirect()->route('kb_index')->with('deleted', 'Data Berhasil Dihapus');
     }
 }

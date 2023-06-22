@@ -16,6 +16,17 @@
           </a> --}}
             </div>
             {{-- @endif --}}
+            @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif(session('deleted'))
+    <div class="alert alert-danger alert-dismissible fade show">
+        {{ session('deleted') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
             <div class="table-responsive text-center">
                 <table class="table table-hover table-striped">
                     <thead>
@@ -31,9 +42,9 @@
                     <tbody>
                         @foreach ($KategoriBarang as $item)
                         <tr>
-                            <td>{{$item->id}}</td>
-                            {{-- <td><img src="../storage/image/{{$item->gambar_barang}}" alt="" width="200px"></td> --}}
-                            <td><img src="{{asset('storage/image/'.$item->gambar_kategori)}}" alt="" width="75"></td>
+                            <td>{{ $loop->iteration }}</td>
+                            {{-- <td><img src="../storage/image/{{$item->gambar_barang}}" alt="" height="150px"></td> --}}
+                            <td><img src="{{asset('img/'.$item->gambar_kategori)}}" alt="" height="60"></td>
                             <td>{{$item->kategori_barang}}</td>
                             {{-- <td>{{$item->nama_petugas}}</td> --}}
                             {{-- @if(auth()->user()->level == "admin") --}}

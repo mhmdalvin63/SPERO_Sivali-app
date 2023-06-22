@@ -85,8 +85,8 @@
 </style>
 @section('content')
 <section id="list_barang" class="container" style="height: max-content;
-        transform: translateY(10rem);">
-    <h1 class="text-center fw-bold">Katalog Kami</h1>
+        transform: translateY(10rem); padding-top: 2rem;">
+    <h1 class="text-center fw-bold">Hasil Pencarian Anda</h1>
     <div class="menu d-flex gap-2 flex-wrap justify-content-center mt-5">
         <button id="lb_filter" data-filter="home" onclick="home()" class="btn menu_btn"
             role="button">Semua
@@ -121,8 +121,8 @@
                        <a href="{{ route('detail_barang', $item->id)}}">
                            <div class="card" id="product">
                                <div class="top_product">
-                                   {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
-                                   <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt=""
+                                   {{-- <img src="{{asset('img/'.$item->gambar_barang)}}" alt=""> --}}
+                                   <img src="{{'img/'.$item->file_name}}" title="{{$item->file_name}}" alt=""
                                        width="75">
                                </div>
                                <div class="card-body text-center">
@@ -195,9 +195,9 @@
     {{-- <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a> --}}
 </section>
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.3.min.js"integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script> -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> -->
 </script>
 <script>
     // SORT TERBARU

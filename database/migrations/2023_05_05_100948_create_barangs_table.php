@@ -15,8 +15,6 @@ return new class extends Migration
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
             $table->string('file_name');
-            $table->string('file_location');
-            $table->string('file_hash');
             $table->foreignId('id_kategori')->references('id')->on('kategori_barangs')->onDelete('cascade');
             $table->string('judul_barang', 100);
             $table->string('deskripsi');

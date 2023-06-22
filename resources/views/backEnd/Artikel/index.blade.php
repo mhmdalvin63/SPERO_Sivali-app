@@ -5,17 +5,24 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            {{-- @if(auth()->user()->level == "admin") --}}
             <div class="card-title d-flex justify-content-end mb-5">
                 <a href="{{ route('art_create') }}" class="btn btn-primary btn-icon-text">
                     <i class="mdi mdi-upload btn-icon-prepend"></i>
                     Upload
                 </a>
-                {{-- <a href="" class="btn btn-primary">
-              Add Category
-          </a> --}}
+               
             </div>
-            {{-- @endif --}}
+            @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @elseif(session('deleted'))
+    <div class="alert alert-danger alert-dismissible fade show">
+        {{ session('deleted') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
             <div class="table-responsive text-center">
                 <table class="table table-hover table-striped">
                     <thead>
@@ -33,9 +40,9 @@
                     <tbody>
                         @foreach ($Artikel as $item)
                         <tr>
-                            <td>{{$item->id}}</td>
+                            <td>{{$loop->iteration}}</td>
                             {{-- <td><img src="../storage/image/{{$item->gambar_barang}}" alt="" width="200px"></td> --}}
-                            <td><img src="{{asset('storage/image/'.$item->gambar_artikel)}}" alt="" width="75"></td>
+                            <td><img src="{{asset('img/'.$item->gambar_artikel)}}" alt="" height="60"></td>
                             <td>{{$item->judul_artikel}}</td>
                             <td>{{$item->subjudul_artikel}}</td>
                             <td>{{$item->deskripsi_artikel}}</td>

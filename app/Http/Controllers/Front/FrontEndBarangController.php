@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 
 class FrontEndBarangController extends Controller
 {
-    public function dataKategoriBarang(Request $request){
+    public function index(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::where('status','Active')->get();
         $Banner = Banner::all();

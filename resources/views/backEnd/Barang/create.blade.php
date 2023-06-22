@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group mt-5">
                         <label for="formFile" class="form-label">Pilih Gambar Barang</label>
-                        <input class="form-control" type="file" id="formFile" name="gambar_barang">
+                        <input class="form-control fs-bold" type="file" id="formFile" name="file_name">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Pilih Kategori :</label>
