@@ -9,15 +9,18 @@
             {{ csrf_field() }}
             @method('PUT')
             <div class="form-group mt-5">
-                <label for="formFile" class="form-label">Ubah Gambar Jika Ingin</label>
-                <input class="form-control mt-5" type="file" id="formFile" name="gambar_artikel" value="{{ $Artikel->gambar_artikel}}">
+                <label for="formFile" class="form-label">Ubah Gambar Jika Ingin (max 3240px x 3240px)</label>
+                <input class="form-control  fw-bold" type="file" id="formFile" name="gambar_artikel" value="{{ $Artikel->gambar_artikel}}">
+                @error('gambar_artikel')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
               </div>
-              <div class="form-group mt-5">
+              <div class="form-group">
                 <label for="exampleInputUsername1" class="fw-bold">Judul Artikel :</label>
                 <input type="text" class="form-control" id="exampleInputUsername1"
                     placeholder="Masukkan Judul Artikel..." name="judul_artikel" value="{{ $Artikel->judul_artikel}}">
             </div>
-            <div class="form-group mt-5">
+            <div class="form-group">
                 <label for="exampleInputUsername1" class="fw-bold">Sub Judul Artikel :</label>
                 <input type="text" class="form-control" id="exampleInputUsername1"
                     placeholder="Masukkan Subjudul Artikel..." name="subjudul_artikel" value="{{ $Artikel->subjudul_artikel}}">

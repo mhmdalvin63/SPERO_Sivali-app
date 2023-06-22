@@ -35,23 +35,35 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar_artikel' => 'required|image|mimes:jpeg,jpg,png,webp',
+            'gambar_artikel' => 'required|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
             'judul_artikel' => 'required',
             'subjudul_artikel' => 'required',
             'deskripsi_artikel' => 'required',
+        ],[
+            'gambar_artikel' => 'Pilih Gambar',
+            'gambar_artikel.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_artikel.mimes' => 'Image Harus jpeg, jpg, png, webp',
+            'judul_artikel' => 'Judul Tidak Boleh Kosong',
+            'subjudul_artikel' => 'Subjudul Tidak Boleh Kosong',
+            'deskripsi_artikel' => 'Deskripsi Tidak Boleh Kosong',
         ]);
 
-        $gambar_artikel = $request->file('gambar_artikel');
-        $gambar_artikel->storeAs('public/image', $gambar_artikel->hashName());
+        $newArtikel = new Artikel();
+        $newArtikel->judul_artikel = $request->judul_artikel;
+        $newArtikel->subjudul_artikel = $request->subjudul_artikel;
+        $newArtikel->deskripsi_artikel = $request->deskripsi_artikel;
 
-        Artikel::create([
-            'gambar_artikel' => $gambar_artikel->hashName(),
-            'judul_artikel' => $request->judul_artikel,
-            'subjudul_artikel' => $request->subjudul_artikel,
-            'deskripsi_artikel' => $request->deskripsi_artikel,
-        ]);
+        if($request->hasFile('gambar_artikel'))
+        {
+            $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
+            $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
+            $newArtikel->gambar_artikel = $fotoArtikel;
+            $newArtikel->save();
+        }
+
+       $newArtikel->save();
         // Artikel::create($request->all());
-        return redirect('/admartikel')->with('success','Data Pemesanan Berhasil Di Tambahkan');
+        return redirect('/admartikel')->with('success','Data Artikel Berhasil Di Tambahkan');
     }
 
     /**
@@ -78,22 +90,24 @@ class ArtikelController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar_artikel' => '|image|mimes:jpeg,jpg,png,webp',
+            'gambar_artikel' => '|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
             'judul_artikel' => '',
             'subjudul_artikel' => '',
             'deskripsi_artikel' => '',
+        ],[
+            'gambar_artikel.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_artikel.mimes' => 'Image Harus jpeg, jpg, png, webp',
         ]);
 
         $Artikel = Artikel::findOrfail($id);
-        if ($request->hasFile('gambar_artikel')) {
-
-            $gambar_artikel = $request->file('gambar_artikel');
-            $gambar_artikel->storeAs('public/image', $gambar_artikel->hashName());
-
-            Storage::delete('public/image/'.$Artikel->gambar_artikel);
+        if($request->hasFile('gambar_artikel'))
+        {
+            $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
+            $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
+            $Artikel->gambar_artikel = $fotoArtikel;
+            $Artikel->save();
 
             $Artikel->update([
-                'gambar_artikel' => $gambar_artikel->hashName(),
                 'judul_artikel' => $request->judul_artikel,
                 'subjudul_artikel' => $request->subjudul_artikel,
                 'deskripsi_artikel' => $request->deskripsi_artikel,
@@ -105,7 +119,7 @@ class ArtikelController extends Controller
                 'deskripsi_artikel' => $request->deskripsi_artikel,
             ]);
         }
-        return redirect()->route('art_index');
+        return redirect()->route('art_index')->with('success','Data Artikel Berhasil Diupdate');
     }
 
     /**
@@ -116,6 +130,6 @@ class ArtikelController extends Controller
         $Artikel = Artikel::findOrfail($id);
         Storage::delete('public/image'.$Artikel->gambar_artikel);
         $Artikel->delete();
-        return redirect()->route('art_index')->with('success', 'Data deleted successfully');
+        return redirect()->route('art_index')->with('deleted', 'Data Berhasil Dihapus');
     }
 }

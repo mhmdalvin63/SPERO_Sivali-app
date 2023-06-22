@@ -18,7 +18,7 @@
     color: white;
 }
 #top{
-    height: max-content;
+    height: 100vh;
 }
 #carousel{
     width: 100%;
@@ -159,6 +159,7 @@
 }
 #kategoribarang{
     height: max-content;
+    margin-top: -5rem;
     transform: translateY(10rem);
 }
 .circle{

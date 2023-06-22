@@ -124,21 +124,97 @@
   }
 }
 .searchTerm {
-  width: 2.5rem;
+  width: 10rem;
   transition: all .5s ease-in;
   border: .5px solid #00B4CC;
   border-right: none;
   padding: 5px;
-  height: max-content;
+  height: 2.25rem;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
 }
 
-.searchTerm:focus{
+/* .searchTerm:focus{
   color: #888b8b;
   width: 15rem;
   transition: all .5s ease-in;
+} */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dd-button {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 10px 30px 10px 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+/* .dd-button:hover {
+  background-color: #eeeeee;
+} */
+
+
+.dd-input {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+}
+
+.dd-input + .dd-menu {
+  display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+  display: block;
+} 
+
+.dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-menu li:hover {
+  background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+  display: block;
+  text-decoration: none;
+  margin: -10px -20px;
+  padding: 10px 20px;
+}
+
+.dd-menu li.divider{
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
 }
 
 .searchButton {
@@ -162,12 +238,12 @@
     <div class="container">
         <div class="container-fluid">
             <div class="nav_logo">
-                <a class="navbar-brand" href="/home"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
+                <a class="navbar-brand" href="/"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item {{ Request::segment(1) === 'home' ? 'navactive' : null }}">
-                  <a class="nav-link fs-5" aria-current="page" href="{{ url('home' )}}">Home</a>
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('/')}}">Home</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog</a>
@@ -182,31 +258,33 @@
             </div>  
             <div class="nav_notif">
                 <span class="navbar-text d-flex align-items-center justify-content-center gap-3">
-                  {{-- <form role="search">
-                    <div class="search-box">
-                      <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                      <input type="search" id="myInput" onkeyup="myFunction()" class="input-search" placeholder="Type to Search...">
-                    </div>
-                  </form> --}}
-                  <form action="{{ url('search') }}" method="GET" role="search" class="wrap">
+                    <form action="{{ url('search') }}" method="GET" role="search" class="wrap">
                     <div class="search">
-                      <input type="search" name="search" value="" class="searchTerm" placeholder="Cari Barangmu...">
+                      <input type="search" name="search" value="" class="searchTerm" placeholder="Search Barang">
                       <button type="submit" class="searchButton">
                         <i class="fa fa-search"></i>
                      </button>
                     </div>
                   </form>
-                    <a href="">
-                      <div class="profil me-2">
-                        <i class="fa-lg fa-regular fa-user w-75"></i>
-                      </div>
-                    </a>
-                    <a href="{{ url('wishlist') }}">
-                      <div class="wishlist">
-                        {{-- <i class="fa-lg fa-solid fa-cart-shopping w-75"></i> --}}
-                        <i class="fa-lg fa-regular fa-heart"></i>
-                        </div>
-                    </a>
+                  <!-- <a href="{{url('logout')}}">
+                    <div class="profil me-2">
+                      <i class="fa-lg fa-regular fa-user w-75"></i>
+                    </div>
+                  </a> -->
+                  <!-- <a href="{{ url('wishlist') }}">
+                    <div class="wishlist">
+                      {{-- <i class="fa-lg fa-solid fa-cart-shopping w-75"></i> --}}
+                      <i class="fa-lg fa-regular fa-heart"></i>
+                    </div>
+                  </a> -->
+                
+                    <!-- <li>
+                      <a href="/profil"><i class="fa-regular text-dark fa-user me-2"></i>Profile</a>
+                    </li> -->
+                    
+                  </ul>
+                  
+                </label>
                 </span>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -227,7 +305,7 @@
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('home' )}}">Home</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'navactive' : null }}">
-                  <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog</a>
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog gw</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'artikel' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('artikel' )}}">Artikel</a>
@@ -246,7 +324,9 @@
                        </button>
                       </div>
                     </form>
-                      <a href="">
+                    
+            
+                      <a href="/logout">
                         <div class="profil me-2">
                           <i class="fa-lg fa-regular fa-user w-75"></i>
                         </div>

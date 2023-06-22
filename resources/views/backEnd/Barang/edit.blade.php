@@ -18,8 +18,11 @@
               </div>
               
             <div class="form-group mt-5">
-                <label for="formFile" class="form-label">Pilih Gambar Barang</label>
-                <input class="form-control" type="file" id="formFile" name="gambar_barang" value="{{$barang->gambar_barang}}">
+                <label for="formFile" class="form-label">Pilih Gambar Barang (max 3240px x 3240px)</label>
+                <input class="form-control fw-bold" type="file" id="formFile" name="file_name" value="{{$barang->file_name}}">
+                @error('file_name')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="form-group">

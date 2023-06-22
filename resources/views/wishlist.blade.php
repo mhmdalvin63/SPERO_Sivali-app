@@ -114,7 +114,7 @@
                 <div class="col-7 col-sm-6 my-auto">
                     <p class="border-0 mb-2">Total Barang : {{ $FavoritMerge->count() }}</p>
                     <div class="search-wishlist d-flex justify-content-end align-items-center">
-                        <input id="myInput" type="text" placeholder="Cari Barangmu...."> 
+                        <input id="myInput" type="text" placeholder="Search Barang"> 
                     </div>
                 </div>
             </div>
@@ -143,23 +143,23 @@
                                             <div class="col-md-8 col-6">
                                                 <div class="row" id="produk">
                                                     <div class="parent_img col-md-6 col-12">
-                                                        <img src="{{$item->Barang->file_location.'/'.$item->Barang->file_hash}}"
+                                                        <img src="{{'img/'.$item->Barang->file_name}}"
                                                             title="{{$item->Barang->file_name}}" alt="" width="75"
                                                             style="width: 100%; height: 100%; object-fit: contain;">
                                                     </div>
-                                                    <div class="judul_barang col-md-6 col-12">
+                                                    <div class="judul_barang col-md-6 col-12 mt-5">
                                                         <p>{{$item->Barang->judul_barang}}</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="harga col-md-2 col-3 text-center">
+                                            <div class="harga col-md-2 col-3 text-center mt-5">
                                                 @if ($item->Barang->harga_diskon==null)
                                                 <span class="fw-bold">Rp.{{ number_format($item->Barang->harga_asli, 2, ',', '.') }}</span>
                                                 @else
                                                 <span class="fw-bold">Rp.{{ number_format($item->Barang->harga_diskon, 2, ',', '.') }}</span>
                                                 @endif
                                             </div>
-                                            <div class="col-md-2 col-3 text-center">
+                                            <div class="col-md-2 col-3 text-center mt-5">
                                                 {{-- <a href="{{ route('Favorit-delete',['id' => $item->id]) }}">Hapus</a> --}}
                                                 <form method="POST" action="{{ route('Favorit-delete',$item->id_barang) }}">
                                                     @csrf

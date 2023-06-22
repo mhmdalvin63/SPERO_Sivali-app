@@ -143,7 +143,7 @@
     <div class="db_section">
         <div class="row db_row">
             <div class="db_img col-md-6">
-                <img src="{{$barang->file_location.'/'.$barang->file_hash}}" title="{{$barang->file_name}}" alt=""
+                <img src="{{asset('img/'.$barang->file_name)}}" title="{{$barang->file_name}}" alt=""
                     width="75">
                     <div class="sosmed mt-2 gap-2 d-flex justify-content-end">
                         <p class="mb-0 text-end">Bagikan</p>

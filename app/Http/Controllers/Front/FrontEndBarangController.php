@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 
 class FrontEndBarangController extends Controller
 {
-    public function dataKategoriBarang(Request $request){
+    public function index(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::where('status','Active')->get();
         $Banner = Banner::all();
@@ -90,7 +90,7 @@ class FrontEndBarangController extends Controller
     }
     public function SearchProduct(Request $request){
         if ($request->search) {
-            $searchProduct = NewBarang::where('judul_barang','LIKE','%'.$request->search.'%')->latest()->paginate(10);
+            $searchProduct = NewBarang::where('judul_barang','LIKE','%'.$request->search.'%')->orwhere('harga_asli','LIKE','%'.$request->search.'%')->orwhere('stok','=',$request->search)->latest()->paginate(10);
             return view('search', compact('searchProduct'));
         } else {
            return redirect()->back()->with('message','Empty Search');

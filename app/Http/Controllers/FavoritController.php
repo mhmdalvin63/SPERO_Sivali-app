@@ -6,6 +6,7 @@ use Session;
 use App\Models\Favorit;
 use App\Models\NewBarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class FavoritController extends Controller
@@ -52,6 +53,7 @@ class FavoritController extends Controller
             $love = Favorit::create(
                 [
                     'id_barang' => $id,
+                    'user_id' => Auth::user()->id,
                     ]
             );
                 // dd($id);

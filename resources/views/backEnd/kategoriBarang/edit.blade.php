@@ -4,13 +4,15 @@
     
 <div class="card">
     <div class="card-body">
-        <img src="{{asset('storage/image/'.$KategoriBarang->gambar_kategori)}}" alt="" width="100">
+        <img src="{{asset('img'.$KategoriBarang->gambar_kategori)}}" alt="" width="100">
         <form action="{{ route('kb_update', $KategoriBarang->id) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PUT')
             <div class="form-group mt-5">
-                <label for="formFile" class="form-label">Ubah Gambar Jika Ingin</label>
-                <input class="form-control mt-5" type="file" id="formFile" name="gambar_kategori" value="{{ $KategoriBarang->gambar_kategori}}">
+                <label for="formFile" class="form-label">Ubah Gambar Jika Ingin (max 3240px x 3240px)</label>
+                <input class="form-control fw-bold" type="file" id="formFile" name="gambar_kategori" value="{{ $KategoriBarang->gambar_kategori}}"> @error('gambar_kategori')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
               </div>
               <div class="form-group mt-5">
                 <label for="exampleInputUsername1">Nama Kategori Barang :</label>

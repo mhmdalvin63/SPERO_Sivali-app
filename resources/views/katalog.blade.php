@@ -84,6 +84,25 @@
 </style>
 
 @section('content')
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container" id="top_content">
     <div id="top_cf">
         <div class="content">
@@ -92,8 +111,8 @@
                     <div class="tc_content mt-5">
                         <h1 class="text-white fw-light"><span class="fw-bold">SIVALI</span> #1 WEBSITE FURNITURE
                             TERPERCAYA</h1>
-                        <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iure.
-                        </p>
+                        <!-- <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iure.
+                        </p> -->
                     </div>
                     <a href="#next_scroll" class="scrolling">
                         <p class="text-white fs-4 mb-1">LIHAT <b>LEBIH</b></p>
@@ -115,7 +134,7 @@
             <div class="produk d-grid d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-center justify-content-around"
                 style="width: 100%">
                 <div class=" barang__kiri" id="gambar_barang">
-                    <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt=""
+                <img src="{{asset('img/'.$item->file_name)}}" alt=""
                         style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     {{-- <img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt=""> --}}
                 </div>
@@ -180,8 +199,8 @@
 
                 </div>
                 <div class=" barang__kanan" id="gambar_barang">
-                    <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt=""
-                        style="width: 100%;height: 100%; object-fit: contain;aspect-ratio: 2/2;">
+                <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                        style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     {{-- <img src="{{asset('../img/meja-flexibel.png')}}" width="100%" alt=""> --}}
                 </div>
             </div>
@@ -192,10 +211,7 @@
 
 <div class="container mb-5" id="list_katalog">
     <div class="row d-flex align-items-center">
-        <div class="col-md-4 col-lg-2 col-12 text-center text-md-left">
-            <h3 class="fw-bold mb-0">FURNITURES</h3>
-        </div>
-        <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap justify-content-center">
+        <div id="menu" class="col-md-8 col-lg-10 mt-3 mt-lg-0 menu d-flex gap-3 flex-wrap">
             <button id="home_button" class="btn menu_btn sorter" role="button" data-filter="*">Semua</button>
             @foreach ($kategoriBarang as $item)
             <button class="btn menu_btn sorter" role="button"
@@ -206,7 +222,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <ul class=" mt-5" id="sort-me">
+            <ul class="" id="sort-me">
                 @foreach ($barang as $key => $item)
                 <li class="mt-5 filter-{{$item->id_kategori}}" data-title="{{$key}}" data-order="{{$key}}">
                     {{-- <li class="mt-5" data-kategori="{{$item->id_kategori}}"> --}}
@@ -227,8 +243,8 @@
                         <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
                             <div>
                                 <div class="card__img d-flex justify-content-center align-items-center">
-                                    <img src="{{$item->file_location.'/'.$item->file_hash}}"
-                                        title="{{$item->file_name}}" alt="">
+                                <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                        style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                                 </div>
                                 <div class="card__title">
                                     <p class="mb-1 mt-3 text-black">{{$item->judul_barang}}</p>
@@ -261,19 +277,11 @@
                             </div>
                         </a>
 
-                        <div class="hovering d-flex justify-content-around">
-                            <div class="hovering__left d-flex align-items-center justify-content-center px-3 py-3">
+                        <!-- <div class="hovering d-flex justify-content-around">
+                            <div class="hovering__left d-flex align-items-center justify-content-center">
                                 <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
                             </div>
-                            {{-- <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
-                                        <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
-                                    </div> --}}
-                            <div class="hovering__right d-flex justify-content-center align-items-center px-3 py-3">
-                                <a href="{{ route('favorit_barang', $item->id)}}#list_barang">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                                </a>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </li>
                 @endforeach
@@ -291,24 +299,28 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="slider">
+            @foreach ($barangrandomkanan->take(1) as $item)
                 <div class="carousel-item d-grid active">
                     <div class="ci_image">
-                        <img src="{{asset('../img/figma-lampu-1.png')}}" alt="...">
+                        <img src="{{asset('img/'.$item->file_name)}}" width="250" height="250" alt="...">
                     </div>
                     <div class="ci_desc text-black">
-                        <p class="fw-bold">Gaya Baru <span class="fw-light">Kursi Modern</span></p>
+                        <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
                         <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
                     </div>
                 </div>
+                @endforeach
+                @foreach ($barangrandomkiri->take(1) as $item)
                 <div class="carousel-item d-grid">
                     <div class="ci_image">
-                        <img src="{{asset('../img/figma-lemari-1.png')}}" alt="...">
+                        <img src="{{asset('img/'.$item->file_name)}}" width="250" height="250" alt="...">
                     </div>
                     <div class="ci_desc text-black">
-                        <p class="fw-bold">Gaya Baru <span class="fw-light">Lemari Modern</span></p>
+                        <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
                         <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
 
@@ -346,8 +358,8 @@
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" id="pbi">
                         {{-- <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}"
                         alt="" width="75"> --}}
-                        <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}" alt=""
-                            style="width: 100%;height: 100%; object-fit: contain;">
+                        <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                        style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     </div>
                     <div class="r_desc col-md-6 fs-5 pl-5 ">
                         <p class="mb-0 text-black">{{$item->judul_barang}}</p>
@@ -380,10 +392,10 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script> -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 
 <script>
  $(document).ready(function (e) {
@@ -478,7 +490,7 @@
             }).wrap($outerWrapper);
 
             $lis.css({
-                'display': 'inline-block'
+                // 'display': 'inline-block'
             }).each(function (i) {
                 widths[i] = $(this).outerWidth() + options.css.border.width * 2;
                 heights[i] = $(this).outerHeight() + options.css.border.width * 2;
