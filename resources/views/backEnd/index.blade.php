@@ -175,7 +175,7 @@
                         </li>
                         <li>
                             <a class="nav-link {{ Request::segment(1) === 'banner' ? 'sideactive' : null }}" href="{{ url('banner' )}}"><i class="far fa-file-alt"></i>
-                            <span>Banner</span></a>
+                            <span>Banner Home</span></a>
                         </li>
                         <!-- <li>
                             <a class="nav-link {{ Request::segment(1) === 'manage_user' ? 'sideactive' : null }}" href="{{ url('manage_user' )}}"><i class="far fa-user"></i>

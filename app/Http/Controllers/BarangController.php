@@ -41,7 +41,7 @@ class BarangController extends Controller
     {
         $this->validate($request,[
             'status' => 'required',
-            'file_name' => 'required|image|mimes:jpeg,jpg,png,webp',
+            'file_name' => 'required|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
             'id_kategori' => 'required',
             'judul_barang' => 'required',
             'deskripsi' => 'required',
@@ -51,6 +51,16 @@ class BarangController extends Controller
             'stok' => 'required',
             'terjual' => '',
             'rate' => 'required',
+        ],[
+            'status' => 'Status Tidak Boleh Kosong',
+            'file_name' => 'File Tidak Boleh Kosong',
+            'file_name.dimensions' => 'Image Melebihi Kapasitas',
+            'file_name.mimes' => 'Image Format Harus jpg, jpeg, png, webp',
+            'id_kategori' => 'Kategori Tidak Boleh Kosong',
+            'judul_barang' => 'Judul Tidak Boleh Kosong',
+            'harga_asli' => 'Harga Asli Tidak Boleh Kosong',
+            'stok' => 'Stok Tidak Boleh Kosong',
+            'rate' => 'Rate Tidak Boleh Kosong',
         ]);
 
         $newBarang = new NewBarang();
@@ -104,7 +114,7 @@ class BarangController extends Controller
     {
         $this->validate($request,[
             'status' => '',
-            'gambar_barang' => '|image|mimes:jpeg,jpg,png,webp',
+            'file_name' => '|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240|',
             'id_kategori' => '',
             'judul_barang' => '',
             'deskripsi' => '',
@@ -114,6 +124,9 @@ class BarangController extends Controller
             'stok' => '',
             'terjual' => '',
             'rate' => '',
+        ],[
+            'file_name.dimensions' => 'Image Melebihi Kapasitas',
+            'file_name.mimes' => 'Image Format Harus jpg, jpeg, png, webp',
         ]);
 
         $barang = NewBarang::findOrfail($id);

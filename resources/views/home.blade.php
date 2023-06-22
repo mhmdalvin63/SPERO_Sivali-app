@@ -178,10 +178,10 @@
         transform: translateY(9rem);">
     <h1 class="text-center fw-bold">Katalog Kami</h1>
     <div class="menu d-flex gap-2 flex-wrap justify-content-start justify-content-md-center mt-5">
-        <button id="lb_filter" data-filter="Active" onclick="home()" class="home_button btn menu_btn"
+        <!-- <button id="lb_filter" onclick="home()" class="home_button btn menu_btn"
             role="button">Semua
-        </button>
-        <button id="lb_filter" data-filter="Terbaru" onclick="showterbaru()" class="btn menu_btn" role="button">Terbaru</button>
+        </button> -->
+        <button id="lb_filter" data-filter="Terbaru" data-filter="Active" onclick="showterbaru()" class="btn home_button menu_btn" role="button">Terbaru</button>
         <button id="lb_filter" data-filter="Terlaris" onclick="showterlaris()" class="btn menu_btn" role="button">Terlaris</button>
         <button id="lb_filter" onclick="showtermurah()" data-filter="Termurah" class="btn menu_btn" role="button">Termurah</button>
         <button id="lb_filter" onclick="showtermahal()" data-filter="Termahal" class="btn menu_btn" role="button">Termahal</button>
@@ -405,7 +405,7 @@
     var resulttermurah = "";
     var resulttermahal = "";
     var resultpromo = "";
-    var resultstatus = "";
+    // var resultstatus = "";
 
         var sortterbaru = jQuery(".lbblbb").find(".list-barang-barang").toArray().reverse(function(a, b){return parseInt(b.getAttribute('terbaru_count')) - parseInt(a.getAttribute('terbaru_count'))});
             jQuery.each(sortterbaru, function(index, value) {
@@ -440,10 +440,10 @@
             resulttermahal += $(sorttermahal[i]).html();
         }
         // SORT SEMUA
-        var sortiractive = document.querySelectorAll('[data-status="Active"]');
-                for (var i = 0; i < (sortiractive.length > 4 ? 4 : sortiractive.length); i++) {
-                    resultstatus += $(sortiractive[i]).html();
-                };
+        // var sortiractive = document.querySelectorAll('[data-status="Active"]');
+        //         for (var i = 0; i < (sortiractive.length > 4 ? 4 : sortiractive.length); i++) {
+        //             resultstatus += $(sortiractive[i]).html();
+        //         };
         // SORT PROMO
         var sortirpromo = document.querySelectorAll('[data-promosi="Promo"]');
         for (var i = 0; i < (sortirpromo.length > 4 ? 4 : sortirpromo.length); i++) {
@@ -462,9 +462,9 @@
     function showtermahal() {
         $("#lbblbb").html(resulttermahal == undefined ? '' : resulttermahal);
     }
-    function home() {
-        $("#lbblbb").html(resultstatus == undefined ? '' : resultstatus);
-    }
+    // function home() {
+    //     $("#lbblbb").html(resultstatus == undefined ? '' : resultstatus);
+    // }
     function showpromo() {
         $("#lbblbb").html(resultpromo == undefined ? '' : resultpromo);
         

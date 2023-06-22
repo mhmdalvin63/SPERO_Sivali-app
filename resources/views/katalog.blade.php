@@ -111,8 +111,8 @@
                     <div class="tc_content mt-5">
                         <h1 class="text-white fw-light"><span class="fw-bold">SIVALI</span> #1 WEBSITE FURNITURE
                             TERPERCAYA</h1>
-                        <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iure.
-                        </p>
+                        <!-- <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iure.
+                        </p> -->
                     </div>
                     <a href="#next_scroll" class="scrolling">
                         <p class="text-white fs-4 mb-1">LIHAT <b>LEBIH</b></p>
@@ -277,25 +277,11 @@
                             </div>
                         </a>
 
-                        <div class="hovering d-flex justify-content-around">
-                            <div class="hovering__left d-flex align-items-center justify-content-center px-3 py-3">
+                        <!-- <div class="hovering d-flex justify-content-around">
+                            <div class="hovering__left d-flex align-items-center justify-content-center">
                                 <i class="fa-solid fa-comment-dots fa-lg" style="color: #fff"></i>
                             </div>
-                            {{-- <div class="hovering__right d-flex justify-content-center align-items-center" style="width: 30%;">
-                                        <i class="fa-solid fa-cart-shopping fa-lg" style="color: #fff;"></i>
-                                    </div> --}}
-                            <div class="hovering__right d-flex justify-content-center align-items-center px-3 py-3">
-                                <a href="{{ route('favorit_barang', $item->id)}}#list_barang">
-                                    <i class="fa-regular fa-heart fa-lg" style="color: #fff;"></i>
-                                </a>
-                            </div>
-                            <div class="hovering__right d-flex justify-content-center align-items-center px-3 py-3">
-                                <a href="{{ url('chart', $item->id)}}#list_barang">
-                               
-                                <i class="fa-solid fa-cart-shopping" style="color: #ffff;"></i>
-                                </a>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </li>
                 @endforeach
@@ -313,24 +299,28 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="slider">
+            @foreach ($barangrandomkanan->take(1) as $item)
                 <div class="carousel-item d-grid active">
                     <div class="ci_image">
-                        <img src="{{asset('../img/figma-lampu-1.png')}}" alt="...">
+                        <img src="{{asset('img/'.$item->file_name)}}" width="250" height="250" alt="...">
                     </div>
                     <div class="ci_desc text-black">
-                        <p class="fw-bold">Gaya Baru <span class="fw-light">Kursi Modern</span></p>
+                        <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
                         <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
                     </div>
                 </div>
+                @endforeach
+                @foreach ($barangrandomkiri->take(1) as $item)
                 <div class="carousel-item d-grid">
                     <div class="ci_image">
-                        <img src="{{asset('../img/figma-lemari-1.png')}}" alt="...">
+                        <img src="{{asset('img/'.$item->file_name)}}" width="250" height="250" alt="...">
                     </div>
                     <div class="ci_desc text-black">
-                        <p class="fw-bold">Gaya Baru <span class="fw-light">Lemari Modern</span></p>
+                        <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
                         <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
 

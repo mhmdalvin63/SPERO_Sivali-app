@@ -242,8 +242,8 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item {{ Request::segment(1) === '' ? 'navactive' : null }}">
-                  <a class="nav-link fs-5" aria-current="page" href="{{ url('/' )}}">Home</a>
+                <li class="nav-item {{ Request::segment(1) === 'home' ? 'navactive' : null }}">
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('/')}}">Home</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog</a>

@@ -10,13 +10,19 @@
                 <form action="{{ route('kb_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="formFile" class="form-label">Pilih Gambar Kategori (1080px x 1080px)</label>
-                        <input class="form-control" type="file" id="formFile" name="gambar_kategori">
+                        <label for="formFile" class="form-label">Pilih Gambar Kategori (max 3240px x 3240px)</label>
+                        <input class="form-control fw-bold" type="file" id="formFile" name="gambar_kategori" >
+                        @error('gambar_kategori')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
                       </div>
                     <div class="form-group">
                         <label for="exampleInputUsername1" class="fw-bold">Nama Kategori Barang :</label>
                         <input type="text" class="form-control" id="exampleInputUsername1"
-                            placeholder="Masukkan Nama Kategori Barang..." name="kategori_barang">
+                            placeholder="Masukkan Nama Kategori Barang..." name="kategori_barang" >
+                            @error('kategori_barang')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
                     </div>
                     <div class="modal-footer">
                         <a href="{{ route('kb_index') }}" class="btn btn-outline-warning btn-icon-text">

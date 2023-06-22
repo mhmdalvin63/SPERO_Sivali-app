@@ -35,8 +35,12 @@ class BannerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar_banner' => 'required|image|mimes:jpeg,jpg,png,webp|dimensions:max_width=1440px,max_height=556px',
+            'gambar_banner' => 'required|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
             'id_barang' => 'required',
+        ],[
+            'gambar_banner.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_banner.mimes' => 'Image Format Harus jpg, jpeg, png, webp',
+            'id_barang' => 'Kategori Tidak Boleh Kosong'
         ]);
 
         $newBanner = new Banner();
@@ -82,8 +86,11 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar_banner' => 'required|image|mimes:jpeg,jpg,png,webp|dimensions:max_width=1440px,max_height=556px',
+            'gambar_banner' => '|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
             'id_barang' => '',
+        ],[
+            'gambar_banner.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_banner.mimes' => 'Image Format Harus jpg, jpeg, png, webp',
         ]);
 
         $Banner = Banner::findOrfail($id);

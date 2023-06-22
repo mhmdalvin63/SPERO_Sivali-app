@@ -90,7 +90,7 @@ class FrontEndBarangController extends Controller
     }
     public function SearchProduct(Request $request){
         if ($request->search) {
-            $searchProduct = NewBarang::where('judul_barang','LIKE','%'.$request->search.'%')->latest()->paginate(10);
+            $searchProduct = NewBarang::where('judul_barang','LIKE','%'.$request->search.'%')->orwhere('harga_asli','LIKE','%'.$request->search.'%')->orwhere('stok','=',$request->search)->latest()->paginate(10);
             return view('search', compact('searchProduct'));
         } else {
            return redirect()->back()->with('message','Empty Search');

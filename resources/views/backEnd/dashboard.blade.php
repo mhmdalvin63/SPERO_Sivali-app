@@ -14,10 +14,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Total Admin</h4>
+                    <h4>Total Barang</h4>
                   </div>
                   <div class="card-body">
-                    10
+                    {{$sumBarang}}
                   </div>
                 </div>
               </div>
@@ -29,10 +29,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>News</h4>
+                    <h4>Artikel</h4>
                   </div>
                   <div class="card-body">
-                    42
+                    {{$countArt}}
                   </div>
                 </div>
               </div>
@@ -44,10 +44,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Reports</h4>
+                    <h4>Banner</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                    {{$countBan}}
                   </div>
                 </div>
               </div>
@@ -59,10 +59,10 @@
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Online Users</h4>
+                    <h4>Kategori</h4>
                   </div>
                   <div class="card-body">
-                    47
+                    {{$countKate}}
                   </div>
                 </div>
               </div>
