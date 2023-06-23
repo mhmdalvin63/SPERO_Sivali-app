@@ -47,9 +47,9 @@ Route::post('/verified',[LoginController::class, 'verified'])->name('verified');
 // Route::get('/resend', [LoginController::class, 'resendotp'])->name('resendotp');
 // Route::post('/register',[LoginController::class, 'verify'])->name('verify');
 
-Route::get('/signin', [LoginController::class, 'adminlogin'])->name('signin');
-Route::post('/postlogin',[LoginController::class, 'postadmin'])->name('postadmin');
-Route::get('/logoutadmin', [LoginController::class, 'logoutadmin'])->name('logoutadmin');
+Route::get('/signin', [SigninController::class, 'adminlogin'])->name('signin');
+Route::post('/postlogin',[SigninController::class, 'postadmin'])->name('postadmin');
+Route::get('/logoutadmin', [SigninController::class, 'logoutadmin'])->name('logoutadmin');
 
 // Route::middleware(['web'])->group(function(){
 //     Route::middleware(['logged_in'])->group(function(){
