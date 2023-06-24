@@ -35,13 +35,13 @@ class ArtikelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar_artikel' => 'required|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
+            'gambar_artikel' => 'required|file|mimes:jpeg,jpg,png,webp|size:2048',
             'judul_artikel' => 'required',
             'subjudul_artikel' => 'required',
             'deskripsi_artikel' => 'required',
         ],[
             'gambar_artikel' => 'Pilih Gambar',
-            'gambar_artikel.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_artikel.size' => 'Image Melebihi 2048kb',
             'gambar_artikel.mimes' => 'Image Harus jpeg, jpg, png, webp',
             'judul_artikel' => 'Judul Tidak Boleh Kosong',
             'subjudul_artikel' => 'Subjudul Tidak Boleh Kosong',
@@ -90,12 +90,12 @@ class ArtikelController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar_artikel' => '|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
+            'gambar_artikel' => '|file|mimes:jpeg,jpg,png,webp|size:2048',
             'judul_artikel' => '',
             'subjudul_artikel' => '',
             'deskripsi_artikel' => '',
         ],[
-            'gambar_artikel.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_artikel.size' => 'Image Melebihi 2048kb',
             'gambar_artikel.mimes' => 'Image Harus jpeg, jpg, png, webp',
         ]);
 

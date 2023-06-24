@@ -31,7 +31,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>No</th>
                             <th>Gambar</th>
                             <th>Kategori</th>
                             {{-- @if(auth()->user()->level == "admin") --}}
