@@ -9,7 +9,7 @@
             {{ csrf_field() }}
             @method('PUT')
             <div class="form-group mt-5">
-                <label for="formFile" class="form-label">Ubah Gambar Jika Ingin (max 3240px x 3240px)</label>
+                <label for="formFile" class="form-label">Ubah Gambar Jika Ingin (max 2048kb)</label>
                 <input class="form-control fw-bold" type="file" id="formFile" name="gambar_kategori" value="{{ $KategoriBarang->gambar_kategori}}"> @error('gambar_kategori')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

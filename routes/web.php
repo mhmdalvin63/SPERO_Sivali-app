@@ -35,15 +35,15 @@ use App\Http\Controllers\Front\DataBarangFrontController;
 
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('/login', [LoginController::class, 'index'])->name('login');
+// Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
+// Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route::get('/register', [LoginController::class, 'register'])->name('register');
 // Route::post('/postregister',[LoginController::class, 'postregister'])->name('postregister');
 
-Route::get('/verification/{$id}', [LoginController::class, 'verification'])->name('verification');
-Route::post('/verified',[LoginController::class, 'verified'])->name('verified');
+// Route::get('/verification/{$id}', [LoginController::class, 'verification'])->name('verification');
+// Route::post('/verified',[LoginController::class, 'verified'])->name('verified');
 // Route::get('/resend', [LoginController::class, 'resendotp'])->name('resendotp');
 // Route::post('/register',[LoginController::class, 'verify'])->name('verify');
 
@@ -52,21 +52,22 @@ Route::post('/postlogin',[SigninController::class, 'postadmin'])->name('postadmi
 Route::get('/logoutadmin', [SigninController::class, 'logoutadmin'])->name('logoutadmin');
 
 // Route::middleware(['web'])->group(function(){
-//     Route::middleware(['logged_in'])->group(function(){
-//         Route::get('/', [LoginController::class, 'index'])->name('login');
-//         Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
-//     });
-//     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('/', [FrontEndBarangController::class, 'index'])->name('home');
-    Route::get('search', [FrontEndBarangController::class,'SearchProduct']);
-    Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
-    
-            Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
-            Route::get('/katalog/{id}', [FrontEndBarangController::class,'dataKategoriBarangKatalogId'])->name('katalogFilter');
-            Route::get('/artikel', [FrontEndBarangController::class,'dataArtikel']);
-            Route::get('/artikel/{id}', [FrontEndBarangController::class,'dataArtikelDetail'])->name('detail_artikel');
-            Route::get('/kontak', function () {return view('kontak');});
-// });
+    //     Route::middleware(['logged_in'])->group(function(){
+        //         Route::get('/', [LoginController::class, 'index'])->name('login');
+        //         Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
+        //     });
+        //     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+        Route::get('/home', [FrontEndBarangController::class, 'index'])->name('home');
+        Route::get('/', [FrontEndBarangController::class, 'index'])->name('home');
+        Route::get('search', [FrontEndBarangController::class,'SearchProduct']);
+        Route::get('/detailBarang/{id}', [FrontEndBarangController::class,'detailBarang'])->name('detail_barang');
+        
+        Route::get('/katalog', [FrontEndBarangController::class,'dataKategoriBarangKatalog']);
+        Route::get('/katalog/{id}', [FrontEndBarangController::class,'dataKategoriBarangKatalogId'])->name('katalogFilter');
+        Route::get('/artikel', [FrontEndBarangController::class,'dataArtikel']);
+        Route::get('/artikel/{id}', [FrontEndBarangController::class,'dataArtikelDetail'])->name('detail_artikel');
+        Route::get('/kontak', function () {return view('kontak');});
+        // });
 Route::middleware(['auth:web', 'PreventBack', 'user'])->group(function(){
 
         // Route::get('/katalog/{id}', [FrontEndBarangController::class,'SearchProduct']);

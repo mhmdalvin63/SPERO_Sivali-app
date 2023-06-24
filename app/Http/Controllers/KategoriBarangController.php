@@ -36,12 +36,12 @@ class KategoriBarangController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'gambar_kategori' => 'required|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
+            'gambar_kategori' => 'required|file|mimes:jpeg,jpg,png,webp|size:2048',
             'kategori_barang' => 'required',
         ],[
             'gambar_kategori' => 'Gambar Harus Di isi',
             'gambar_kategori.mimes' => 'Image Harus jpeg, jpg, png, webp',
-            'gambar_kategori.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_kategori.size' => 'Image Melebihi 2048kb',
             'kategori_barang' => 'Kategori Tidak Boleh Kosong'
         ]);
 
@@ -86,11 +86,11 @@ class KategoriBarangController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'gambar_kategori' => '|file|mimes:jpeg,jpg,png,webp|dimensions:max_width=3240,max_height=3240',
+            'gambar_kategori' => '|file|mimes:jpeg,jpg,png,webp|size:2048',
             'kategori_barang' => '',
         ],[
             'gambar_kategori.mimes' => 'Image Harus jpeg, jpg, png, webp',
-            'gambar_kategori.dimensions' => 'Image Melebihi Kapasitas',
+            'gambar_kategori.size' => 'Image Melebihi 2048kb',
         ]);
 
         $KategoriBarang = NewkategoriBarang::findOrfail($id);
