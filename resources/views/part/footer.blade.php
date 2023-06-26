@@ -1,7 +1,7 @@
 <style>
     footer{
         margin-top: 2.5rem;
-        background-color: #19376D;
+        background-color: #4C4C6D;
         padding: 3rem 0 2rem 0;
     }
     .text-justify{
@@ -36,35 +36,32 @@
     <div class="container">
         <div class="row">
             <div class="par-img col-md-2 d-flex justify-content-center align-items-center">
-                <img src="{{asset('../img/logo-sivali-putih.png')}}" width="100%" alt="">
+                <img src="{{asset('../img/ELEGAN_PNG.png')}}" width="100%" alt="">
             </div>
             <div class="col-md-4 mt-3">
-                <h2>SIVALI FURNITURE</h2>
-                <p class="text-justify">Sivali Fitur adalah sebuah wadah untuk anda yang sedang mencari furniture terbaik.</p>
-                <div class="sosmed d-flex gap-4 mt-3 mt-lg-4 mb-4 mb-lg-0 flex-wrap">
-                    <i class="fa-brands fa-facebook-f fa-lg"></i>
-                    <i class="fa-brands fa-twitter fa-lg"></i>
-                    <i class="fa-brands fa-instagram fa-lg"></i>
-                    <i class="fa-brands fa-youtube fa-lg"></i>
-                    <i class="fa-brands fa-tiktok fa-lg"></i>
-                    <i class="fa-solid fa-circle-play fa-lg"></i>
-                </div>
+                <h2>ELEGAN FASHION STORE</h2>
+                <p class="text-justify" style="font-size: 15px">Elegan Fashion Store menyediakan berbagai koleksi sepatu seperti sneakers, sandal, dan aksesoris fashion pendukung lainnya yang berkualitas tinggi, sangat populer dikalangan para remaja dengan harga terjangkau.<br><br>Sneakers sebagai produk utama yang dijual dan didesain sangat nyaman untuk traveling, olahraga, berkuliah, sekolah dan aktivitas lainnya. Saat kamu merasa kurang percaya diri pakai sepatu apa yang cocok untuk menyempurnakan gayamu, coba pilih salah satu sepatu casual dengan warna-warna netral dari produk kami. Mulai dari warna putih, pink, hitam, krem, hingga abu-abu dapat kamu temukan dengan mudah di Elegan Fashion Store. </p>
             </div>
             <div class="col-md-2 mt-3">
                 <h2>MENU</h2>
-                <p class="mb-1">Home</p>
-                <p class="mb-1">Artikel</p>
-                <p class="mb-1">Katalog</p>
-                <p class="mb-1">Kontak Kami</p>
+                <a style="text-decoration: none;" class="text-white" href="/home"><p class="mb-1">Home</p></a>
+                <a style="text-decoration: none;" class="text-white" href="/artikel">
+                <p class="mb-1">Artikel</p></a>
+                <a style="text-decoration: none;" class="text-white" href="/katalog">
+                <p class="mb-1">Katalog</p></a>
+                <a style="text-decoration: none;" class="text-white" href="/kontak">
+                <p class="mb-1">Kontak Kami</p></a>
             </div>
             <div class="col-md-4 mt-3">
-                <h2>ALAMAT</h2>
-                <p class="text-justify">Jalan bukit sikumbang, no.103, rangkapan jaya baru, pancoran mas, depok.</p>
+                <h2>SOCIAL MEDIA</h2>
+                <p class="text-justify"><i class="fa-brands fa-facebook-f fa-lg"></i> : Elegan FashionStore</p>
+                <p class="text-justify"><i class="fa-brands fa-instagram fa-lg"></i> : elegan_fashion_store</p>
+                <p class="text-justify"><i class="fa-brands fa-tiktok fa-lg"></i> : eleganfashionstore</p>
             </div>
         </div>
         <hr class="bg-white border-2 border-top border-white">
         <div class="bottom_footer d-flex justify-content-between">
-            <p>@2020 Sivalin Furniture Jepara, All Rights Reserved</p>
+            <p>@2020 Elegan Fashion Store, All Rights Reserved</p>
             <p><a class="text-white" href="#">Terms & Condition</a> - <a class="text-white" href="#">Privacy</a> - <a class="text-white" href="#">Cookies</a></p>
         </div>
     </div>

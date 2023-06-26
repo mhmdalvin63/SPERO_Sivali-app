@@ -9,15 +9,16 @@
     <div class="header d-flex">
         <div class="content">
             <p class="fs-4 fw-bold" style="color:
-            #134B6E">HUBUNGI KAMI</p>
+            #7E1717">HUBUNGI KAMI</p>
             <img class="img-fluid" src="{{asset('../img/kontak.png')}}" alt="">
         </div>
     </div>
 
     <div class="middle__artikel">
-        <p class="fs-4 fw-bold" id="sec_content">SIVALI CALL CENTER</p>
+        <p class="fs-4 fw-bold" style="color:
+            #7E1717" id="sec_content">ELEGAN FASHION STORE CALL CENTER</p>
         <p class="desc__scc">Jika terdapat pertanyaan, kami siap membantu. Hubungi layanan pelanggan
-            SIVALI atau temukan jawabannya di bawah ini.</p>
+        ELEGAN FASHION STORE atau temukan jawabannya di bawah ini.</p>
     </div>
 
     <div class="bottom__artikel d-flex justify-content-between mt-5">
@@ -25,8 +26,10 @@
             <div class="col-md-5 col-12" style="height: max-content;">
                 <div class="ba__left">
                     <p class="fs-5 fw-bold mb-0" style="color:
-                    #134B6E">Layanan Pelanggan SIVALI Telepon +6221-2985-3900 Whatsapp +62811-1300-2242</p>
-                    <p class="paragraf mb-0 mt-4">Anda dapat menghubungi kami Senin - Minggu: 10:00 – 21:00</p>
+                    #7E1717">call center atau customer service atau whatsapp admin :082229901779
+</p>
+                    <p class="paragraf mb-0 mt-4">jam operasional admin : <br>Senin - Jumat pukul 09:00 - 18:00 WIB
+                           Sabtu - Minggu Pukul 10:00 - 15:00 WIB</p>
                 </div>
             </div>
             <div class="col-md-2 d-flex justify-content-center">
@@ -35,11 +38,8 @@
             <div class="col-md-5 col-12 mt-3 mt-md-0" style="height: max-content;">
                 <div class="ba__right">
                     <p class="fs-5 fw-bold mb-0" style="color:
-                    #134B6E">E-MAIL</p>
-                    <p class="paragraf mb-0">E-mail kami kapan pun dan kami akan membalasnya dalam
-                        24 jam.</p>
-        
-                    <p class="paragraf mb-0 mt-5">Kirim email ke <span class="fw-bold">sivalifurtniture@gmail.co.id</span></p>
+                    #7E1717">E-MAIL</p>
+                    <p class="paragraf mb-0">email yang dapat dihubungi : <span class="fw-bold">eleganfashionstore@gmail.com</span></p>
                 </div>
             </div>
         </div>

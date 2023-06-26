@@ -16,12 +16,12 @@
     }
 
     #navbarText ul li a{
-      color: #134B6E;
+      color: #7E1717;
     }
 
     #navbarText ul li a:hover{
       /* font-weight: bold; */
-      border-bottom: 1px solid #134B6E;
+      border-bottom: 1px solid #7E1717;
     }
 
     .nav_logo{grid-area: logo;}
@@ -31,8 +31,8 @@
 
     .navactive{
       font-weight: bold;
-      color: #134B6E;
-      border-bottom: 1px solid #134B6E;
+      color: #7E1717;
+      border-bottom: 1px solid #7E1717;
     }
     
     @media only screen and (max-width: 650px){
@@ -126,7 +126,7 @@
 .searchTerm {
   width: 10rem;
   transition: all .5s ease-in;
-  border: .5px solid #00B4CC;
+  border: .5px solid #7E1717;
   border-right: none;
   padding: 5px;
   height: 2.25rem;
@@ -220,7 +220,7 @@
 .searchButton {
   width: 2.5rem;
   height: 36px;
-  border: .5px solid #00B4CC;
+  border: .5px solid #7E1717;
   border-left: none;
   outline: none;
   background: white;
@@ -238,7 +238,7 @@
     <div class="container">
         <div class="container-fluid">
             <div class="nav_logo">
-                <a class="navbar-brand" href="/"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
+                <a class="navbar-brand" href="/"><img src="{{asset('../img/ELEGAN_PNG.png')}}" width="90px" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mb-2 mb-lg-0">

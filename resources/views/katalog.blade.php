@@ -78,7 +78,7 @@
 
     .menu.active,
     .btn:hover {
-        background-color: #19376D;
+        background-color: #7E1717;
     }
 
 </style>
@@ -109,7 +109,7 @@
             <div class="row" id="grid-header">
                 <div class="col-md-6 gh_left">
                     <div class="tc_content mt-5">
-                        <h1 class="text-white fw-light"><span class="fw-bold">SIVALI</span> #1 WEBSITE FURNITURE
+                        <h1 class="text-white fw-light"><span class="fw-bold">ELEGAN FASHION STORE</span> #1 WEBSITE FASHION
                             TERPERCAYA</h1>
                         <!-- <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, iure.
                         </p> -->
@@ -120,8 +120,8 @@
                         <i class="fa-solid fa-circle-chevron-down fa-lg mt-3" style="color: #000;"></i>
                     </a>
                 </div>
-                <div class="img__lampu gh_right1"><img src="{{asset('../img/figma-lampu-1.png')}}" alt=""></div>
-                <div class="col-md-6 gh_right2"><img src="{{asset('../img/figma-lemari-1.png')}}" alt=""></div>
+                <div class="img__lampu ms-5 gh_right1"><img width="300" src="{{asset('../img/sneakers.png')}}" alt=""></div>
+                <div class="col-md-6 gh_right2"><img width="300" src="{{asset('../img/jaket_kulit.png')}}" alt=""></div>
             </div>
         </div>
     </div>

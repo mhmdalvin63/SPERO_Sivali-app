@@ -174,6 +174,6 @@ class BarangController extends Controller
         $barang = NewBarang::findOrfail($id);
         Storage::delete('public/image'.$barang->gambar_barang);
         $barang->delete();
-        return redirect()->route('kb_index')->with('deleted', 'Data Berhasil Dihapus');
+        return redirect('/barang')->with('deleted', 'Data Berhasil Dihapus');
     }
 }

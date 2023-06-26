@@ -102,7 +102,6 @@ class KategoriBarangController extends Controller
             $KategoriBarang->save();
             
             $KategoriBarang->update([
-                'gambar_kategori' => $gambar_kategori->hashName(),
                 'kategori_barang' => $request->kategori_barang,
             ]);
         }else{

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Admin</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/logo-sivali.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/ELEGAN_PNG.png') }}">
 
 
     <!-- General CSS Files -->
@@ -140,7 +140,7 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand py-3" style="height: max-content;">
-                        <a href="index.html"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
+                        <a href="index.html"><img src="{{asset('../img/ELEGAN_PNG.png')}}" width="100px" alt=""></a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="index.html">SF</a>
