@@ -10,7 +10,7 @@
                 <form action="{{ route('kb_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="formFile" class="form-label">Pilih Gambar Kategori (max 2048kb)</label>
+                        <label for="formFile" class="form-label">Pilih Gambar Kategori (max 1024kb)</label>
                         <input class="form-control fw-bold" type="file" id="formFile" name="gambar_kategori" >
                         @error('gambar_kategori')
                     <p class="text-danger">{{ $message }}</p>
