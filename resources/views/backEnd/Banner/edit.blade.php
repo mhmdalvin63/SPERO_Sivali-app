@@ -10,7 +10,8 @@
             @method('PUT')
             <div class="form-group mt-5">
                 <label for="formFile" class="form-label">Ubah Gambar Jika Ingin (max 1024kb)</label>
-                <input class="form-control fw-bold" type="file" id="formFile" name="gambar_banner" value="{{ $Banner->gambar_banner}}">
+                <input class="form-control file fw-bold"  onchange="validateFile()" type="file" id="formFile" name="gambar_banner" value="{{ $Banner->gambar_banner}}">
+                <div class="result text-danger fw-bold"></div>
                 @error('gambar_banner')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -38,5 +39,19 @@
     </div>
 </div>
 
-
+<script>
+   let BtnEle = document.querySelector(".Btn");
+   let resEle = document.querySelector(".result");
+   let fileEle = document.querySelector(".file");
+   function validateFile() {
+      if (fileEle.files.length) {
+         let fileSize = Math.round(fileEle.files[0].size / 1024);
+         if (fileSize > 1024) {
+            resEle.innerHTML = "Ukuran Image Melebihi 1024Kb!";
+         }else{
+            resEle.innerHTML = "";
+         }
+      }
+   }
+</script>
 @endsection
