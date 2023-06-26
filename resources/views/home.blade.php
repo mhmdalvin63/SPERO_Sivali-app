@@ -280,6 +280,7 @@
 </section>
 
 <section class="container" style="height: max-content; margin-top: 12.5rem;">
+<h1 class="text-center fw-bold mb-3">Artikel</h1>
     <div class="grid-container href-artikel"> 
            @if(empty($Artikel[0]))
             <img src="{{asset('/img/logoplus.jpg')}}" id="logoplus" alt="">
@@ -338,50 +339,12 @@
                     </div>
                 </a>
             @endif
-            @if($Artikel->count() > 4)
+    </div>
+    @if($art->count() > 4)
     <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/artikel" role="button">Selengkapnya >></a>
     @endif
-    </div>
 </section>
 
-{{-- <section class="container" style="height: max-content;
-        margin-top: 12.5rem;">
-    <div class="grid-container href-artikel">
-        <a href="/artikel" class="grid-item item1 mt-3 la__image">
-            <img class="img-fluid" src="../img/artikel-kami-img.png" alt="">
-            <div class="overlay">
-                <p class="mb-1 fw-bold">SAMPAI JUMPA DI TOKO</p>
-                <p>Sebelum berkunjung, lihat halaman Toko dan Pick-up Point SIVALI untuk mengetahui informasi seputar
-                    penawaran, event dan lainnya.</p>
-            </div>
-        </a>
-        <a href="/artikel" class="grid-item item2 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1">Barang dengan kualitas Terbaik</p>
-            </div>
-        </a>
-        <a href="/artikel" class="grid-item item3 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1">Temukan <br> barang - barang lokal buatan <br> Kota Jepara</p>
-            </div>
-        </a>
-        <a href="/artikel" class="grid-item item4 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1 fw-bold">Semua Jenis Peralatan Dapur</p>
-            </div>
-        </a>
-        <a href="/artikel" class="grid-item item5 mt-3 la__image">
-            <img class="img-fluid" src="{{asset('../img/image-artikel.png')}}" alt="">
-            <div class="overlay">
-                <p class="mb-1 fw-bold">Tipe Dapur Impian Anda Dirumah</p>
-                <p>Temukan semua barangnya hanya di Sivali Furniture</p>
-            </div>
-        </a>
-    </div>
-</section> --}}
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> -->
 <!-- </script> -->

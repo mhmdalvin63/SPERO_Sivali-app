@@ -17,6 +17,7 @@ class FrontEndBarangController extends Controller
     public function index(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
         $barang = NewBarang::where('status','Active')->get();
+        $art = Artikel::all();
         $Banner = Banner::all();
 
         $Artikel = Artikel::orderBy('id', 'desc')->take(5)->get();
@@ -33,7 +34,7 @@ class FrontEndBarangController extends Controller
             $barang = NewBarang::where('promosi','promo')->where('status','Active')->get();
         }
         // dd($Artikel);
-        return view("home",compact('kategoriBarang','barang','Banner','Artikel'));
+        return view("home",compact('kategoriBarang','barang','Banner','Artikel', 'art'));
     }
     public function dataKategoriBarangKatalog(Request $request){
         $kategoriBarang = NewKategoriBarang::first()->get();
@@ -84,8 +85,7 @@ class FrontEndBarangController extends Controller
         ->twitter()
         ->linkedin()
         ->telegram()    
-        ->whatsapp()        
-        ->reddit();
+        ->whatsapp();
         return view("detailBarang",compact('barang','shareComponent'));
     }
     public function SearchProduct(Request $request){
