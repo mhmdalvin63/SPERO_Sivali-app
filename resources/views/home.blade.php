@@ -164,10 +164,10 @@
             </div>
             <div class="col-md-6 d-flex" id="tfk_right">
                 <div class="cont_3">
-                    <h1>Tentang Furniture Kita</h1>
+                    <h1>Tentang Fashion Store Kita</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat delectus facere blanditiis
                         voluptatum labore aliquam fuga dicta voluptas vero porro!</p>
-                    <a class="btn btn-primary" href="/katalog" role="button">Selengkapnya >></a>
+                    <a class="btn btn-danger" href="/katalog" role="button">Selengkapnya >></a>
                 </div>
             </div>
         </div>
@@ -276,7 +276,7 @@
         </div>
     </div>
    </div>
-    <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/katalog" role="button">Selengkapnya >></a>
+    <a class="d-block fs-5 mt-3 text-end fw-bold text-danger text-decoration-none" href="/katalog" role="button">Selengkapnya >></a>
 </section>
 
 <section class="container" style="height: max-content; margin-top: 12.5rem;">
@@ -341,7 +341,7 @@
             @endif
     </div>
     @if($art->count() > 4)
-    <a class="d-block fs-5 mt-3 text-end fw-bold text-decoration-none" href="/artikel" role="button">Selengkapnya >></a>
+    <a class="d-block fs-5 text-danger mt-3 text-end fw-bold text-decoration-none" href="/artikel" role="button">Selengkapnya >></a>
     @endif
 </section>
 

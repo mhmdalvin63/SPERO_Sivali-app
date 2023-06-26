@@ -134,7 +134,7 @@
     }
 }
 .desc h1{
-    color: var(--blue-color);
+    color: #7E1717;
     font-weight: 700;
     font-size: 50px;
 }
@@ -144,7 +144,7 @@
 }
 .desc a{
     font-weight: bold;
-    background-color: var(--blue-color);
+    background-color: #7E1717;
 }
 .logo__img{
     height: 3.5rem;
@@ -170,14 +170,14 @@
     width: 20rem;
     height: 20rem;
     border-radius: 200px;
-    background: #19376D;
+    background: #7E1717;
 }
 .circle2{
     z-index: 1;
     width: 5rem;
     height: 5rem;
     border-radius: 200px;
-    background: #19376D;
+    background: #7E1717;
 }
 #ab_lemari{
     -ms-transform: translate(100px,25px); /* Internet Explorer 9 */
@@ -190,11 +190,11 @@
 .cont_3 h1{
     font-weight: 700;
     font-size: 2.2rem;
-    color: var(--blue-color);
+    color: #7E1717;
 }
 .cont_3 a{
     font-weight: bold;
-    background-color: var(--blue-color);
+    background-color: #7E1717;
 }
 
 .wrapper {
@@ -275,13 +275,13 @@
 .menu .menu_btn:hover{
     border: 1px solid rgb(187, 186, 186);
     border-radius: 20px;
-    background: #19376D;
+    background: #7E1717;
     color: white;
 }
 .menu .menu_btn:active, .menu .menu_btn.active{
     border: 1px solid rgb(187, 186, 186) !important;
     border-radius: 20px;
-    background: #19376D;
+    background: #7E1717;
     color: white;
 }
 
@@ -538,10 +538,10 @@
         width: 12.5rem;
         height: 12.5rem;
         border-radius: 200px;
-        background: #19376D;
+        background: #7E1717;
     }
     .desc h1{
-        color: var(--blue-color);
+        color: #7E1717;
         font-weight: 700;
         font-size: 25px;
     }
@@ -550,7 +550,7 @@
         width: 5rem;
         height: 5rem;
         border-radius: 200px;
-        background: #19376D;
+        background: #7E1717;
     }
     .grid-container{
         display: grid;
@@ -567,7 +567,7 @@
     .cont_3 h1{
         font-weight: 700;
         font-size: 1.5rem;
-        color: var(--blue-color);
+        color: #7E1717;
     }
     .item1 .overlay p:nth-child(1){
         font-size: calc(60% + 0.8vmin);

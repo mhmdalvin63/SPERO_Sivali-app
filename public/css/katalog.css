@@ -4,7 +4,7 @@
     padding: 5% 0 0 0;
 }
 #top_cf{
-    background-color: var(--blue-color);
+    background-color: #7E1717;
     padding: 2rem 4rem;
     border-radius: 5px;
 }
@@ -76,7 +76,7 @@
 .menu .menu_btn:hover{
     border: 1px solid rgb(187, 186, 186);
     border-radius: 20px;
-    background: #19376D;
+    background: #7E1717;
     font-weight: bold;
     color: white;
 }
@@ -84,7 +84,7 @@
 .menu .menu_btn.active{
     border: 1px solid rgb(187, 186, 186);
     border-radius: 20px;
-    background: #19376D;
+    background: #7E1717;
     font-weight: bold;
     color: white;
 }
