@@ -18,7 +18,7 @@
                         </select>
                     </div>
                     <div class="form-group mt-5">
-                        <label for="formFile " class="form-label">Pilih Gambar Barang (max 2048kb)</label>
+                        <label for="formFile " class="form-label">Pilih Gambar Barang (max 1024kb)</label>
                         <input class="form-control fw-bold" type="file" id="formFile" name="file_name">
                         @error('file_name')
                     <p class="text-danger">{{ $message }}</p>

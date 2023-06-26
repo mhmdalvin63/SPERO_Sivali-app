@@ -10,7 +10,7 @@
                 <form action="{{ route('art_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group mt-5">
-                        <label for="formFile" class="form-label">Pilih Gambar Artikel (max 2048kb)</label>
+                        <label for="formFile" class="form-label">Pilih Gambar Artikel (max 1024kb)</label>
                         <input class="form-control fw-bold" type="file" id="formFile" name="gambar_artikel">
                         @error('gambar_artikel')
                     <p class="text-danger">{{ $message }}</p>

@@ -306,7 +306,7 @@
                     </div>
                     <div class="ci_desc text-black">
                         <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
-                        <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
+                        <a href="" class="fw-bold text-black" style="text-decoration: none">Upgrade<span class="fw-light"> Lifestyle Mu</span></a>
                     </div>
                 </div>
                 @endforeach
@@ -317,7 +317,7 @@
                     </div>
                     <div class="ci_desc text-black">
                         <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
-                        <a href="" class="fw-bold text-black">Lihat <span class="fw-light">Selengkapnya</span></a>
+                        <a href="" class="fw-bold text-black" style="text-decoration: none">Upgrade<span class="fw-light"> Lifestyle Mu</span></a>
                     </div>
                 </div>
                 @endforeach
