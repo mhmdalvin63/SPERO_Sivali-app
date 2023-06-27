@@ -20,11 +20,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::create([
-            'name' => 'AdminSivali',
-            'email' => 'Sivaliadminlogin@gmail.com',
-            'password' => bcrypt('Adminsivalilogin12345678900987654321'),
+        User::create(
+        //     [
+        //     'name' => 'AdminSivali',
+        //     'email' => 'Sivaliadminlogin@gmail.com',
+        //     'password' => bcrypt('Adminsivalilogin12345678900987654321'),
+        //     'level' => 'admin',
+        // ],
+        [
+            'name' => 'AdminElegan',
+            'email' => 'eleganfashionstore@gmail.com',
+            'password' => bcrypt('AdminElegan12345678'),
             'level' => 'admin',
-        ]);
+        ]
+    );
     }
 }
