@@ -5,6 +5,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <link rel="icon" type="image/x-icon" href="{{ asset('img/ELEGAN_PNG.png') }}">
   <title>Login ELegan Admin</title>
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{asset('../theme/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
@@ -41,6 +42,12 @@
               <div class="card-header"><h3 style="font-size: 20px;">Welcome Admin Elegan</h3></div>
 
               <div class="card-body">
+              @if (session('error'))
+                  <div  class="alert alert-danger alert-dismissible fade show">
+                      {{ session('error') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+              @endif
                 <form method="POST" action="{{route('postadmin')}}" class="needs-validation" novalidate="">
                     @csrf
                   <div class="form-group">
@@ -49,6 +56,9 @@
                     <div class="invalid-feedback">
                       Please fill in your email
                     </div>
+                    @error('email')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
                   </div>
 
                   <div class="form-group">
@@ -64,6 +74,9 @@
                     <div class="invalid-feedback">
                       please fill in your password
                     </div>
+                    @error('password')
+                    <p class="text-danger">{{ $message }}</p>
+                @enderror
                   </div>
 
                   <div class="form-group">
@@ -101,8 +114,11 @@
   <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
   <script src="assets/modules/moment.min.js"></script>
   <script src="assets/js/stisla.js"></script>
+  <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js') }}" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
-<script>
+<script type="text/javascript">
+
+
 
 function myFunction() {
 var x = document.getElementById("password");
@@ -113,7 +129,6 @@ if (x.type === "password") {
 }
 }
 </script>
-  
   <!-- JS Libraies -->
 
   <!-- Page Specific JS File -->

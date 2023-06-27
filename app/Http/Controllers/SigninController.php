@@ -17,11 +17,16 @@ class SigninController extends Controller
 
     public function postadmin(Request $request)
     {
-         Session::flash('email', $request->email);
+        //  Session::flash('email', $request->email);
          $this->validate($request, [
              'email' => 'required|email|exists:users,email',
              'password' => 'required|min:8',
-         ]);
+         ],[
+             'email' => 'Email Harus Diisi',
+             'email.email' => 'Format Email Salah',
+             'password' => 'Password Harus Diisi',
+             'password.min' => 'Password Harus Diisi Minimal 8 Karakter',
+        ]);
  
          $infologin = [ 
              'email' => $request->email,
@@ -33,10 +38,10 @@ class SigninController extends Controller
                  return redirect()->route('dashboard');
              }
              else{
-                 return redirect('/signin');
+                 return redirect('/signin')->with('error', 'Username atau Password Salah!');
              }
          }else{
-             return redirect('/signin')->withErrors('Username atau Password Salah!');
+             return redirect('/signin')->with('error', 'Username atau Password Salah!');
          }
     }
  
