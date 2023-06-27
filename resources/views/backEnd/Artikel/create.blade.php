@@ -7,6 +7,12 @@
         <div class="card">
             <div class="card-body p-5">
                 <h4 class="card-title">Form Artikel</h4>
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <form action="{{ route('art_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group mt-5">

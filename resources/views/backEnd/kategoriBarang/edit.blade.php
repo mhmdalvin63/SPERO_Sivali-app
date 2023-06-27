@@ -5,6 +5,12 @@
 <div class="card">
     <div class="card-body">
         <img src="{{asset('img'.$KategoriBarang->gambar_kategori)}}" alt="" width="100">
+        @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+         @endif
         <form action="{{ route('kb_update', $KategoriBarang->id) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PUT')

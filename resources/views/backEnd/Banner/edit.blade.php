@@ -5,6 +5,12 @@
 <div class="card">
     <div class="card-body">
         <img src="{{asset('storage/image/'.$Banner->gambar_banner)}}" alt="" width="100">
+        @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
         <form action="{{ route('ban_update', $Banner->id) }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PUT')

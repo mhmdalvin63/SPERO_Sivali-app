@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 // use App\Models\KategoriBarang;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\NewKategoriBarang;
@@ -39,27 +40,33 @@ class KategoriBarangController extends Controller
             'gambar_kategori' => 'required|file|mimes:jpeg,jpg,png,webp|max:1024',
             'kategori_barang' => 'required',
         ],[
-            'gambar_kategori' => 'Gambar Harus Di isi',
+            'gambar_kategori' => 'Gambar Harus Diisi',
             'gambar_kategori.mimes' => 'Image Harus jpeg, jpg, png, webp',
             'gambar_kategori.max' => 'Image Melebihi 1024kb',
             'kategori_barang' => 'Kategori Tidak Boleh Kosong'
         ]);
-
-        $kategoriNew = new NewKategoriBarang();
-        $kategoriNew->kategori_barang = $request->kategori_barang;
-        if($request->hasFile('gambar_kategori'))
-        {
-            $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
-            $request->file('gambar_kategori')->move(public_path().'/img/', $category);
-            $kategoriNew->gambar_kategori = $category;
-            $kategoriNew->save();
-        }
-        $kategoriNew->save();
-
         
+        try {
+            $kategoriNew = new NewKategoriBarang();
+            $kategoriNew->kategori_barang = $request->kategori_barang;
+            if($request->hasFile('gambar_kategori'))
+            {
+                $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
+                $request->file('gambar_kategori')->move(public_path().'/img/', $category);
+                $kategoriNew->gambar_kategori = $category;
+                $kategoriNew->save();
+            }
+            $kategoriNew->save();
+    
+            
+    
+            // KategoriBarang::create($request->all());
+            return redirect('/kategoriBarang')->with('success','Data Kategori Berhasil Di Tambahkan');
 
-        // KategoriBarang::create($request->all());
-        return redirect('/kategoriBarang')->with('success','Data Kategori Berhasil Di Tambahkan');
+          } 
+          catch (Exception $e) {
+          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan');
+          }
     }
 
     /**
@@ -93,23 +100,27 @@ class KategoriBarangController extends Controller
             'gambar_kategori.max' => 'Image Melebihi 1024kb',
         ]);
 
-        $KategoriBarang = NewkategoriBarang::findOrfail($id);
-        if($request->hasFile('gambar_kategori'))
-        {
-            $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
-            $request->file('gambar_kategori')->move(public_path().'/img/', $category);
-            $KategoriBarang->gambar_kategori = $category;
-            $KategoriBarang->save();
-            
-            $KategoriBarang->update([
-                'kategori_barang' => $request->kategori_barang,
-            ]);
-        }else{
-            $KategoriBarang->update([
-                'kategori_barang' => $request->kategori_barang,
-            ]);
-        }
-        return redirect()->route('kb_index')->with('success', 'Data Kategori Berhasil Diupdate');
+        try {
+            $KategoriBarang = NewkategoriBarang::findOrfail($id);
+            if($request->hasFile('gambar_kategori'))
+            {
+                $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
+                $request->file('gambar_kategori')->move(public_path().'/img/', $category);
+                $KategoriBarang->gambar_kategori = $category;
+                $KategoriBarang->save();
+                
+                $KategoriBarang->update([
+                    'kategori_barang' => $request->kategori_barang,
+                ]);
+            }else{
+                $KategoriBarang->update([
+                    'kategori_barang' => $request->kategori_barang,
+                ]);
+            }
+            return redirect()->route('kb_index')->with('success', 'Data Kategori Berhasil Diupdate');
+          } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan');
+          }
     }
 
     /**

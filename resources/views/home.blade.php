@@ -156,7 +156,7 @@
     <div class="container">
         <div class="row gap-5 tfk" style="align-items: center;">
             <div class="col-md-5" id="tfk_left">
-                <img id="ab_lemari" src="{{asset('../img/furniture-home.png')}}" alt="">
+                <img id="ab_lemari" class="rounded-4 mt-4" src="{{asset('../img/MOCKUP3.jpg')}}" alt="">
                 <div class="circle position-relative">
                     <div class="circle1"></div>
                     <div class="circle2"></div>
@@ -165,8 +165,8 @@
             <div class="col-md-6 d-flex" id="tfk_right">
                 <div class="cont_3">
                     <h1>Tentang Fashion Store Kita</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat delectus facere blanditiis
-                        voluptatum labore aliquam fuga dicta voluptas vero porro!</p>
+                    <p>Elegan Fashion Store menyediakan berbagai koleksi sepatu seperti sneakers, sandal, dan aksesoris fashion pendukung lainnya yang berkualitas tinggi, sangat populer dikalangan para remaja dengan harga terjangkau.<br><br>
+                    Sneakers sebagai produk utama yang dijual dan didesain sangat nyaman untuk traveling, olahraga, berkuliah, sekolah dan aktivitas lainnya. Saat kamu merasa kurang percaya diri pakai sepatu apa yang cocok untuk menyempurnakan gayamu, coba pilih salah satu sepatu casual dengan warna-warna netral dari produk kami. Mulai dari warna putih, pink, hitam, krem, hingga abu-abu dapat kamu temukan dengan mudah di Elegan Fashion Store.</p>
                     <a class="btn btn-danger" href="/katalog" role="button">Selengkapnya >></a>
                 </div>
             </div>
@@ -285,57 +285,57 @@
            @if(empty($Artikel[0]))
             <img src="{{asset('/img/logoplus.jpg')}}" id="logoplus" alt="">
            @else
-            <a id="a-genap" href="{{ route('detail_artikel', $Artikel[0]->id)}}" class="grid-item item1 mt-3 la__image">
+            <a id="a-genap" href="{{ route('detail_artikel', $Artikel[0]->id)}}" class="grid-item item1 la__image">
             {{-- <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt=""> --}}
             <img class="img-fluid" src="{{asset('img/'.$Artikel[0]->gambar_artikel)}}" alt="">
             <div class="overlay">
-                <p class="mb-1 fw-bold">{{ $Artikel[0]->judul_artikel }}</p>
-                <p>{{ $Artikel[0]->subjudul_artikel }}</p>
+                <p class="mb-1 fw-bold fs-4">{{ $Artikel[0]->judul_artikel }}</p>
+                <p class="fs-5">{{Str::limit($Artikel[0]->subjudul_artikel, 25) }}</p>
             </div>
             </a>
             @endif
             @if(empty($Artikel[1]))
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
-                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[1]->id)}}" class="grid-item item2 mt-3 la__image">
+                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[1]->id)}}" class="grid-item item2 la__image">
                     <img class="img-fluid" src="{{asset('img/'.$Artikel[1]->gambar_artikel)}}" alt="">
                     {{-- <img class="img-fluid" src="{{asset('img/'.$item->gambar_artikel)}}" alt=""> --}}
                     <div class="overlay">
-                        <p class="mb-1 fw-bold">{{ $Artikel[1]->judul_artikel }}</p>
-                        <p>{{ $Artikel[1]->subjudul_artikel }}</p>
+                        <p class="mb-1 fw-bold fs-4">{{ $Artikel[1]->judul_artikel }}</p>
+                        <p class="fs-5">{{ Str::limit($Artikel[1]->subjudul_artikel, 25) }}</p>
                     </div>
                 </a>
             @endif
             @if (empty($Artikel[4]))
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
-                <a id="a-ganjil" href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item3 mt-3 la__image">
+                <a id="a-ganjil" href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item3 la__image">
                     <img class="img-fluid" src="{{asset('img/'.$Artikel[4]->gambar_artikel)}}" alt="">
                     <div class="overlay">
-                        <p class="mb-1 fw-bold">{{ $Artikel[4]->judul_artikel }}</p>
-                        <p>{{ $Artikel[4]->subjudul_artikel }}</p>
+                        <p class="mb-1 fw-bold fs-4">{{ $Artikel[4]->judul_artikel }}</p>
+                        <p class="fs-5">{{ Str::limit($Artikel[4]->subjudul_artikel, 25) }}</p>
                     </div>
                 </a>
             @endif
             @if (empty($Artikel[2]))
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
-                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item4 mt-3 la__image">
+                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item4 la__image">
                     <img class="img-fluid" src="{{asset('img/'.$Artikel[2]->gambar_artikel)}}" alt="">
                     <div class="overlay">
-                        <p class="mb-1 fw-bold">{{ $Artikel[2]->judul_artikel }}</p>
-                        <p>{{ $Artikel[2]->subjudul_artikel }}</p>
+                        <p class="mb-1 fw-bold fs-4">{{ $Artikel[2]->judul_artikel }}</p>
+                        <p class="fs-5">{{ Str::limit($Artikel[2]->subjudul_artikel, 25) }}</p>
                     </div>
                 </a>
             @endif
             @if (empty($Artikel[3]))
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
-                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item5 mt-3 la__image">
+                <a id="a-genap" href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item5 la__image">
                     <img class="img-fluid" src="{{asset('img/'.$Artikel[3]->gambar_artikel)}}" alt="">
                     <div class="overlay">
-                        <p class="mb-1 fw-bold">{{ $Artikel[3]->judul_artikel }}</p>
-                        <p>{{ $Artikel[3]->subjudul_artikel }}</p>
+                        <p class="mb-1 fw-bold fs-4">{{ $Artikel[3]->judul_artikel }}</p>
+                        <p class="fs-5">{{ Str::limit($Artikel[3]->subjudul_artikel, 25) }}</p>
                     </div>
                 </a>
             @endif

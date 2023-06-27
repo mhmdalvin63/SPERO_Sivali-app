@@ -7,6 +7,12 @@
         <div class="card">
             <div class="card-body p-5">
                 <h4 class="card-title">Form Kategori Barang</h4>
+                @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <form action="{{ route('kb_store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -20,7 +26,7 @@
                     <div class="form-group">
                         <label for="exampleInputUsername1" class="fw-bold">Nama Kategori Barang :</label>
                         <input type="text" class="form-control" id="exampleInputUsername1"
-                            placeholder="Masukkan Nama Kategori Barang..." name="kategori_barang" >
+                            placeholder="Masukkan Nama Kategori Barang..." name="kategori_barang">
                             @error('kategori_barang')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

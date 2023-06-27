@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Artikel;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -48,22 +49,29 @@ class ArtikelController extends Controller
             'deskripsi_artikel' => 'Deskripsi Tidak Boleh Kosong',
         ]);
 
-        $newArtikel = new Artikel();
-        $newArtikel->judul_artikel = $request->judul_artikel;
-        $newArtikel->subjudul_artikel = $request->subjudul_artikel;
-        $newArtikel->deskripsi_artikel = $request->deskripsi_artikel;
+        try {
+            $newArtikel = new Artikel();
+            $newArtikel->judul_artikel = $request->judul_artikel;
+            $newArtikel->subjudul_artikel = $request->subjudul_artikel;
+            $newArtikel->deskripsi_artikel = $request->deskripsi_artikel;
+    
+            if($request->hasFile('gambar_artikel'))
+            {
+                $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
+                $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
+                $newArtikel->gambar_artikel = $fotoArtikel;
+                $newArtikel->save();
+            }
+    
+           $newArtikel->save();
+            // Artikel::create($request->all());
+            return redirect('/admartikel')->with('success','Data Artikel Berhasil Di Tambahkan');
+          } catch (Exception $e) {
+          
+              return redirect()->back()->with('error','Data Tidak Bisa Disimpan!');
+          
+          }
 
-        if($request->hasFile('gambar_artikel'))
-        {
-            $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
-            $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
-            $newArtikel->gambar_artikel = $fotoArtikel;
-            $newArtikel->save();
-        }
-
-       $newArtikel->save();
-        // Artikel::create($request->all());
-        return redirect('/admartikel')->with('success','Data Artikel Berhasil Di Tambahkan');
     }
 
     /**
@@ -99,27 +107,34 @@ class ArtikelController extends Controller
             'gambar_artikel.mimes' => 'Image Harus jpeg, jpg, png, webp',
         ]);
 
-        $Artikel = Artikel::findOrfail($id);
-        if($request->hasFile('gambar_artikel'))
-        {
-            $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
-            $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
-            $Artikel->gambar_artikel = $fotoArtikel;
-            $Artikel->save();
-
-            $Artikel->update([
-                'judul_artikel' => $request->judul_artikel,
-                'subjudul_artikel' => $request->subjudul_artikel,
-                'deskripsi_artikel' => $request->deskripsi_artikel,
-            ]);
-        }else{
-            $Artikel->update([
-                'judul_artikel' => $request->judul_artikel,
-                'subjudul_artikel' => $request->subjudul_artikel,
-                'deskripsi_artikel' => $request->deskripsi_artikel,
-            ]);
-        }
-        return redirect()->route('art_index')->with('success','Data Artikel Berhasil Diupdate');
+        
+        try {
+            $Artikel = Artikel::findOrfail($id);
+            if($request->hasFile('gambar_artikel'))
+            {
+                $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
+                $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
+                $Artikel->gambar_artikel = $fotoArtikel;
+                $Artikel->save();
+    
+                $Artikel->update([
+                    'judul_artikel' => $request->judul_artikel,
+                    'subjudul_artikel' => $request->subjudul_artikel,
+                    'deskripsi_artikel' => $request->deskripsi_artikel,
+                ]);
+            }else{
+                $Artikel->update([
+                    'judul_artikel' => $request->judul_artikel,
+                    'subjudul_artikel' => $request->subjudul_artikel,
+                    'deskripsi_artikel' => $request->deskripsi_artikel,
+                ]);
+            }
+            return redirect()->route('art_index')->with('success','Data Artikel Berhasil Diupdate');
+          
+          } catch (Exception $e) {
+          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan!');
+                    
+          }
     }
 
     /**
