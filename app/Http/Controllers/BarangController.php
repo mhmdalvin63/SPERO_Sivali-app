@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 // use App\Models\Barang;
+use Exception;
 use App\Models\NewBarang;
-use Illuminate\Http\Request;
 // use App\Models\KategoriBarang;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\NewKategoriBarang;
 use Illuminate\Support\Facades\URL;
@@ -63,29 +64,35 @@ class BarangController extends Controller
             'rate' => 'Rate Tidak Boleh Kosong',
         ]);
 
-        $newBarang = new NewBarang();
-        $newBarang->status = $request->status;
-
-        $newBarang->id_kategori =$request->id_kategori;
-        $newBarang->judul_barang = $request->judul_barang;
-        $newBarang->deskripsi = $request->deskripsi;
-        $newBarang->promosi = $request->pomosi;
-        $newBarang->harga_asli = $request->harga_asli;
-        $newBarang->harga_diskon = $request->harga_diskon;
-        $newBarang->stok = $request->stok;
-        $newBarang->terjual = $request->terjual;
-        $newBarang->rate = $request->rate;
-        if($request->hasFile('file_name'))
-        {
-            $fotoBarang = 'gambar'.rand(1,99999).'.'.$request->file_name->getClientOriginalExtension();
-            $request->file('file_name')->move(public_path().'/img/', $fotoBarang);
-            $newBarang->file_name = $fotoBarang;
+        try {
+            $newBarang = new NewBarang();
+            $newBarang->status = $request->status;
+    
+            $newBarang->id_kategori =$request->id_kategori;
+            $newBarang->judul_barang = $request->judul_barang;
+            $newBarang->deskripsi = $request->deskripsi;
+            $newBarang->promosi = $request->pomosi;
+            $newBarang->harga_asli = $request->harga_asli;
+            $newBarang->harga_diskon = $request->harga_diskon;
+            $newBarang->stok = $request->stok;
+            $newBarang->terjual = $request->terjual;
+            $newBarang->rate = $request->rate;
+            if($request->hasFile('file_name'))
+            {
+                $fotoBarang = 'gambar'.rand(1,99999).'.'.$request->file_name->getClientOriginalExtension();
+                $request->file('file_name')->move(public_path().'/img/', $fotoBarang);
+                $newBarang->file_name = $fotoBarang;
+                $newBarang->save();
+            }
             $newBarang->save();
-        }
-        $newBarang->save();
-      
-        // barang::create($request->all());
-        return redirect('/barang')->with('success','Data Barang Berhasil Di Tambahkan');
+          
+            // barang::create($request->all());
+            return redirect('/barang')->with('success','Data Barang Berhasil Di Tambahkan');
+
+          } catch (Exception $e) {
+          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan');
+          }
+
     }
 
     /**
@@ -128,42 +135,46 @@ class BarangController extends Controller
             'file_name.max' => 'Image Melebihi 1024kb',
             'file_name.mimes' => 'Image Format Harus jpg, jpeg, png, webp',
         ]);
-
-        $barang = NewBarang::findOrfail($id);
-        if($request->hasFile('file_name'))
-        {
-            $fotoBarang = 'gambar'.rand(1,99999).'.'.$request->file_name->getClientOriginalExtension();
-            $request->file('file_name')->move(public_path().'/img/', $fotoBarang);
-            $barang->file_name = $fotoBarang;
-            $barang->save();
-
-            $barang->update([
-                'status' => $request->status,
-                'id_kategori' => $request->id_kategori,
-                'judul_barang' => $request->judul_barang,
-                'deskripsi' => $request->deskripsi,
-                'promosi' => $request->promosi,
-                'harga_asli' => $request->harga_asli,
-                'harga_diskon' => $request->harga_diskon,
-                'stok' => $request->stok,
-                'terjual' => $request->terjual,
-                'rate' => $request->rate,
-            ]);
-        }else{
-            $barang->update([
-                'status' => $request->status,
-                'id_kategori' => $request->id_kategori,
-                'judul_barang' => $request->judul_barang,
-                'deskripsi' => $request->deskripsi,
-                'promosi' => $request->promosi,
-                'harga_asli' => $request->harga_asli,
-                'harga_diskon' => $request->harga_diskon,
-                'stok' => $request->stok,
-                'terjual' => $request->terjual,
-                'rate' => $request->rate,
-            ]);
-        }
-        return redirect()->route('b_index')->with('success', 'Data Barang Berhasil Diupdate');
+         
+        try {
+            $barang = NewBarang::findOrfail($id);
+            if($request->hasFile('file_name'))
+            {
+                $fotoBarang = 'gambar'.rand(1,99999).'.'.$request->file_name->getClientOriginalExtension();
+                $request->file('file_name')->move(public_path().'/img/', $fotoBarang);
+                $barang->file_name = $fotoBarang;
+                $barang->save();
+    
+                $barang->update([
+                    'status' => $request->status,
+                    'id_kategori' => $request->id_kategori,
+                    'judul_barang' => $request->judul_barang,
+                    'deskripsi' => $request->deskripsi,
+                    'promosi' => $request->promosi,
+                    'harga_asli' => $request->harga_asli,
+                    'harga_diskon' => $request->harga_diskon,
+                    'stok' => $request->stok,
+                    'terjual' => $request->terjual,
+                    'rate' => $request->rate,
+                ]);
+            }else{
+                $barang->update([
+                    'status' => $request->status,
+                    'id_kategori' => $request->id_kategori,
+                    'judul_barang' => $request->judul_barang,
+                    'deskripsi' => $request->deskripsi,
+                    'promosi' => $request->promosi,
+                    'harga_asli' => $request->harga_asli,
+                    'harga_diskon' => $request->harga_diskon,
+                    'stok' => $request->stok,
+                    'terjual' => $request->terjual,
+                    'rate' => $request->rate,
+                ]);
+            }
+            return redirect()->route('b_index')->with('success', 'Data Barang Berhasil Diupdate');
+          } catch (Exception $e) {
+          return redirect()->back()->with('error', 'Data Tidak Bisa DIsimpan');
+          }
     }
 
     /**

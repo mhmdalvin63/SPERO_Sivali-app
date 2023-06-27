@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-4 mt-3">
                 <h2>ELEGAN FASHION STORE</h2>
-                <p class="text-justify" style="font-size: 15px">Elegan Fashion Store menyediakan berbagai koleksi sepatu seperti sneakers, sandal, dan aksesoris fashion pendukung lainnya yang berkualitas tinggi, sangat populer dikalangan para remaja dengan harga terjangkau.<br><br>Sneakers sebagai produk utama yang dijual dan didesain sangat nyaman untuk traveling, olahraga, berkuliah, sekolah dan aktivitas lainnya. Saat kamu merasa kurang percaya diri pakai sepatu apa yang cocok untuk menyempurnakan gayamu, coba pilih salah satu sepatu casual dengan warna-warna netral dari produk kami. Mulai dari warna putih, pink, hitam, krem, hingga abu-abu dapat kamu temukan dengan mudah di Elegan Fashion Store. </p>
+                <p class="text-justify" style="font-size: 15px">Elegan Fashion Store menyediakan berbagai koleksi sepatu seperti sneakers, sandal, dan aksesoris fashion pendukung lainnya yang berkualitas tinggi, sangat populer dikalangan para remaja dengan harga terjangkau.
             </div>
             <div class="col-md-2 mt-3">
                 <h2>MENU</h2>

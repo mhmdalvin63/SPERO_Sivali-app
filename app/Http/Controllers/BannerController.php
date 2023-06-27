@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Banner;
 use App\Models\NewBarang;
 use Illuminate\Http\Request;
@@ -93,23 +94,29 @@ class BannerController extends Controller
             'gambar_banner.mimes' => 'Image Format Harus jpg, jpeg, png, webp',
         ]);
 
-        $Banner = Banner::findOrfail($id);
-        if($request->hasFile('gambar_banner'))
-        {
-            $fotoBanner = 'gambar'.rand(1,99999).'.'.$request->gambar_banner->getClientOriginalExtension();
-            $request->file('gambar_banner')->move(public_path().'/img/', $fotoBanner);
-            $Banner->gambar_banner = $fotoBanner;
-            $Banner->save();
+        try {
+            $Banner = Banner::findOrfail($id);
+            if($request->hasFile('gambar_banner'))
+            {
+                $fotoBanner = 'gambar'.rand(1,99999).'.'.$request->gambar_banner->getClientOriginalExtension();
+                $request->file('gambar_banner')->move(public_path().'/img/', $fotoBanner);
+                $Banner->gambar_banner = $fotoBanner;
+                $Banner->save();
+    
+                $Banner->update([
+                    'id_barang' => $request->id_barang,
+                ]);
+            }else{
+                $Banner->update([
+                    'id_barang' => $request->id_barang,
+                ]);
+            }
+            return redirect()->route('ban_index')->with('success', 'Data Banner Berhasil Diupdate');
 
-            $Banner->update([
-                'id_barang' => $request->id_barang,
-            ]);
-        }else{
-            $Banner->update([
-                'id_barang' => $request->id_barang,
-            ]);
-        }
-        return redirect()->route('ban_index')->with('success', 'Data Banner Berhasil Diupdate');;
+          } catch (Exception $e) {
+          return redirect()->back()->with('error', 'Data Tidak Bisa DIsimpan');
+          }
+
     }
 
     /**
