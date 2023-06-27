@@ -39,7 +39,7 @@
               <a href="{{ route('art_index') }}" class="btn btn-outline-warning btn-icon-text">                                                  
                 Cancel
               </a>
-            <button class="btn btn-outline-primary" type="submit">Submit</button>
+            <button class="btn btn-outline-primary" id="dis" type="submit">Submit</button>
         </form>
     </div>
 </div>
@@ -53,8 +53,10 @@
          let fileSize = Math.round(fileEle.files[0].size / 1024);
          if (fileSize > 1024) {
             resEle.innerHTML = "Ukuran Image Melebihi 1024Kb!";
+            document.getElementById("dis").disabled = true;
          }else{
             resEle.innerHTML = "";
+            document.getElementById("dis").disabled = false;
          }
       }
    }
