@@ -341,7 +341,7 @@
             @endif
     </div>
     @if($art->count() > 4)
-    <a class="d-block fs-5 text-danger mt-3 text-end fw-bold text-decoration-none" href="/artikel" role="button">Selengkapnya >></a>
+    <a class="d-block fs-5 text-danger mt-3 text-end fw-bold text-decoration-none" href="/artikel" role="button">Baca Artikel Lainnya >></a>
     @endif
 </section>
 
