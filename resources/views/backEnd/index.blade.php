@@ -77,7 +77,7 @@
                         <a href="index.html"><img src="{{asset('../img/ELEGAN_PNG.png')}}" width="100px" alt=""></a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">SF</a>
+                        <a href="#">EFS</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
@@ -281,7 +281,7 @@
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright Sivali <div class="bullet"></div> Design By <a href="/">Sivali</a>
+                    Copyright Elegant Fashion <div class="bullet"></div> Design By <a href="/home" target="_blank">Elegant Fashion</a>
                 </div>
                 <div class="footer-right">
 
