@@ -297,7 +297,7 @@
     <div class="container">
         <div class="container-fluid">
             <div class="nav_logo">
-                <a class="navbar-brand" href="/home"><img src="{{asset('../img/logo-sivali.png')}}" width="100px" alt=""></a>
+                <a class="navbar-brand" href="/home"><img src="{{asset('../img/ELEGAN_PNG.png')}}" width="100px" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="navbar-nav mb-2 mb-lg-0">
@@ -305,7 +305,7 @@
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('home' )}}">Home</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'katalog' ? 'navactive' : null }}">
-                  <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog gw</a>
+                  <a class="nav-link fs-5" aria-current="page" href="{{ url('katalog' )}}">Katalog</a>
                 </li>
                 <li class="nav-item {{ Request::segment(1) === 'artikel' ? 'navactive' : null }}">
                   <a class="nav-link fs-5" aria-current="page" href="{{ url('artikel' )}}">Artikel</a>
@@ -318,7 +318,7 @@
                   <span class="navbar-text d-flex align-items-center justify-content-center gap-3">
                     <form action="{{ url('search') }}" method="GET" role="search" class="wrap">
                       <div class="search">
-                        <input type="search" name="search" value="" class="searchTerm" placeholder="Cari Barangmu...">
+                        <input type="search" name="search" value="" class="searchTerm" placeholder="Search Barang">
                         <button type="submit" class="searchButton">
                           <i class="fa fa-search"></i>
                        </button>

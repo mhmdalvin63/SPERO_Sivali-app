@@ -1,7 +1,7 @@
 <style>
     footer{
         margin-top: 2.5rem;
-        background-color: #4C4C6D;
+        background-color: #F0F0F0;
         padding: 3rem 0 2rem 0;
     }
     .text-justify{
@@ -32,7 +32,7 @@
         }
     }
 </style>
-<footer class="text-white">
+<footer class="text-dark">
     <div class="container">
         <div class="row">
             <div class="par-img col-md-2 d-flex justify-content-center align-items-center">
@@ -44,25 +44,24 @@
             </div>
             <div class="col-md-2 mt-3">
                 <h2>MENU</h2>
-                <a style="text-decoration: none;" class="text-white" href="/home"><p class="mb-1">Home</p></a>
-                <a style="text-decoration: none;" class="text-white" href="/artikel">
+                <a style="text-decoration: none;" class="text-dark" href="/home"><p class="mb-1">Home</p></a>
+                <a style="text-decoration: none;" class="text-dark" href="/artikel">
                 <p class="mb-1">Artikel</p></a>
-                <a style="text-decoration: none;" class="text-white" href="/katalog">
+                <a style="text-decoration: none;" class="text-dark" href="/katalog">
                 <p class="mb-1">Katalog</p></a>
-                <a style="text-decoration: none;" class="text-white" href="/kontak">
+                <a style="text-decoration: none;" class="text-dark" href="/kontak">
                 <p class="mb-1">Kontak Kami</p></a>
             </div>
             <div class="col-md-4 mt-3">
                 <h2>SOCIAL MEDIA</h2>
-                <p class="text-justify"><i class="fa-brands fa-facebook-f fa-lg"></i> : Elegan FashionStore</p>
-                <p class="text-justify"><i class="fa-brands fa-instagram fa-lg"></i> : elegan_fashion_store</p>
-                <p class="text-justify"><i class="fa-brands fa-tiktok fa-lg"></i> : eleganfashionstore</p>
-            </div>
+                <p class="text-justify"><i class="fa-brands fa-instagram fa-lg"></i> : <a href="https://www.instagram.com/elegan_fashion_store/" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">elegan_fashion_store</a></p>
+                <p class="text-justify"><i class="fa-brands fa-tiktok fa-lg"></></i> : <a href="https://www.tiktok.com/@eleganfashionstore" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">eleganfashionstore</a></p>
+                <p class="text-justify"><i class="fa-brands fa-shopify fa-lg"></i> : <a href="https://shopee.co.id/eleganfashion" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">EleganFashion.Store</a></p>
         </div>
-        <hr class="bg-white border-2 border-top border-white">
+        <hr class="bg-dark border-2 border-top border-dark">
         <div class="bottom_footer d-flex justify-content-between">
             <p>@2020 Elegan Fashion Store, All Rights Reserved</p>
-            <p><a class="text-white" href="#">Terms & Condition</a> - <a class="text-white" href="#">Privacy</a> - <a class="text-white" href="#">Cookies</a></p>
+            <p><a class="text-dark" href="#">Terms & Condition</a> - <a class="text-dark" href="#">Privacy</a> - <a class="text-dark" href="#">Cookies</a></p>
         </div>
     </div>
 </footer>
