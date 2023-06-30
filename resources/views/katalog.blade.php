@@ -120,7 +120,7 @@
                         <i class="fa-solid fa-circle-chevron-down fa-lg mt-3" style="color: #000;"></i>
                     </a>
                 </div>
-                <div class="img__lampu ms-5 gh_right1"><img width="300" src="{{asset('../img/sneakers.png')}}" alt=""></div>
+                <div class="img__lampu gh_right1"><img width="300" src="{{asset('../img/sneakers.png')}}" alt=""></div>
                 <div class="col-md-6 gh_right2"><img width="300" src="{{asset('../img/jaket_kulit.png')}}" alt=""></div>
             </div>
         </div>
