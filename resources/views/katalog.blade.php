@@ -370,9 +370,9 @@
                                 text-overflow: ellipsis;">
                             @if ($item->harga_diskon==null)
                             <span class="fw-bold"
-                                style="color: #19376D;">Rp {{ number_format($item->harga_asli) }}</span><br>
+                                style="color: #19376D; font-size: 1.5rem;">Rp {{ number_format($item->harga_asli) }}</span><br>
                             <span class="fw-bold"
-                                style="font-size: 1.5rem; visibility: hidden;">Rp {{ number_format($item->harga_diskon) }}</span>
+                                style=" visibility: hidden;">Rp {{ number_format($item->harga_diskon) }}</span>
                             @else
                             <span class="fw-bolder"
                                 style=" text-decoration: line-through; color: red;">Rp {{ number_format($item->harga_asli) }}</span><br>
