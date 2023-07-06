@@ -251,19 +251,19 @@
                                     <div class="harga_bawah"
                                         style="width: 100%; overflow: hidden; text-overflow: ellipsis;">
                                         @if ($item->harga_diskon==null)
-                                        <p class="mb-1 fw-bold" style="width: 100%;
+                                        <p class="mb-1 fw-bold" style="width: 100%; font-size: 1.5rem;
                                                 overflow: hidden;
                                                 text-overflow: ellipsis;">
                                             Rp {{ number_format($item->harga_asli) }}</p>
                                         <p class=" mb-1 fw-bold" style="font-size: 1.5rem; visibility: hidden;
                                                 ">Rp {{ number_format($item->harga_diskon) }}</p>
                                         @else
-                                        <p class="mb-1 fw-bolder" style="font-size: 1.5rem; text-decoration: line-through; color: red;
+                                        <p class="mb-1 fw-bolder" style=" text-decoration: line-through; color: red;
                                                 width: 100%;
                                                 overflow: hidden;
                                                 text-overflow: ellipsis;">
                                             Rp {{ number_format($item->harga_asli) }}</p>
-                                        <p class="mb-1 fw-bold" style="width: 100%;
+                                        <p class="mb-1 fw-bold" style="width: 100%; font-size: 1.5rem;
                                                 overflow: hidden;
                                                 text-overflow: ellipsis;">
                                             Rp {{ number_format($item->harga_diskon) }}</p>
@@ -370,14 +370,14 @@
                                 text-overflow: ellipsis;">
                             @if ($item->harga_diskon==null)
                             <span class="fw-bold"
-                                style="color: #19376D;">Rp {{ number_format($item->harga_asli) }}</span>
+                                style="color: #19376D;">Rp {{ number_format($item->harga_asli) }}</span><br>
                             <span class="fw-bold"
                                 style="font-size: 1.5rem; visibility: hidden;">Rp {{ number_format($item->harga_diskon) }}</span>
                             @else
                             <span class="fw-bolder"
-                                style="font-size: 1.5rem; text-decoration: line-through; color: red;">Rp {{ number_format($item->harga_asli) }}</span>
+                                style=" text-decoration: line-through; color: red;">Rp {{ number_format($item->harga_asli) }}</span><br>
                             <span class="fw-bold"
-                                style="color: #19376D;">Rp {{ number_format($item->harga_diskon) }}</span>
+                                style="color: #19376D; font-size: 1.5rem;">Rp {{ number_format($item->harga_diskon) }}</span>
                             @endif
                             <div class="stok_terjual d-flex justify-content-between">
                                 <p class="mb-3 text-black"  style="font-size: 1rem ;">Stok : {{ $item->stok }}</p>
