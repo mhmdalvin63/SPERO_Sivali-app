@@ -148,14 +148,14 @@
                     <h2 class="harga fw-bold">
                         @if ($item->harga_diskon==null)
                         <span class="fw-bold"
-                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
-                        {{-- <span class="fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_asli) }}</span>
+                        {{-- <span class="fw-bold" style="font-size: 1.5rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon) }}</span>
                         --}}
                         @else
-                        {{-- <span class="fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                        {{-- <span class="fw-bolder" style="font-size: 1.5rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli) }}</span>
                         --}}
                         <span class="fw-bold"
-                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_diskon) }}</span>
                         @endif
                     </h2>
                     <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
@@ -181,14 +181,14 @@
                     <h2 class="harga fw-bold">
                         @if ($item->harga_diskon==null)
                         <span class="fw-bold"
-                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
-                        {{-- <span class="fw-bold" style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_asli) }}</span>
+                        {{-- <span class="fw-bold" style="font-size: 1.5rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon) }}</span>
                         --}}
                         @else
-                        {{-- <span class="fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                        {{-- <span class="fw-bolder" style="font-size: 1.5rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli) }}</span>
                         --}}
                         <span class="fw-bold"
-                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                            style="overflow-wrap: break-word;">Rp.{{ number_format($item->harga_diskon) }}</span>
                         @endif
                     </h2>
                     <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
@@ -254,23 +254,23 @@
                                         <p class="mb-1 fw-bold" style="width: 100%;
                                                 overflow: hidden;
                                                 text-overflow: ellipsis;">
-                                            Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
-                                        <p class=" mb-1 fw-bold" style="font-size: .75rem; visibility: hidden;
-                                                ">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                            Rp.{{ number_format($item->harga_asli) }}</p>
+                                        <p class=" mb-1 fw-bold" style="font-size: 1.5rem; visibility: hidden;
+                                                ">Rp.{{ number_format($item->harga_diskon) }}</p>
                                         @else
-                                        <p class="mb-1 fw-bolder" style="font-size: .75rem; text-decoration: line-through; color: red;
+                                        <p class="mb-1 fw-bolder" style="font-size: 1.5rem; text-decoration: line-through; color: red;
                                                 width: 100%;
                                                 overflow: hidden;
                                                 text-overflow: ellipsis;">
-                                            Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                            Rp.{{ number_format($item->harga_asli) }}</p>
                                         <p class="mb-1 fw-bold" style="width: 100%;
                                                 overflow: hidden;
                                                 text-overflow: ellipsis;">
-                                            Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                            Rp.{{ number_format($item->harga_diskon) }}</p>
                                         @endif
                                         <div class="stok_terjual d-flex justify-content-between">
-                                            <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
-                                            <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
+                                            <p class="mb-3 text-black"  style="font-size: 1rem ;">Stok : {{ $item->stok }}</p>
+                                            <p class="mb-3 text-black"  style="font-size: 1rem ;">{{ $item->terjual }} terjual</p>
                                         </div>
                                     </div>
                                 </div>
@@ -363,25 +363,25 @@
                     </div>
                     <div class="r_desc col-md-6 fs-5 pl-5 ">
                         <p class="mb-0 text-black">{{$item->judul_barang}}</p>
-                        {{-- <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga, 2, ',', '.') }}</span>
+                        {{-- <span class="fw-bold" style="color: #134B6E">Rp.{{ number_format($item->harga) }}</span>
                         --}}
                         <div class="harga_bawah" style="width: 100%;
                                 overflow: hidden;
                                 text-overflow: ellipsis;">
                             @if ($item->harga_diskon==null)
                             <span class="fw-bold"
-                                style="color: #19376D;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                                style="color: #19376D;">Rp.{{ number_format($item->harga_asli) }}</span>
                             <span class="fw-bold"
-                                style="font-size: .75rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                                style="font-size: 1.5rem; visibility: hidden;">Rp.{{ number_format($item->harga_diskon) }}</span>
                             @else
                             <span class="fw-bolder"
-                                style="font-size: .75rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</span>
+                                style="font-size: 1.5rem; text-decoration: line-through; color: red;">Rp.{{ number_format($item->harga_asli) }}</span>
                             <span class="fw-bold"
-                                style="color: #19376D;">Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</span>
+                                style="color: #19376D;">Rp.{{ number_format($item->harga_diskon) }}</span>
                             @endif
                             <div class="stok_terjual d-flex justify-content-between">
-                                <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
-                                <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
+                                <p class="mb-3 text-black"  style="font-size: 1rem ;">Stok : {{ $item->stok }}</p>
+                                <p class="mb-3 text-black"  style="font-size: 1rem ;">{{ $item->terjual }} terjual</p>
                             </div>
                         </div>
                     </div>
@@ -858,7 +858,7 @@
             // },
             nothingToShow: {
                 text: 'Tidak Ada Barang',
-                color: '#ccc'
+                color: '#ccc',
             }
         }).on('fm.boxClicked', function (e, position, order) {
             console.log('Box position is ' + position);

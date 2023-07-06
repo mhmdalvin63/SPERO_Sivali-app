@@ -156,21 +156,21 @@
                     <h5 class="card-subtitle fw-light">Ketegori {{$barang->kategoriBarang->kategori_barang}}</h5>
                     <hr class="hr">
                     <div class="dbd_st d-flex align-items-center justify-content-between">
-                        <p><span class="fw-bold">Stok :</span> {{$barang->stok}}</p>
-                        <p><span class="fw-bold">Terjual :</span> {{$barang->terjual}}</p>
+                        <p class="fw-bold"><span class="fw-bold"  style="font-size: 1rem ;">Stok :</span > {{$barang->stok}}</p>
+                        <p class="fw-bold"><span class="fw-bold"  style="font-size: 1rem ;">Terjual :</span > {{$barang->terjual}}</p>
                     </div>
                     <p>Deskripsi :</p>
                     <p class="dbd_desc">{{$barang->deskripsi}}</p>
                     <hr class="hr">
                     @if ($barang->harga_diskon==null)
-                    <h1 class="card-text fw-bolder mb-0" style="font-size: .75rem; visibility: hidden;">
-                        Rp.{{ number_format($barang->harga_diskon, 2, ',', '.') }}</h1>
-                    <h1 class="card-text fw-bolder mb-3">Rp.{{ number_format($barang->harga_asli, 2, ',', '.') }}</h1>
+                    <h1 class="card-text fw-bolder mb-0" style="font-size: 1.5rem; visibility: hidden;">
+                        Rp.{{ number_format($barang->harga_diskon) }}</h1>
+                    <h1 class="card-text fw-bolder mb-3">Rp.{{ number_format($barang->harga_asli) }}</h1>
                     @else
                     <h1 class="card-text fw-bolder mb-0"
-                        style="font-size: .75rem; text-decoration: line-through; color: red;">
-                        Rp.{{ number_format($barang->harga_asli, 2, ',', '.') }}</h1>
-                    <h1 class="card-text fw-bolder mb-3">Rp.{{ number_format($barang->harga_diskon, 2, ',', '.') }}</h1>
+                        style="font-size: 1.5rem; text-decoration: line-through; color: red;">
+                        Rp.{{ number_format($barang->harga_asli) }}</h1>
+                    <h1 class="card-text fw-bolder mb-3">Rp.{{ number_format($barang->harga_diskon) }}</h1>
                     @endif
                     <div class="dbd_rate">
                         <div class="rating">
