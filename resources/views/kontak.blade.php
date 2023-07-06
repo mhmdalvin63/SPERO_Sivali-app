@@ -35,11 +35,18 @@
             <div class="col-md-2 d-flex justify-content-center">
                 <div class="vr"></div>
             </div>
-            <div class="col-md-5 col-12 mt-3 mt-md-0" style="height: max-content;">
-                <div class="ba__right">
+            <div class="col-md-5 col-12 mt-3 mt-md-0 text-center d-flex justify-content-center" style="height: max-content; flex-wrap: wrap;align-item: center; gap: 2rem;">
+                <div class="ba__right mt-4 p-1">
                     <p class="fs-5 fw-bold mb-0" style="color:
                     #7E1717">E-MAIL</p>
-                    <p class="paragraf mb-0">email yang dapat dihubungi : <span class="fw-bold">eleganfashionstore@gmail.com</span></p>
+                    <img class="" src="{{asset('../img/gmail.png')}}" width="100" alt="">
+                    <p class="paragraf mb-0"><span class="fw-bold">eleganfashionstore@gmail.com</span></p>
+                </div>
+                <div class="ba__right mt-4 p-1">
+                    <p class="fs-5 fw-bold mb-0" style="color:
+                    #7E1717">INSTAGRAM</p>
+                    <img class="" src="{{asset('../img/instagram.png')}}" width="100" alt="">
+                    <p class="paragraf mb-0"><span class="fw-bold">@elegan_fashion_store</span></p>
                 </div>
             </div>
         </div>

@@ -123,22 +123,22 @@
                                </div>
                                <div class="card-body text-center">
                                    <h5 class="card-title text-black">{{$item->judul_barang}}</h5>
-                                   {{-- <p class="card-text">Rp.{{ number_format($item->harga, 2, ',', '.') }}</p> --}}
+                                   {{-- <p class="card-text">Rp.{{ number_format($item->harga) }}</p> --}}
                                    @if ($item->harga_diskon==null)
                                    <p class="card-text fw-bold mb-0" style="font-size: .75rem; visibility: hidden;">
-                                       Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                       Rp.{{ number_format($item->harga_diskon) }}</p>
                                    <p class="card-text fw-bold mb-0" style="color: #19376D;">
-                                       Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                       Rp.{{ number_format($item->harga_asli) }}</p>
                                    @else
                                    <p class="card-text fw-bold mb-0"
                                        style="font-size: .75rem; text-decoration: line-through; color: red;">
-                                       Rp.{{ number_format($item->harga_asli, 2, ',', '.') }}</p>
+                                       Rp.{{ number_format($item->harga_asli) }}</p>
                                    <p class="card-text fw-bold mb-0" style="color: #19376D;">
-                                       Rp.{{ number_format($item->harga_diskon, 2, ',', '.') }}</p>
+                                       Rp.{{ number_format($item->harga_diskon) }}</p>
                                    @endif
                                    <div class="stok_terjual d-flex justify-content-between flex-wrap">
-                                       <p class="mb-3 text-black">Stok : {{ $item->stok }}</p>
-                                       <p class="mb-3 text-black">{{ $item->terjual }} terjual</p>
+                                       <p class="mb-3 text-black" style="font-size: 1rem ;">Stok : {{ $item->stok }}</p>
+                                       <p class="mb-3 text-black" style="font-size: 1rem ;">{{ $item->terjual }} terjual</p>
                                    </div>
                                    <div class="rating">
                                        @if($item->rate <= 0) <i class="fa fa-star" aria-hidden="true"></i>

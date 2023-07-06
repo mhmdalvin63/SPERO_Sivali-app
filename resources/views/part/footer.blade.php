@@ -55,12 +55,13 @@
             <div class="col-md-4 mt-3">
                 <h2>SOCIAL MEDIA</h2>
                 <p class="text-justify"><i class="fa-brands fa-instagram fa-lg"></i> : <a href="https://www.instagram.com/elegan_fashion_store/" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">elegan_fashion_store</a></p>
-                <p class="text-justify"><i class="fa-brands fa-tiktok fa-lg"></></i> : <a href="https://www.tiktok.com/@eleganfashionstore" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">eleganfashionstore</a></p>
+                <p class="text-justify"><i class="fa-brands fa-tiktok fa-lg"></></i> : <a href="https://www.tiktok.com/@eleganfashionstore" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">eleganfashionstore</a></p><br>
+                    <h2>MARKETPLACE</h2>
                 <p class="text-justify"><i class="fa-brands fa-shopify fa-lg"></i> : <a href="https://shopee.co.id/eleganfashion" target="_blank" rel="noopener noreferrer"  style="text-decoration: none;" class="text-dark">EleganFashion.Store</a></p>
         </div>
         <hr class="bg-dark border-2 border-top border-dark">
         <div class="bottom_footer d-flex justify-content-between">
-            <p>@2020 Elegan Fashion Store, All Rights Reserved</p>
+            <p>@2023 Elegan Fashion Store, All Rights Reserved</p>
             <p><a class="text-dark" href="#">Terms & Condition</a> - <a class="text-dark" href="#">Privacy</a> - <a class="text-dark" href="#">Cookies</a></p>
         </div>
     </div>
