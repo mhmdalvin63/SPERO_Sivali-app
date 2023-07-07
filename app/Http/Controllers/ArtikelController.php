@@ -58,7 +58,7 @@ class ArtikelController extends Controller
             if($request->hasFile('gambar_artikel'))
             {
                 $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
-                $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
+                $request->file('gambar_artikel')->move(public_path().'/img/storage/', $fotoArtikel);
                 $newArtikel->gambar_artikel = $fotoArtikel;
                 $newArtikel->save();
             }
@@ -68,7 +68,7 @@ class ArtikelController extends Controller
             return redirect('/admartikel')->with('success','Data Artikel Berhasil Di Tambahkan');
           } catch (Exception $e) {
           
-              return redirect()->back()->with('error','Data Tidak Bisa Disimpan!');
+              return redirect()->back()->with('error','Data Tidak Bisa Disimpan!', $e);
           
           }
 
@@ -113,7 +113,7 @@ class ArtikelController extends Controller
             if($request->hasFile('gambar_artikel'))
             {
                 $fotoArtikel = 'gambar'.rand(1,99999).'.'.$request->gambar_artikel->getClientOriginalExtension();
-                $request->file('gambar_artikel')->move(public_path().'/img/', $fotoArtikel);
+                $request->file('gambar_artikel')->move(public_path().'/img/storage/', $fotoArtikel);
                 $Artikel->gambar_artikel = $fotoArtikel;
                 $Artikel->save();
     
@@ -132,7 +132,7 @@ class ArtikelController extends Controller
             return redirect()->route('art_index')->with('success','Data Artikel Berhasil Diupdate');
           
           } catch (Exception $e) {
-          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan!');
+          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan!', $e);
                     
           }
     }

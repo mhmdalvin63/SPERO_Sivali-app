@@ -42,7 +42,7 @@
                         @foreach ($Banner as $item)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td><img src="{{asset('img/'.$item->gambar_banner)}}" alt="" width="75"></td>
+                            <td><img src="{{asset('img/storage/'.$item->gambar_banner)}}" alt="" width="75"></td>
                             <td>{{$item->Barang->judul_barang}}</td>
                             <td class="d-flex gap-3 justify-content-center align-items-center">
                                 <a href="{{ route('ban_edit', $item->id )}}"

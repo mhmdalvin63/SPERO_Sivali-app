@@ -49,7 +49,7 @@ class BannerController extends Controller
         if($request->hasFile('gambar_banner'))
         {
             $fotoBanner = 'gambar'.rand(1,99999).'.'.$request->gambar_banner->getClientOriginalExtension();
-            $request->file('gambar_banner')->move(public_path().'/img/', $fotoBanner);
+            $request->file('gambar_banner')->move(public_path().'/img/storage/', $fotoBanner);
             $newBanner->gambar_banner = $fotoBanner;
             $newBanner->save();
         }
@@ -99,7 +99,7 @@ class BannerController extends Controller
             if($request->hasFile('gambar_banner'))
             {
                 $fotoBanner = 'gambar'.rand(1,99999).'.'.$request->gambar_banner->getClientOriginalExtension();
-                $request->file('gambar_banner')->move(public_path().'/img/', $fotoBanner);
+                $request->file('gambar_banner')->move(public_path().'/img/storage/', $fotoBanner);
                 $Banner->gambar_banner = $fotoBanner;
                 $Banner->save();
     
@@ -114,7 +114,7 @@ class BannerController extends Controller
             return redirect()->route('ban_index')->with('success', 'Data Banner Berhasil Diupdate');
 
           } catch (Exception $e) {
-          return redirect()->back()->with('error', 'Data Tidak Bisa DIsimpan');
+          return redirect()->back()->with('error', 'Data Tidak Bisa DIsimpan', $e);
           }
 
     }

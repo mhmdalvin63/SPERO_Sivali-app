@@ -58,7 +58,7 @@
                                     <button class="btn btn-outline-danger fw-bold text-dark">Non Active</button>
                                 @endif
                             </td>
-                            <td><img src="{{asset('img/'.$item->file_name)}}" alt="" height="60"></td>
+                            <td><img src="{{asset('img/storage/'.$item->file_name)}}" alt="" height="60"></td>
                             {{-- <td><img src="{{asset('storage/image/'.$item->file_hash)}}" alt="" width="75"></td> --}}
                             <td>{{$item->kategoriBarang->kategori_barang}}</td>
                             <td>{{$item->judul_barang}}</td>

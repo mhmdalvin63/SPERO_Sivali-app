@@ -80,7 +80,7 @@ class BarangController extends Controller
             if($request->hasFile('file_name'))
             {
                 $fotoBarang = 'gambar'.rand(1,99999).'.'.$request->file_name->getClientOriginalExtension();
-                $request->file('file_name')->move(public_path().'/img/', $fotoBarang);
+                $request->file('file_name')->move(public_path().'/img/storage/', $fotoBarang);
                 $newBarang->file_name = $fotoBarang;
                 $newBarang->save();
             }
@@ -90,7 +90,7 @@ class BarangController extends Controller
             return redirect('/barang')->with('success','Data Barang Berhasil Di Tambahkan');
 
           } catch (Exception $e) {
-          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan');
+          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan', $e);
           }
 
     }
@@ -141,7 +141,7 @@ class BarangController extends Controller
             if($request->hasFile('file_name'))
             {
                 $fotoBarang = 'gambar'.rand(1,99999).'.'.$request->file_name->getClientOriginalExtension();
-                $request->file('file_name')->move(public_path().'/img/', $fotoBarang);
+                $request->file('file_name')->move(public_path().'/img/storage/', $fotoBarang);
                 $barang->file_name = $fotoBarang;
                 $barang->save();
     
@@ -173,7 +173,7 @@ class BarangController extends Controller
             }
             return redirect()->route('b_index')->with('success', 'Data Barang Berhasil Diupdate');
           } catch (Exception $e) {
-          return redirect()->back()->with('error', 'Data Tidak Bisa DIsimpan');
+          return redirect()->back()->with('error', 'Data Tidak Bisa DIsimpan', $e);
           }
     }
 
