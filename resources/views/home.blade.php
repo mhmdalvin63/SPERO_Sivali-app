@@ -94,7 +94,7 @@
                             @foreach ($Banner as $key => $item)
                             <a href="#">
                                 <div class="carousel-item {{ $key == 0 ? 'active' : ''}}" id="carousel_img">
-                                    <img class="img-fluid" src="{{asset('img/'.$item->gambar_banner)}}"
+                                    <img class="img-fluid" src="{{asset('img/storage/'.$item->gambar_banner)}}"
                                         alt="">
                                 </div>
                             </a>
@@ -104,23 +104,23 @@
                 </div>
             </div>
             <div class="next_prev" id="lg-np">
-                <button style="z-index: 3;" class="ms-5 position-absolute carousel-control-prev" type="button"
+                <button style="z-index: 3; margin-top: -1rem;" class="ms-5 position-absolute carousel-control-prev" type="button"
                     data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                     <span class="fw-bold" style="color: black;">Prev</span>
                 </button>
-                <button style="z-index: 3;" class="position-absolute carousel-control-next me-5" type="button"
+                <button style="z-index: 3;margin-top: -1rem;" class="position-absolute carousel-control-next me-5" type="button"
                     data-bs-target="#carouselExampleFade" data-bs-slide="next">
                     <span class="fw-bold" style="color: black;">Next</span>
                 </button>
             </div>
             <div class="next_prev" id="sm-np">
-                <button class="position-absolute carousel-control-prev" type="button"
+                <button style="margin-top: -1.55rem;" class="position-absolute carousel-control-prev" type="button"
                     data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                     <span class="parent_icon" aria-hidden="true">
                         <i class="fa-solid fa-angle-left"></i>
                     </span>
                 </button>
-                <button class="position-absolute carousel-control-next" type="button"
+                <button style="margin-top: -1.55rem;" class="position-absolute carousel-control-next" type="button"
                     data-bs-target="#carouselExampleFade" data-bs-slide="next">
                     <span class="parent_icon" aria-hidden="true">
                         <i class="fa-solid fa-angle-right"></i>
@@ -139,7 +139,7 @@
         <a class="text-black" href="{{ route('katalogFilter', $item->id)}}" style="text-decoration: none;">
             <div class="logo">
                 <div class="logo__img">
-                    <img class="img-fluid" src="{{asset('img/'.$item->gambar_kategori)}}" alt=""
+                    <img class="img-fluid" src="{{asset('img/storage/'.$item->gambar_kategori)}}" alt=""
                         width="50">
                 </div>
                 <div class="desc_logo_img">
@@ -207,7 +207,7 @@
                         <div class="card" id="product">
                             <div class="top_product">
                                 {{-- <img src="{{asset('storage/image/'.'/'.$item->gambar_barang)}}" alt=""> --}}
-                                <img src="{{'img/'.$item->file_name}}" title="{{$item->file_name}}" alt=""
+                                <img src="{{'img/storage/'.$item->file_name}}" title="{{$item->file_name}}" alt=""
                                     width="75">
                             </div>
                             <div class="card-body text-center">
@@ -287,7 +287,7 @@
            @else
             <a id="a-genap" href="{{ route('detail_artikel', $Artikel[0]->id)}}" class="grid-item item1 la__image">
             {{-- <img class="img-fluid" src="{{asset('../img/artikel-kami-img.png')}}" alt=""> --}}
-            <img class="img-fluid" src="{{asset('img/'.$Artikel[0]->gambar_artikel)}}" alt="">
+            <img class="img-fluid" src="{{asset('img/storage/'.$Artikel[0]->gambar_artikel)}}" alt="">
             <div class="overlay">
                 <p class="mb-1 fw-bold fs-4">{{ $Artikel[0]->judul_artikel }}</p>
                 <p class="fs-5">{{Str::limit($Artikel[0]->subjudul_artikel, 25) }}</p>
@@ -298,8 +298,8 @@
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
                 <a id="a-genap" href="{{ route('detail_artikel', $Artikel[1]->id)}}" class="grid-item item2 la__image">
-                    <img class="img-fluid" src="{{asset('img/'.$Artikel[1]->gambar_artikel)}}" alt="">
-                    {{-- <img class="img-fluid" src="{{asset('img/'.$item->gambar_artikel)}}" alt=""> --}}
+                    <img class="img-fluid" src="{{asset('img/storage/'.$Artikel[1]->gambar_artikel)}}" alt="">
+                    {{-- <img class="img-fluid" src="{{asset('img/storage/'.$item->gambar_artikel)}}" alt=""> --}}
                     <div class="overlay">
                         <p class="mb-1 fw-bold fs-4">{{ $Artikel[1]->judul_artikel }}</p>
                         <p class="fs-5">{{ Str::limit($Artikel[1]->subjudul_artikel, 25) }}</p>
@@ -310,7 +310,7 @@
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
                 <a id="a-ganjil" href="{{ route('detail_artikel', $Artikel[4]->id)}}" class="grid-item item3 la__image">
-                    <img class="img-fluid" src="{{asset('img/'.$Artikel[4]->gambar_artikel)}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/storage/'.$Artikel[4]->gambar_artikel)}}" alt="">
                     <div class="overlay">
                         <p class="mb-1 fw-bold fs-4">{{ $Artikel[4]->judul_artikel }}</p>
                         <p class="fs-5">{{ Str::limit($Artikel[4]->subjudul_artikel, 25) }}</p>
@@ -321,7 +321,7 @@
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
                 <a id="a-genap" href="{{ route('detail_artikel', $Artikel[2]->id)}}" class="grid-item item4 la__image">
-                    <img class="img-fluid" src="{{asset('img/'.$Artikel[2]->gambar_artikel)}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/storage/'.$Artikel[2]->gambar_artikel)}}" alt="">
                     <div class="overlay">
                         <p class="mb-1 fw-bold fs-4">{{ $Artikel[2]->judul_artikel }}</p>
                         <p class="fs-5">{{ Str::limit($Artikel[2]->subjudul_artikel, 25) }}</p>
@@ -332,7 +332,7 @@
                 <img src="{{asset('../img/logoplus.jpg')}}" id="logoplus" alt="">
             @else
                 <a id="a-genap" href="{{ route('detail_artikel', $Artikel[3]->id)}}" class="grid-item item5 la__image">
-                    <img class="img-fluid" src="{{asset('img/'.$Artikel[3]->gambar_artikel)}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/storage/'.$Artikel[3]->gambar_artikel)}}" alt="">
                     <div class="overlay">
                         <p class="mb-1 fw-bold fs-4">{{ $Artikel[3]->judul_artikel }}</p>
                         <p class="fs-5">{{ Str::limit($Artikel[3]->subjudul_artikel, 25) }}</p>

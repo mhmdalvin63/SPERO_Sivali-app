@@ -134,7 +134,7 @@
             <div class="produk d-grid d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-center justify-content-around"
                 style="width: 100%">
                 <div class=" barang__kiri" id="gambar_barang">
-                <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                <img src="{{asset('img/storage/'.$item->file_name)}}" alt=""
                         style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     {{-- <img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt=""> --}}
                 </div>
@@ -199,7 +199,7 @@
 
                 </div>
                 <div class=" barang__kanan" id="gambar_barang">
-                <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                <img src="{{asset('img/storage/'.$item->file_name)}}" alt=""
                         style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     {{-- <img src="{{asset('../img/meja-flexibel.png')}}" width="100%" alt=""> --}}
                 </div>
@@ -243,7 +243,7 @@
                         <a href="{{ route('detail_barang', $item->id)}}" style="text-decoration: none;">
                             <div>
                                 <div class="card__img d-flex justify-content-center align-items-center">
-                                <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                                <img src="{{asset('img/storage/'.$item->file_name)}}" alt=""
                         style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                                 </div>
                                 <div class="card__title">
@@ -302,7 +302,7 @@
             @foreach ($barangrandomkanan->take(1) as $item)
                 <div class="carousel-item d-grid active">
                     <div class="ci_image">
-                        <img src="{{asset('img/'.$item->file_name)}}" width="250" height="250" alt="...">
+                        <img src="{{asset('img/storage/'.$item->file_name)}}" width="250" height="250" alt="...">
                     </div>
                     <div class="ci_desc text-black">
                         <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
@@ -313,7 +313,7 @@
                 @foreach ($barangrandomkiri->take(1) as $item)
                 <div class="carousel-item d-grid">
                     <div class="ci_image">
-                        <img src="{{asset('img/'.$item->file_name)}}" width="250" height="250" alt="...">
+                        <img src="{{asset('img/storage/'.$item->file_name)}}" width="250" height="250" alt="...">
                     </div>
                     <div class="ci_desc text-black">
                         <p class="fw-bold">Gaya Baru <span class="fw-light">{{$item->judul_barang}}</span></p>
@@ -323,7 +323,8 @@
                 @endforeach
             </div>
         </div>
-
+        @foreach($allbarang as $item)
+        @if($item != NULL)
         <div class="next_prev">
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
                 data-bs-slide="prev">
@@ -336,6 +337,8 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        @endif
+        @endforeach
     </div>
 
 </div>
@@ -347,7 +350,7 @@
         <div class="status col d-flex gap-3 align-items-center fs-5">
             <a href="" class="text-black">LAKU <span class="fw-bold">TERJUAL</span></a>
             <div class="hl"></div>
-            <a href="" class="fw-bold text-black">READY STOK</a>
+            <a href="" class="fw-bold text-black">READY STOCK</a>
         </div>
     </div>
     <div class="row px-3 d-flex justify-content-between justify-content-xl-start">
@@ -358,7 +361,7 @@
                     <div class="col-md-6 py-3 px-2 d-flex align-items-center justify-content-center" id="pbi">
                         {{-- <img src="{{$item->file_location.'/'.$item->file_hash}}" title="{{$item->file_name}}"
                         alt="" width="75"> --}}
-                        <img src="{{asset('img/'.$item->file_name)}}" alt=""
+                        <img src="{{asset('img/storage/'.$item->file_name)}}" alt=""
                         style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     </div>
                     <div class="r_desc col-md-6 fs-5 pl-5 ">

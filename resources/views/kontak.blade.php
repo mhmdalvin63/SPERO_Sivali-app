@@ -26,7 +26,7 @@
             <div class="col-md-5 col-12" style="height: max-content;">
                 <div class="ba__left">
                     <p class="fs-5 fw-bold mb-0" style="color:
-                    #7E1717">call center atau customer service atau whatsapp admin :082229901779
+                    #7E1717">call center atau customer service atau whatsapp admin :<a href="https://wa.me/6282229901779" target="_blank" style="text-decoration: none;">Disini</a>
 </p>
                     <p class="paragraf mb-0 mt-4">jam operasional admin : <br>Senin - Jumat pukul 09:00 - 18:00 WIB
                            Sabtu - Minggu Pukul 10:00 - 15:00 WIB</p>
@@ -39,13 +39,13 @@
                 <div class="ba__right mt-4 p-1">
                     <p class="fs-5 fw-bold mb-0" style="color:
                     #7E1717">E-MAIL</p>
-                    <img class="" src="{{asset('../img/gmail.png')}}" width="100" alt="">
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJZWPbtmgxBpmkdgbMVhcrFcFwdmjNcLBzwgnqXFfZSDptSVJcghCkRTLKblNhVrnZPdpsB" target="_blank" rel="noopener noreferrer"><img class="" src="{{asset('../img/gmail.png')}}" width="100" alt=""></a>
                     <p class="paragraf mb-0"><span class="fw-bold">eleganfashionstore@gmail.com</span></p>
                 </div>
                 <div class="ba__right mt-4 p-1">
                     <p class="fs-5 fw-bold mb-0" style="color:
                     #7E1717">INSTAGRAM</p>
-                    <img class="" src="{{asset('../img/instagram.png')}}" width="100" alt="">
+                    <a href="https://ig.me/m/elegan_fashion_store" target="_blank" rel="noopener noreferrer"><img class="" src="{{asset('../img/instagram.png')}}" width="100" alt=""></a>
                     <p class="paragraf mb-0"><span class="fw-bold">@elegan_fashion_store</span></p>
                 </div>
             </div>

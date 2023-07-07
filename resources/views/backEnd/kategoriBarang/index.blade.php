@@ -44,7 +44,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             {{-- <td><img src="../storage/image/{{$item->gambar_barang}}" alt="" height="150px"></td> --}}
-                            <td><img src="{{asset('img/'.$item->gambar_kategori)}}" alt="" height="60"></td>
+                            <td><img src="{{asset('img/storage/'.$item->gambar_kategori)}}" alt="" height="60"></td>
                             <td>{{$item->kategori_barang}}</td>
                             {{-- <td>{{$item->nama_petugas}}</td> --}}
                             {{-- @if(auth()->user()->level == "admin") --}}

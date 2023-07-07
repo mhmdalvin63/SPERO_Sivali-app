@@ -4,7 +4,7 @@
     
 <div class="card">
     <div class="card-body">
-        <img src="{{asset('img'.$KategoriBarang->gambar_kategori)}}" alt="" width="100">
+        <img src="{{asset('img/storage'.$KategoriBarang->gambar_kategori)}}" alt="" width="100">
         @if(session('error'))
                 <div class="alert alert-danger alert-dismissible fade show">
                     {{ session('error') }}

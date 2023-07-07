@@ -121,7 +121,7 @@
                        <a href="{{ route('detail_barang', $item->id)}}">
                            <div class="card" id="product">
                                <div class="top_product">
-                                   {{-- <img src="{{asset('img/'.$item->gambar_barang)}}" alt=""> --}}
+                                   {{-- <img src="{{asset('img/storage/'.$item->gambar_barang)}}" alt=""> --}}
                                    <img src="{{'img/'.$item->file_name}}" title="{{$item->file_name}}" alt=""
                                        width="75">
                                </div>

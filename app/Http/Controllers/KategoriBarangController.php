@@ -52,7 +52,7 @@ class KategoriBarangController extends Controller
             if($request->hasFile('gambar_kategori'))
             {
                 $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
-                $request->file('gambar_kategori')->move(public_path().'/img/', $category);
+                $request->file('gambar_kategori')->move(public_path().'/img/storage/', $category);
                 $kategoriNew->gambar_kategori = $category;
                 $kategoriNew->save();
             }
@@ -65,7 +65,7 @@ class KategoriBarangController extends Controller
 
           } 
           catch (Exception $e) {
-          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan');
+          return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan', $e);
           }
     }
 
@@ -105,7 +105,7 @@ class KategoriBarangController extends Controller
             if($request->hasFile('gambar_kategori'))
             {
                 $category = 'category'.rand(1,99999).'.'.$request->gambar_kategori->getClientOriginalExtension();
-                $request->file('gambar_kategori')->move(public_path().'/img/', $category);
+                $request->file('gambar_kategori')->move(public_path().'/img/storage/', $category);
                 $KategoriBarang->gambar_kategori = $category;
                 $KategoriBarang->save();
                 
@@ -119,7 +119,7 @@ class KategoriBarangController extends Controller
             }
             return redirect()->route('kb_index')->with('success', 'Data Kategori Berhasil Diupdate');
           } catch (Exception $e) {
-            return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan');
+            return redirect()->back()->with('error', 'Data Tidak Bisa Disimpan', $e);
           }
     }
 
