@@ -13,15 +13,21 @@
 
     .sdfm-inner-wrapper {
         /* width: 25% !important; */
-        height: unset !important;
+        height: max-content !important;
         transition: none !important;
         float: left;
         display: inline-block;
         padding: 0px;
-        position: relative;
+        /* position: relative; */
         border: none !important;
         margin: 10px;
         cursor: pointer;
+        transform: translate(0)!important;
+
+    }
+    .sdfm-box-hidden{
+        transform: translate(0)!important;
+        display:none!important;
     }
 
     /* Extra small devices (phones, 600px and down) */
@@ -489,7 +495,7 @@
 
 
             $el.css({
-                'list-style-type': 'none'
+                'list-style-type': 'none',
             }).wrap($outerWrapper);
 
             $lis.css({
@@ -823,7 +829,7 @@
                     color: '#2A4153'
                 },
                 margin: 10,
-                pointer: true
+                pointer: 'true',
             },
             nothingToShow: {
                 text: 'Tidak Ada Barang'
