@@ -144,9 +144,9 @@
                         style="width: 100%;height: 100%; object-fit: contain; aspect-ratio: 2/2;">
                     {{-- <img src="{{asset('../img/kursi-nyaman.png')}}" width="100%" alt=""> --}}
                 </div>
-                <div class="" id="desc_barang">
+                <div class="ms-3" id="desc_barang">
                     <div class="judul__barang">
-                        <h3 class="fw-light" style="text-decoration: none; font-weight:bold">{{$item->judul_barang}}
+                        <h3 class="fw-light" style="text-decoration: none; font-weight:bold; ">{{$item->judul_barang}}
                         </h3>
                         {{-- <h3 class="fw-light">KURSI <span class="fw-bold">NYAMAN</span></h3> --}}
                     </div>
