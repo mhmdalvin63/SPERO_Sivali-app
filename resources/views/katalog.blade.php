@@ -5,6 +5,17 @@
         display: none !important;
     }
 
+    .judul__barang {
+    width: 80%!important;
+    }
+    .tj {
+        /* text-align: justify; */
+        width: 80%!important;
+    }
+    #gambar_barang {
+    height: 12rem!important;
+    width: 85%!important;
+    }
     .sdfm-wrapper {
         vertical-align: top;
         /* display: block; */
