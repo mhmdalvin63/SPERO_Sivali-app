@@ -28,10 +28,6 @@
     padding: 2rem 1rem;
     height: max-content;
 }
-.tj{
-    /* text-align: justify */
-    width: 80%!important;
-}
 .vl {
     -ms-transform: translate(9px,0); /* Internet Explorer 9 */
     -webkit-transform: translate(9px,0); /* Safari */
@@ -45,7 +41,7 @@
 }
 #gambar_barang{
     height: 12rem;
-    width: 85%!important;
+    /* width: 25%; */
 }
 .content_barang h2{
     color: #EE9D00;
@@ -54,7 +50,7 @@
     color: var(--blue-color);
 }
 .judul__barang{
-    width: 80%!important;
+    width: max-content;
 }
 .judul__barang h3{
     text-decoration-line: underline;
