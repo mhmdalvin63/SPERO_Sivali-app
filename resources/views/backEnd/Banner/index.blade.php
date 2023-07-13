@@ -33,7 +33,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Gambar</th>
+                            <th>Gambar <br><span style="font-size: 12px" class=" fw-bold">*Ukuran 1192px x 360px atau 1256px x 392px</span></th>
                             <th>Barang</th>
                             <th>Aksi</th>
                         </tr>
